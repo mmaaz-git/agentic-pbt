@@ -1,0 +1,42 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 436949,
+  "duration_api_ms": 429571,
+  "num_turns": 80,
+  "result": "## Summary\n\n\u2705 **Bug Found**: Discovered a contract violation in `pydantic.main` where models with None defaults for non-optional fields break JSON round-trip validation.\n\n**Testing Results**:\n- Tested 8 properties on pydantic.main\n- 6 properties passed \u2705\n- 2 test failures led to bug discovery\n- Bug affects both `BaseModel` and `create_model` functions\n\n**Bug Details**:\n- **Type**: Contract violation \n- **Severity**: Medium\n- **Impact**: Affects all non-optional types (int, float, str, bool) when None is used as default\n- **Bug report**: Created as `bug_report_pydantic_main_2025-08-18_19-40_fcil.md`\n\nThe bug violates the fundamental round-trip property that `model_validate_json(model.model_dump_json())` should equal the original model. This happens because Pydantic accepts None as a default for non-optional fields but then fails to validate the resulting JSON.",
+  "session_id": "cf526c17-bc0d-4e0c-82df-31e99537e625",
+  "total_cost_usd": 4.231427200000001,
+  "usage": {
+    "input_tokens": 562,
+    "cache_creation_input_tokens": 72300,
+    "cache_read_input_tokens": 1289408,
+    "output_tokens": 12243,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01Cx1wjsMRtReAan4qMNmz5H",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/pydantic/main.py",
+        "limit": 100
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01A9pm9qvJ7XBBRXqXkQLRS1",
+      "tool_input": {
+        "command": "cp /home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/pydantic/main.py /root/hypothesis-llm/worker_/6/pydantic_main.py",
+        "description": "Copy pydantic main.py to local directory"
+      }
+    }
+  ],
+  "call_id": "3f4c0e57",
+  "module": "pydantic.main",
+  "timestamp": "2025-08-18T19:41:40.959132"
+}

@@ -1,0 +1,49 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 440803,
+  "duration_api_ms": 446168,
+  "num_turns": 116,
+  "result": "## Bug Found! \ud83d\udc1b\n\nSuccessfully discovered an **API contract violation** in `troposphere.wafregional`:\n\n- **Issue**: All 11 AWSObject classes require an undocumented `title` parameter\n- **Impact**: Users following the `props` documentation cannot instantiate objects without TypeError\n- **Severity**: Medium (affects all classes in the module)\n\n**Bug report saved**: `bug_report_troposphere_wafregional_2025-08-19_02-41_5k6j.md`\n\nAlso tested 9 other properties successfully:\n\u2705 Boolean validator handles multiple representations correctly\n\u2705 Integer validator accepts various numeric types\n\u2705 WAF action validator enforces valid action types\n\u2705 AWSProperty classes work as documented\n\nThe property-based testing approach effectively revealed this systematic issue affecting the entire module's public API.",
+  "session_id": "6b4b40a8-974c-4b54-846c-2df0d0ea6b2f",
+  "total_cost_usd": 5.6713954,
+  "usage": {
+    "input_tokens": 652,
+    "cache_creation_input_tokens": 62340,
+    "cache_read_input_tokens": 2367488,
+    "output_tokens": 12390,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01RKmp2i5XUSnfUj244PffVL",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/troposphere/wafregional.py"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01WevjgQu5bHNaP6WuN8rgoJ",
+      "tool_input": {
+        "command": "find /root/hypothesis-llm -name \"*.py\" | xargs grep -l \"wafregional\" 2>/dev/null | head -5",
+        "description": "Search for wafregional related files in the project"
+      }
+    },
+    {
+      "tool_name": "Glob",
+      "tool_use_id": "toolu_01NsEo61b8yMkYDBugFnocVx",
+      "tool_input": {
+        "pattern": "**/*wafregional*",
+        "path": "/root/hypothesis-llm"
+      }
+    }
+  ],
+  "call_id": "9770902e",
+  "module": "troposphere.wafregional",
+  "timestamp": "2025-08-19T02:42:46.337721"
+}

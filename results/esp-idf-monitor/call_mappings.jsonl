@@ -1,0 +1,3 @@
+{"call_id": "35c67df0", "module": "esp_idf_monitor", "timestamp": "2025-08-19T02:59:10.023404", "bug_reports": [], "aux_files_dir": "aux_files/35c67df0"}
+{"call_id": "ae0968ab", "module": "esp_idf_monitor.base", "timestamp": "2025-08-19T02:55:07.546929", "bug_reports": ["bug_report_esp_idf_monitor_base_binlog_2025-08-19_02-54_jmjv.md"], "aux_files_dir": "aux_files/ae0968ab"}
+{"call_id": "5e305fee", "module": "esp_idf_monitor.idf_monitor", "timestamp": "2025-08-19T03:00:06.120187", "bug_reports": ["bug_report_esp_idf_monitor_line_matcher_2025-08-19_02-59_iab3.md"], "aux_files_dir": "aux_files/5e305fee"}

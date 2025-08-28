@@ -1,0 +1,42 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 408889,
+  "duration_api_ms": 414735,
+  "num_turns": 97,
+  "result": "## Bug Found! \ud83d\udc1b\n\nI've successfully discovered a **genuine bug** in `sudachipy.command_line` using property-based testing with Hypothesis.\n\n### Bug Summary\nThe `_command_build` and `_command_user_build` functions have a logic bug where descriptions exceeding 255 bytes in UTF-8 cause **silent failures**. The code prints \"it will be truncated\" but actually returns early without building the dictionary at all.\n\n### Impact\n- **Severity**: Medium\n- **Type**: Logic bug (silent failure)\n- Users attempting to build dictionaries with long descriptions experience unexplained failures\n- The misleading message violates the principle of least surprise\n\n### Files Created\n1. **Bug Report**: `bug_report_sudachipy_command_line_2025-08-18_20-37_6jw1.md` - Full documentation with reproduction steps and fix\n2. **Test Files**: Various test files demonstrating the bug through property-based testing\n\nThe bug was discovered by testing the property that descriptions > 255 bytes should either be truncated (as the message claims) or raise an error, but should never silently fail to build the dictionary.",
+  "session_id": "47d86fc5-b35e-4cc7-b6e6-69cc5f5ca396",
+  "total_cost_usd": 4.452643299999999,
+  "usage": {
+    "input_tokens": 618,
+    "cache_creation_input_tokens": 54614,
+    "cache_read_input_tokens": 1587242,
+    "output_tokens": 13679,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_018iCxPfzNeZcHQ7jKTWARS4",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/sudachipy_env/bin/activate && python -c \"import sudachipy.command_line; print('Successfully imported sudachipy.command_line')\"",
+        "description": "Check sudachipy.command_line in virtual environment"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_013g4VqAPgHAdCzbeW9JDHjy",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/sudachipy_env/bin/python -c \"import sudachipy.command_line; print('Successfully imported sudachipy.command_line')\"",
+        "description": "Check sudachipy.command_line using venv python"
+      }
+    }
+  ],
+  "call_id": "5f1878e2",
+  "module": "sudachipy.command_line",
+  "timestamp": "2025-08-18T20:38:16.902203"
+}

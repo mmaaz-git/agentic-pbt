@@ -1,0 +1,25 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 340219,
+  "duration_api_ms": 356506,
+  "num_turns": 77,
+  "result": "## Summary\n\nFound **1 genuine bug** in `html.unescape`: The function incorrectly handles control character references (codepoints 1-8, 11, 14-31), returning empty strings instead of the corresponding Unicode characters as specified by HTML5.\n\nBug report saved as: `bug_report_html_unescape_2025-08-18_04-55_axxv.md`",
+  "session_id": "25eac362-9ee2-481e-9027-0eafa1365ce4",
+  "total_cost_usd": 4.5303523,
+  "usage": {
+    "input_tokens": 268,
+    "cache_creation_input_tokens": 51594,
+    "cache_read_input_tokens": 1782314,
+    "output_tokens": 11143,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [],
+  "call_id": "e2321bed",
+  "module": "html.parser",
+  "timestamp": "2025-08-18T04:56:19.783518"
+}

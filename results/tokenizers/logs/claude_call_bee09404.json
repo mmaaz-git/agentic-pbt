@@ -1,0 +1,57 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 611398,
+  "duration_api_ms": 615917,
+  "num_turns": 108,
+  "result": "## Summary\n\nSuccessfully found **2 bugs** in `tokenizers.models` through property-based testing:\n\n### Bug 1: Duplicate Token IDs Break Round-Trip Property\n- **Severity**: Medium\n- **Type**: Contract violation\n- WordLevel and WordPiece models accept vocabularies where multiple tokens map to the same ID\n- This breaks the fundamental property: `id_to_token(token_to_id(t)) == t`\n- Bug report saved: `bug_report_tokenizers_models_wordlevel_2025-08-18_21-27_i59p.md`\n\n### Bug 2: Unknown Tokens Return None Instead of UNK ID  \n- **Severity**: Medium\n- **Type**: Contract violation\n- Models return `None` for unknown tokens instead of the configured UNK token's ID\n- Violates documented behavior for unknown token handling\n- Bug report saved: `bug_report_tokenizers_models_unknown_token_2025-08-18_21-27_92j2.md`\n\nBoth bugs were discovered through systematic property-based testing using Hypothesis, with minimal reproducible examples provided in the bug reports. \u2705",
+  "session_id": "646eaad8-438c-4b71-afde-3df23855317d",
+  "total_cost_usd": 5.116643699999999,
+  "usage": {
+    "input_tokens": 648,
+    "cache_creation_input_tokens": 68810,
+    "cache_read_input_tokens": 1920034,
+    "output_tokens": 12290,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "LS",
+      "tool_use_id": "toolu_01GeXG4fsLCDMAG2KLPADBmm",
+      "tool_input": {
+        "path": "/root/hypothesis-llm"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_013quL3ygzMbnqFRjnLhPK7n",
+      "tool_input": {
+        "command": "source bin/activate && python -c \"import tokenizers.models; print('success - treating as module')\"",
+        "description": "Activate venv and import tokenizers"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01HsxkdaeKwcbvn352wDJMQy",
+      "tool_input": {
+        "command": "./bin/python -c \"import tokenizers.models; print('success - treating as module')\"",
+        "description": "Use venv python to import tokenizers"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01C1TmVHbsgZESQmdiihzxTj",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/tokenizers_env/bin/python -c \"import tokenizers.models; print('success - treating as module')\"",
+        "description": "Import tokenizers.models using venv Python"
+      }
+    }
+  ],
+  "call_id": "bee09404",
+  "module": "tokenizers.models",
+  "timestamp": "2025-08-18T21:29:11.368013"
+}

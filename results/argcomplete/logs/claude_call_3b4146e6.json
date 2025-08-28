@@ -1,0 +1,40 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 477986,
+  "duration_api_ms": 486009,
+  "num_turns": 94,
+  "result": "**Bug Found!** \u2705\n\nI discovered a **file descriptor leak** in `argcomplete.io.mute_stdout()`. The function opens `/dev/null` but never closes it, unlike `mute_stderr()` which properly closes the file. This is a genuine resource leak that could cause file descriptor exhaustion in long-running processes.\n\nThe bug report has been saved to `bug_report_argcomplete_io_2025-08-18_21-21_a66n.md` with:\n- A minimal reproduction script \n- The exact fix needed (adding `sys.stdout.close()` before restoring stdout)\n- Property-based tests that revealed the issue\n\nThis is a **Medium severity Logic bug** - the code violates the fundamental contract of context managers to release acquired resources.",
+  "session_id": "ca784412-4907-4e34-b250-942058341ee8",
+  "total_cost_usd": 3.5165664999999997,
+  "usage": {
+    "input_tokens": 562,
+    "cache_creation_input_tokens": 40546,
+    "cache_read_input_tokens": 1282516,
+    "output_tokens": 10863,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01Nk7TBECQnWsQLvgqxeJYPH",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/argcomplete/io.py"
+      }
+    },
+    {
+      "tool_name": "LS",
+      "tool_use_id": "toolu_014nzLzY6DTzxHKRwDiBX6JF",
+      "tool_input": {
+        "path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/argcomplete"
+      }
+    }
+  ],
+  "call_id": "3b4146e6",
+  "module": "argcomplete.io",
+  "timestamp": "2025-08-18T21:22:31.388687"
+}

@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 379656,
+  "duration_api_ms": 389111,
+  "num_turns": 104,
+  "result": "## Summary\n\nSuccessfully discovered **4 genuine bugs** in `troposphere.rekognition` using property-based testing with Hypothesis:\n\n### Bugs Found:\n\n1. **ImportError in validate_PolygonRegionsOfInterest** (High severity)\n   - Function crashes trying to import non-existent `Point` class\n   - Makes `StreamProcessor.PolygonRegionsOfInterest` property unusable\n\n2. **double() returns wrong type** (Medium severity)  \n   - Returns string instead of float when given string input\n   - Breaks type expectations and causes downstream errors\n\n3. **boolean() doesn't handle 'TRUE'/'FALSE'** (Low severity)\n   - Accepts 'true' and 'True' but not 'TRUE'\n   - Inconsistent case handling\n\n4. **Typo in error message** (Low severity)\n   - Says \"ponts\" instead of \"points\"\n   - Unprofessional and potentially confusing\n\nAll bugs have been documented with:\n- Property-based tests that found them\n- Minimal reproductions\n- Impact analysis\n- Suggested fixes\n\nThe tests also validated that other properties work correctly (to_dict/from_dict round-trips, Collection type field inclusion).",
+  "session_id": "1ef49da7-1fb3-48ea-accd-563ac52a3e7b",
+  "total_cost_usd": 4.1046917999999994,
+  "usage": {
+    "input_tokens": 456,
+    "cache_creation_input_tokens": 44744,
+    "cache_read_input_tokens": 1506618,
+    "output_tokens": 13078,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01N4z9B1KLkHHdjahPFTj2BN",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/troposphere/rekognition.py"
+      }
+    }
+  ],
+  "call_id": "e0db8428",
+  "module": "troposphere.rekognition",
+  "timestamp": "2025-08-19T02:23:31.968403"
+}

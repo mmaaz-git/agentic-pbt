@@ -1,0 +1,6 @@
+{"call_id": "e70ae32b", "module": "yq", "timestamp": "2025-08-19T03:12:26.243266", "bug_reports": ["bug_report_yq_2025-08-19_03-11_fx0o.md"], "aux_files_dir": "aux_files/e70ae32b"}
+{"call_id": "1b7821c5", "module": "yq.dumper", "timestamp": "2025-08-19T03:09:35.432236", "bug_reports": [], "aux_files_dir": "aux_files/1b7821c5"}
+{"call_id": "bc7895b5", "module": "yq.loader", "timestamp": "2025-08-19T03:08:09.825939", "bug_reports": ["bug_report_yq_loader_2025-08-19_02-52_k3m9.md"], "aux_files_dir": "aux_files/bc7895b5"}
+{"call_id": "27e9b598", "module": "yq.parser", "timestamp": "2025-08-19T03:04:08.187166", "bug_reports": ["bug_report_sqltrie_sqlite_2025-08-19_03-03_7fk5.md"], "aux_files_dir": "aux_files/27e9b598"}
+{"call_id": "7038005e", "module": "yq.tomlq", "timestamp": "2025-08-19T03:09:50.781783", "bug_reports": ["bug_report_yq_yq_2025-08-19_18-29_k3m9.md"], "aux_files_dir": "aux_files/7038005e"}
+{"call_id": "7ff37e91", "module": "yq.xq", "timestamp": "2025-08-19T03:09:10.013541", "bug_reports": ["bug_report_yq_decode_docs_2025-08-19_00-00_x9k2.md"], "aux_files_dir": "aux_files/7ff37e91"}

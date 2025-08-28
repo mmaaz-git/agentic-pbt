@@ -1,0 +1,74 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 3557848,
+  "duration_api_ms": 3563870,
+  "num_turns": 110,
+  "result": "## Summary\n\n\ud83d\udc1b **Bug Found!** I discovered a contract violation in `troposphere.elasticbeanstalk` (affects all AWSObject subclasses).\n\n### Bug Details:\n- **Issue**: Misleading error message says titles are \"not alphanumeric\" when rejecting Unicode characters like '\u00aa', '\u00b2', '\u00b5'\n- **Problem**: These characters ARE alphanumeric according to Python's `isalnum()`, but the regex only accepts ASCII [a-zA-Z0-9]\n- **Impact**: Low severity - causes confusion with misleading error messages\n\n### Testing Results:\n- \u2705 13 tests passed\n- \u274c 1 test failed (revealing the bug)\n- Tested properties including validators, required fields, round-trip serialization, and type validation\n\nThe bug report has been saved to `bug_report_troposphere_elasticbeanstalk_2025-08-19_01-38_qd1v.md` with a recommended fix to clarify the error message.",
+  "session_id": "276e7cc5-ea83-4e8a-9952-283a30925b59",
+  "total_cost_usd": 7.2531813,
+  "usage": {
+    "input_tokens": 758,
+    "cache_creation_input_tokens": 143482,
+    "cache_read_input_tokens": 2309704,
+    "output_tokens": 14245,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01HDzxxTKXaqSpoCarjzsnM8",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/troposphere_env/bin/activate && python3 -c \"import troposphere.elasticbeanstalk; print('Successfully imported troposphere.elasticbeanstalk')\"",
+        "description": "Activate venv and import module"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01NvT7Mv1eZEpgJeQT7nnkgP",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python3 -c \"import troposphere.elasticbeanstalk; print('Successfully imported troposphere.elasticbeanstalk')\"",
+        "description": "Import troposphere.elasticbeanstalk with venv Python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01VUt21Po3ebZCxGu826PNF1",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python3 -m pytest test_troposphere_elasticbeanstalk.py -v",
+        "description": "Run property-based tests with pytest"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01F3GFg8B1B3dHAUKxun8ADD",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/pytest test_troposphere_elasticbeanstalk.py -v",
+        "description": "Run pytest tests"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Mck6e6zpnCoG6pBpbZp9Km",
+      "tool_input": {
+        "command": "PYTHONPATH=/root/hypothesis-llm/envs/troposphere_env/lib/python3.13/site-packages /home/linuxbrew/.linuxbrew/bin/python3 -m pytest test_troposphere_elasticbeanstalk.py -v --tb=short",
+        "description": "Run tests with system Python and venv packages"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_015QmnkxkkLAu5AHDqRafcaU",
+      "tool_input": {
+        "command": "PYTHONPATH=/root/hypothesis-llm/envs/troposphere_env/lib/python3.13/site-packages python3 -c \"\nimport sys\nsys.path.insert(0, '.')\nimport test_troposphere_elasticbeanstalk as t\n\n# Run each test with a simple example\nprint('Testing validate_tier_name with invalid input...')\ntry:\n    t.test_validate_tier_name_invalid('InvalidTier')\n    print('\u2713 test_validate_tier_name_invalid passed')\nexcept AssertionError as e:\n    print(f'\u2717 test_validate_tier_name_invalid failed: {e}')\n\nprint('\\\\nTesting validate_tier_name with valid input...')\ntry:\n    t.test_validate_tier_name_valid('WebServer')\n    print('\u2713 test_validate_tier_name_valid passed')\nexcept AssertionError as e:\n    print(f'\u2717 test_validate_tier_name_valid failed: {e}')\n\nprint('\\\\nTesting title validation...')\ntry:\n    t.test_title_validation('Valid123')\n    t.test_title_validation('Invalid-Title!')\n    print('\u2713 test_title_validation passed')\nexcept AssertionError as e:\n    print(f'\u2717 test_title_validation failed: {e}')\n\nprint('\\\\nTesting required properties...')\ntry:\n    t.test_required_properties_application_version('MyApp', 'app1', 'bucket', 'key')\n    print('\u2713 test_required_properties_application_version passed')\nexcept AssertionError as e:\n    print(f'\u2717 test_required_properties_application_version failed: {e}')\n\"",
+        "description": "Run tests manually with Python"
+      }
+    }
+  ],
+  "call_id": "781afecd",
+  "module": "troposphere.elasticbeanstalk",
+  "timestamp": "2025-08-19T01:39:31.065204"
+}

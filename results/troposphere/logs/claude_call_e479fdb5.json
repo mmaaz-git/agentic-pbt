@@ -1,0 +1,50 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 407203,
+  "duration_api_ms": 412171,
+  "num_turns": 109,
+  "result": "## Bug Hunting Complete\n\nFound **1 genuine bug** in `troposphere.autoscaling`:\n\n### Bug Found: validate_int_to_str Exception Type Error\n- **Function**: `troposphere.validators.autoscaling.validate_int_to_str`\n- **Issue**: Raises `ValueError` instead of `TypeError` for non-numeric strings\n- **Impact**: Contract violation - inconsistent error handling\n- **Bug Report**: Created in `bug_report_troposphere_validate_int_to_str_2025-08-18_23-52_k3m9.md`\n\n### Tests Performed\nTested 7 properties across the module:\n1. \u2705 Boolean validator - handles all documented input types correctly\n2. \u2705 Integer validator - properly validates integer conversions  \n3. \u2705 Double validator - properly validates float conversions\n4. \u274c validate_int_to_str - **BUG FOUND**: wrong exception type\n5. \u2705 Tags class - correctly handles tag creation and conversion\n6. \u2705 Property None handling - works as designed (uses NoValue, not None)\n7. \u2705 LaunchTemplateSpecification - validation works correctly\n\nThe property-based testing successfully identified a contract violation where the function's actual behavior differs from its documented exception type, demonstrating the power of Hypothesis for finding subtle API contract bugs.",
+  "session_id": "977fa427-d2a3-4b31-b4db-7fc553f6e986",
+  "total_cost_usd": 7.206266099999999,
+  "usage": {
+    "input_tokens": 696,
+    "cache_creation_input_tokens": 100202,
+    "cache_read_input_tokens": 2950220,
+    "output_tokens": 11729,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_014q9D1ndUGdqDMR46vf3LSz",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -c \"import troposphere.autoscaling; print('Successfully imported troposphere.autoscaling')\"",
+        "description": "Check if troposphere is available in the venv"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01FVd9kKfbNQHPd7tQmJ1reH",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python3 -c \"\nimport troposphere.autoscaling\nimport inspect\nprint('Module file:', troposphere.autoscaling.__file__)\nprint('\\\\nModule members (first 20):')\nmembers = inspect.getmembers(troposphere.autoscaling)\nfor name, obj in members[:20]:\n    print(f'  {name}: {type(obj).__name__}')\n\"",
+        "description": "Explore troposphere.autoscaling module structure"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01H3bemqpotH2s6wFTocxSS9",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -m pytest test_troposphere_autoscaling.py -v",
+        "description": "Run the property-based tests with pytest"
+      }
+    }
+  ],
+  "call_id": "e479fdb5",
+  "module": "troposphere.autoscaling",
+  "timestamp": "2025-08-18T23:50:21.176303"
+}

@@ -1,0 +1,25 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 386719,
+  "duration_api_ms": 411019,
+  "num_turns": 87,
+  "result": "**Bug found**: Created bug report file `bug_report_dateutil_easter_2025-08-18_05-24_xnc1.md` documenting a high-severity crash bug in `dateutil.easter` where the Orthodox Easter calculation (method=2) produces invalid dates like June 31st for 137 different years, causing ValueError crashes. \u2705",
+  "session_id": "7b669d63-708c-4d76-941e-2ab108cb4bf7",
+  "total_cost_usd": 4.358119799999999,
+  "usage": {
+    "input_tokens": 322,
+    "cache_creation_input_tokens": 49936,
+    "cache_read_input_tokens": 1643460,
+    "output_tokens": 11797,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [],
+  "call_id": "58b11b56",
+  "module": "dateutil.easter",
+  "timestamp": "2025-08-18T05:25:12.784733"
+}

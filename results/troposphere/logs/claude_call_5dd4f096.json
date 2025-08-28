@@ -1,0 +1,42 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 440283,
+  "duration_api_ms": 427272,
+  "num_turns": 114,
+  "result": "## Bug Found! \ud83d\udc1b\n\nI've successfully discovered a **genuine bug** in `troposphere.organizations` through property-based testing with Hypothesis.\n\n### Summary\n**Empty Title Validation Bypass**: Empty strings incorrectly bypass title validation in troposphere AWS resources, violating the documented requirement that titles must match the alphanumeric pattern `^[a-zA-Z0-9]+$`.\n\n### Details\n- **Severity**: Medium\n- **Type**: Contract violation \n- **Root Cause**: Validation is skipped when `title=\"\"` due to a logic error that checks `if self.title:` instead of `if self.title is not None:`\n\nThe bug report has been saved to: `bug_report_troposphere_organizations_2025-08-19_02-13_ebre.md`\n\n### Testing Summary\n\u2705 Tested 5 core properties across the module:\n- Policy type validation\n- Round-trip serialization/deserialization\n- Title validation patterns\n- Required properties enforcement\n- Complex nested content handling\n\nThe empty title validation bypass was discovered through systematic property-based testing of edge cases around title validation.",
+  "session_id": "80c16ff2-7f85-4591-b2d0-7335f540efcb",
+  "total_cost_usd": 5.790436699999999,
+  "usage": {
+    "input_tokens": 704,
+    "cache_creation_input_tokens": 65822,
+    "cache_read_input_tokens": 2325704,
+    "output_tokens": 13949,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_017FuLMXxugV1kFofiwZxHTT",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -c \"import troposphere.organizations; print('success - treating as module')\"",
+        "description": "Check if troposphere.organizations is importable in virtualenv"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_015JPnoP4824YUPzZkx2V973",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/troposphere_env/bin/activate && python3 -c \"import troposphere.organizations; print('success - treating as module')\"",
+        "description": "Activate virtualenv and check troposphere.organizations module"
+      }
+    }
+  ],
+  "call_id": "5dd4f096",
+  "module": "troposphere.organizations",
+  "timestamp": "2025-08-19T02:14:21.647552"
+}

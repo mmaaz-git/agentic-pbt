@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 607459,
+  "duration_api_ms": 620234,
+  "num_turns": 89,
+  "result": "## Summary\n\n**Bug found! \u2705** \n\nI discovered a case sensitivity inconsistency bug in `troposphere.ecr.boolean` function. The function accepts 'true' and 'True' but rejects 'TRUE' (same for false values), which is inconsistent and could cause issues in real-world usage where uppercase boolean strings are common.\n\n**Bug Details:**\n- **Function**: `troposphere.ecr.boolean`\n- **Issue**: Accepts mixed-case but not all-uppercase boolean strings\n- **Impact**: Medium severity - affects API usability and integration with systems using uppercase booleans\n- **Bug Report**: Created `bug_report_troposphere_ecr_boolean_2025-08-19_06-06_ukdm.md`\n\nThe property-based testing with Hypothesis successfully identified this legitimate bug that violates expected behavior patterns.",
+  "session_id": "a977eda0-3a78-40f9-9f3b-e77ca9604cc5",
+  "total_cost_usd": 3.9148345000000004,
+  "usage": {
+    "input_tokens": 526,
+    "cache_creation_input_tokens": 66018,
+    "cache_read_input_tokens": 1301896,
+    "output_tokens": 9333,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01Jv83daWrSPqe5KBk5bf1DG",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/troposphere/ecr.py"
+      }
+    }
+  ],
+  "call_id": "2c3f70be",
+  "module": "troposphere.ecr",
+  "timestamp": "2025-08-19T06:08:57.457223"
+}

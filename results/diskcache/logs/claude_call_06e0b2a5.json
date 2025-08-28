@@ -1,0 +1,58 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 644039,
+  "duration_api_ms": 528392,
+  "num_turns": 104,
+  "result": "## Testing Summary\n\n**Found 1 bug in `diskcache.recipes`**:\n\n\u2705 **Tested properties that passed:**\n- Averager maintains correct mathematical average\n- Averager returns None when empty\n- RLock supports re-entrant acquisition\n- RLock enforces thread ownership\n- BoundedSemaphore respects value bounds\n- Lock provides mutual exclusion\n\n\u274c **Bug discovered:**\n- **throttle decorator**: Allows N+1 calls in the first period when configured for N calls, violating its rate limiting contract (Medium severity logic bug)\n\n**Bug report created**: `bug_report_diskcache_recipes_throttle_2025-08-19_02-50_w7vs.md`\n\nThe bug was discovered through property-based testing that verified the throttle decorator's claim to limit calls to \"count per seconds\". Testing revealed it consistently allows one extra call before enforcing the rate limit.",
+  "session_id": "31faecbc-c444-4873-945e-de5d6072caf6",
+  "total_cost_usd": 6.2741090999999996,
+  "usage": {
+    "input_tokens": 604,
+    "cache_creation_input_tokens": 79902,
+    "cache_read_input_tokens": 2288304,
+    "output_tokens": 17527,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01CnpGNnkZpmgDxuHuvPf1jN",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/diskcache_env/bin/activate && python -c \"import diskcache.recipes; print('success - treating as module')\"",
+        "description": "Activate virtual environment and check diskcache.recipes"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01PNNh7W4zuUPCJebBJ9zC7H",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/diskcache_env/bin/python -c \"import diskcache.recipes; print('success - treating as module')\"",
+        "description": "Use virtual environment python to import diskcache.recipes"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_019yzhCpdkak4XY8RFDNuwWV",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/diskcache_env/bin/python -m pytest test_diskcache_recipes.py -v",
+        "description": "Run pytest on the test file"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_012yD6NhAhPW3JaN8Fsssg1a",
+      "tool_input": {
+        "command": "PYTHONPATH=/root/hypothesis-llm/envs/diskcache_env/lib/python3.13/site-packages pytest test_diskcache_recipes.py -v",
+        "description": "Run pytest with PYTHONPATH set"
+      }
+    }
+  ],
+  "call_id": "06e0b2a5",
+  "module": "diskcache.recipes",
+  "timestamp": "2025-08-19T02:51:05.336148"
+}

@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 315504,
+  "duration_api_ms": 321333,
+  "num_turns": 72,
+  "result": "## Bug Found! \ud83d\udc1b\n\nI discovered a **crash bug** in `fire.test_components_py3` LRU cache functions. They fail with `TypeError: unhashable type` when called with unhashable inputs like lists or dictionaries.\n\n**Summary of Testing:**\n- \u2705 Tested 10 properties across the module  \n- \u2705 8 properties passed (double/triple multiplication, identity functions, get_int behavior)\n- \ud83d\udc1b 2 properties revealed bugs in LRU cache functions\n\n**The Bug:**\n- Both `lru_cache_decorated()` and `LruCacheDecoratedMethod.lru_cache_in_class()` crash on unhashable inputs\n- Minimal failing example: `lru_cache_decorated([])` raises `TypeError`\n- Impact: Medium severity - affects usability but has workarounds\n\nBug report saved to: `bug_report_fire_test_components_py3_2025-08-18_22-34_dsla.md`",
+  "session_id": "9b1aef6f-eed4-4c1b-a285-d9cd1f44cdc5",
+  "total_cost_usd": 2.7804864999999994,
+  "usage": {
+    "input_tokens": 504,
+    "cache_creation_input_tokens": 36634,
+    "cache_read_input_tokens": 940792,
+    "output_tokens": 8897,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01D6oxyCAspsVdS5r3r5bTRd",
+      "tool_input": {
+        "file_path": "/root/.local/lib/python3.13/site-packages/fire/test_components_py3.py"
+      }
+    }
+  ],
+  "call_id": "d6d22a0a",
+  "module": "fire.test_components_py3",
+  "timestamp": "2025-08-18T22:35:50.676189"
+}

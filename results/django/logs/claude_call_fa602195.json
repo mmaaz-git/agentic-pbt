@@ -1,0 +1,34 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 528134,
+  "duration_api_ms": 542947,
+  "num_turns": 112,
+  "result": "## Summary\n\nI successfully tested `django.middleware` using property-based testing with Hypothesis and found one bug:\n\n### Bug Found \u2713\n\n**django.middleware.csrf._unmask_cipher_token Contract Violation** (Low severity, Contract type)\n- The internal function `_unmask_cipher_token` doesn't validate its input length\n- Returns wrong-length results (e.g., empty string) for invalid inputs instead of failing\n- Violates the implicit contract that unmasked tokens are always 32 characters\n- While not exploitable in practice (validation happens earlier in the call chain), this violates defensive programming principles\n\n### Properties Successfully Tested \u2705\n\n1. **CSRF mask/unmask round-trip**: `_unmask_cipher_token(_mask_cipher_secret(s)) == s` - PASSED\n2. **CSRF token format validation**: `_check_token_format` correctly validates token format - PASSED  \n3. **Masked token format**: Masked tokens have correct length and characters - PASSED\n4. **Multiple masks same secret**: Different masks of same secret unmask correctly - PASSED\n5. **GZip compression size**: GZipMiddleware only compresses if it reduces size - PASSED\n6. **CSRF token validation comprehensive**: Format validation is consistent - PASSED\n7. **Mask operation properties**: Masking operations maintain correctness - PASSED\n\nThe bug has been documented in `bug_report_django_middleware_csrf_2025-08-18_18-58_2zgm.md` with reproduction steps and a suggested fix.",
+  "session_id": "6c9fcccd-399d-43d5-9c43-545f86e619da",
+  "total_cost_usd": 5.9296319,
+  "usage": {
+    "input_tokens": 752,
+    "cache_creation_input_tokens": 84066,
+    "cache_read_input_tokens": 2054286,
+    "output_tokens": 16485,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_014pg9V9NjeVwZnYyhcjytCB",
+      "tool_input": {
+        "file_path": "/root/.local/lib/python3.13/site-packages/django/middleware/csrf.py",
+        "limit": 100
+      }
+    }
+  ],
+  "call_id": "fa602195",
+  "module": "django.middleware",
+  "timestamp": "2025-08-18T18:59:38.124442"
+}

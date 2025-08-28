@@ -1,0 +1,42 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 506490,
+  "duration_api_ms": 512664,
+  "num_turns": 110,
+  "result": "## Bug Hunting Results for troposphere.guardduty\n\n\u2705 **Successfully found 2 bugs** through property-based testing:\n\n### Bug 1: Title Validation Inconsistency (Medium Severity)\n- **Issue**: Error message claims titles must be \"alphanumeric\" but rejects Unicode alphanumeric characters\n- **Example**: Characters like '\u00b9' and '\u00aa' are alphanumeric according to Python but rejected by the validator\n- **Impact**: Misleading error messages that confuse users about valid input\n\n### Bug 2: Integer Validator OverflowError (Low Severity)  \n- **Issue**: Validator raises OverflowError instead of ValueError for infinity values\n- **Example**: `validators.integer(float('inf'))` crashes with OverflowError\n- **Impact**: Violates API contract that promises ValueError for invalid integers\n\n### Test Summary\n- **8 property-based tests** written\n- **5 tests passed** validating correct behavior\n- **3 tests failed** revealing the bugs above\n- Properties tested included title validation, boolean/integer validators, required fields, and serialization\n\nBug reports have been saved as:\n- `bug_report_troposphere_title_validation_2025-08-19_01-43_0agv.md`\n- `bug_report_troposphere_integer_validator_2025-08-19_01-43_riut.md`",
+  "session_id": "24df1680-6c8a-4e4b-b6f9-719743d3cea4",
+  "total_cost_usd": 6.3110545,
+  "usage": {
+    "input_tokens": 694,
+    "cache_creation_input_tokens": 81758,
+    "cache_read_input_tokens": 2485794,
+    "output_tokens": 13689,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01EMGZycwABS2YYzd3qxwSG2",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python3 -c \"import troposphere.guardduty; print('Success - troposphere.guardduty is a module')\"",
+        "description": "Import troposphere.guardduty using venv python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01DEW7EZkEMzYjH6Ykz6g9gb",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/troposphere_env/bin/activate && python3 -c \"import troposphere.guardduty; print('Success - troposphere.guardduty is a module')\"",
+        "description": "Activate venv and import troposphere.guardduty"
+      }
+    }
+  ],
+  "call_id": "3c2bbeb2",
+  "module": "troposphere.guardduty",
+  "timestamp": "2025-08-19T01:44:40.472074"
+}

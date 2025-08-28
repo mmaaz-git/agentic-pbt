@@ -1,0 +1,66 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 317598,
+  "duration_api_ms": 322262,
+  "num_turns": 113,
+  "result": "Tested 11 properties on troposphere.lookoutvision - all passed \u2705\n\nThe module correctly implements:\n- Title validation (alphanumeric only)\n- Required property enforcement (ProjectName)\n- Type validation (string types)\n- Serialization/deserialization round-trips\n- Object equality and hashing\n- JSON serialization\n- CloudFormation helper methods (ref/get_att)\n\nNo bugs found. The Project class behaves as documented and expected.",
+  "session_id": "c5015685-74b1-4763-8d6c-d134ab24fc1a",
+  "total_cost_usd": 5.093879200000001,
+  "usage": {
+    "input_tokens": 624,
+    "cache_creation_input_tokens": 57812,
+    "cache_read_input_tokens": 2188536,
+    "output_tokens": 9375,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Nu6xQs5ZZeKs7WM5mpwzSz",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/troposphere_env/bin/activate && python -c \"import troposphere.lookoutvision; print('success - treating as module')\"",
+        "description": "Activate venv and check troposphere.lookoutvision"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01EjT3fUQv2qUFsA2nf99yd3",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -c \"import troposphere.lookoutvision; print('success - treating as module')\"",
+        "description": "Check troposphere.lookoutvision using venv python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_016GKeT4WnJSLyBhT3VHUvxJ",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python3 -c \"import troposphere.lookoutvision; print('success - treating as module')\"",
+        "description": "Check troposphere.lookoutvision using venv python3"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01UmV14fuyWf85fTF8dVe2iq",
+      "tool_input": {
+        "command": "grep -E \"^class [^(]*\\(AWSObject\\)\" /root/hypothesis-llm/envs/troposphere_env/lib/python3.13/site-packages/troposphere/*.py | head -5",
+        "description": "Find AWSObject subclasses"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_011rk43xsmjYUj7DLFf4aNZK",
+      "tool_input": {
+        "command": "PYTHONPATH=/root/hypothesis-llm/envs/troposphere_env/lib/python3.13/site-packages python3 -m pytest test_lookoutvision.py -v",
+        "description": "Run pytest on test_lookoutvision.py"
+      }
+    }
+  ],
+  "call_id": "c39694bd",
+  "module": "troposphere.lookoutvision",
+  "timestamp": "2025-08-19T02:01:18.482831"
+}

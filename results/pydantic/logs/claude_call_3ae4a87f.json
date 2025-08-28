@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 341132,
+  "duration_api_ms": 359064,
+  "num_turns": 82,
+  "result": "## Testing Complete \u2705\n\nTested 7 properties on `pydantic.parse` module - all passed \u2705\n\n### Properties Tested:\n1. **AttributeError for `__path__`**: Correctly raises AttributeError\n2. **MOVED_IN_V2 items**: Emit proper warnings and return moved objects\n3. **REMOVED_IN_V2 items**: Raise PydanticImportError as expected  \n4. **Non-existent attributes**: Raise AttributeError correctly\n5. **Idempotence**: Multiple calls behave consistently\n6. **REDIRECT_TO_V1 items**: Emit proper warnings and return V1 objects\n7. **BaseSettings special case**: Raises specific PydanticImportError\n\nThe `pydantic.parse` module is a migration helper that correctly handles deprecated, moved, and removed items from Pydantic V1 to V2. All tested properties hold - no bugs found.",
+  "session_id": "88b5540c-7681-42e8-b5da-a55d83702f69",
+  "total_cost_usd": 3.9213692,
+  "usage": {
+    "input_tokens": 548,
+    "cache_creation_input_tokens": 66416,
+    "cache_read_input_tokens": 1264812,
+    "output_tokens": 9996,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_0159F1eeW3DMsY8DeUMTasRz",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/pydantic/parse.py"
+      }
+    }
+  ],
+  "call_id": "3ae4a87f",
+  "module": "pydantic.parse",
+  "timestamp": "2025-08-18T19:40:05.559987"
+}

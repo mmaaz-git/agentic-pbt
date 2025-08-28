@@ -1,0 +1,58 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 338495,
+  "duration_api_ms": 340018,
+  "num_turns": 96,
+  "result": "## Bug Found! \ud83d\udc1b\n\nI've successfully discovered a **contract violation bug** in `troposphere.datasync` (which affects all troposphere AWSObject classes).\n\n### Bug Summary\nThe title validation incorrectly rejects Unicode alphanumeric characters (like '\u00b5', '\u03b1', '\u2460') with an error message claiming they are \"not alphanumeric\", when these characters ARE alphanumeric according to Python's `str.isalnum()` method.\n\n### Key Details\n- **Severity**: Medium\n- **Type**: Contract violation\n- **Impact**: Affects all AWS resource classes in troposphere that require titles\n- **Root Cause**: Regex pattern `^[a-zA-Z0-9]+$` only accepts ASCII, but error message implies broader definition\n\n### What I Tested\n\u2705 Title validation with Unicode characters  \n\u2705 Required property validation  \n\u2705 Round-trip serialization  \n\u2705 Equality and hash consistency  \n\u2705 Type validation  \n\u2705 JSON serialization  \n\nThe bug was discovered through property-based testing with Hypothesis, which automatically generated edge cases including Unicode alphanumeric characters that exposed this inconsistency.\n\n### Bug Report\nCreated `bug_report_troposphere_datasync_2025-08-19_00-35_vs6e.md` with:\n- Minimal reproduction script\n- Property-based test that exposed the bug\n- Two potential fixes (either clarify the error message or expand validation)\n\nThis demonstrates how property-based testing can uncover subtle contract violations that traditional testing might miss!",
+  "session_id": "03973564-c5e4-4de1-946c-07a37fa7222e",
+  "total_cost_usd": 4.8359157,
+  "usage": {
+    "input_tokens": 494,
+    "cache_creation_input_tokens": 71766,
+    "cache_read_input_tokens": 1799826,
+    "output_tokens": 10253,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01FoPtuEH3ABZuGNWYJ3dQ6A",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/troposphere_env/bin/activate && python -c \"import troposphere.datasync; print('success - treating as module')\"",
+        "description": "Activate venv and check if troposphere.datasync can be imported"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_0112aETfztNg8kti1adUnHnV",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -c \"import troposphere.datasync; print('success - treating as module')\"",
+        "description": "Use venv Python to check if troposphere.datasync can be imported"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_016Fr3ubwtVGtP2naHk4qJfb",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -m pytest test_datasync_properties.py -v --tb=short",
+        "description": "Run property-based tests with pytest"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_015skGuUeJUtDwdHs3J81TLw",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python test_datasync_properties.py",
+        "description": "Run property-based tests directly with Python"
+      }
+    }
+  ],
+  "call_id": "4709eb5c",
+  "module": "troposphere.datasync",
+  "timestamp": "2025-08-19T00:36:51.883776"
+}

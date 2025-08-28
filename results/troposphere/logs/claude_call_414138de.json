@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 442955,
+  "duration_api_ms": 443076,
+  "num_turns": 86,
+  "result": "## Summary\n\nFound **2 genuine bugs** in `troposphere.template_generator` through property-based testing:\n\n### Bug 1: Numeric Property Names Cause AttributeError\n- **Severity**: Medium\n- **Type**: Crash  \n- CloudFormation templates with numeric property names (\"0\", \"1\", etc.) crash TemplateGenerator\n- Filed as: `bug_report_troposphere_template_generator_2025-08-19_02-38_iqzx.md`\n\n### Bug 2: Empty Parameters/Outputs Not Preserved\n- **Severity**: Low\n- **Type**: Logic\n- Empty Parameters and Outputs sections disappear during round-trip conversion\n- Filed as: `bug_report_troposphere_template_generator_2025-08-19_02-38_pywo.md`\n\nBoth bugs violate expected round-trip conversion properties and have been documented with minimal reproductions and suggested fixes.",
+  "session_id": "348f4445-5fe6-4ce8-913b-9785182749c7",
+  "total_cost_usd": 4.479582299999999,
+  "usage": {
+    "input_tokens": 636,
+    "cache_creation_input_tokens": 52838,
+    "cache_read_input_tokens": 1589988,
+    "output_tokens": 14333,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01JSMEHAmJaT9FTBajHvf18Q",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/troposphere/template_generator.py"
+      }
+    }
+  ],
+  "call_id": "414138de",
+  "module": "troposphere.template_generator",
+  "timestamp": "2025-08-19T02:39:36.890992"
+}

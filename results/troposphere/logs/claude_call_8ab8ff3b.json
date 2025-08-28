@@ -1,0 +1,58 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 418416,
+  "duration_api_ms": 422308,
+  "num_turns": 122,
+  "result": "## Bug Found! \ud83d\udc1b\n\nI discovered a **type contract violation** in `troposphere.validators.boolean` where it incorrectly accepts float values `0.0` and `1.0` as valid boolean representations.\n\n**Summary:**\n- **Bug**: The boolean validator uses `x in [0, 1, ...]` which unintentionally matches floats due to Python's equality behavior\n- **Impact**: Could lead to type confusion when float calculations accidentally pass as booleans\n- **Severity**: Medium - Substantial API contract violation\n- **Bug report saved**: `bug_report_troposphere_codestar_2025-08-19_00-32_givh.md`\n\nThe property-based testing successfully uncovered this subtle but important bug that would be easy to miss with traditional testing approaches!",
+  "session_id": "9dc1af68-57de-4cbc-a720-ac109f5ffa7f",
+  "total_cost_usd": 6.376085100000002,
+  "usage": {
+    "input_tokens": 652,
+    "cache_creation_input_tokens": 72618,
+    "cache_read_input_tokens": 2685364,
+    "output_tokens": 12830,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01AAQa5k6xD4ZBP8GihKH4Rp",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/troposphere_env/bin/activate && python -c \"import troposphere.codestar; print('Success - treating as module')\"",
+        "description": "Check if troposphere.codestar is importable in venv"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01KHE2YAcFv5wNPuSh8eeP3M",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -c \"import troposphere.codestar; print('Success - treating as module')\"",
+        "description": "Check if troposphere.codestar is importable using venv python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01GG675ExKqtQqCs42AZziMQ",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -m pytest test_troposphere_codestar.py -v --tb=short",
+        "description": "Run property-based tests"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_011JG1iZnUK7d7aoH1xjLqNR",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python test_troposphere_codestar.py",
+        "description": "Run tests directly with python"
+      }
+    }
+  ],
+  "call_id": "8ab8ff3b",
+  "module": "troposphere.codestar",
+  "timestamp": "2025-08-19T00:32:58.995580"
+}

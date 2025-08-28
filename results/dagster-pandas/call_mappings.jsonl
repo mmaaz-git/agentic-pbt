@@ -1,0 +1,4 @@
+{"call_id": "e1f73200", "module": "dagster_pandas", "timestamp": "2025-08-18T22:46:56.737130", "bug_reports": ["bug_report_dagster_pandas_2025-08-18_17-17_k3j9.md"], "aux_files_dir": "aux_files/e1f73200"}
+{"call_id": "418d0a11", "module": "dagster_pandas.constraints", "timestamp": "2025-08-18T22:46:55.827964", "bug_reports": ["bug_report_dagster_pandas_constraints_2025-08-18_22-45_c0kf.md"], "aux_files_dir": "aux_files/418d0a11"}
+{"call_id": "0d99fe47", "module": "dagster_pandas.data_frame", "timestamp": "2025-08-18T23:04:16.287197", "bug_reports": ["bug_report_dagster_pandas_constraints_2025-08-18_23-03_49em.md"], "aux_files_dir": "aux_files/0d99fe47"}
+{"call_id": "4dac36e7", "module": "dagster_pandas.validation", "timestamp": "2025-08-18T23:07:45.365499", "bug_reports": ["bug_report_dagster_pandas_categorical_column_2025-08-18_00-00_x7k9.md"], "aux_files_dir": "aux_files/4dac36e7"}

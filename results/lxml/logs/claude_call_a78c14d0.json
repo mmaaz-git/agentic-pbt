@@ -1,0 +1,25 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 585581,
+  "duration_api_ms": 623501,
+  "num_turns": 126,
+  "result": "Found bug: lxml.html incorrectly converts incomplete processing instruction syntax (`<?`) into malformed HTML comments that include closing tags (e.g., `<!--?</div-->`), breaking HTML structure. Severity: Medium.",
+  "session_id": "5ac7f68c-65a4-4347-8e05-694940d55d3b",
+  "total_cost_usd": 7.047987599999999,
+  "usage": {
+    "input_tokens": 400,
+    "cache_creation_input_tokens": 58956,
+    "cache_read_input_tokens": 3018150,
+    "output_tokens": 16520,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [],
+  "call_id": "a78c14d0",
+  "module": "lxml",
+  "timestamp": "2025-08-18T05:31:46.911560"
+}

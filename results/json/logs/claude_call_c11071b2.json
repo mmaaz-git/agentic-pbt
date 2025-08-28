@@ -1,0 +1,25 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 445786,
+  "duration_api_ms": 464627,
+  "num_turns": 78,
+  "result": "Found and documented a bug in the `json` module: the `parse_float` parameter documentation is misleading as it doesn't handle the special float constants `Infinity`, `-Infinity`, and `NaN`, which are instead handled by `parse_constant`. This is a low-severity API contract violation that affects users trying to uniformly customize float parsing.",
+  "session_id": "f7ac0b29-5402-4c9d-9d24-7bccb9804d69",
+  "total_cost_usd": 4.7435518000000005,
+  "usage": {
+    "input_tokens": 338,
+    "cache_creation_input_tokens": 44240,
+    "cache_read_input_tokens": 1826656,
+    "output_tokens": 14915,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [],
+  "call_id": "c11071b2",
+  "module": "json",
+  "timestamp": "2025-08-18T04:51:18.544758"
+}

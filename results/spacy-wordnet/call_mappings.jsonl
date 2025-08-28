@@ -1,0 +1,3 @@
+{"call_id": "ca8f35c3", "module": "spacy_wordnet", "timestamp": "2025-08-19T03:15:01.112546", "bug_reports": ["bug_report_spacy_wordnet_load_domains_2025-08-19_15-30_a7b3.md"], "aux_files_dir": "aux_files/ca8f35c3"}
+{"call_id": "dfd9897e", "module": "spacy_wordnet.wordnet_annotator", "timestamp": "2025-08-19T03:17:27.137128", "bug_reports": ["bug_report_spacy_wordnet___utils___fetch_wordnet_lang_2025-08-19_03-16_zrip.md"], "aux_files_dir": "aux_files/dfd9897e"}
+{"call_id": "8a334eca", "module": "spacy_wordnet.wordnet_domains", "timestamp": "2025-08-19T03:17:29.543053", "bug_reports": ["bug_report_spacy_wordnet_wordnet_domains_2025-08-19_03-16_evle.md"], "aux_files_dir": "aux_files/8a334eca"}

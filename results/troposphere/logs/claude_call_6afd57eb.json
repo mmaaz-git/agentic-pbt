@@ -1,0 +1,50 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 296714,
+  "duration_api_ms": 296904,
+  "num_turns": 88,
+  "result": "Found bug: `troposphere.validators.boolean()` incorrectly accepts floats 0.0 and 1.0 due to Python's equality behavior in the `in` operator check. Created bug report documenting the contract violation. \u2705\n\nTested 8 properties on troposphere.fms module - 7 passed, 1 bug found.",
+  "session_id": "c8586543-da93-4dd9-9f4a-404760498e79",
+  "total_cost_usd": 4.3870216,
+  "usage": {
+    "input_tokens": 576,
+    "cache_creation_input_tokens": 61932,
+    "cache_read_input_tokens": 1681872,
+    "output_tokens": 9133,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01BEvoU611ApNcsPL3M4Gfq4",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/troposphere_env/bin/activate && python -c \"import troposphere.fms; print('Successfully imported troposphere.fms')\"",
+        "description": "Activate venv and import troposphere.fms"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01FokXCGRBv7hTsPacVYCbtB",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -c \"import troposphere.fms; print('Successfully imported troposphere.fms')\"",
+        "description": "Import troposphere.fms using venv Python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01B62xqMU1gRJdp2tAqWL9nq",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -m pytest test_troposphere_fms_properties.py -v",
+        "description": "Run property-based tests"
+      }
+    }
+  ],
+  "call_id": "6afd57eb",
+  "module": "troposphere.fms",
+  "timestamp": "2025-08-19T01:41:10.220589"
+}

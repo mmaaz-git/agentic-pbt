@@ -1,0 +1,8 @@
+{"call_id": "c31f0a20", "module": "sphinxcontrib", "timestamp": "2025-08-18T22:58:03.757899", "bug_reports": ["bug_report_sphinxcontrib_mermaid_2025-01-18_12-45_x7n2.md"], "aux_files_dir": "aux_files/c31f0a20"}
+{"call_id": "c62c128c", "module": "sphinxcontrib.applehelp", "timestamp": "2025-08-18T22:55:47.873669", "bug_reports": ["bug_report_sphinxcontrib_applehelp_2025-08-18_22-54_7f8u.md"], "aux_files_dir": "aux_files/c62c128c"}
+{"call_id": "326cd3b4", "module": "sphinxcontrib.devhelp", "timestamp": "2025-08-18T22:56:40.388506", "bug_reports": ["bug_report_sphinxcontrib_devhelp_2025-08-18_22-55_dfl6.md"], "aux_files_dir": "aux_files/326cd3b4"}
+{"call_id": "8c1f39ab", "module": "sphinxcontrib.htmlhelp", "timestamp": "2025-08-18T21:34:45.711144", "bug_reports": ["bug_report_sphinxcontrib_htmlhelp_2025-08-18_21-33_ocjr.md"], "aux_files_dir": "aux_files/8c1f39ab"}
+{"call_id": "590fda65", "module": "sphinxcontrib.jsmath", "timestamp": "2025-08-18T21:33:14.190490", "bug_reports": [], "aux_files_dir": "aux_files/590fda65"}
+{"call_id": "bdcdda53", "module": "sphinxcontrib.mermaid", "timestamp": "2025-08-18T21:35:21.583584", "bug_reports": ["bug_report_sphinxcontrib_mermaid_autoclassdiag_2025-08-18_21-34_4dwa.md"], "aux_files_dir": "aux_files/bdcdda53"}
+{"call_id": "0ff8aa03", "module": "sphinxcontrib.qthelp", "timestamp": "2025-08-18T21:41:35.044965", "bug_reports": ["bug_report_sphinxcontrib_qthelp_2025-08-18_21-40_dd32.md"], "aux_files_dir": "aux_files/0ff8aa03"}
+{"call_id": "218ed090", "module": "sphinxcontrib.serializinghtml", "timestamp": "2025-08-18T21:37:59.339577", "bug_reports": [], "aux_files_dir": "aux_files/218ed090"}

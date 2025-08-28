@@ -1,0 +1,5 @@
+{"call_id": "b8c5c75d", "module": "testpath", "timestamp": "2025-08-19T03:11:19.444975", "bug_reports": ["bug_report_testpath_MockCommand_2025-08-19_03-33_k9x2.md"], "aux_files_dir": "aux_files/b8c5c75d"}
+{"call_id": "20786492", "module": "testpath.asserts", "timestamp": "2025-08-19T03:12:34.699291", "bug_reports": ["bug_report_testpath_asserts_2025-08-19_14-30_x9k2.md"], "aux_files_dir": "aux_files/20786492"}
+{"call_id": "00dad278", "module": "testpath.commands", "timestamp": "2025-08-19T03:15:57.609280", "bug_reports": ["bug_report_testpath_commands_2025-08-19_03-13_wou3.md", "bug_report_testpath_commands_2025-08-19_03-13_lzk0.md", "bug_report_testpath_commands_2025-08-19_03-13_vpof.md"], "aux_files_dir": "aux_files/00dad278"}
+{"call_id": "d7ba7f83", "module": "testpath.env", "timestamp": "2025-08-19T03:12:37.042273", "bug_reports": ["bug_report_pathlib_with_name_2025-08-19_03-11_l0ze.md"], "aux_files_dir": "aux_files/d7ba7f83"}
+{"call_id": "8e71eb5b", "module": "testpath.tempdir", "timestamp": "2025-08-19T03:12:01.633572", "bug_reports": ["bug_report_testpath_tempdir_2025-08-19_03-11_l2wb.md"], "aux_files_dir": "aux_files/8e71eb5b"}

@@ -1,0 +1,3 @@
+{"call_id": "8fe10bb9", "module": "money", "timestamp": "2025-08-18T21:55:15.805312", "bug_reports": ["bug_report_money___rsub___2025-08-18_21-54_zpq6.md"], "aux_files_dir": "aux_files/8fe10bb9"}
+{"call_id": "3675358e", "module": "money.currency", "timestamp": "2025-08-18T21:56:40.776710", "bug_reports": ["bug_report_money_currency_2025-08-18_09-45_x3k9.md"], "aux_files_dir": "aux_files/3675358e"}
+{"call_id": "f4c09cee", "module": "money.money", "timestamp": "2025-08-18T21:54:02.749406", "bug_reports": ["bug_report_money_money_2025-08-18_21-53_a4xf.md"], "aux_files_dir": "aux_files/f4c09cee"}

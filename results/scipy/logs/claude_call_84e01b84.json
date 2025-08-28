@@ -1,0 +1,41 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 198624,
+  "duration_api_ms": 207788,
+  "num_turns": 49,
+  "result": "No testable properties found in scipy.misc. \n\nThe module is deprecated (will be removed in scipy 2.0.0) and contains no functions or classes - only a warnings module. All historical functionality that used to exist in scipy.misc (like imread, imresize, factorial, etc.) has been removed or moved to other modules. There is no code to test with property-based testing.",
+  "session_id": "bb739938-aeb8-45f6-9621-433721955570",
+  "total_cost_usd": 1.6434272000000005,
+  "usage": {
+    "input_tokens": 386,
+    "cache_creation_input_tokens": 22776,
+    "cache_read_input_tokens": 631448,
+    "output_tokens": 3412,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_017gXLwnRLo4JYn9KF1GnhJU",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/scipy/misc/__init__.py"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01A2o2CEBeJyxFtxyfFD4DTe",
+      "tool_input": {
+        "command": "ls -la /home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/scipy/misc/",
+        "description": "List files in scipy.misc directory"
+      }
+    }
+  ],
+  "call_id": "84e01b84",
+  "module": "scipy.misc",
+  "timestamp": "2025-08-18T19:56:44.220474"
+}

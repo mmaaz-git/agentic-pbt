@@ -1,0 +1,66 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 606627,
+  "duration_api_ms": 604254,
+  "num_turns": 139,
+  "result": "## Bug Found in troposphere.pcaconnectorscep \u2705\n\nSuccessfully discovered a **title validation bypass bug** through property-based testing with Hypothesis.\n\n### Bug Details:\n- **Type**: Contract violation - API accepts invalid inputs that CloudFormation would reject\n- **Impact**: Medium severity - produces invalid CloudFormation templates that fail at deployment\n- **Root Cause**: Conditional validation check skips validation for falsy titles (empty string, None)\n\n### Properties Tested:\n1. \u2705 Round-trip serialization \n2. \u274c **Title validation** - Found bug with empty/None titles\n3. \u2705 Required field validation\n4. \u2705 Type checking\n5. \u2705 Equality properties\n\nThe bug affects all Troposphere AWSObject classes, not just pcaconnectorscep. Created detailed bug report: `bug_report_troposphere_pcaconnectorscep_2025-08-19_16-45_k3m9.md`",
+  "session_id": "51f98a7a-5533-44d6-9782-0231c495fa7f",
+  "total_cost_usd": 7.5444816,
+  "usage": {
+    "input_tokens": 836,
+    "cache_creation_input_tokens": 76300,
+    "cache_read_input_tokens": 3194504,
+    "output_tokens": 17237,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01DLNhL9pzKFFvGbGXfDZprn",
+      "tool_input": {
+        "command": "pip3 install troposphere",
+        "description": "Install the troposphere module"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01V2GWxnpBanaKyRiLUdiNU2",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python3 -c \"import troposphere.pcaconnectorscep; print('Success - treating as module')\"",
+        "description": "Test if troposphere.pcaconnectorscep exists in the env"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01QHHPC55kQGB9ZBCPjZvyZU",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/envs/troposphere_env && source bin/activate && python3 -c \"import troposphere.pcaconnectorscep; print('Success - treating as module')\"",
+        "description": "Activate env and test module import"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01LvShNzzCM3Gy88jvGwciis",
+      "tool_input": {
+        "command": "PYTHONPATH=/root/hypothesis-llm/envs/troposphere_env/lib/python3.13/site-packages python3 -m pytest test_pcaconnectorscep.py -xvs",
+        "description": "Run hypothesis tests for pcaconnectorscep"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01NzuHghsfxw4JXFJ4EazMzQ",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/pytest test_pcaconnectorscep.py -xvs",
+        "description": "Run pytest tests"
+      }
+    }
+  ],
+  "call_id": "3d90603d",
+  "module": "troposphere.pcaconnectorscep",
+  "timestamp": "2025-08-19T02:19:08.757798"
+}

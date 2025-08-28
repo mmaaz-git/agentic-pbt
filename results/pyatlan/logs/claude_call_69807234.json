@@ -1,0 +1,25 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 704573,
+  "duration_api_ms": 709160,
+  "num_turns": 106,
+  "result": "## Bug Found! \ud83d\udc1b\n\nSuccessfully discovered a **HIGH severity security vulnerability** in `pyatlan.multipart_data_generator.MultipartDataGenerator`:\n\n### Header Injection Vulnerability\n- **Issue**: The class doesn't escape special characters in filenames\n- **Impact**: Allows HTTP header injection attacks via CRLF sequences\n- **Exploit**: Attackers can inject arbitrary headers, override Content-Type, and break multipart structure\n\n### Test Results\n\u2705 11/12 property tests passed  \n\u274c 1 critical failure: filenames with special characters cause header injection\n\n### Key Finding\n```python\nfilename = \"test.txt\\r\\nX-Injected: malicious\"\n# Results in injected HTTP header in multipart data\n```\n\n### Bug Report Created\n`bug_report_pyatlan_multipart_data_generator_2025-08-18_21-13_rtj1.md`\n\nThe vulnerability allows attackers to inject arbitrary HTTP headers through unescaped filename parameters, potentially bypassing security filters and causing parser confusion. This is a legitimate security issue that should be fixed by properly escaping special characters in filenames.",
+  "session_id": "bcf99eb8-b86f-4c93-94a7-a303e924a42d",
+  "total_cost_usd": 5.1050592,
+  "usage": {
+    "input_tokens": 708,
+    "cache_creation_input_tokens": 60056,
+    "cache_read_input_tokens": 1889488,
+    "output_tokens": 14942,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [],
+  "call_id": "69807234",
+  "module": "pyatlan.multipart_data_generator",
+  "timestamp": "2025-08-18T21:15:34.181746"
+}

@@ -1,0 +1,50 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 498527,
+  "duration_api_ms": 504887,
+  "num_turns": 130,
+  "result": "## Bug Found! \ud83d\udc1b\n\nSuccessfully discovered a **high-severity contract violation bug** in `troposphere.connectcampaigns`:\n\n**Bug**: The library generates invalid JSON when NaN/Infinity values are used in numeric properties, violating JSON RFC 7159 and causing potential AWS CloudFormation deployment failures.\n\n**Impact**: \n- Generates syntactically invalid JSON containing `NaN`, `Infinity`, or `-Infinity` literals\n- CloudFormation would reject these templates\n- Affects all classes using the `double` validator in connectcampaigns module\n\n**Bug report saved**: `bug_report_troposphere_connectcampaigns_2025-08-19_00-36_x5py.md`\n\nTested 8 properties successfully, with 1 genuine bug discovered through property-based testing with Hypothesis.",
+  "session_id": "f1f87bbf-e82c-4210-81f6-db85a6777738",
+  "total_cost_usd": 6.6020322,
+  "usage": {
+    "input_tokens": 676,
+    "cache_creation_input_tokens": 74104,
+    "cache_read_input_tokens": 2687122,
+    "output_tokens": 15388,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01XcW7hSm9NFGTjZ4UtWtg7w",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/troposphere_env/bin/activate && python3 -c \"import troposphere.connectcampaigns; print('success - treating as module')\"",
+        "description": "Import troposphere.connectcampaigns in virtual environment"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_018nukwfkDecj4sAtgh94QHN",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python3 -c \"import troposphere.connectcampaigns; print('success - treating as module')\"",
+        "description": "Import troposphere.connectcampaigns using venv python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01AzSooUs9dBsxiaKpRLCwg6",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python3 -m pytest test_connectcampaigns_properties.py -v",
+        "description": "Run property-based tests with pytest"
+      }
+    }
+  ],
+  "call_id": "7dc064df",
+  "module": "troposphere.connectcampaigns",
+  "timestamp": "2025-08-19T00:37:13.838667"
+}

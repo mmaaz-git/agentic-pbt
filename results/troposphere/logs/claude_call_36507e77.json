@@ -1,0 +1,58 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 416436,
+  "duration_api_ms": 413017,
+  "num_turns": 108,
+  "result": "## Summary\n\nSuccessfully found **3 genuine bugs** in `troposphere.apigatewayv2` through property-based testing:\n\n1. **bug_report_troposphere_positive_integer_2025-08-18_23-41_fwno.md** - High severity logic bug where `positive_integer` validator incorrectly accepts 0\n2. **bug_report_troposphere_empty_title_2025-08-18_23-41_el5h.md** - Medium severity contract bug allowing empty resource titles\n3. **bug_report_troposphere_validation_flag_2025-08-18_23-41_rcxi.md** - Medium severity contract bug where `validation=False` doesn't skip title validation\n\nAll bugs have been verified with minimal reproductions and documented with suggested fixes. \u2705",
+  "session_id": "dbcd8075-b840-45a3-ba64-e78fccddea2c",
+  "total_cost_usd": 6.404299699999999,
+  "usage": {
+    "input_tokens": 678,
+    "cache_creation_input_tokens": 85090,
+    "cache_read_input_tokens": 2567866,
+    "output_tokens": 12402,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_016fEwRrNag1x7DwAWp4jY3m",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/troposphere_env/bin/activate && python -c \"import troposphere.apigatewayv2; print('Successfully imported troposphere.apigatewayv2')\"",
+        "description": "Activate venv and check module import"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01S5g5eA2bVFAXjNMToh7XPz",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -c \"import troposphere.apigatewayv2; print('Successfully imported troposphere.apigatewayv2')\"",
+        "description": "Import module using venv python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Rd43EMwpP1F6i2V4YDHUK5",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/pytest test_apigatewayv2_properties.py -v --tb=short",
+        "description": "Run property-based tests for apigatewayv2"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01J1qEFqvK4wFXp33dKvL83H",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python test_apigatewayv2_properties.py",
+        "description": "Run property-based tests directly"
+      }
+    }
+  ],
+  "call_id": "36507e77",
+  "module": "troposphere.apigatewayv2",
+  "timestamp": "2025-08-18T23:42:53.631393"
+}

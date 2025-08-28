@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 460888,
+  "duration_api_ms": 470584,
+  "num_turns": 107,
+  "result": "## Summary\n\n\u2705 **Bug Found!** Successfully discovered a bug in `pydantic.schema.getattr_migration` through property-based testing.\n\n**Bug Details:**\n- The function crashes with `KeyError` when accessing attributes on modules not in `sys.modules`\n- Should raise `AttributeError` for consistency with other error paths\n- Bug report saved as: `bug_report_pydantic_schema_2025-08-18_19-41_l4v7.md`\n\n**Testing Coverage:**\n- Tested 7 core properties including determinism, idempotence, and error message formatting\n- All properties passed except when discovering the nonexistent module bug\n- The bug is reproducible and affects any module name not present in `sys.modules`",
+  "session_id": "db10e924-b2ca-4fab-8f6a-1e79026dca0f",
+  "total_cost_usd": 5.040924,
+  "usage": {
+    "input_tokens": 686,
+    "cache_creation_input_tokens": 76600,
+    "cache_read_input_tokens": 1701498,
+    "output_tokens": 13679,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01MBLGbgbgi3SNwD8ZH8fdnS",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/pydantic/schema.py"
+      }
+    }
+  ],
+  "call_id": "7d094790",
+  "module": "pydantic.schema",
+  "timestamp": "2025-08-18T19:42:05.178393"
+}

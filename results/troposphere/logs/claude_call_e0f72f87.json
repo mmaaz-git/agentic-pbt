@@ -1,0 +1,34 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 491248,
+  "duration_api_ms": 463371,
+  "num_turns": 100,
+  "result": "## Bug Hunting Complete! \ud83d\udd0d\n\nFound **2 bugs** in `troposphere.pinpointemail` and related modules through property-based testing:\n\n### Bug 1: Boolean Validator Accepts Floats\n- **Location**: `troposphere.validators.boolean`\n- **Issue**: Accepts `0.0` and `1.0` (floats) when it should only accept integers and strings\n- **Impact**: Type validation bypass allowing unintended float inputs\n- **Bug Report**: `bug_report_troposphere_validators_boolean_2025-08-19_02-17_gnh5.md`\n\n### Bug 2: Title Validation Rejects Valid Unicode  \n- **Location**: `troposphere.BaseAWSObject.validate_title`\n- **Issue**: ASCII-only regex rejects valid Unicode alphanumeric characters (\u00b5, \u03c0, \u6d4b\u8bd5, caf\u00e9, etc.)\n- **Impact**: Prevents internationalization, inconsistent with Python's `isalnum()`\n- **Bug Report**: `bug_report_troposphere_title_validation_2025-08-19_02-17_qxlm.md`\n\n### Properties Tested\n\u2705 Boolean validator type checking  \n\u2705 Title validation rules  \n\u2705 Round-trip serialization (passed after fixing title generation)  \n\u2705 Required property validation  \n\u2705 JSON serialization  \n\u2705 Complex nested structures\n\nBoth bugs are legitimate issues that violate the code's documented behavior and would affect real users of the troposphere library.",
+  "session_id": "2b1a6980-5227-4ceb-a08f-b1f967f785fa",
+  "total_cost_usd": 5.738792800000001,
+  "usage": {
+    "input_tokens": 578,
+    "cache_creation_input_tokens": 74236,
+    "cache_read_input_tokens": 2280230,
+    "output_tokens": 12044,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01DL4utdtzde9jLHZv3RQeB7",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python3 -c \"import troposphere.pinpointemail; print('success - treating as module')\"",
+        "description": "Import troposphere.pinpointemail using venv Python"
+      }
+    }
+  ],
+  "call_id": "e0f72f87",
+  "module": "troposphere.pinpointemail",
+  "timestamp": "2025-08-19T02:18:51.215425"
+}

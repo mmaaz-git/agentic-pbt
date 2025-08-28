@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 552490,
+  "duration_api_ms": 563033,
+  "num_turns": 89,
+  "result": "## Bug Found! \ud83d\udc1b\n\nI discovered a genuine bug in `pydantic._migration.getattr_migration` through property-based testing:\n\n**Summary**: The function raises `KeyError` instead of `AttributeError` when accessing attributes of non-existent modules, violating Python's attribute access protocol.\n\n**Tested Properties**:\n- \u2705 Import consistency for moved items\n- \u2705 Warning generation for migrations  \n- \u2705 Error handling for removed items\n- \u274c **Attribute error consistency (FAILED - found bug)**\n- \u2705 Special __path__ handling\n- \u2705 Redirect warnings\n\n**Bug Details**: When a module doesn't exist in `sys.modules`, the code attempts to access it without checking, causing a `KeyError` on line 303 instead of the expected `AttributeError`.\n\nThe bug report has been saved to: `bug_report_pydantic_migration_getattr_migration_2025-08-18_19-42_01au.md`\n\nThis is a medium-severity crash bug that affects error handling consistency in Pydantic's v1-to-v2 migration layer.",
+  "session_id": "05f97338-c010-4776-b80d-a93d44d1e43a",
+  "total_cost_usd": 4.396750300000001,
+  "usage": {
+    "input_tokens": 596,
+    "cache_creation_input_tokens": 70546,
+    "cache_read_input_tokens": 1412620,
+    "output_tokens": 12386,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01Tei2NaHKtiuu3eeZLW582F",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/pydantic/validators.py"
+      }
+    }
+  ],
+  "call_id": "58cbf28d",
+  "module": "pydantic.validators",
+  "timestamp": "2025-08-18T19:43:36.994075"
+}

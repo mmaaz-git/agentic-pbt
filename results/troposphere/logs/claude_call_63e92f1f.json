@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 505385,
+  "duration_api_ms": 498426,
+  "num_turns": 111,
+  "result": "## Summary\n\nSuccessfully discovered 2 bugs in `troposphere.securityhub` through property-based testing:\n\n### Bug 1: Broken Round-Trip Serialization (High Severity)\n- **Issue**: `from_dict()` method fails for all AWSObject classes \n- **Impact**: Cannot deserialize objects that were serialized with `to_dict()`\n- **Root Cause**: `to_dict()` wraps properties in 'Properties' key, but `from_dict()` doesn't unwrap it\n\n### Bug 2: Integer Validator Accepts Floats (Medium Severity)  \n- **Issue**: `integer()` validator accepts non-integer floats like 0.5 and 3.14\n- **Impact**: Violates validation contract, allows invalid data to pass through\n- **Root Cause**: Validator checks if `int(x)` succeeds but returns original value unchanged\n\nBoth bugs have been documented in detailed bug reports with reproducible test cases and suggested fixes. \u2705",
+  "session_id": "6ecee97c-6790-4b2c-a0f3-75bade2d3177",
+  "total_cost_usd": 6.0990624,
+  "usage": {
+    "input_tokens": 678,
+    "cache_creation_input_tokens": 68716,
+    "cache_read_input_tokens": 2392534,
+    "output_tokens": 15964,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01WhPSSEi6FPQSaDbdMikq1T",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/troposphere/securityhub.py"
+      }
+    }
+  ],
+  "call_id": "63e92f1f",
+  "module": "troposphere.securityhub",
+  "timestamp": "2025-08-19T02:33:09.322699"
+}

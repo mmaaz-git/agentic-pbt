@@ -1,0 +1,32 @@
+{"call_id": "7b3f6b23", "module": "pydantic", "timestamp": "2025-08-18T20:29:20.307514", "bug_reports": ["bug_report_pydantic_2025-08-18_20-28_6l8q.md"], "aux_files_dir": "aux_files/7b3f6b23"}
+{"call_id": "2b52ea72", "module": "pydantic.alias_generators", "timestamp": "2025-08-18T19:19:53.584144", "bug_reports": ["bug_report_pydantic_alias_generators_2025-08-18_19-18_6iio.md"], "aux_files_dir": "aux_files/2b52ea72"}
+{"call_id": "dd262fbf", "module": "pydantic.aliases", "timestamp": "2025-08-18T20:32:11.620407", "bug_reports": ["bug_report_pydantic_aliases_2025-08-18_20-31_g425.md"], "aux_files_dir": "aux_files/dd262fbf"}
+{"call_id": "1ca0edf5", "module": "pydantic.annotated_handlers", "timestamp": "2025-08-18T20:25:16.932533", "bug_reports": ["bug_report_pydantic_annotated_handlers_2025-08-18_20-24_8q1d.md"], "aux_files_dir": "aux_files/1ca0edf5"}
+{"call_id": "36fcab3e", "module": "pydantic.class_validators", "timestamp": "2025-08-18T20:30:09.629958", "bug_reports": ["bug_report_pydantic_import_string_2025-08-18_20-28_aeze.md"], "aux_files_dir": "aux_files/36fcab3e"}
+{"call_id": "0ecad6db", "module": "pydantic.color", "timestamp": "2025-08-18T22:57:14.691018", "bug_reports": ["bug_report_pydantic_color_2025-08-18_22-54_4m0z.md", "bug_report_pydantic_color_alpha_percentage_2025-08-18_22-56_2usc.md"], "aux_files_dir": "aux_files/0ecad6db"}
+{"call_id": "1d95281b", "module": "pydantic.dataclasses", "timestamp": "2025-08-18T20:31:00.830350", "bug_reports": [], "aux_files_dir": "aux_files/1d95281b"}
+{"call_id": "435208d2", "module": "pydantic.datetime_parse", "timestamp": "2025-08-18T20:22:40.886994", "bug_reports": [], "aux_files_dir": "aux_files/435208d2"}
+{"call_id": "f2870371", "module": "pydantic.decorator", "timestamp": "2025-08-18T20:29:48.390668", "bug_reports": ["bug_report_pydantic_decorator_2025-08-18_20-28_82wf.md"], "aux_files_dir": "aux_files/f2870371"}
+{"call_id": "03a9e759", "module": "pydantic.env_settings", "timestamp": "2025-08-18T20:25:55.040737", "bug_reports": ["bug_report_pydantic_env_settings_2025-08-18_20-25_taom.md"], "aux_files_dir": "aux_files/03a9e759"}
+{"call_id": "be58241e", "module": "pydantic.error_wrappers", "timestamp": "2025-08-18T20:29:36.696638", "bug_reports": [], "aux_files_dir": "aux_files/be58241e"}
+{"call_id": "24b1f7ef", "module": "pydantic.experimental", "timestamp": "2025-08-18T20:29:12.410291", "bug_reports": ["bug_report_pydantic_experimental_pipeline_2025-08-18_20-28_vnzh.md"], "aux_files_dir": "aux_files/24b1f7ef"}
+{"call_id": "1b5bab60", "module": "pydantic.fields", "timestamp": "2025-08-18T19:44:55.596492", "bug_reports": ["bug_report_pydantic_fields_2025-08-18_19-44_irmp.md"], "aux_files_dir": "aux_files/1b5bab60"}
+{"call_id": "31e3d2b3", "module": "pydantic.functional_serializers", "timestamp": "2025-08-18T19:42:36.626403", "bug_reports": ["bug_report_pydantic_functional_serializers_2025-08-18_19-41_xtdb.md"], "aux_files_dir": "aux_files/31e3d2b3"}
+{"call_id": "2594f92d", "module": "pydantic.functional_validators", "timestamp": "2025-08-18T19:52:01.498183", "bug_reports": [], "aux_files_dir": "aux_files/2594f92d"}
+{"call_id": "e29926a4", "module": "pydantic.generics", "timestamp": "2025-08-18T19:40:17.964854", "bug_reports": ["bug_report_pydantic_generics_2025-08-18_19-39_tiw6.md"], "aux_files_dir": "aux_files/e29926a4"}
+{"call_id": "cb6832be", "module": "pydantic.json", "timestamp": "2025-08-18T20:29:31.844127", "bug_reports": [], "aux_files_dir": "aux_files/cb6832be"}
+{"call_id": "aa3ea8ca", "module": "pydantic.json_schema", "timestamp": "2025-08-18T19:47:31.223003", "bug_reports": [], "aux_files_dir": "aux_files/aa3ea8ca"}
+{"call_id": "3f4c0e57", "module": "pydantic.main", "timestamp": "2025-08-18T19:41:40.967011", "bug_reports": ["bug_report_pydantic_main_2025-08-18_19-40_fcil.md"], "aux_files_dir": "aux_files/3f4c0e57"}
+{"call_id": "8d2cac69", "module": "pydantic.networks", "timestamp": "2025-08-18T19:43:39.097363", "bug_reports": ["bug_report_pydantic_color_2025-08-18_19-22_468x.md", "bug_report_pydantic_networks_2025-08-18_19-40_vx6l.md"], "aux_files_dir": "aux_files/8d2cac69"}
+{"call_id": "3ae4a87f", "module": "pydantic.parse", "timestamp": "2025-08-18T19:40:05.564295", "bug_reports": [], "aux_files_dir": "aux_files/3ae4a87f"}
+{"call_id": "ceb9d848", "module": "pydantic.plugin", "timestamp": "2025-08-18T19:42:47.483266", "bug_reports": ["bug_report_pydantic_plugin__loader_2025-08-18_19-41_cmy2.md"], "aux_files_dir": "aux_files/ceb9d848"}
+{"call_id": "585164eb", "module": "pydantic.root_model", "timestamp": "2025-08-18T19:46:55.134324", "bug_reports": [], "aux_files_dir": "aux_files/585164eb"}
+{"call_id": "7d094790", "module": "pydantic.schema", "timestamp": "2025-08-18T19:42:05.181040", "bug_reports": ["bug_report_pydantic_schema_2025-08-18_19-41_l4v7.md"], "aux_files_dir": "aux_files/7d094790"}
+{"call_id": "2998b7bc", "module": "pydantic.tools", "timestamp": "2025-08-18T19:44:13.163130", "bug_reports": [], "aux_files_dir": "aux_files/2998b7bc"}
+{"call_id": "f1432b5e", "module": "pydantic.type_adapter", "timestamp": "2025-08-18T19:45:03.277943", "bug_reports": ["bug_report_pydantic_type_adapter_2025-08-18_19-44_3bkd.md"], "aux_files_dir": "aux_files/f1432b5e"}
+{"call_id": "d78df7cd", "module": "pydantic.types", "timestamp": "2025-08-18T19:43:24.206018", "bug_reports": ["bug_report_pydantic_types_ByteSize_2025-08-18_19-42_olxp.md"], "aux_files_dir": "aux_files/d78df7cd"}
+{"call_id": "31b801ee", "module": "pydantic.typing", "timestamp": "2025-08-18T19:40:11.131384", "bug_reports": ["bug_report_pydantic_typing_2025-08-18_19-39_rxf7.md"], "aux_files_dir": "aux_files/31b801ee"}
+{"call_id": "8a442c6c", "module": "pydantic.utils", "timestamp": "2025-08-18T19:41:34.562129", "bug_reports": ["bug_report_pydantic_utils_2025-08-18_19-40_od3x.md"], "aux_files_dir": "aux_files/8a442c6c"}
+{"call_id": "52eaa29e", "module": "pydantic.v1", "timestamp": "2025-08-18T19:44:34.041231", "bug_reports": ["bug_report_pydantic_v1_decimal_2025-08-18_19-43_ozsw.md"], "aux_files_dir": "aux_files/52eaa29e"}
+{"call_id": "8e633c46", "module": "pydantic.validate_call_decorator", "timestamp": "2025-08-18T19:43:39.987296", "bug_reports": [], "aux_files_dir": "aux_files/8e633c46"}
+{"call_id": "58cbf28d", "module": "pydantic.validators", "timestamp": "2025-08-18T19:43:36.996071", "bug_reports": ["bug_report_pydantic_migration_getattr_migration_2025-08-18_19-42_01au.md"], "aux_files_dir": "aux_files/58cbf28d"}

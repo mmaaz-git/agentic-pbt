@@ -1,0 +1,6 @@
+{"call_id": "337e57c5", "module": "cloudscraper", "timestamp": "2025-08-19T03:06:52.805342", "bug_reports": [], "aux_files_dir": "aux_files/337e57c5"}
+{"call_id": "ccead923", "module": "cloudscraper.captcha", "timestamp": "2025-08-19T03:00:01.625174", "bug_reports": [], "aux_files_dir": "aux_files/ccead923"}
+{"call_id": "b8533268", "module": "cloudscraper.cloudflare", "timestamp": "2025-08-19T03:09:37.977549", "bug_reports": ["bug_report_cloudscraper_cloudflare_2025-08-19_03-08_i4ju.md"], "aux_files_dir": "aux_files/b8533268"}
+{"call_id": "21dc8a78", "module": "cloudscraper.help", "timestamp": "2025-08-19T03:06:59.808957", "bug_reports": ["bug_report_cloudscraper_help_2025-08-19_03-05_z7ln.md"], "aux_files_dir": "aux_files/21dc8a78"}
+{"call_id": "42d0823d", "module": "cloudscraper.interpreters", "timestamp": "2025-08-19T03:13:30.855569", "bug_reports": ["bug_report_cloudscraper_interpreters_encapsulated_2025-08-19_03-11_gnsy.md"], "aux_files_dir": "aux_files/42d0823d"}
+{"call_id": "3f58bc50", "module": "cloudscraper.user_agent", "timestamp": "2025-08-19T03:06:31.630335", "bug_reports": ["bug_report_cloudscraper_user_agent_2025-08-19_03-05_mmen.md"], "aux_files_dir": "aux_files/3f58bc50"}

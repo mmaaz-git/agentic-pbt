@@ -1,0 +1,16 @@
+{"call_id": "7d96509d", "module": "awkward", "timestamp": "2025-08-18T21:12:57.912765", "bug_reports": ["bug_report_awkward_mask_2025-08-18_08-48_k3n2.md"], "aux_files_dir": "aux_files/7d96509d"}
+{"call_id": "e118f31c", "module": "awkward.behaviors", "timestamp": "2025-08-18T21:16:04.304288", "bug_reports": ["bug_report_awkward_behaviors_mixins_2025-08-18_21-14_d4a7.md"], "aux_files_dir": "aux_files/e118f31c"}
+{"call_id": "8aed1f03", "module": "awkward.builder", "timestamp": "2025-08-18T21:19:48.945181", "bug_reports": ["bug_report_awkward_builder_2025-08-18_21-18_0hmu.md"], "aux_files_dir": "aux_files/8aed1f03"}
+{"call_id": "dd564bc6", "module": "awkward.contents", "timestamp": "2025-08-18T21:27:00.333796", "bug_reports": [], "aux_files_dir": "aux_files/dd564bc6"}
+{"call_id": "39da7486", "module": "awkward.cppyy", "timestamp": "2025-08-18T21:29:13.237683", "bug_reports": ["bug_report_cling_RecordArrayGenerator_2025-08-18_21-27_bfr9.md", "bug_report_cling_generator_equality_2025-08-18_21-27_nymd.md"], "aux_files_dir": "aux_files/39da7486"}
+{"call_id": "711eacf2", "module": "awkward.forms", "timestamp": "2025-08-18T21:18:50.455305", "bug_reports": [], "aux_files_dir": "aux_files/711eacf2"}
+{"call_id": "85da1f73", "module": "awkward.forth", "timestamp": "2025-08-18T21:16:43.400108", "bug_reports": ["bug_report_awkward_forth_2025-08-18_21-16_7d5x.md"], "aux_files_dir": "aux_files/85da1f73"}
+{"call_id": "1c847af0", "module": "awkward.highlevel", "timestamp": "2025-08-18T21:22:00.390270", "bug_reports": [], "aux_files_dir": "aux_files/1c847af0"}
+{"call_id": "334bea22", "module": "awkward.index", "timestamp": "2025-08-18T21:21:28.598833", "bug_reports": [], "aux_files_dir": "aux_files/334bea22"}
+{"call_id": "7ff44fde", "module": "awkward.jax", "timestamp": "2025-08-18T21:18:26.310601", "bug_reports": ["bug_report_awkward_jax_2025-08-18_15-30_x7k9.md"], "aux_files_dir": "aux_files/7ff44fde"}
+{"call_id": "caa60c61", "module": "awkward.numba", "timestamp": "2025-08-18T21:13:45.074935", "bug_reports": [], "aux_files_dir": "aux_files/caa60c61"}
+{"call_id": "2030f814", "module": "awkward.operations", "timestamp": "2025-08-18T21:19:11.466518", "bug_reports": [], "aux_files_dir": "aux_files/2030f814"}
+{"call_id": "723730a4", "module": "awkward.prettyprint", "timestamp": "2025-08-18T21:18:58.913984", "bug_reports": ["bug_report_awkward_prettyprint_2025-08-18_08-22_k3m9.md"], "aux_files_dir": "aux_files/723730a4"}
+{"call_id": "c5efc044", "module": "awkward.record", "timestamp": "2025-08-18T21:32:47.935179", "bug_reports": ["bug_report_awkward_record_2025-08-18_21-31_j6zp.md", "bug_report_tokenizers_trainers_initial_alphabet_2025-08-18_10-30_ab3f.md"], "aux_files_dir": "aux_files/c5efc044"}
+{"call_id": "213e858f", "module": "awkward.types", "timestamp": "2025-08-18T21:27:23.147825", "bug_reports": [], "aux_files_dir": "aux_files/213e858f"}
+{"call_id": "f2141548", "module": "awkward.typetracer", "timestamp": "2025-08-18T22:58:07.876022", "bug_reports": ["bug_report_awkward_typetracer_2025-01-19_00-00_k3j9.md"], "aux_files_dir": "aux_files/f2141548"}

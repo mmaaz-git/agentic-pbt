@@ -1,0 +1,42 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 585949,
+  "duration_api_ms": 589129,
+  "num_turns": 114,
+  "result": "## Summary\n\nSuccessfully found **1 bug** in `requests_oauthlib.oauth1_session` using property-based testing! \ud83c\udfaf\n\n### Bug Found: None \u2192 'None' String Conversion\nThe `authorization_url` method incorrectly converts `None` values to the string `'None'` in URL parameters, violating OAuth specifications and potentially breaking authentication flows.\n\n### Properties Tested\n\u2705 Token setter/getter round-trip  \n\u2705 URL parameter parsing preservation  \n\u2705 urldecode URL/JSON fallback  \n\u274c authorization_url parameter handling (bug found!)  \n\u2705 authorized property consistency  \n\u2705 Multiple token setting behavior  \n\nBug report saved: `bug_report_oauth1_session_2025-08-18_22-03_zm2q.md`",
+  "session_id": "5dc49dd3-a24b-410a-9eec-2ad4113c66b8",
+  "total_cost_usd": 6.8562087,
+  "usage": {
+    "input_tokens": 754,
+    "cache_creation_input_tokens": 86074,
+    "cache_read_input_tokens": 2569372,
+    "output_tokens": 18134,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01GrMoyd4VsCmuBQ9XjyCsvb",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/requests-oauthlib_env/bin/activate && python -c \"import requests_oauthlib.oauth1_session; print('Successfully imported module')\"",
+        "description": "Import module in virtual env"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Eeu76x6TyW4aMLLhgPFygW",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/requests-oauthlib_env/bin/python -c \"import requests_oauthlib.oauth1_session; print('Successfully imported module')\"",
+        "description": "Import module using venv python"
+      }
+    }
+  ],
+  "call_id": "fe336f7d",
+  "module": "requests_oauthlib.oauth1_session",
+  "timestamp": "2025-08-18T22:04:45.000272"
+}

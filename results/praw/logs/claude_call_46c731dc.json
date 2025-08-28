@@ -1,0 +1,47 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 499605,
+  "duration_api_ms": 502401,
+  "num_turns": 142,
+  "result": "## Bug Hunt Complete! \ud83c\udfaf\n\nFound **1 genuine bug** in `praw.objector`:\n\n### Bug: TypeError in Objector.objectify with primitive lists\n- **Severity**: Medium\n- **Type**: Crash\n- **Impact**: The `objectify` method crashes when processing lists containing primitive types (integers, floats, strings)\n- **Root Cause**: Missing type check before dict operations on line 237 of objector.py\n\nThe bug occurs because after handling lists and booleans, the code assumes all remaining data is dict-like and attempts `\"json\" in data` without verifying the type first. This is a real issue that could affect production code when Reddit API returns lists of IDs, scores, or timestamps.\n\n**Bug report saved**: `bug_report_praw_objector_2025-08-18_23-23_v6hp.md`\n\n### Additional findings:\n- Tested 19 properties across snake_case conversion, error handling, and object parsing\n- 16 tests passed successfully\n- 2 Unicode edge cases found in snake_case conversion (non-critical)\n\nThe property-based testing approach successfully identified a legitimate bug that traditional unit tests might have missed! \u2705",
+  "session_id": "53970df0-c425-4c3c-8e3b-93e0bbef1aee",
+  "total_cost_usd": 7.819334999999999,
+  "usage": {
+    "input_tokens": 918,
+    "cache_creation_input_tokens": 86412,
+    "cache_read_input_tokens": 3391338,
+    "output_tokens": 14475,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01ATEJwCYKy2VZwDRbA2fJHq",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/praw_env/bin/activate && python -c \"import praw; print('PRAW imported successfully'); print('PRAW version:', praw.__version__)\""
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01FcZhyREwzYyzQS5Je349fq",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/praw_env/bin/python -c \"import praw; print('PRAW imported successfully'); print('PRAW version:', praw.__version__)\""
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01GiZiU86gFadFY7gJd8VH8Y",
+      "tool_input": {
+        "command": "grep -n \"self._objector\" /root/hypothesis-llm/envs/praw_env/lib/python3.13/site-packages/praw/reddit.py | head -5"
+      }
+    }
+  ],
+  "call_id": "46c731dc",
+  "module": "praw.objector",
+  "timestamp": "2025-08-18T23:23:56.212745"
+}

@@ -1,0 +1,90 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 407885,
+  "duration_api_ms": 417038,
+  "num_turns": 118,
+  "result": "## Bug Hunt Complete! \ud83d\udc1b\n\nFound **2 bugs** in the slack dependency injection module:\n\n### Bug 1: Critical Python Compatibility Issue (HIGH severity)\n- **Issue**: Module uses deprecated `inspect.getargspec()` which was removed in Python 3.11\n- **Impact**: Complete module failure on Python 3.11+\n- **Report**: `bug_report_slack_2025-08-18_23-13_iq2j.md`\n\n### Bug 2: Exception Name Typo (LOW severity)  \n- **Issue**: Exception class named `ParamterMissingError` instead of `ParameterMissingError`\n- **Impact**: API inconsistency and potential user confusion\n- **Report**: `bug_report_slack_typo_2025-08-18_23-14_6huj.md`\n\nThe property-based testing approach successfully revealed these issues by attempting to test basic container functionality. The first bug prevents any testing on modern Python versions, while the second is a naming issue that affects the API contract.",
+  "session_id": "59b3bc32-56f3-49ae-88d1-2b721f4043d1",
+  "total_cost_usd": 4.7412425,
+  "usage": {
+    "input_tokens": 670,
+    "cache_creation_input_tokens": 46666,
+    "cache_read_input_tokens": 1933498,
+    "output_tokens": 12474,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_012QAxoTdAVcYw81L4n3ZVQb",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/envs/slack_env && source bin/activate && pip list | grep -i slack",
+        "description": "Check for slack-related packages in the virtual environment"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01P97ffLX334cGxq4553HvdS",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/slack_env/bin/python3 -c \"import slack; print('Module imported successfully'); print('Module location:', slack.__file__ if hasattr(slack, '__file__') else 'No __file__ attribute')\"",
+        "description": "Import slack module and find its location"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Xcww9UAZFGEi8rg7LecFd6",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/slack_env/bin/python3 -c \"import slack; print(slack.__file__)\"",
+        "description": "Get slack module file location"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_015p4mPgghNsjobJpWPWthqw",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/slack_env/bin/python3 -m pytest test_slack_properties.py -v",
+        "description": "Run hypothesis property tests for slack module"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01SdrFyv77yDTQ17iMAJzejM",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/slack_env/bin/pytest test_slack_properties.py -v",
+        "description": "Run pytest on slack property tests"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_017gQ8WYpmSoYJvrHkrdBSAR",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/slack_env/bin/python3 -m pytest test_slack_properties.py --tb=short",
+        "description": "Run pytest tests with short traceback"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01GCEzzKZRwCzQYfotqrS4ao",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/slack_env/bin/python3 run_tests.py",
+        "description": "Execute hypothesis property tests"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01FmpKXFstAuXrhUc15QYiK6",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/slack_env/bin/python3 test_inline.py",
+        "description": "Run inline tests for slack module"
+      }
+    }
+  ],
+  "call_id": "4f016af7",
+  "module": "slack",
+  "timestamp": "2025-08-18T23:15:01.763458"
+}

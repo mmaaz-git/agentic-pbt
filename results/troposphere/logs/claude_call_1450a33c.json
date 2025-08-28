@@ -1,0 +1,42 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 432038,
+  "duration_api_ms": 438768,
+  "num_turns": 113,
+  "result": "## Summary\n\nFound **2 bugs** in troposphere module through property-based testing:\n\n### Bug 1: Integer Validator Inconsistent Error Handling\n- **File**: `bug_report_troposphere_validators_integer_2025-08-19_02-15_16ei.md`\n- **Issue**: `integer()` validator raises OverflowError instead of ValueError for infinity values\n- **Severity**: Medium (Contract violation)\n\n### Bug 2: Title Validation Bypass  \n- **File**: `bug_report_troposphere_BaseAWSObject_2025-08-19_02-15_en4n.md`\n- **Issue**: Empty strings and None bypass title validation, violating alphanumeric-only rule\n- **Severity**: Medium (Logic bug)\n\nSuccessfully tested 9 properties total, with 7 passing and 2 revealing bugs. \u2705",
+  "session_id": "9a381f83-fff0-4b5e-ae76-f6a55e9afdc6",
+  "total_cost_usd": 5.841723999999999,
+  "usage": {
+    "input_tokens": 700,
+    "cache_creation_input_tokens": 64920,
+    "cache_read_input_tokens": 2441570,
+    "output_tokens": 12521,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01G3YPtQxHVVTivPrY6jKjWz",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/envs/troposphere_env && source bin/activate && python -c \"import troposphere; print('troposphere module found'); print(troposphere.__file__)\"",
+        "description": "Check if troposphere module is installed"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01VvpStsurU12FQYa6TX4M3i",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -c \"import troposphere; print('troposphere module found'); print(troposphere.__file__)\"",
+        "description": "Check if troposphere module is installed using env python"
+      }
+    }
+  ],
+  "call_id": "1450a33c",
+  "module": "troposphere.pcs",
+  "timestamp": "2025-08-19T02:16:17.698778"
+}

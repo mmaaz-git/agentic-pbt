@@ -1,0 +1,34 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 786872,
+  "duration_api_ms": 795340,
+  "num_turns": 113,
+  "result": "Tested 42 properties on `pydantic.json_schema` - all passed \u2705\n\n## Summary\n\nI performed comprehensive property-based testing on `pydantic.json_schema` module with Hypothesis, testing:\n\n**Core Properties:**\n- JSON schema generation produces valid, round-trippable JSON\n- All `$ref` values resolve to valid definitions\n- Reference templates work correctly with various formats\n- Field aliases are handled properly based on `by_alias` parameter\n- Validation vs serialization modes produce compatible schemas\n\n**Complex Scenarios:**\n- Recursive and cyclic model dependencies\n- Discriminated unions\n- Computed fields\n- Generic models and inheritance\n- Models with 50-100 fields\n\n**Edge Cases:**\n- Special numeric values (inf, nan, very large decimals)\n- Complex nested generics (Dict[str, Dict[str, List[int]]])\n- DateTime/UUID/Enum types\n- Literal types with special values (empty strings, None, unicode)\n- Field constraints (min/max values, patterns, lengths)\n- ConfigDict settings variations\n\n**Internal Functions:**\n- `_deduplicate_schemas` preserves uniqueness and order\n- `_DefinitionsRemapping` handles circular references and collisions correctly\n- Schema remapping preserves structure with deeply nested schemas\n\nAll 42 tests passed successfully. The `pydantic.json_schema` module appears robust and handles edge cases well.",
+  "session_id": "322cfa23-caf6-4d29-84eb-ef4759f968b8",
+  "total_cost_usd": 7.3848842999999995,
+  "usage": {
+    "input_tokens": 592,
+    "cache_creation_input_tokens": 107450,
+    "cache_read_input_tokens": 2294276,
+    "output_tokens": 25358,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01JkeYxyN9RhsAETq28ympKM",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/pydantic/json_schema.py",
+        "limit": 100
+      }
+    }
+  ],
+  "call_id": "aa3ea8ca",
+  "module": "pydantic.json_schema",
+  "timestamp": "2025-08-18T19:47:31.218647"
+}

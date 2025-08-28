@@ -1,0 +1,25 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 269745,
+  "duration_api_ms": 287689,
+  "num_turns": 64,
+  "result": "## Summary\n\nFound 2 genuine bugs in `urllib.request` through property-based testing:\n\n1. **parse_keqv_list IndexError** - Crashes when parsing key-value pairs with empty unquoted values like `key=`\n2. **parse_http_list Backslash Handling** - Incorrectly consumes backslashes in quoted strings, violating RFC 2068\n\nBoth bugs have been documented with reproducible test cases and suggested fixes.",
+  "session_id": "f19b62da-d5f8-4921-a83f-fd17b3ba3b98",
+  "total_cost_usd": 3.2013511999999995,
+  "usage": {
+    "input_tokens": 286,
+    "cache_creation_input_tokens": 32288,
+    "cache_read_input_tokens": 1291682,
+    "output_tokens": 8053,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [],
+  "call_id": "9bc66706",
+  "module": "urllib.request",
+  "timestamp": "2025-08-18T04:48:22.497115"
+}

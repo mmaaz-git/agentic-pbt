@@ -1,0 +1,50 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 494548,
+  "duration_api_ms": 477770,
+  "num_turns": 120,
+  "result": "## Summary\n\nTested 4 properties on win32ctypes.core - all passed \u2705\n\n**Properties tested:**\n1. **Type checking consistency**: `is_bytes()`, `is_text()`, and `is_integer()` functions correctly identify their respective types and are mutually exclusive\n2. **is_bytes invariant**: Returns `True` only for Python `bytes` objects\n3. **is_text invariant**: Returns `True` only for Python `str` objects  \n4. **is_integer invariant**: Returns `True` only for Python `int` objects (including `bool` as a subclass)\n5. **IS_INTRESOURCE implementation**: Correctly identifies Windows INTRESOURCE values (0-65535) using bit-shift operation\n\n**Test coverage:**\n- Ran 28 property-based tests with over 40,000+ generated examples\n- Tested edge cases including empty values, Unicode strings, large integers, and boundary conditions\n- All tests passed without any failures\n\n**Note:** Most of win32ctypes.core requires Windows-specific APIs and couldn't be tested on Linux. The tested components were platform-independent utility functions that had clear, verifiable properties.",
+  "session_id": "3a9f3650-b32a-4866-b7c8-1714fbb50d6d",
+  "total_cost_usd": 5.880125700000002,
+  "usage": {
+    "input_tokens": 572,
+    "cache_creation_input_tokens": 71994,
+    "cache_read_input_tokens": 2351562,
+    "output_tokens": 12964,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_018vsWL9aEdZv2T9ReSBN5es",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/envs/pywin32-ctypes_env && source bin/activate && python -c \"import win32ctypes.core; print('Successfully imported win32ctypes.core')\"",
+        "description": "Activate venv and import win32ctypes.core"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01TsMACtYNV6biiqS8qwzp4u",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/pywin32-ctypes_env/bin/python -c \"import win32ctypes.core; print('Successfully imported win32ctypes.core'); print(win32ctypes.core.__file__)\"",
+        "description": "Import win32ctypes.core and get file location"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_014LFcLxrq82C16ehK4kR8vy",
+      "tool_input": {
+        "command": "PYTHONPATH=/root/hypothesis-llm/envs/pywin32-ctypes_env/lib/python3.13/site-packages python3 -c \"import win32ctypes.core; print('Successfully imported win32ctypes.core'); print(win32ctypes.core.__file__)\"",
+        "description": "Import win32ctypes.core with PYTHONPATH"
+      }
+    }
+  ],
+  "call_id": "070e8baa",
+  "module": "win32ctypes.core",
+  "timestamp": "2025-08-18T22:42:09.562197"
+}

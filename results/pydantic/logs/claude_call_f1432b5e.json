@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 639265,
+  "duration_api_ms": 639105,
+  "num_turns": 121,
+  "result": "## Summary\n\n\ud83d\udc1b **Bug Found in pydantic.type_adapter.TypeAdapter**\n\nI discovered a contract violation bug where TypeAdapter's bytes handling breaks the round-trip property. The adapter accepts arbitrary byte sequences via `validate_python()` but fails to serialize non-UTF-8 bytes with `dump_json()`.\n\n**Key findings:**\n- Tested 13 core properties with 500+ examples each\n- All properties passed except bytes serialization\n- Bug affects any bytes containing non-UTF-8 sequences (e.g., `b'\\x80'`)\n- Created bug report: `bug_report_pydantic_type_adapter_2025-08-18_19-44_3bkd.md`\n\n**Impact:** Medium severity - breaks expected round-trip behavior for a core type, affecting users who need to serialize arbitrary binary data through Pydantic's TypeAdapter.",
+  "session_id": "53dbd5b8-3c28-4c05-b654-5fac1088c26c",
+  "total_cost_usd": 6.513044499999999,
+  "usage": {
+    "input_tokens": 862,
+    "cache_creation_input_tokens": 86578,
+    "cache_read_input_tokens": 2298596,
+    "output_tokens": 18393,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_0129fYQ8n8mhcxTPrCTwN8Dc",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/pydantic/type_adapter.py"
+      }
+    }
+  ],
+  "call_id": "f1432b5e",
+  "module": "pydantic.type_adapter",
+  "timestamp": "2025-08-18T19:45:03.275098"
+}

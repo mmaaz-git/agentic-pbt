@@ -1,0 +1,50 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 426560,
+  "duration_api_ms": 434789,
+  "num_turns": 109,
+  "result": "## Bug Found! \ud83d\udc1b\n\nSuccessfully discovered a **contract violation bug** in the `addict` library's Dict class:\n\n**Bug**: Dict union operators (| and |=) don't follow Python's standard dict semantics - they recursively merge nested dicts instead of replacing them.\n\n**Example**: \n- Standard dict: `{'a': {'b': 1}} | {'a': {}}` \u2192 `{'a': {}}`\n- addict.Dict: `{'a': {'b': 1}} | {'a': {}}` \u2192 `{'a': {'b': 1}}`\n\nThe bug report has been saved to: `bug_report_addict_Dict_union_2025-08-18_22-02_jsng.md`\n\n**Testing summary**:\n- \u2705 9 properties passed\n- \u274c 1 property failed (dict union operator)\n- Severity: Medium (API contract violation)",
+  "session_id": "c086a245-a4d6-4daa-9c6a-dc2133414d84",
+  "total_cost_usd": 4.7788018,
+  "usage": {
+    "input_tokens": 670,
+    "cache_creation_input_tokens": 52000,
+    "cache_read_input_tokens": 1857760,
+    "output_tokens": 13185,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01WRgBRBFksN8NPr1YkbWogR",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/addict_env/bin/python -c \"import addict; print('Success - addict is a module'); print(addict.__file__)\"",
+        "description": "Check if addict is installed in the addict_env"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Y1DfRMS2APT7XWxVSzAJm8",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/envs/addict_env && source bin/activate && python3 -c \"import addict; print('Success - addict is a module'); print(addict.__file__)\"",
+        "description": "Activate addict_env and check for addict module"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01QmHagRXhYbEVgZrKatoBgX",
+      "tool_input": {
+        "command": "PYTHONPATH=/root/hypothesis-llm/envs/addict_env/lib/python3.13/site-packages python3 -c \"\nimport addict\nimport inspect\n\nprint('Module file:', addict.__file__)\nprint('Module doc:', addict.__doc__)\nprint()\n\nmembers = inspect.getmembers(addict)\nprint('Public members:')\nfor name, obj in members:\n    if not name.startswith('_'):\n        print(f'  {name}: {type(obj).__name__}')\"",
+        "description": "Introspect addict module to understand its API"
+      }
+    }
+  ],
+  "call_id": "64a68848",
+  "module": "addict",
+  "timestamp": "2025-08-18T22:02:57.220830"
+}

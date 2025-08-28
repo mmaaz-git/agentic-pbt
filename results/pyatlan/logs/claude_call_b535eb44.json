@@ -1,0 +1,50 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 324440,
+  "duration_api_ms": 328139,
+  "num_turns": 91,
+  "result": "## Summary\n\nSuccessfully discovered **2 bugs** in `pyatlan.utils.to_camel_case`:\n\n### Bug 1: Idempotence Violation (Medium Severity)\n- `to_camel_case('A A')` \u2192 `'aA'` \u2192 `'aa'` (changes on second application)\n- Affects data pipeline reliability where functions may be applied multiple times\n\n### Bug 2: Unicode Character Corruption (Medium Severity)  \n- `to_camel_case('\u00df')` \u2192 `'ss'` (German sharp-s becomes two characters)\n- Breaks string integrity for international data\n\nBug report saved to: `bug_report_pyatlan_utils_2025-08-18_22-52_helk.md`\n\nBoth bugs are legitimate logic errors that violate expected function behavior and could impact production systems handling repeated transformations or international text.",
+  "session_id": "6f213aae-6b9d-4687-a96e-cb35955798c7",
+  "total_cost_usd": 5.073638900000001,
+  "usage": {
+    "input_tokens": 548,
+    "cache_creation_input_tokens": 72654,
+    "cache_read_input_tokens": 1959056,
+    "output_tokens": 10046,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01633SSfFPhY3cbTvbvZxjxv",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/pyatlan_env/bin/activate && python -c \"import pyatlan; print('success - treating as module')\"",
+        "description": "Activate venv and try importing pyatlan"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01M4E4Vj2RFpp2ap6akiePiX",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/pyatlan_env/bin/python -c \"import pyatlan; print('success - treating as module')\"",
+        "description": "Use venv Python to import pyatlan"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_013y7teuWN92FDYevPwuuJ3c",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/pyatlan_env/bin/python -m pytest test_pyatlan_properties.py -v --tb=short",
+        "description": "Run property-based tests on pyatlan"
+      }
+    }
+  ],
+  "call_id": "b535eb44",
+  "module": "pyatlan",
+  "timestamp": "2025-08-18T22:53:46.439779"
+}

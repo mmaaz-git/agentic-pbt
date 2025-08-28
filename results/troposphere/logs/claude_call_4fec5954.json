@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 402961,
+  "duration_api_ms": 357171,
+  "num_turns": 83,
+  "result": "## Bug Found! \ud83d\udc1b\n\nSuccessfully discovered a **contract violation bug** in `troposphere.voiceid.Domain` where the title validation is overly restrictive, rejecting valid CloudFormation resource names that contain hyphens, underscores, colons, and other standard characters.\n\n**Impact**: Users cannot use common CloudFormation naming conventions like:\n- `My-VoiceID-Domain` (hyphens)\n- `AWS::VoiceID::Domain` (colons)\n- `Domain_Production` (underscores)\n\nThe validation uses `^[a-zA-Z0-9]+$` but CloudFormation supports a much wider character set for logical IDs.\n\n**Bug report saved**: `bug_report_troposphere_voiceid_2025-08-19_02-40_k36g.md`\n\nThis affects all AWS resource classes in troposphere that inherit from `AWSObject`, making it a widespread issue for CloudFormation template generation.",
+  "session_id": "f801c4e1-b140-49e3-b97d-0adf3cbf9877",
+  "total_cost_usd": 3.5594418,
+  "usage": {
+    "input_tokens": 600,
+    "cache_creation_input_tokens": 41008,
+    "cache_read_input_tokens": 1295078,
+    "output_tokens": 10972,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01RkKkXEPJZrsE4i2ScEE668",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/troposphere/voiceid.py"
+      }
+    }
+  ],
+  "call_id": "4fec5954",
+  "module": "troposphere.voiceid",
+  "timestamp": "2025-08-19T02:41:13.616865"
+}

@@ -1,0 +1,50 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 377000,
+  "duration_api_ms": 382482,
+  "num_turns": 100,
+  "result": "## Summary\n\nSuccessfully completed property-based testing of `requests_oauthlib` and discovered **2 bugs**:\n\n### Bug 1: OAuth2Session Invalid expires_in Crash (Medium Severity)\n- **Issue**: OAuth2Session crashes with ValueError when token contains non-integer `expires_in` \n- **Impact**: Applications crash when processing malformed tokens\n- **File**: `bug_report_oauth2session_expires_in_2025-08-18_22-59_skz2.md`\n\n### Bug 2: urldecode JSON Fallback Failure (Low Severity)  \n- **Issue**: Simple JSON values like `0` or `\"text\"` parsed incorrectly as URL-encoded data\n- **Impact**: Dual-mode parsing promise broken for non-dict/array JSON\n- **File**: `bug_report_urldecode_json_fallback_2025-08-18_22-59_y63q.md`\n\nTested 9 properties total - 5 passed, 4 revealed bugs (2 unique issues after deduplication).",
+  "session_id": "119dab43-7b8c-49ca-9e3f-a9fadc10aae0",
+  "total_cost_usd": 5.052544599999999,
+  "usage": {
+    "input_tokens": 644,
+    "cache_creation_input_tokens": 67276,
+    "cache_read_input_tokens": 1906160,
+    "output_tokens": 12082,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01NwiPc7Ttun6j7baDnKiXcG",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/envs/requests-oauthlib_env && source bin/activate && pip install requests-oauthlib hypothesis pytest",
+        "description": "Install requests-oauthlib and testing dependencies in the virtual environment"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01EUBnDt5eAVt4KRBfv4vddD",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/requests-oauthlib_env/bin/pip install requests-oauthlib hypothesis pytest",
+        "description": "Install requests-oauthlib and testing dependencies"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01AmNsR6s8Mbc4PqAXHxyecB",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/requests-oauthlib_env/bin/python3 -c \"import sys; print(sys.path)\"",
+        "description": "Check Python path in virtual environment"
+      }
+    }
+  ],
+  "call_id": "a9ff8548",
+  "module": "requests_oauthlib",
+  "timestamp": "2025-08-18T23:00:57.537672"
+}

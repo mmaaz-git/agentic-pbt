@@ -1,0 +1,34 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 361235,
+  "duration_api_ms": 369572,
+  "num_turns": 88,
+  "result": "## Bug Found! \ud83d\udc1b\n\nI discovered a **contract violation bug** in the `troposphere.validators.boolean` function. The validator accepts any numeric type that equals 0 or 1 (like `float(0.0)`, `Decimal(1)`, `numpy.int32(0)`, `complex(1)`), when it should only accept the documented types: `True, False, 0, 1, \"0\", \"1\", \"true\", \"True\", \"false\", \"False\"`.\n\n**Impact**: This affects 12 boolean properties across the DLM module used for AWS CloudFormation templates. Users could inadvertently pass float values where strict booleans are expected.\n\n**Bug Report**: Created `bug_report_troposphere_boolean_validator_2025-08-19_00-40_13lu.md` with full details and a proposed fix.\n\n**Tests Summary**: \n- \u2705 22 properties passed validation\n- \u274c 1 property violation found (boolean validator type strictness)",
+  "session_id": "d84928fb-1b89-4994-abf7-3dc67e512be3",
+  "total_cost_usd": 4.1066244,
+  "usage": {
+    "input_tokens": 598,
+    "cache_creation_input_tokens": 48840,
+    "cache_read_input_tokens": 1559152,
+    "output_tokens": 11066,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_017f59irocSFTwHZTfRqTSMG",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python3 -c \"import troposphere.dlm; print('success - treating as module')\"",
+        "description": "Check troposphere.dlm with venv Python"
+      }
+    }
+  ],
+  "call_id": "2c43ee8a",
+  "module": "troposphere.dlm",
+  "timestamp": "2025-08-19T00:41:37.766963"
+}

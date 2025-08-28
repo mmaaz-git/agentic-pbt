@@ -1,0 +1,42 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 220866,
+  "duration_api_ms": 230311,
+  "num_turns": 80,
+  "result": "## Analysis Complete\n\n**No testable properties found in sudachipy.morpheme**\n\nAfter thorough investigation:\n\n1. **sudachipy.morpheme** contains the Morpheme class for Japanese morphological analysis\n2. The module is implemented in C++ with Python bindings (`.so` file)\n3. Morpheme instances can only be created through tokenization, which requires a dictionary\n4. No dictionary is installed (would need `sudachidict_core`, `sudachidict_small`, or `sudachidict_full`)\n5. Without a dictionary, the Morpheme class cannot be instantiated or tested\n\nThe module's properties (like `begin() <= end()`, morpheme length consistency, split properties) are all meaningful but require actual Morpheme instances from tokenization to test. Since we cannot create these instances without a dictionary, there are no properties that can be tested with property-based testing in the current environment.",
+  "session_id": "dcfa83c8-2a06-47f5-929f-d43929e1734e",
+  "total_cost_usd": 3.3572205,
+  "usage": {
+    "input_tokens": 470,
+    "cache_creation_input_tokens": 46974,
+    "cache_read_input_tokens": 1291610,
+    "output_tokens": 6939,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01AKraNN9Mc8ZsPEK33KTuWm",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/sudachipy_env/bin/python -c \"import sudachipy.morpheme; print('success - treating as module')\"",
+        "description": "Check if sudachipy.morpheme is importable in the env"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01DgxVi43oSYicEeC7VxpHpQ",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/sudachipy_env/bin/activate && python -c \"import sudachipy.morpheme; print('success - treating as module')\"",
+        "description": "Activate virtual environment and check module"
+      }
+    }
+  ],
+  "call_id": "8645468c",
+  "module": "sudachipy.morpheme",
+  "timestamp": "2025-08-18T20:36:24.543970"
+}

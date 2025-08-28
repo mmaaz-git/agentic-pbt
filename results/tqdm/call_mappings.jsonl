@@ -1,0 +1,10 @@
+{"call_id": "fc753965", "module": "tqdm", "timestamp": "2025-08-18T19:51:08.084990", "bug_reports": [], "aux_files_dir": "aux_files/fc753965"}
+{"call_id": "e98b02b6", "module": "tqdm.asyncio", "timestamp": "2025-08-18T19:46:14.869226", "bug_reports": ["bug_report_tqdm_asyncio_gather_2025-08-18_19-45_igsv.md"], "aux_files_dir": "aux_files/e98b02b6"}
+{"call_id": "b3adacff", "module": "tqdm.auto", "timestamp": "2025-08-18T19:51:27.602268", "bug_reports": ["bug_report_tqdm_auto_2025-08-18_19-50_cof6.md", "bug_report_tqdm_auto_2025-08-18_19-50_pmqm.md", "bug_report_pydantic_functional_validators_2025-08-18_19-50_teee.md"], "aux_files_dir": "aux_files/b3adacff"}
+{"call_id": "bef00036", "module": "tqdm.autonotebook", "timestamp": "2025-08-18T19:50:16.411110", "bug_reports": [], "aux_files_dir": "aux_files/bef00036"}
+{"call_id": "f3f6b324", "module": "tqdm.cli", "timestamp": "2025-08-18T19:51:56.737666", "bug_reports": ["bug_report_tqdm_cli_2025-08-18_19-50_k6s9.md"], "aux_files_dir": "aux_files/f3f6b324"}
+{"call_id": "c213272b", "module": "tqdm.contrib", "timestamp": "2025-08-18T19:53:29.324559", "bug_reports": ["bug_report_tqdm_contrib_tenumerate_2025-08-18_19-52_gz84.md"], "aux_files_dir": "aux_files/c213272b"}
+{"call_id": "af046642", "module": "tqdm.gui", "timestamp": "2025-08-18T19:53:24.357625", "bug_reports": ["bug_report_tqdm_gui_2025-08-18_19-52_rvwc.md"], "aux_files_dir": "aux_files/af046642"}
+{"call_id": "ca1b721b", "module": "tqdm.notebook", "timestamp": "2025-08-18T19:56:30.535614", "bug_reports": ["bug_report_tqdm_notebook_2025-08-18_19-54_kex2.md"], "aux_files_dir": "aux_files/ca1b721b"}
+{"call_id": "bf5ca6b1", "module": "tqdm.std", "timestamp": "2025-08-18T19:52:42.583814", "bug_reports": ["bug_report_tqdm_std_ema_zerodivision_2025-08-18_19-50_yeoy.md", "bug_report_tqdm_std_bar_format_2025-08-18_19-50_bcpk.md", "bug_report_tqdm_utils_disp_trim_2025-08-18_19-50_5g2e.md"], "aux_files_dir": "aux_files/bf5ca6b1"}
+{"call_id": "c839cede", "module": "tqdm.utils", "timestamp": "2025-08-18T19:52:53.694990", "bug_reports": ["bug_report_tqdm_utils_disp_trim_2025-08-18_19-51_4bc5.md"], "aux_files_dir": "aux_files/c839cede"}

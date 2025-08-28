@@ -1,0 +1,35 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 497083,
+  "duration_api_ms": 508935,
+  "num_turns": 110,
+  "result": "## Summary\n\n**Bug found! \ud83d\udc1b** \n\nI successfully discovered a bug in `functools.singledispatch` where using the `@func.register` decorator directly on a class without specifying a type argument causes the class to be corrupted and replaced with a lambda function.\n\n### Testing performed:\n- \u2705 Tested 9 core properties including dispatch-registry consistency, inheritance resolution, re-registration behavior, and ABC support - all passed\n- \u2705 Tested 10 edge cases including generic types, diamond inheritance, metaclasses, and bool/int relationships\n- \ud83d\udc1b **Found 1 bug**: Class decorator misuse silently corrupts the class definition\n\n### Bug details:\n- **Severity**: Medium  \n- **Type**: Contract violation\n- **Impact**: Silent corruption of class definitions leading to runtime errors\n- **Report**: `bug_report_functools_singledispatch_2025-08-18_21-36_i9vc.md`\n\nThe bug occurs when developers attempt to use `@func.register` as a decorator on a class without specifying which type to register for. Instead of raising an error or handling it correctly, the decorator silently replaces the class with a function, making it impossible to create instances of the original class.",
+  "session_id": "f41b078e-994f-4fbf-a712-e0e419fa363f",
+  "total_cost_usd": 4.910618099999999,
+  "usage": {
+    "input_tokens": 616,
+    "cache_creation_input_tokens": 55310,
+    "cache_read_input_tokens": 1763288,
+    "output_tokens": 16014,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01SC2aKhP87roSm56CxfoWoG",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/Cellar/python@3.13/3.13.6/lib/python3.13/functools.py",
+        "offset": 800,
+        "limit": 200
+      }
+    }
+  ],
+  "call_id": "c3da9560",
+  "module": "singledispatch",
+  "timestamp": "2025-08-18T21:37:31.324444"
+}

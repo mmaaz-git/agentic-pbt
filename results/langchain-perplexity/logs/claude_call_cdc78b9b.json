@@ -1,0 +1,50 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 698492,
+  "duration_api_ms": 692729,
+  "num_turns": 91,
+  "result": "## Summary\n\n**Found 1 bug in langchain_perplexity** \u2705\n\n### Bug: Message Role to Chunk Type Mapping Logic Error\n\nThe `_convert_delta_to_message_chunk` method has a logic error where it uses `or` operators incorrectly, causing it to always return the default_class type when it's one of the predefined chunk types (like AIMessageChunk), regardless of the actual role specified.\n\n**Impact**: When streaming responses, message roles like \"system\", \"function\", or \"tool\" get incorrectly converted to AIMessageChunk instead of their appropriate types, potentially breaking downstream code that relies on correct message types.\n\n**Bug report saved**: `bug_report_langchain_perplexity_2025-08-18_23-27_ewue.md`\n\n### Tests Summary\n- \u2705 5 properties passed validation\n- \u274c 1 property revealed a logic bug  \n- \u2139\ufe0f 2 properties revealed TypedDict behavior (not a bug, but potentially confusing API design)",
+  "session_id": "c9c8d09d-e8e2-4523-8bed-b0f02c89a3c9",
+  "total_cost_usd": 4.597075350000001,
+  "usage": {
+    "input_tokens": 583,
+    "cache_creation_input_tokens": 66453,
+    "cache_read_input_tokens": 1772846,
+    "output_tokens": 8962,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_013KKsRiZG7s76B2ywn6PkWr",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/langchain-perplexity_env/bin/activate && python -c \"import langchain_perplexity; print('success - treating as module')\"",
+        "description": "Activate venv and check for langchain_perplexity"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_014PJtAYHZuKeScthmTg2kab",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/langchain-perplexity_env/bin/python -c \"import langchain_perplexity; print('success - treating as module')\"",
+        "description": "Use venv python to import langchain_perplexity"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01NWL3U813UuGp2FrsiZ9u8B",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/langchain-perplexity_env/bin/python -m pytest test_langchain_perplexity_properties.py -v",
+        "description": "Run property-based tests with pytest"
+      }
+    }
+  ],
+  "call_id": "cdc78b9b",
+  "module": "langchain_perplexity",
+  "timestamp": "2025-08-18T23:28:29.713461"
+}

@@ -1,0 +1,74 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 521771,
+  "duration_api_ms": 528004,
+  "num_turns": 128,
+  "result": "## Bug Hunting Summary for troposphere.appsync\n\nFound **2 genuine bugs** through property-based testing:\n\n### Bug 1: Empty String Title Validation \u2705\n- **File**: `bug_report_troposphere_empty_title_2025-08-18_23-47_geef.md`\n- Empty strings bypass alphanumeric validation for AWS object titles\n- Root cause: Validation skipped when title is falsy\n\n### Bug 2: Integer Validator Overflow \u2705  \n- **File**: `bug_report_troposphere_integer_overflow_2025-08-18_23-47_mdd4.md`\n- Integer validator crashes with OverflowError on infinity values\n- Root cause: Missing OverflowError in exception handler\n\n### Additional Finding\n- Objects can be created without required properties (validation deferred to `to_dict()`) - this appears to be intentional design for flexibility\n\nTested **8 core properties** and **10 advanced edge cases** across the troposphere.appsync module, validating type checking, required/optional fields, validators, and round-trip serialization.",
+  "session_id": "06e95e66-716f-4350-b400-f6a43e081c8d",
+  "total_cost_usd": 6.8583531,
+  "usage": {
+    "input_tokens": 832,
+    "cache_creation_input_tokens": 82534,
+    "cache_read_input_tokens": 2719260,
+    "output_tokens": 16039,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01DPiiyAg3yFUF59W4rYbkWd",
+      "tool_input": {
+        "command": "find /root/hypothesis-llm -name \"*appsync*\" -o -name \"*troposphere*\" 2>/dev/null | head -20",
+        "description": "Search for troposphere or appsync files"
+      }
+    },
+    {
+      "tool_name": "Glob",
+      "tool_use_id": "toolu_015irrukFPwNjEk4SzTwwriF",
+      "tool_input": {
+        "pattern": "**/*troposphere*",
+        "path": "/root/hypothesis-llm"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_018biyv3qnbDS6X6JtRjKetW",
+      "tool_input": {
+        "command": "pip3 install troposphere",
+        "description": "Install troposphere package"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_012nBo7Z9cpa5gy9Gyh9Bheh",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/troposphere_env/bin/activate && python3 -c \"import troposphere.appsync; print('Success - troposphere.appsync imported'); print(troposphere.appsync.__file__)\"",
+        "description": "Activate venv and import troposphere"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_014yTFRYujp2zE5e8eECshzn",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python3 -c \"import troposphere.appsync; print('Success - troposphere.appsync imported'); print(troposphere.appsync.__file__)\"",
+        "description": "Use venv python directly to import troposphere"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01T2r5CXg4YzwwGPkdBrTLMc",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python3 -c \"import sys; sys.path.insert(0, '/root/hypothesis-llm/envs/troposphere_env/lib/python3.13/site-packages'); import troposphere.appsync; print('Success'); print(troposphere.appsync.__file__)\"",
+        "description": "Import troposphere with correct path"
+      }
+    }
+  ],
+  "call_id": "1acd7bc2",
+  "module": "troposphere.appsync",
+  "timestamp": "2025-08-18T23:48:36.610973"
+}

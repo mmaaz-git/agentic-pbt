@@ -1,0 +1,66 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 974014,
+  "duration_api_ms": 967061,
+  "num_turns": 115,
+  "result": "## Testing Complete - No Bugs Found \u2705\n\nTested 14 properties on fire.completion module - all passed \u2705\n\n### Properties Successfully Verified:\n\n1. **_FormatForCommand function**: \n   - Tokens starting with '_' remain unchanged\n   - Underscores replaced with hyphens for other tokens\n   - Non-string inputs converted to strings correctly\n\n2. **_CompletionsFromArgs function**:\n   - All args correctly prefixed with '--'\n   - Underscores properly replaced with hyphens\n\n3. **Completions function**:\n   - Lists/tuples return correct string indices 0 to len-1\n   - Generators always return empty list\n   - Dictionaries return formatted visible keys\n\n4. **MemberVisible function**:\n   - Double underscore members never visible\n   - Single underscore members visible only in verbose mode\n   - Verbose flag correctly controls visibility\n\n5. **Additional Properties**:\n   - _IsOption correctly identifies options (strings starting with '-')\n   - _FormatForCommand is idempotent\n   - List completions preserve order\n   - VisibleMembers respects verbose flag\n\nAll properties were tested with 100 examples each using Hypothesis, ensuring robust coverage of the input space. The fire.completion module correctly implements its documented behavior for tab completion functionality.",
+  "session_id": "f74be7a9-22e7-47af-bf6a-f2f799ee3be4",
+  "total_cost_usd": 5.8014586999999995,
+  "usage": {
+    "input_tokens": 638,
+    "cache_creation_input_tokens": 82570,
+    "cache_read_input_tokens": 2222444,
+    "output_tokens": 11972,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01FRGSDLuvbT7e7mPKotEdUb",
+      "tool_input": {
+        "command": "pip3 install python-fire",
+        "description": "Install the python-fire library"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01CPsMihc1zX3Nyvo27QZeey",
+      "tool_input": {
+        "command": "pip3 list | grep -i fire",
+        "description": "Check if fire is already installed"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01LSWwoSXMaXYo66VqWRpbmR",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/fire_env/bin/python3 -c \"import fire; print(fire.__file__)\"",
+        "description": "Check if fire module exists in venv"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_019x9YXVYFzP6cUWJdauJiM2",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/fire_env/bin/python3 -m pytest test_fire_completion_properties.py -v --tb=short",
+        "description": "Run property-based tests for fire.completion"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01K4epus4qi3xMvwroiqLj7A",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/fire_env/bin/python3 test_fire_completion_properties.py",
+        "description": "Run tests using venv python"
+      }
+    }
+  ],
+  "call_id": "db584f1d",
+  "module": "fire.completion_test",
+  "timestamp": "2025-08-18T22:30:34.108055"
+}

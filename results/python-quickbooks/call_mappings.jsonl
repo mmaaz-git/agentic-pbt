@@ -1,0 +1,8 @@
+{"call_id": "206f008e", "module": "quickbooks", "timestamp": "2025-08-18T22:07:09.114472", "bug_reports": ["bug_report_quickbooks_2025-08-18_22-05_6rba.md"], "aux_files_dir": "aux_files/206f008e"}
+{"call_id": "75ea620f", "module": "quickbooks.batch", "timestamp": "2025-08-18T22:09:26.722033", "bug_reports": ["bug_report_quickbooks_batch_2025-08-18_22-07_382f.md"], "aux_files_dir": "aux_files/75ea620f"}
+{"call_id": "330a59c5", "module": "quickbooks.cdc", "timestamp": "2025-08-18T22:11:16.489332", "bug_reports": ["bug_report_quickbooks_cdc_2025-08-18_22-08_bbnl.md", "bug_report_quickbooks_cdc_2025-08-18_22-09_swgs.md"], "aux_files_dir": "aux_files/330a59c5"}
+{"call_id": "87997294", "module": "quickbooks.client", "timestamp": "2025-08-18T22:18:45.328683", "bug_reports": [], "aux_files_dir": "aux_files/87997294"}
+{"call_id": "7de8a874", "module": "quickbooks.helpers", "timestamp": "2025-08-18T22:10:02.446557", "bug_reports": ["bug_report_quickbooks_helpers_2025-08-18_22-08_v8af.md"], "aux_files_dir": "aux_files/7de8a874"}
+{"call_id": "72afd35a", "module": "quickbooks.mixins", "timestamp": "2025-08-18T23:02:24.634813", "bug_reports": ["bug_report_quickbooks_mixins_2025-08-18_23-01_4qhq.md"], "aux_files_dir": "aux_files/72afd35a"}
+{"call_id": "9a39ac0b", "module": "quickbooks.objects", "timestamp": "2025-08-18T22:16:31.503445", "bug_reports": ["bug_report_quickbooks_mixins_to_dict_2025-08-18_22-14_9add.md"], "aux_files_dir": "aux_files/9a39ac0b"}
+{"call_id": "cc747f88", "module": "quickbooks.utils", "timestamp": "2025-08-18T22:14:50.215729", "bug_reports": ["bug_report_quickbooks_utils_2025-08-18_22-13_coe8.md"], "aux_files_dir": "aux_files/cc747f88"}

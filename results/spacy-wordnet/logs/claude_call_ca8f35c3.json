@@ -1,0 +1,58 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 350358,
+  "duration_api_ms": 341293,
+  "num_turns": 82,
+  "result": "## Summary\n\nFound **1 genuine bug** in `spacy_wordnet` through property-based testing:\n\n### Bug: Duplicate SSID Overwrite in load_wordnet_domains\n- **Severity**: Medium\n- **Type**: Logic bug causing data loss\n- **Impact**: When the wordnet_domains.txt file contains duplicate SSIDs, only the last occurrence is retained, silently discarding earlier domain mappings\n- **Root cause**: Using assignment (`=`) instead of extend to handle domains\n- **Bug report**: `bug_report_spacy_wordnet_load_domains_2025-08-19_15-30_a7b3.md`\n\n### Additional Minor Issue\nFound a regex matching issue in `fetch_wordnet_lang` error messages when language contains newline characters, but this is low severity since language codes don't typically contain newlines in practice.\n\n### Testing Notes\nSome tests couldn't run fully due to missing NLTK WordNet data, but the core logic bugs were still discoverable through property-based testing of the parsing and data structure operations.",
+  "session_id": "545c2ef0-00a6-41b0-afea-0f40034e1c79",
+  "total_cost_usd": 3.921893399999999,
+  "usage": {
+    "input_tokens": 500,
+    "cache_creation_input_tokens": 57596,
+    "cache_read_input_tokens": 1342654,
+    "output_tokens": 10639,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01QDdNsvcnwTgSCYHJtS1s3D",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/spacy-wordnet_env/bin/python3 -c \"import spacy_wordnet; print('success - treating as module'); print(spacy_wordnet.__file__)\"",
+        "description": "Import spacy_wordnet using venv python and get its file location"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01MrzVKXRRDDq6N3Yewuo4SH",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/envs/spacy-wordnet_env && ./bin/python3 -c \"import spacy_wordnet; print('success - treating as module'); print(spacy_wordnet.__file__)\"",
+        "description": "Use venv python to import spacy_wordnet"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01A5miY37zdoJLTW8T8SSCvQ",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/spacy-wordnet_env/bin/activate && python3 -c \"import spacy_wordnet; print('success - treating as module'); print(spacy_wordnet.__file__)\"",
+        "description": "Activate venv and import spacy_wordnet"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01CGZwPdij4d2B7AKVr5vBsV",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/spacy-wordnet_env/bin/python3 -m pytest test_spacy_wordnet.py -v --tb=short",
+        "description": "Run property-based tests on spacy_wordnet"
+      }
+    }
+  ],
+  "call_id": "ca8f35c3",
+  "module": "spacy_wordnet",
+  "timestamp": "2025-08-19T03:15:01.109948"
+}

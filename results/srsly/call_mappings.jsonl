@@ -1,0 +1,6 @@
+{"call_id": "18d15b4d", "module": "srsly", "timestamp": "2025-08-18T22:55:58.424224", "bug_reports": ["bug_report_srsly_is_json_serializable_2025-08-18_00-00_xk9z.md", "bug_report_srsly_yaml_nel_character_2025-08-18_00-01_ab3d.md"], "aux_files_dir": "aux_files/18d15b4d"}
+{"call_id": "0c55ec43", "module": "srsly.about", "timestamp": "2025-08-18T21:25:50.638794", "bug_reports": [], "aux_files_dir": "aux_files/0c55ec43"}
+{"call_id": "0cb7e24d", "module": "srsly.cloudpickle", "timestamp": "2025-08-18T22:57:52.866040", "bug_reports": ["bug_report_srsly_cloudpickle_2025-08-18_22-57_i4qt.md"], "aux_files_dir": "aux_files/0cb7e24d"}
+{"call_id": "c1289e1e", "module": "srsly.msgpack", "timestamp": "2025-08-18T21:35:28.803057", "bug_reports": ["bug_report_srsly_msgpack_2025-08-18_21-33_owup.md"], "aux_files_dir": "aux_files/c1289e1e"}
+{"call_id": "cacc1c65", "module": "srsly.ruamel_yaml", "timestamp": "2025-08-18T22:54:46.169845", "bug_reports": ["bug_report_srsly_ruamel_yaml_2025-08-18_22-54_mh0h.md"], "aux_files_dir": "aux_files/cacc1c65"}
+{"call_id": "563e212a", "module": "srsly.ujson", "timestamp": "2025-08-18T21:34:53.415220", "bug_reports": ["bug_report_srsly_ujson_2025-08-18_21-33_uetq.md", "bug_report_srsly_ujson_2025-08-18_21-33_r22e.md", "bug_report_srsly_ujson_2025-08-18_21-33_ej1s.md"], "aux_files_dir": "aux_files/563e212a"}

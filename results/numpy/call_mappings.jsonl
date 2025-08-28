@@ -1,0 +1,17 @@
+{"call_id": "59e39f54", "module": "numpy", "timestamp": "2025-08-18T05:09:07.844843", "bug_reports": [], "aux_files_dir": "aux_files/59e39f54"}
+{"call_id": "d5962b5a", "module": "numpy.char", "timestamp": "2025-08-18T04:57:49.745933", "bug_reports": ["bug_report_numpy_char_2025-08-18_04-57_l1vf.md"], "aux_files_dir": "aux_files/d5962b5a"}
+{"call_id": "b073a719", "module": "numpy.core", "timestamp": "2025-08-18T05:03:12.195135", "bug_reports": [], "aux_files_dir": "aux_files/b073a719"}
+{"call_id": "72e16f60", "module": "numpy.ctypeslib", "timestamp": "2025-08-18T04:59:36.488368", "bug_reports": ["bug_report_numpy_ctypeslib_2025-08-18_04-58_0qfo.md"], "aux_files_dir": "aux_files/72e16f60"}
+{"call_id": "8d21e5d4", "module": "numpy.dtypes", "timestamp": "2025-08-18T05:03:34.175248", "bug_reports": ["bug_report_numpy_dtypes_2025-08-18_05-02_wigy.md"], "aux_files_dir": "aux_files/8d21e5d4"}
+{"call_id": "7e54f856", "module": "numpy.f2py", "timestamp": "2025-08-18T04:58:53.015839", "bug_reports": ["bug_report_numpy_f2py_markoutercomma_2025-08-18_04-58_la7s.md"], "aux_files_dir": "aux_files/7e54f856"}
+{"call_id": "79547105", "module": "numpy.fft", "timestamp": "2025-08-18T05:00:18.677753", "bug_reports": ["bug_report_numpy_fft_irfftn_2025-08-18_04-59_50mb.md"], "aux_files_dir": "aux_files/79547105"}
+{"call_id": "0d484284", "module": "numpy.lib", "timestamp": "2025-08-18T05:07:13.923832", "bug_reports": ["bug_report_numpy_lib_arrayterator_2025-08-18_05-00_0jug.md"], "aux_files_dir": "aux_files/0d484284"}
+{"call_id": "5daa5ede", "module": "numpy.linalg", "timestamp": "2025-08-18T05:07:47.371858", "bug_reports": ["bug_report_numpy_linalg_eig_2025-08-18_05-07_2za5.md"], "aux_files_dir": "aux_files/5daa5ede"}
+{"call_id": "67567f2f", "module": "numpy.ma", "timestamp": "2025-08-18T05:06:37.753100", "bug_reports": ["bug_report_numpy_ma_compress_2025-08-18_05-06_2r3o.md"], "aux_files_dir": "aux_files/67567f2f"}
+{"call_id": "ba830b29", "module": "numpy.matlib", "timestamp": "2025-08-18T05:02:59.140741", "bug_reports": [], "aux_files_dir": "aux_files/ba830b29"}
+{"call_id": "5d9b34e8", "module": "numpy.matrixlib", "timestamp": "2025-08-18T05:04:54.596706", "bug_reports": ["bug_report_numpy_matrixlib_2025-08-18_05-04_oq91.md"], "aux_files_dir": "aux_files/5d9b34e8"}
+{"call_id": "fd340070", "module": "numpy.polynomial", "timestamp": "2025-08-18T05:01:08.341566", "bug_reports": ["bug_report_numpy_polynomial_polydiv_2025-08-18_04-59_xsjk.md", "bug_report_numpy_polynomial_polymul_2025-08-18_05-00_a7f9.md"], "aux_files_dir": "aux_files/fd340070"}
+{"call_id": "1b4d659c", "module": "numpy.random", "timestamp": "2025-08-18T05:02:42.486719", "bug_reports": ["bug_report_numpy_random_wald_2025-08-18_05-02_fm33.md"], "aux_files_dir": "aux_files/1b4d659c"}
+{"call_id": "6f2e28e1", "module": "numpy.rec", "timestamp": "2025-08-18T05:01:52.295395", "bug_reports": ["bug_report_numpy_rec_format_parser_2025-08-18_05-01_jhwz.md"], "aux_files_dir": "aux_files/6f2e28e1"}
+{"call_id": "84408c6d", "module": "numpy.strings", "timestamp": "2025-08-18T05:06:35.629545", "bug_reports": ["bug_report_numpy_strings_str_len_2025-08-18_05-05_r6x2.md"], "aux_files_dir": "aux_files/84408c6d"}
+{"call_id": "7e56f875", "module": "numpy.typing", "timestamp": "2025-08-18T05:02:16.602845", "bug_reports": ["bug_report_numpy_typing_2025-08-18_05-01_rgc1.md"], "aux_files_dir": "aux_files/7e56f875"}

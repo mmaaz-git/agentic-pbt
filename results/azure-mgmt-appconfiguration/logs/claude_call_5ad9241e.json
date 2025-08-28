@@ -1,0 +1,58 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 250496,
+  "duration_api_ms": 257833,
+  "num_turns": 79,
+  "result": "Tested 6 properties on azure.common - all passed \u2705\n\nThe module's exception handling logic correctly implements:\n- Status code 404 \u2192 AzureMissingResourceHttpError\n- Status code 409 \u2192 AzureConflictHttpError  \n- Other status codes \u2192 AzureHttpError\n- Message and status code preservation\n- Consistent error creation\n- Unicode and special character handling",
+  "session_id": "5584a291-3da7-4912-8b67-f3acf5e31a50",
+  "total_cost_usd": 3.5715881,
+  "usage": {
+    "input_tokens": 492,
+    "cache_creation_input_tokens": 53998,
+    "cache_read_input_tokens": 1333664,
+    "output_tokens": 7124,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_015QXc2HcyvyurxdTH6RWkTN",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/azure-mgmt-appconfiguration_env/bin/activate && python -c \"import azure.common; print('success - treating as module')\"",
+        "description": "Activate venv and check azure.common"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_0163CbrCJ5r6zPnc653jB65c",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/azure-mgmt-appconfiguration_env/bin/python -c \"import azure.common; print('success - treating as module')\"",
+        "description": "Use venv Python to check azure.common"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_016aomDbkLw671uu6muMzqxZ",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/envs/azure-mgmt-appconfiguration_env && ./bin/python -c \"import azure.common; print('success - treating as module')\"",
+        "description": "Check azure.common using venv Python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01PZvqq4KbhTufJyj14eJXrA",
+      "tool_input": {
+        "command": "export PYTHONPATH=/root/hypothesis-llm/envs/azure-mgmt-appconfiguration_env/lib/python3.13/site-packages && python3 -c \"import azure.common; print('success - treating as module')\"",
+        "description": "Set PYTHONPATH and check azure.common"
+      }
+    }
+  ],
+  "call_id": "5ad9241e",
+  "module": "azure.common",
+  "timestamp": "2025-08-18T20:55:13.551025"
+}

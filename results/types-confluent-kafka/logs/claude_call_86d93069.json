@@ -1,0 +1,42 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 167193,
+  "duration_api_ms": 171221,
+  "num_turns": 58,
+  "result": "## Analysis Complete: No Testable Properties Found\n\nAfter analyzing `confluent_kafka-stubs`, I found that this package contains only **type stub files** (.pyi files) - these are Python Interface files that provide type hints for the confluent_kafka library, not actual implementation code.\n\n### Key Findings:\n- The package consists entirely of `.pyi` files (type stubs)\n- Type stubs only define method signatures and type annotations\n- No executable code or logic exists to test\n- These files serve as type hints for IDEs and type checkers like mypy\n\n### Why No Properties Can Be Tested:\nType stub files are purely declarative - they describe the shape of an API without containing any implementation. Property-based testing requires actual code with behavior to verify properties against.\n\n**Conclusion**: No testable properties found in `confluent_kafka-stubs` as it contains no implementation code to test.",
+  "session_id": "685b0265-d8ad-4c0f-8d92-ef214b0006af",
+  "total_cost_usd": 2.4252323,
+  "usage": {
+    "input_tokens": 382,
+    "cache_creation_input_tokens": 42514,
+    "cache_read_input_tokens": 896888,
+    "output_tokens": 3596,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_013Sr5ut6FrEoGjngbcaB5RQ",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/envs/types-confluent-kafka_env && source bin/activate && python3 -c \"import confluent_kafka; print(confluent_kafka.__file__)\"",
+        "description": "Check if confluent_kafka is installed"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01JbW4eh51LSz2gJAYLGqGgh",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/types-confluent-kafka_env/bin/python3 -c \"import confluent_kafka; print(confluent_kafka.__file__)\"",
+        "description": "Check if confluent_kafka is installed"
+      }
+    }
+  ],
+  "call_id": "86d93069",
+  "module": "confluent_kafka-stubs",
+  "timestamp": "2025-08-18T21:48:02.264247"
+}

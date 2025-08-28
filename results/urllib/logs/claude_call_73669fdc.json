@@ -1,0 +1,25 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 612029,
+  "duration_api_ms": 626535,
+  "num_turns": 95,
+  "result": "## Summary\n\nTested 50+ properties on `urllib.response` module - all passed \u2705\n\nThe module contains simple wrapper classes (`addbase`, `addclosehook`, `addinfo`, `addinfourl`) that add functionality to file-like objects. After extensive property-based testing with Hypothesis, I found:\n\n**Tested Properties:**\n- Context manager invariants (proper cleanup, no reentry after close)\n- Close hook execution (exactly once, proper cleanup even with exceptions)\n- Header preservation and mutability\n- File operation delegation and state consistency\n- Nested wrapper behavior\n- Memory management with large arguments\n- Edge cases with various input types\n\n**Minor Design Observations (not bugs):**\n- Hardcoded `'<urllib response>'` name loses original filename information\n- Headers stored by reference allow external mutation\n- Chained closehooks all execute (cascading behavior)\n\nAll fundamental properties and contracts hold correctly. The module is robust against edge cases and maintains proper invariants throughout its operations.",
+  "session_id": "e46be1bc-0175-48b9-82d2-98250525b69f",
+  "total_cost_usd": 5.987464800000001,
+  "usage": {
+    "input_tokens": 378,
+    "cache_creation_input_tokens": 53332,
+    "cache_read_input_tokens": 2240584,
+    "output_tokens": 20777,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [],
+  "call_id": "73669fdc",
+  "module": "urllib.response",
+  "timestamp": "2025-08-18T04:54:05.158254"
+}

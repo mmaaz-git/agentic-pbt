@@ -1,0 +1,11 @@
+{"call_id": "a78c14d0", "module": "lxml", "timestamp": "2025-08-18T05:31:47.611410", "bug_reports": ["bug_report_lxml_html_2025-08-18_05-31_gx0l.md"], "aux_files_dir": "aux_files/a78c14d0"}
+{"call_id": "fa47c767", "module": "lxml.ElementInclude", "timestamp": "2025-08-18T05:32:35.770896", "bug_reports": [], "aux_files_dir": "aux_files/fa47c767"}
+{"call_id": "e3b30661", "module": "lxml.builder", "timestamp": "2025-08-18T05:36:45.716589", "bug_reports": [], "aux_files_dir": "aux_files/e3b30661"}
+{"call_id": "6ae371d1", "module": "lxml.doctestcompare", "timestamp": "2025-08-18T05:34:03.465180", "bug_reports": ["bug_report_lxml_doctestcompare_2025-08-18_05-33_5xgt.md"], "aux_files_dir": "aux_files/6ae371d1"}
+{"call_id": "a169c4e3", "module": "lxml.etree", "timestamp": "2025-08-18T05:34:33.193618", "bug_reports": ["bug_report_lxml_etree_set_none_2025-08-18_05-33_ms7u.md"], "aux_files_dir": "aux_files/a169c4e3"}
+{"call_id": "0f958b11", "module": "lxml.html", "timestamp": "2025-08-18T05:31:10.957709", "bug_reports": ["bug_report_lxml_html_2025-08-18_05-30_lwpi.md"], "aux_files_dir": "aux_files/0f958b11"}
+{"call_id": "829e29d5", "module": "lxml.includes", "timestamp": "2025-08-18T05:26:48.728992", "bug_reports": [], "aux_files_dir": "aux_files/829e29d5"}
+{"call_id": "ae5e099d", "module": "lxml.isoschematron", "timestamp": "2025-08-18T05:29:56.109240", "bug_reports": [], "aux_files_dir": "aux_files/ae5e099d"}
+{"call_id": "f3338c8e", "module": "lxml.objectify", "timestamp": "2025-08-18T05:31:27.670269", "bug_reports": [], "aux_files_dir": "aux_files/f3338c8e"}
+{"call_id": "bb9f45ea", "module": "lxml.pyclasslookup", "timestamp": "2025-08-18T05:36:06.056694", "bug_reports": ["bug_report_lxml_pyclasslookup_2025-08-18_01-47_x9k2.md"], "aux_files_dir": "aux_files/bb9f45ea"}
+{"call_id": "b005dcbd", "module": "lxml.sax", "timestamp": "2025-08-18T05:34:30.701936", "bug_reports": ["bug_report_lxml_sax_2025-08-18_05-33_s4t0.md"], "aux_files_dir": "aux_files/b005dcbd"}

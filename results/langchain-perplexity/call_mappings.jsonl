@@ -1,0 +1,2 @@
+{"call_id": "cdc78b9b", "module": "langchain_perplexity", "timestamp": "2025-08-18T23:28:29.716129", "bug_reports": ["bug_report_langchain_perplexity_2025-08-18_23-27_ewue.md"], "aux_files_dir": "aux_files/cdc78b9b"}
+{"call_id": "0a09a6f3", "module": "langchain_perplexity.chat_models", "timestamp": "2025-08-18T23:26:44.007861", "bug_reports": ["bug_report_langchain_perplexity_chat_models_2025-08-18_23-25_fpv0.md"], "aux_files_dir": "aux_files/0a09a6f3"}

@@ -1,0 +1,42 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 530891,
+  "duration_api_ms": 545239,
+  "num_turns": 142,
+  "result": "## Bug Hunting Summary: isort.wrap_modes\n\nFound **4 genuine bugs** in isort.wrap_modes through property-based testing:\n\n### Bugs Discovered:\n\n1. **Empty Import Handling** (Medium severity):\n   - `VERTICAL_HANGING_INDENT`: Returns non-empty string for empty imports\n   - `VERTICAL_GRID`: Returns unbalanced ')' for empty imports  \n   - `VERTICAL_GRID_GROUPED`: Returns unbalanced '\\n)' for empty imports\n\n2. **from_string ValueError** (Low severity):\n   - Crashes with ValueError for integer strings >= 12 (out of enum range)\n   - Should handle invalid inputs gracefully\n\n### Properties Tested:\n\u2705 Non-emptiness invariant  \n\u2705 from_string integer handling  \n\u2705 formatter_from_string consistency  \n\u2705 No data loss in formatting  \n\u2705 Balanced parentheses  \n\u2705 Comment preservation\n\nCreated 2 detailed bug reports with reproduction scripts and suggested fixes.",
+  "session_id": "478af169-721d-4ae3-aa68-f14caf7cf84e",
+  "total_cost_usd": 7.398099299999998,
+  "usage": {
+    "input_tokens": 1072,
+    "cache_creation_input_tokens": 73630,
+    "cache_read_input_tokens": 3127504,
+    "output_tokens": 17184,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01BtyH263sktaayYf2RCvXSG",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/envs/isort_env && source bin/activate && python3 -c \"import isort.wrap_modes; print('Successfully imported'); print(type(isort.wrap_modes)); print(isort.wrap_modes.__file__)\"",
+        "description": "Import isort.wrap_modes with virtual env"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01WBTWoNT8e6EEJXFwNfx569",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/isort_env/bin/python3 -c \"import isort.wrap_modes; print('Successfully imported'); print(type(isort.wrap_modes)); print(isort.wrap_modes.__file__)\"",
+        "description": "Import isort.wrap_modes using venv Python"
+      }
+    }
+  ],
+  "call_id": "6cf45850",
+  "module": "isort.wrap_modes",
+  "timestamp": "2025-08-18T22:59:46.697111"
+}

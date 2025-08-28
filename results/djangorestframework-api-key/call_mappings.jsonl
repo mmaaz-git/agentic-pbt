@@ -1,0 +1,2 @@
+{"call_id": "d41d3786", "module": "rest_framework_api_key", "timestamp": "2025-08-19T03:02:22.399906", "bug_reports": ["bug_report_rest_framework_api_key_crypto_2025-08-19_03-01_ih1u.md"], "aux_files_dir": "aux_files/d41d3786"}
+{"call_id": "3e9bf6c9", "module": "rest_framework_api_key.migrations", "timestamp": "2025-08-19T03:03:40.103218", "bug_reports": ["bug_report_rest_framework_api_key_crypto_2025-08-19_03-02_03u0.md"], "aux_files_dir": "aux_files/3e9bf6c9"}

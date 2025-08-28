@@ -1,0 +1,2 @@
+import comprehensive_test
+comprehensive_test.run_tests()

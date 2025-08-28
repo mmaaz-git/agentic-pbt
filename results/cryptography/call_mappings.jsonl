@@ -1,0 +1,5 @@
+{"call_id": "08ae02a0", "module": "cryptography", "timestamp": "2025-08-18T05:28:29.793029", "bug_reports": ["bug_report_cryptography_fernet_2025-08-18_05-27_v6rw.md"], "aux_files_dir": "aux_files/08ae02a0"}
+{"call_id": "fb0b7ebf", "module": "cryptography.fernet", "timestamp": "2025-08-18T05:27:11.331891", "bug_reports": ["bug_report_cryptography_fernet_2025-08-18_05-25_dn9j.md"], "aux_files_dir": "aux_files/fb0b7ebf"}
+{"call_id": "8a6f1e08", "module": "cryptography.hazmat", "timestamp": "2025-08-18T05:28:56.227031", "bug_reports": ["bug_report_cryptography_hazmat_primitives_keywrap_2025-08-18_05-27_y16a.md", "bug_report_cryptography_hazmat_primitives_keywrap_2025-08-18_05-28_vfre.md"], "aux_files_dir": "aux_files/8a6f1e08"}
+{"call_id": "6c905586", "module": "cryptography.utils", "timestamp": "2025-08-18T05:27:14.258404", "bug_reports": ["bug_report_cryptography_utils_cached_property_2025-08-18_05-26_fssu.md"], "aux_files_dir": "aux_files/6c905586"}
+{"call_id": "c4712269", "module": "cryptography.x509", "timestamp": "2025-08-18T05:27:12.825079", "bug_reports": [], "aux_files_dir": "aux_files/c4712269"}

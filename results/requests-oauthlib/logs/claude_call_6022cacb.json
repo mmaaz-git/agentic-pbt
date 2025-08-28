@@ -1,0 +1,42 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 349639,
+  "duration_api_ms": 350784,
+  "num_turns": 89,
+  "result": "## Bug Found! \ud83d\udc1b\n\nI discovered a **crash bug** in `requests_oauthlib.oauth2_auth.OAuth2` through property-based testing with Hypothesis.\n\n**The Issue**: The OAuth2 class blindly copies all token dictionary entries as attributes on the client object, including special Python attributes like `__class__`. This causes a TypeError when such special attributes are present in the token dictionary.\n\n**Impact**: This is a medium-severity bug that could cause applications to crash when processing OAuth2 tokens from untrusted sources or when token data contains unexpected keys.\n\nThe bug report has been saved to `bug_report_requests_oauthlib_oauth2_auth_2025-08-18_10-45_x3m9.md` with a complete analysis, reproduction steps, and suggested fix.\n\n**Testing Summary**:\n- \u2705 Tested 7 core properties with 700+ test cases\n- \u2705 Found 1 genuine bug through edge case testing\n- \u2705 Bug is reproducible and fixable",
+  "session_id": "dbf7a3f3-9260-4fb6-87cb-dc920017ed15",
+  "total_cost_usd": 3.9587961999999997,
+  "usage": {
+    "input_tokens": 566,
+    "cache_creation_input_tokens": 53428,
+    "cache_read_input_tokens": 1418228,
+    "output_tokens": 10806,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01E8o4Zoc4JHrwxWQMFqeNxf",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/requests-oauthlib_env/bin/activate && python -c \"import requests_oauthlib; print('requests_oauthlib imported successfully')\"",
+        "description": "Activate venv and check requests_oauthlib"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01WEQ5yeJHVtxT3JDDDHXrEP",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/requests-oauthlib_env/bin/python -c \"import requests_oauthlib; print('requests_oauthlib imported successfully')\"",
+        "description": "Check requests_oauthlib with venv python"
+      }
+    }
+  ],
+  "call_id": "6022cacb",
+  "module": "requests_oauthlib.oauth2_auth",
+  "timestamp": "2025-08-18T22:00:56.053227"
+}

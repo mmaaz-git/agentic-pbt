@@ -1,0 +1,25 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 580044,
+  "duration_api_ms": 579692,
+  "num_turns": 103,
+  "result": "## Bug Hunt Complete! \ud83d\udc1b\n\n**Found 1 bug in Pydantic v2.10.4**\n\n### Bug: JSON Round-Trip Fails for Special Float Values\n\nI discovered that Pydantic's JSON serialization violates the round-trip property for infinity and NaN values. When serializing models containing `float('inf')`, `float('-inf')`, or `float('nan')`, these values become `null` in JSON and cannot be deserialized back.\n\n**Impact**: Medium severity - affects scientific/numerical applications that use special float values\n\n**Test results**:\n- \u2705 11 properties passed (dict round-trips, field constraints, type coercion, nested models, etc.)\n- \u274c 1 property failed (JSON round-trip for special floats)\n- \ud83d\udca1 1 false alarm identified (exclude_unset behavior is documented)\n\nThe bug report has been saved to `bug_report_pydantic_2025-08-18_20-28_6l8q.md` with a complete reproduction script and suggested fix.",
+  "session_id": "05cf78df-f1ca-472d-91d7-cdf84922a243",
+  "total_cost_usd": 5.9264276,
+  "usage": {
+    "input_tokens": 718,
+    "cache_creation_input_tokens": 85380,
+    "cache_read_input_tokens": 1933354,
+    "output_tokens": 18346,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [],
+  "call_id": "7b3f6b23",
+  "module": "pydantic",
+  "timestamp": "2025-08-18T20:29:20.303105"
+}

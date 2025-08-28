@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 629077,
+  "duration_api_ms": 639526,
+  "num_turns": 130,
+  "result": "## Bug Found! \ud83d\udc1b\n\nI successfully discovered a bug in `pydantic._internal._validators.import_string` through property-based testing.\n\n**Bug Summary**: The function inconsistently handles errors - it wraps `ImportError` in `PydanticCustomError` but allows `TypeError` to leak through when given relative import paths like `.` or `..`.\n\n**Impact**: Medium severity - violates the function's contract of consistent error handling.\n\n**Bug Report Created**: `bug_report_pydantic_import_string_2025-08-18_20-28_aeze.md`\n\nThe comprehensive testing also validated that the migration system in `pydantic.class_validators` works correctly for:\n- Deprecated attribute redirection\n- AttributeError handling for non-existent attributes  \n- Thread-safe concurrent access\n- Edge cases with special characters and long attribute names",
+  "session_id": "4b3b7fc3-f3a4-4ac3-a864-651c5fd335b6",
+  "total_cost_usd": 7.062945699999999,
+  "usage": {
+    "input_tokens": 970,
+    "cache_creation_input_tokens": 97138,
+    "cache_read_input_tokens": 2646850,
+    "output_tokens": 16420,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_017F1NnEBMbrdMJKVJfCQvSh",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/pydantic/class_validators.py"
+      }
+    }
+  ],
+  "call_id": "36fcab3e",
+  "module": "pydantic.class_validators",
+  "timestamp": "2025-08-18T20:30:09.626506"
+}

@@ -1,0 +1,34 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 325352,
+  "duration_api_ms": 315416,
+  "num_turns": 84,
+  "result": "## Bug Found! \ud83d\udc1b\n\nI discovered a bug in `pyatlan.test_utils.base_vcr.VCRPrettyPrintJSONBody.deserialize`:\n\n**Bug**: The method crashes with `AttributeError` when deserializing valid JSON that isn't a dictionary (numbers, strings, arrays, booleans, null).\n\n**Example**: `VCRPrettyPrintJSONBody.deserialize('0')` throws `AttributeError: 'int' object has no attribute 'get'`\n\n**Test Summary**:\n- \u2705 6 properties passed: TestId formatting, idempotence, JSON processing, round-trip serialization\n- \u274c 1 bug found: deserialize crashes on non-dictionary JSON values\n\nThe bug report has been saved to: `bug_report_pyatlan_test_utils_base_vcr_2025-08-18_21-09_92bs.md`",
+  "session_id": "12bb34f1-b603-44cd-b347-ccd11c7211a6",
+  "total_cost_usd": 4.4112326,
+  "usage": {
+    "input_tokens": 474,
+    "cache_creation_input_tokens": 68024,
+    "cache_read_input_tokens": 1612662,
+    "output_tokens": 9406,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01YGZ7jmMYbXE9yTWaMCU1cT",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/pyatlan_env/bin/python -c \"import pyatlan.test_utils; print('success - treating as module')\"",
+        "description": "Check if pyatlan.test_utils exists in the env"
+      }
+    }
+  ],
+  "call_id": "f00c7430",
+  "module": "pyatlan.test_utils",
+  "timestamp": "2025-08-18T21:10:04.834675"
+}

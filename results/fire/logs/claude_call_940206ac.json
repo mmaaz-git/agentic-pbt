@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 593436,
+  "duration_api_ms": 599832,
+  "num_turns": 130,
+  "result": "## Summary\n\n\u2705 **Bug found!** Successfully discovered a genuine bug in `fire.test_components.BinaryCanvas`:\n\n**Bug**: BinaryCanvas accepts negative and zero size values without validation, creating invalid canvas states that crash on basic operations like `move()` and `on()`.\n\n**Testing completed**:\n- Tested 28 properties across 13 different classes/functions\n- Found 1 medium-severity contract violation bug\n- Created bug report: `bug_report_fire_test_components_BinaryCanvas_2025-08-18_22-39_aqv4.md`\n\nThe bug occurs because the BinaryCanvas constructor doesn't validate that `size > 0`, allowing creation of canvases with empty pixel arrays that cause `IndexError` and `ZeroDivisionError` when used.",
+  "session_id": "d28da938-1cac-40cb-918d-28af256cf53f",
+  "total_cost_usd": 5.9883303,
+  "usage": {
+    "input_tokens": 838,
+    "cache_creation_input_tokens": 66070,
+    "cache_read_input_tokens": 2240962,
+    "output_tokens": 18136,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01YZvCohzobpjMVKvmtR6jDi",
+      "tool_input": {
+        "file_path": "/root/.local/lib/python3.13/site-packages/fire/test_components_bin.py"
+      }
+    }
+  ],
+  "call_id": "940206ac",
+  "module": "fire.test_components_bin",
+  "timestamp": "2025-08-18T22:40:23.934933"
+}

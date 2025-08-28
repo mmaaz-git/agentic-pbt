@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 540740,
+  "duration_api_ms": 554856,
+  "num_turns": 134,
+  "result": "## Summary\n\nSuccessfully tested `azure.core` module and discovered **2 bugs** through property-based testing:\n\n### Bug 1: parse_connection_string Key Stripping\n- **Severity**: Medium\n- **Issue**: Function strips leading whitespace from keys even when `case_sensitive_keys=True`  \n- **Impact**: Violates key preservation contract, affects round-trip scenarios\n- **Report**: `bug_report_azure_core_parse_connection_string_2025-08-18_20-58_qd5w.md`\n\n### Bug 2: CaseInsensitiveDict Unicode Handling\n- **Severity**: Medium\n- **Issue**: Fails with Unicode characters having complex case mappings (\u00b5\u2192\u039c, \u00df\u2192SS)\n- **Impact**: Breaks case-insensitive access invariant for international characters\n- **Report**: `bug_report_azure_core_caseinsensitivedict_2025-08-18_20-58_ernf.md`\n\n### Properties Tested Successfully \u2705\n- AzureJSONEncoder bytes base64 encoding\n- AzureJSONEncoder datetime ISO formatting\n- AzureJSONEncoder timedelta duration formatting\n- parse_connection_string basic case sensitivity\n- parse_connection_string malformed string validation\n\nThe bugs were found using Hypothesis to generate edge cases with Unicode characters and whitespace that exposed incorrect assumptions in the implementation.",
+  "session_id": "bef5af54-a501-4914-af56-2eb96e9b6c22",
+  "total_cost_usd": 6.180817799999998,
+  "usage": {
+    "input_tokens": 642,
+    "cache_creation_input_tokens": 64808,
+    "cache_read_input_tokens": 2418800,
+    "output_tokens": 17315,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "LS",
+      "tool_use_id": "toolu_0119BdjcAsbSKMvFFqGTqW4U",
+      "tool_input": {
+        "path": "/root/hypothesis-llm/envs"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01G3b3qzjctPsveHFeFTLG2o",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/azure-mgmt-appconfiguration_env/bin/activate && python3 -c \"import azure.core; print('azure.core version:', azure.core.__version__); print('azure.core path:', azure.core.__file__)\"",
+        "description": "Activate venv and check azure.core"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_0158H2GpX2pHhbCj23iAg1Sb",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/azure-mgmt-appconfiguration_env/bin/python3 -c \"import azure.core; print('azure.core version:', azure.core.__version__); print('azure.core path:', azure.core.__file__)\"",
+        "description": "Check azure.core in venv"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01RYZQkfBUGGn5BVUydCsqcN",
+      "tool_input": {
+        "command": "pip3 install azure-core",
+        "description": "Install azure-core package"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Vmt14KNRgPVcMF259tv5MS",
+      "tool_input": {
+        "command": "./venv/bin/pip install azure-core hypothesis pytest",
+        "description": "Install packages in venv"
+      }
+    },
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01Difgvn7Ad37w7m8KnGtjEf",
+      "tool_input": {
+        "file_path": "/root/.local/lib/python3.13/site-packages/azure/core/utils/_connection_string_parser.py"
+      }
+    }
+  ],
+  "call_id": "193751ab",
+  "module": "azure.core",
+  "timestamp": "2025-08-18T21:00:12.114904"
+}

@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 540277,
+  "duration_api_ms": 538309,
+  "num_turns": 96,
+  "result": "## Summary\n\nSuccessfully completed property-based testing of `django.forms` and discovered **2 genuine bugs**:\n\n### Bug 1: JSONField Empty Collection \u2192 None (Medium Severity)\n- **Issue**: `JSONField.clean([])` returns `None` instead of `[]`\n- **Impact**: Breaks round-trip property for empty collections\n- **Report**: `bug_report_django_forms_jsonfield_2025-08-18_18-58_rr74.md`\n\n### Bug 2: BooleanField 'no'/'off' \u2192 True (Low Severity)  \n- **Issue**: `BooleanField.clean('no')` returns `True` instead of `False`\n- **Impact**: Counterintuitive behavior that could cause data entry errors\n- **Report**: `bug_report_django_forms_booleanfield_2025-08-18_18-58_k3x9.md`\n\nTested 10 properties across various field types. Other properties like field idempotence, string coercion, and formset validation confluence all passed successfully \u2705",
+  "session_id": "588ac60a-4baa-4aee-9368-5bda45c9b59b",
+  "total_cost_usd": 5.5324958,
+  "usage": {
+    "input_tokens": 570,
+    "cache_creation_input_tokens": 83832,
+    "cache_read_input_tokens": 1785270,
+    "output_tokens": 16806,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "LS",
+      "tool_use_id": "toolu_01Vd6QAqoeDpjyfbYWavbQou",
+      "tool_input": {
+        "path": "/root/.local/lib/python3.13/site-packages/django/forms"
+      }
+    }
+  ],
+  "call_id": "ec96cdfa",
+  "module": "django.forms",
+  "timestamp": "2025-08-18T18:59:49.939839"
+}

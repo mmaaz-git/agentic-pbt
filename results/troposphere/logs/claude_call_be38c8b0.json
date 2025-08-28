@@ -1,0 +1,41 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 368584,
+  "duration_api_ms": 379617,
+  "num_turns": 94,
+  "result": "## Bug Found! \ud83d\udc1b\n\nSuccessfully discovered a **numeric type coercion bug** in `troposphere.supportapp.boolean`:\n\n### The Bug\nThe `boolean` function unintentionally accepts ANY numeric type that equals 1 or 0 (including `float`, `complex`, `Decimal`, numpy types) even though the implementation explicitly lists only:\n- True values: `[True, 1, \"1\", \"true\", \"True\"]`  \n- False values: `[False, 0, \"0\", \"false\", \"False\"]`\n\n### Root Cause\nPython's `in` operator uses `==` for comparison, causing `1.0 in [1]` to return `True` because `1.0 == 1`.\n\n### Impact\n- **Severity**: Medium\n- **Type**: Contract violation - API accepts inputs beyond its documented/intended behavior\n- Functions using this validator (like `SlackChannelConfiguration`) will accept unexpected types\n\n### Bug Report\nCreated: `bug_report_troposphere_supportapp_boolean_2025-08-19_02-36_zndv.md`\n\nThe bug allows unintended type flexibility that could lead to subtle issues when the function is used for validation in AWS CloudFormation templates.",
+  "session_id": "ae4cad16-64d1-41fe-8710-70096500ddbc",
+  "total_cost_usd": 3.9096641999999995,
+  "usage": {
+    "input_tokens": 734,
+    "cache_creation_input_tokens": 38420,
+    "cache_read_input_tokens": 1523200,
+    "output_tokens": 11684,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01XBPSYaqj5JHE1JozfcXbcY",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/troposphere/supportapp.py"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_0142L6dpD7sw9hEi5mUGD4H6",
+      "tool_input": {
+        "command": "cp /home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/troposphere/supportapp.py /root/hypothesis-llm/worker_/5/supportapp.py",
+        "description": "Copy supportapp.py to working directory"
+      }
+    }
+  ],
+  "call_id": "be38c8b0",
+  "module": "troposphere.supportapp",
+  "timestamp": "2025-08-19T02:37:40.331373"
+}

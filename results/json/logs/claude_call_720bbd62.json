@@ -1,0 +1,25 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 617823,
+  "duration_api_ms": 620499,
+  "num_turns": 85,
+  "result": "Tested 60+ properties on json.scanner - all passed \u2705",
+  "session_id": "ae8b540c-c459-429d-a9f3-8be2629c25a0",
+  "total_cost_usd": 5.8212782999999995,
+  "usage": {
+    "input_tokens": 318,
+    "cache_creation_input_tokens": 61678,
+    "cache_read_input_tokens": 2029652,
+    "output_tokens": 21089,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [],
+  "call_id": "720bbd62",
+  "module": "json.scanner",
+  "timestamp": "2025-08-18T04:54:10.150150"
+}

@@ -1,0 +1,50 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 453740,
+  "duration_api_ms": 451379,
+  "num_turns": 114,
+  "result": "## Summary\n\nFound 3 bugs in `troposphere.iotwireless` module through property-based testing:\n\n### Bug 1: Integer Validator Crash (Medium Severity)\n- **Issue**: `integer` validator crashes with `OverflowError` on `float('inf')`\n- **Impact**: Unhandled exception instead of proper validation error\n- **Report**: `bug_report_troposphere_validators_integer_2025-08-19_01-53_es21.md`\n\n### Bug 2: Title Validation Inconsistency (Low Severity)  \n- **Issue**: Regex rejects non-ASCII alphanumeric characters like '\u00aa' that Python's `isalnum()` accepts\n- **Impact**: Confusing error messages about \"not alphanumeric\" \n- **Report**: `bug_report_troposphere_title_validation_2025-08-19_01-53_ubzk.md`\n\n### Bug 3: _from_dict Missing Title (Medium Severity)\n- **Issue**: `_from_dict` method fails when no title provided\n- **Impact**: Breaks round-trip serialization for untitled objects\n- **Report**: `bug_report_troposphere_from_dict_2025-08-19_01-53_5se0.md`\n\nAll bugs were consistently reproducible with minimal test cases and represent genuine issues that could affect users of the library.",
+  "session_id": "cc246a7c-e99a-465b-8c2e-312b4b170a14",
+  "total_cost_usd": 6.4937455,
+  "usage": {
+    "input_tokens": 618,
+    "cache_creation_input_tokens": 86134,
+    "cache_read_input_tokens": 2614258,
+    "output_tokens": 12428,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_0179qiC45kAKzwqWxY4A5vee",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/troposphere_env/bin/activate && python -c \"import troposphere.iotwireless; print('Success - troposphere.iotwireless is a valid module')\"",
+        "description": "Activate venv and check for troposphere.iotwireless"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01LwVwwCKKdfUYcoQp8jaQGU",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -c \"import troposphere.iotwireless; print('Success - troposphere.iotwireless is a valid module')\"",
+        "description": "Use venv python directly to check troposphere.iotwireless"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_014jK4sN6RvqycQMbCmn4Fqy",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/pytest test_troposphere_iotwireless.py -v --tb=short",
+        "description": "Run Hypothesis tests for troposphere.iotwireless"
+      }
+    }
+  ],
+  "call_id": "0cdecdfb",
+  "module": "troposphere.iotwireless",
+  "timestamp": "2025-08-19T01:55:10.726552"
+}

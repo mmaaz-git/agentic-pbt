@@ -1,0 +1,34 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 452990,
+  "duration_api_ms": 456885,
+  "num_turns": 109,
+  "result": "## Bug Hunt Complete! \ud83d\udc1b\n\nFound **2 distinct bugs** in `troposphere.personalize`:\n\n1. **Invalid Hyperparameter Ranges** (Medium severity, Logic bug)\n   - Both `IntegerHyperParameterRange` and `ContinuousHyperParameterRange` accept MaxValue < MinValue\n   - Generates invalid CloudFormation templates that AWS would reject\n   - Bug reports saved: `bug_report_troposphere_personalize_2025-08-19_02-16_l9f0.md`\n\n2. **Invalid HpoResourceConfig Values** (Low severity, Contract bug)  \n   - `HpoResourceConfig` accepts non-numeric strings and zero/negative values\n   - Fields should only accept positive integer strings\n   - Bug report saved: `bug_report_troposphere_personalize_2025-08-19_02-16_1cav.md`\n\nAll bugs were verified through property-based testing with Hypothesis and confirmed with minimal reproduction scripts. The library lacks proper validation that would prevent generating invalid AWS CloudFormation templates.",
+  "session_id": "ff7f7c97-88a5-42ae-a488-a5aa6fe12135",
+  "total_cost_usd": 5.4531383,
+  "usage": {
+    "input_tokens": 578,
+    "cache_creation_input_tokens": 60578,
+    "cache_read_input_tokens": 2209236,
+    "output_tokens": 13084,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_018ToQE71Fxz1yM8WFyXZ1z7",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -c \"import troposphere.personalize; print('success - treating as module')\"",
+        "description": "Check if troposphere.personalize is installed in venv"
+      }
+    }
+  ],
+  "call_id": "3401f05a",
+  "module": "troposphere.personalize",
+  "timestamp": "2025-08-19T02:17:49.840978"
+}

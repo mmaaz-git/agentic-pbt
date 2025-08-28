@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 595625,
+  "duration_api_ms": 605858,
+  "num_turns": 137,
+  "result": "Tested 37 properties on `pydantic.error_wrappers` - all passed \u2705\n\n**Summary:**\n- Tested migration behavior for moved attributes (ValidationError)\n- Verified proper error handling for removed attributes (ErrorWrapper)  \n- Checked edge cases with special characters, colons, empty strings\n- Validated thread safety and warning isolation\n- Confirmed attribute access consistency across different methods\n- Tested import path edge cases and error wrapping\n\nThe module correctly implements PEP 562 for backwards compatibility during Pydantic's V1 to V2 migration.",
+  "session_id": "c9482926-0b84-4757-bd40-954000830c2c",
+  "total_cost_usd": 7.0908683,
+  "usage": {
+    "input_tokens": 950,
+    "cache_creation_input_tokens": 95422,
+    "cache_read_input_tokens": 2572712,
+    "output_tokens": 18777,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01XQhVkidBMXJfyFJo4Etm4r",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/pydantic/error_wrappers.py"
+      }
+    }
+  ],
+  "call_id": "be58241e",
+  "module": "pydantic.error_wrappers",
+  "timestamp": "2025-08-18T20:29:36.692772"
+}

@@ -1,0 +1,50 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 509168,
+  "duration_api_ms": 481953,
+  "num_turns": 107,
+  "result": "Tested 13 properties on django-simple-history - all passed \u2705\n\n**Properties successfully tested:**\n- History model naming consistency with \"Historical\" prefix\n- Custom model name validation and conflict detection  \n- Primary key field name extraction (regular vs ForeignKey)\n- Configuration parameter validation (bases, m2m_bases)\n- Field list normalization (no_db_index, excluded_fields)\n- Unicode and special character handling in model names\n- Case-insensitive conflict detection for custom names\n- Edge cases with empty strings and extreme lengths\n\nNo bugs found. The django-simple-history package demonstrates robust input validation and consistent behavior across all tested properties.",
+  "session_id": "14617cef-9a7c-4a70-bd53-bd1f69e87158",
+  "total_cost_usd": 5.7851022,
+  "usage": {
+    "input_tokens": 684,
+    "cache_creation_input_tokens": 76908,
+    "cache_read_input_tokens": 2104700,
+    "output_tokens": 15544,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_0152ACvMW4wBGMWLtZdgYdbP",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/django-simple-history_env/bin/python -c \"import simple_history; print('success - treating as module'); print('Module path:', simple_history.__file__)\"",
+        "description": "Check simple_history in virtual env"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Buxd1u4ZFVPdgfPR2EPciM",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/envs/django-simple-history_env && bin/python -c \"import simple_history; print('success - treating as module'); print('Module path:', simple_history.__file__)\"",
+        "description": "Check simple_history in venv directory"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01AZ7ParXNAXGMaCCZF8VPib",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/django-simple-history_env/bin/python -m pytest test_simple_history_properties.py -v --tb=short",
+        "description": "Run tests with virtual environment Python"
+      }
+    }
+  ],
+  "call_id": "09545061",
+  "module": "simple_history",
+  "timestamp": "2025-08-18T23:38:05.432783"
+}

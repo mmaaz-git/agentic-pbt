@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 338893,
+  "duration_api_ms": 354619,
+  "num_turns": 77,
+  "result": "Tested 13 properties on cryptography.x509 - all passed \u2705",
+  "session_id": "e26e0973-13e5-45e4-aed0-cd19684083ac",
+  "total_cost_usd": 3.8399708999999995,
+  "usage": {
+    "input_tokens": 356,
+    "cache_creation_input_tokens": 39646,
+    "cache_read_input_tokens": 1514512,
+    "output_tokens": 10154,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "LS",
+      "tool_use_id": "toolu_01TmAgBh8pfzEK5vZsUNLqKg",
+      "tool_input": {
+        "path": "/root/.local/lib/python3.13/site-packages/cryptography/x509"
+      }
+    }
+  ],
+  "call_id": "c4712269",
+  "module": "cryptography.x509",
+  "timestamp": "2025-08-18T05:27:12.820934"
+}

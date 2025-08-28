@@ -1,0 +1,3 @@
+{"call_id": "e5c2faf5", "module": "win32ctypes", "timestamp": "2025-08-18T22:43:41.269742", "bug_reports": [], "aux_files_dir": "aux_files/e5c2faf5"}
+{"call_id": "070e8baa", "module": "win32ctypes.core", "timestamp": "2025-08-18T22:42:09.567681", "bug_reports": [], "aux_files_dir": "aux_files/070e8baa"}
+{"call_id": "11729d32", "module": "win32ctypes.pywintypes", "timestamp": "2025-08-18T22:43:23.238038", "bug_reports": [], "aux_files_dir": "aux_files/11729d32"}

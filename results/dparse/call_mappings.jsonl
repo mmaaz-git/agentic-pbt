@@ -1,0 +1,6 @@
+{"call_id": "4282ff24", "module": "dparse", "timestamp": "2025-08-18T22:17:40.271110", "bug_reports": ["bug_report_dparse_hash_regex_2025-01-18_07-33_x9k2.md"], "aux_files_dir": "aux_files/4282ff24"}
+{"call_id": "666c4547", "module": "dparse.dependencies", "timestamp": "2025-08-18T23:03:27.873928", "bug_reports": ["bug_report_dparse_dependencies_2025-08-18_23-02_8m0d.md"], "aux_files_dir": "aux_files/666c4547"}
+{"call_id": "0a608b06", "module": "dparse.filetypes", "timestamp": "2025-08-18T22:18:48.118648", "bug_reports": ["bug_report_dparse_dependencies_2025-08-18_14-30_a7f2.md"], "aux_files_dir": "aux_files/0a608b06"}
+{"call_id": "3cf2e993", "module": "dparse.parser", "timestamp": "2025-08-18T22:16:27.762710", "bug_reports": ["bug_report_dparse_parser_2025-08-18_12-00_x7k3.md", "bug_report_dparse_parser_2025-08-18_12-05_m9p2.md"], "aux_files_dir": "aux_files/3cf2e993"}
+{"call_id": "22063100", "module": "dparse.regex", "timestamp": "2025-08-18T22:22:45.020907", "bug_reports": ["bug_report_dparse_regex_2025-08-18_22-20_tjj4.md"], "aux_files_dir": "aux_files/22063100"}
+{"call_id": "d4b66e92", "module": "dparse.updater", "timestamp": "2025-08-18T22:20:52.189230", "bug_reports": ["bug_report_dparse_updater_2025-08-18_14-30_a7f2.md"], "aux_files_dir": "aux_files/d4b66e92"}

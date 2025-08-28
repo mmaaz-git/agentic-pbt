@@ -1,0 +1,25 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 441053,
+  "duration_api_ms": 450507,
+  "num_turns": 78,
+  "result": "Found bug: Commands named `_cmd`, `_command`, `_grp`, or `_group` produce empty names, causing silent overwrites when added to groups. Bug report saved as `bug_report_click_decorators_2025-08-18_05-55_ix7g.md`.",
+  "session_id": "82e864b4-8009-4a08-b772-bcc4b88a5214",
+  "total_cost_usd": 5.5519881999999985,
+  "usage": {
+    "input_tokens": 346,
+    "cache_creation_input_tokens": 68520,
+    "cache_read_input_tokens": 2051890,
+    "output_tokens": 15266,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [],
+  "call_id": "33954ae3",
+  "module": "click.decorators",
+  "timestamp": "2025-08-18T05:56:02.640543"
+}

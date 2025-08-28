@@ -1,0 +1,42 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 149061,
+  "duration_api_ms": 154202,
+  "num_turns": 59,
+  "result": "**Conclusion**: No testable properties found in `fire.formatting_windows`.\n\nThe module only contains platform-specific Windows console initialization code with no pure functions suitable for property-based testing. All functionality is based on side effects (kernel32 DLL calls, environment variables) rather than input-output relationships that Hypothesis can effectively test.",
+  "session_id": "61f024ed-68b5-41a0-a17b-258d7f625efa",
+  "total_cost_usd": 2.2460907,
+  "usage": {
+    "input_tokens": 370,
+    "cache_creation_input_tokens": 38826,
+    "cache_read_input_tokens": 798134,
+    "output_tokens": 4107,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01EgywKv6vvZ9oayga7dp8Vk",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/fire_env/bin/activate && python3 -c \"import fire.formatting_windows; print('Successfully imported fire.formatting_windows')\"",
+        "description": "Check if fire.formatting_windows exists in fire_env"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01HH5b526DDLf1PDtZas2VEr",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/fire_env/bin/python3 -c \"import fire.formatting_windows; print('Successfully imported fire.formatting_windows')\"",
+        "description": "Check if fire.formatting_windows exists in fire_env"
+      }
+    }
+  ],
+  "call_id": "46d60b75",
+  "module": "fire.formatting_windows",
+  "timestamp": "2025-08-18T22:23:25.171087"
+}

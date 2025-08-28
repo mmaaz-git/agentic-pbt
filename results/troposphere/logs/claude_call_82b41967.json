@@ -1,0 +1,74 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 530822,
+  "duration_api_ms": 537111,
+  "num_turns": 148,
+  "result": "## Summary\n\nFound **2 bugs** in `troposphere.appstream` through property-based testing with Hypothesis:\n\n### Bug 1: Integer Validator Accepts Non-Integer Types\n- **Severity**: Medium\n- The `integer()` validator incorrectly accepts booleans (`True`, `False`) and floats (`3.14`, `0.0`) without raising exceptions\n- Created bug report: `bug_report_troposphere_validators_integer_2025-08-18_23-46_642e.md`\n\n### Bug 2: Tags Validator Rejects Dictionary Input  \n- **Severity**: Medium\n- The `tags_or_list()` validator rejects dictionaries even though CloudFormation commonly uses dicts for tags\n- Created bug report: `bug_report_troposphere_validators_tags_2025-08-18_23-46_0trk.md`\n\nBoth bugs violate expected validation contracts and could lead to incorrect CloudFormation template generation. The property-based tests successfully identified these issues by testing fundamental type validation properties.",
+  "session_id": "d9099589-87fa-4316-9311-9b6d7b471884",
+  "total_cost_usd": 7.8052700999999995,
+  "usage": {
+    "input_tokens": 800,
+    "cache_creation_input_tokens": 87110,
+    "cache_read_input_tokens": 3289262,
+    "output_tokens": 16149,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01ThCHX7Z8BnxC4fofTWAaHE",
+      "tool_input": {
+        "command": "find /root/hypothesis-llm -name \"*.py\" -path \"*troposphere*\" -o -name \"*.py\" -path \"*appstream*\" | head -20",
+        "description": "Search for troposphere or appstream related files"
+      }
+    },
+    {
+      "tool_name": "Glob",
+      "tool_use_id": "toolu_01E9yfxnMi1wUJH9XPHGm52b",
+      "tool_input": {
+        "pattern": "**/*troposphere*.py",
+        "path": "/root/hypothesis-llm"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_014vKY5BfvuGi95PRNjkyout",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/troposphere_env/bin/activate && python -c \"import troposphere.appstream; print('success - treating as module')\"",
+        "description": "Activate troposphere_env and check if module exists"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_012WHVxbiUxds1xpE8hGXYMf",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -c \"import troposphere.appstream; print('success - treating as module')\"",
+        "description": "Use troposphere_env Python to import module"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01BzHaCNpFEkJ96YWv2knYg7",
+      "tool_input": {
+        "command": "cat > inspect_appstream.py << 'EOF'\nimport inspect\nfrom troposphere import appstream, BaseAWSObject, AWSProperty\n\n# Look at some example classes\nprint(\"=== S3Location (AWSProperty) ===\")\ns3_loc = appstream.S3Location\nprint(f\"Base classes: {s3_loc.__bases__}\")\nprint(f\"Methods: {[m for m in dir(s3_loc) if not m.startswith('_') and callable(getattr(s3_loc, m))]}\")\n\nprint(\"\\n=== AppBlock (AWSObject) ===\")\napp_block = appstream.AppBlock\nprint(f\"Base classes: {app_block.__bases__}\")\nprint(f\"Methods: {[m for m in dir(app_block) if not m.startswith('_') and callable(getattr(app_block, m))]}\")\n\n# Try creating instances\nprint(\"\\n=== Creating instances ===\")\ntry:\n    # Try creating an S3Location with required props\n    s3 = appstream.S3Location(S3Bucket=\"mybucket\", S3Key=\"mykey\")\n    print(f\"S3Location created successfully\")\n    print(f\"S3Location dict: {s3.to_dict()}\")\nexcept Exception as e:\n    print(f\"Error creating S3Location: {e}\")\n\ntry:\n    # Try creating an AppBlock with minimal required props\n    ab = appstream.AppBlock(\n        \"MyAppBlock\",\n        Name=\"TestBlock\",\n        SourceS3Location=appstream.S3Location(S3Bucket=\"bucket\", S3Key=\"key\")\n    )\n    print(f\"AppBlock created successfully\")\n    print(f\"AppBlock title: {ab.title}\")\n    print(f\"AppBlock resource_type: {ab.resource_type}\")\nexcept Exception as e:\n    print(f\"Error creating AppBlock: {e}\")\n\n# Check validation behavior\nprint(\"\\n=== Validation behavior ===\")\ntry:\n    # Try with missing required field\n    s3_bad = appstream.S3Location(S3Bucket=\"mybucket\")  # Missing S3Key\n    print(\"S3Location with missing required field created\")\nexcept Exception as e:\n    print(f\"Error with missing required field: {e}\")\n\n# Check props structure\nprint(\"\\n=== Props structure ===\")\nprint(f\"S3Location.props: {appstream.S3Location.props}\")\nprint(f\"ComputeCapacity.props: {appstream.ComputeCapacity.props}\")\nEOF\n\npython3 inspect_appstream.py",
+        "description": "Inspect appstream module classes and their behavior"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Y5U3yDMB7Lb1xAKZTGaeE1",
+      "tool_input": {
+        "command": "PYTHONPATH=/root/hypothesis-llm/envs/troposphere_env/lib/python3.13/site-packages python3 inspect_appstream.py",
+        "description": "Run inspection script with correct PYTHONPATH"
+      }
+    }
+  ],
+  "call_id": "82b41967",
+  "module": "troposphere.appstream",
+  "timestamp": "2025-08-18T23:47:27.316250"
+}

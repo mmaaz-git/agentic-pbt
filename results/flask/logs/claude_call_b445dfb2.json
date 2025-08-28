@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 110401,
+  "duration_api_ms": 115238,
+  "num_turns": 37,
+  "result": "No testable properties found in flask.typing.\n\nThe module `flask.typing` contains only type aliases and type definitions used for static type checking in Flask applications. These are not executable functions or classes - they're purely compile-time type hints with no runtime behavior. Type aliases like `ResponseReturnValue`, `RouteCallable`, and `ErrorHandlerCallable` cannot be tested with property-based testing as they don't perform any operations or transformations that could have properties to verify.",
+  "session_id": "c37dafe2-29cd-42a3-906d-ef316b1f6dfb",
+  "total_cost_usd": 1.3551340999999997,
+  "usage": {
+    "input_tokens": 282,
+    "cache_creation_input_tokens": 22610,
+    "cache_read_input_tokens": 463146,
+    "output_tokens": 3014,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01EyDBVXbS4X2XKtNmQESeBg",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/flask/typing.py"
+      }
+    }
+  ],
+  "call_id": "b445dfb2",
+  "module": "flask.typing",
+  "timestamp": "2025-08-19T00:06:12.746306"
+}

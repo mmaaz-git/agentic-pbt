@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 527365,
+  "duration_api_ms": 541446,
+  "num_turns": 89,
+  "result": "## Summary\n\nFound bug in `troposphere.entityresolution.boolean`: accepts float values 0.0 and 1.0 inconsistently due to Python's equality behavior with the `in` operator. Created bug report: `bug_report_troposphere_entityresolution_boolean_2025-08-19_06-06_2b5g.md`\n\n**Bug details:**\n- Function accepts `0.0` \u2192 `False` and `1.0` \u2192 `True` \n- Rejects other floats like `2.0` or `0.5` with `ValueError`\n- Occurs because `0.0 in [0]` evaluates to `True` in Python\n- Creates inconsistent behavior - some floats work, others don't\n\nProperty-based testing with Hypothesis successfully identified this subtle logic bug that traditional testing might miss.",
+  "session_id": "f2cce8cc-1186-4345-afac-989676153485",
+  "total_cost_usd": 4.1734201,
+  "usage": {
+    "input_tokens": 658,
+    "cache_creation_input_tokens": 66238,
+    "cache_read_input_tokens": 1401910,
+    "output_tokens": 10703,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01WXG5eb6oSbMBfH6kYXd5aP",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/troposphere/entityresolution.py"
+      }
+    }
+  ],
+  "call_id": "6dc68401",
+  "module": "troposphere.entityresolution",
+  "timestamp": "2025-08-19T06:07:37.030121"
+}

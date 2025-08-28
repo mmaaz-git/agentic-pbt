@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 354001,
+  "duration_api_ms": 363275,
+  "num_turns": 82,
+  "result": "## Bug Found! \ud83d\udc1b\n\nI successfully discovered a **crash bug** in `pydantic._migration.getattr_migration`, which is used by the `pydantic.generics` module.\n\n### Bug Summary:\n- **Type**: KeyError crash when it should raise AttributeError\n- **Trigger**: Calling the wrapper function returned by `getattr_migration()` with a module name that doesn't exist in `sys.modules`\n- **Impact**: Medium severity - causes unexpected crashes in migration/compatibility code\n\n### What I tested:\n- \u2705 Idempotence of the wrapper function\n- \u2705 Error consistency \n- \u2705 Special case handling for `__path__`\n- \u2705 Edge cases with empty strings and invalid module names\n\nThe bug was discovered through property-based testing that revealed the function crashes with `KeyError` for non-existent modules instead of properly raising `AttributeError` as expected.\n\nBug report saved as: `bug_report_pydantic_generics_2025-08-18_19-39_tiw6.md`",
+  "session_id": "55c76a43-52d8-4295-a60d-1b4b98505bbc",
+  "total_cost_usd": 3.860933099999999,
+  "usage": {
+    "input_tokens": 614,
+    "cache_creation_input_tokens": 64342,
+    "cache_read_input_tokens": 1271824,
+    "output_tokens": 9679,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01G7Jkw5mkUT1PQcFS5YxcCJ",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/pydantic/generics.py"
+      }
+    }
+  ],
+  "call_id": "e29926a4",
+  "module": "pydantic.generics",
+  "timestamp": "2025-08-18T19:40:17.962554"
+}

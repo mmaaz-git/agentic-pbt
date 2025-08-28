@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 439575,
+  "duration_api_ms": 443643,
+  "num_turns": 90,
+  "result": "## Summary\n\nSuccessfully found **2 genuine bugs** in `troposphere.robomaker` using property-based testing with Hypothesis:\n\n### Bug 1: Missing Required Title Parameter (High Severity)\n- **Issue**: AWSObject subclasses require an undocumented 'title' parameter\n- **Impact**: Users cannot instantiate resources following expected API patterns\n- **Report**: `bug_report_troposphere_robomaker_2025-08-19_02-23_sg4n.md`\n\n### Bug 2: None Value Rejection for Optional Fields (Medium Severity)\n- **Issue**: Optional fields reject explicit None values despite being marked as optional\n- **Impact**: Breaks common Python patterns and programmatic construction\n- **Report**: `bug_report_troposphere_robomaker_2025-08-19_02-24_y707.md`\n\n### Testing Results\n- \u2705 4 properties passed successfully (round-trip, JSON serialization for simple classes)\n- \u274c 5 tests revealed the bugs when testing complex instantiation patterns\n- Both bugs affect real-world usage and violate the documented API contract\n\nThe property-based testing approach successfully uncovered API contract violations that would frustrate users trying to programmatically create AWS CloudFormation resources with this library.",
+  "session_id": "7c28a94e-b64a-48d1-b7ab-70623859433b",
+  "total_cost_usd": 4.156294499999999,
+  "usage": {
+    "input_tokens": 638,
+    "cache_creation_input_tokens": 46810,
+    "cache_read_input_tokens": 1492480,
+    "output_tokens": 13519,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01QeYw4PyxX8Wqj59QkFs6Cv",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/troposphere/robomaker.py"
+      }
+    }
+  ],
+  "call_id": "f5efd15c",
+  "module": "troposphere.robomaker",
+  "timestamp": "2025-08-19T02:25:10.151261"
+}

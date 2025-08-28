@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 643018,
+  "duration_api_ms": 649461,
+  "num_turns": 121,
+  "result": "## Bug Hunt Complete! \ud83d\udc1b\n\nFound **2 legitimate bugs** in `django.dispatch`:\n\n### Bug 1: TypeError with Cached Signals (HIGH severity)\n- **Issue**: `Signal(use_caching=True)` crashes when sending with non-weakrefable objects\n- **Impact**: Makes caching unusable with common sender types (object(), int, str, list, dict)\n- **Report**: `bug_report_django_dispatch_2025-08-18_19-00_4apr.md`\n\n### Bug 2: dispatch_uid Sender Dependency (MEDIUM severity)  \n- **Issue**: `dispatch_uid` requires matching sender for disconnect, defeating its purpose as unique ID\n- **Impact**: API contract violation - dispatch_uid should work independently of sender\n- **Report**: `bug_report_django_dispatch_2025-08-18_19-00_pnzn.md`\n\n### Tests Summary\n\u2705 5 core properties passed initially\n\u274c 3 advanced tests revealed bugs\n\u2705 Successfully triaged false positives (weak ref cleanup)\n\nThe property-based testing approach successfully identified genuine bugs that violate documented behavior and cause runtime crashes.",
+  "session_id": "e758ee23-029c-4621-937f-622f2376cea0",
+  "total_cost_usd": 7.8242102,
+  "usage": {
+    "input_tokens": 782,
+    "cache_creation_input_tokens": 111024,
+    "cache_read_input_tokens": 2791296,
+    "output_tokens": 20451,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01E6EMacMRJCmsHr9345c7Qp",
+      "tool_input": {
+        "file_path": "/root/.local/lib/python3.13/site-packages/django/dispatch/__init__.py"
+      }
+    }
+  ],
+  "call_id": "0e1a4167",
+  "module": "django.dispatch",
+  "timestamp": "2025-08-18T19:01:32.828493"
+}

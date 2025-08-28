@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 352221,
+  "duration_api_ms": 350548,
+  "num_turns": 90,
+  "result": "## Bug Found! \ud83d\udc1b\n\nSuccessfully discovered a **Unicode encoding bug** in `requests.auth._basic_auth_str` and `HTTPBasicAuth`.\n\n**Summary**: The authentication functions crash with `UnicodeEncodeError` when given usernames or passwords containing Unicode characters outside the latin-1 range (e.g., '\u0100', '\u5317\u4eac', '\u041c\u043e\u0441\u043a\u0432\u0430', '\u0645\u0631\u062d\u0628\u0627').\n\n**Impact**: Affects international users with non-ASCII characters in credentials. The function uses latin-1 encoding which only supports characters 0-255, while RFC 7617 recommends UTF-8 support.\n\n**Bug report saved**: `bug_report_requests_auth_2025-08-19_00-01_gysz.md`\n\n**Test results**: \n- \u2705 5 properties passed (equality, inheritance)  \n- \u274c 4 properties failed (Unicode handling)\n\nThe bug was found using property-based testing with Hypothesis, which automatically generated test cases including edge cases with Unicode characters that exposed this encoding limitation.",
+  "session_id": "836c07f9-499e-4155-93bd-ee012176ded6",
+  "total_cost_usd": 3.387874,
+  "usage": {
+    "input_tokens": 628,
+    "cache_creation_input_tokens": 32476,
+    "cache_read_input_tokens": 1326434,
+    "output_tokens": 10238,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01KPu9iUGCbQVDWEwvn3mUKd",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/requests/auth.py"
+      }
+    }
+  ],
+  "call_id": "cd7038a7",
+  "module": "requests.auth",
+  "timestamp": "2025-08-19T00:02:10.204398"
+}

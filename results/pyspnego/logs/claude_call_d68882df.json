@@ -1,0 +1,34 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 430979,
+  "duration_api_ms": 436564,
+  "num_turns": 127,
+  "result": "## Bug Hunt Complete! \ud83d\udc1b\n\n**Found 1 genuine bug** in `spnego._context.split_username`:\n- **Bug**: Empty domain returned for backslash-prefixed usernames (e.g., `\\user`)\n- **Severity**: Medium - Could cause authentication failures for local accounts\n- **Report**: `bug_report_spnego__context_split_username_2025-08-18_21-06_wf8w.md`\n\n**Tested properties**:\n- \u2705 `split_username` domain/username splitting (1 bug found)\n- \u2705 `to_bytes`/`to_text` round-trip conversions (all passed)\n- \u2705 `unify_credentials` credential processing (working as designed)\n\n**Note**: The main `SSPIProxy` class requires Windows/SSPI and couldn't be tested on Linux. Focused testing on platform-independent helper functions revealed one logic bug in username parsing.",
+  "session_id": "20efc9de-295d-4b30-a143-abcbbd48821f",
+  "total_cost_usd": 7.113808299999999,
+  "usage": {
+    "input_tokens": 688,
+    "cache_creation_input_tokens": 84262,
+    "cache_read_input_tokens": 3026388,
+    "output_tokens": 12955,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01DEobEQfBtKNF2nSEEqtgYW",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/pyspnego_env/bin/python -c \"import spnego.sspi; print('success - treating as module')\"",
+        "description": "Import spnego.sspi using env python"
+      }
+    }
+  ],
+  "call_id": "d68882df",
+  "module": "spnego.sspi",
+  "timestamp": "2025-08-18T21:07:24.513565"
+}

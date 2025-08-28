@@ -1,0 +1,6 @@
+{"call_id": "e1626064", "module": "limits", "timestamp": "2025-08-18T23:26:34.888238", "bug_reports": ["bug_report_limits_safe_string_2025-08-18_23-25_1mdu.md", "bug_report_limits_equality_2025-08-18_23-25_zzzu.md"], "aux_files_dir": "aux_files/e1626064"}
+{"call_id": "1dfeceaf", "module": "limits.aio", "timestamp": "2025-08-18T23:34:01.262650", "bug_reports": [], "aux_files_dir": "aux_files/1dfeceaf"}
+{"call_id": "1a1f557e", "module": "limits.limits", "timestamp": "2025-08-18T23:29:35.220139", "bug_reports": ["bug_report_limits_safe_string_2025-08-18_10-30_x7k2.md"], "aux_files_dir": "aux_files/1a1f557e"}
+{"call_id": "9f9c9d68", "module": "limits.storage", "timestamp": "2025-08-19T00:21:31.825521", "bug_reports": [], "aux_files_dir": "aux_files/9f9c9d68"}
+{"call_id": "4771895d", "module": "limits.strategies", "timestamp": "2025-08-18T23:35:57.080473", "bug_reports": [], "aux_files_dir": "aux_files/4771895d"}
+{"call_id": "cee50c41", "module": "limits.typing", "timestamp": "2025-08-18T23:32:33.620603", "bug_reports": ["bug_report_limits_typing_2025-08-18_14-30_k3m9.md"], "aux_files_dir": "aux_files/cee50c41"}

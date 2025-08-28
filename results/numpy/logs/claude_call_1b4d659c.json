@@ -1,0 +1,25 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 447912,
+  "duration_api_ms": 462745,
+  "num_turns": 85,
+  "result": "## Summary\n\nFound bug: **`numpy.random.wald` produces negative values for large mean parameters** (>= 1e8), violating the mathematical definition of the Wald distribution which only produces positive values. This is a high-severity logic bug that could affect reliability modeling and financial applications.\n\nBug report saved to: `bug_report_numpy_random_wald_2025-08-18_05-02_fm33.md`",
+  "session_id": "8ca3f18b-0058-49fc-af30-9c812f899812",
+  "total_cost_usd": 4.9048817000000025,
+  "usage": {
+    "input_tokens": 348,
+    "cache_creation_input_tokens": 56202,
+    "cache_read_input_tokens": 1824868,
+    "output_tokens": 13971,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [],
+  "call_id": "1b4d659c",
+  "module": "numpy.random",
+  "timestamp": "2025-08-18T05:02:42.482960"
+}

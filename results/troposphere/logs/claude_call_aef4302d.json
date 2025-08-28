@@ -1,0 +1,42 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 715783,
+  "duration_api_ms": 720983,
+  "num_turns": 138,
+  "result": "## Summary\n\nFound 2 bugs in `troposphere.kendra` through property-based testing with Hypothesis:\n\n### Bug 1: Unicode Digit Acceptance\n- **Severity**: Medium\n- The `integer` validator accepts Unicode digits (Thai \u0e57, Arabic \u0667, etc.) which produce invalid CloudFormation templates\n- These Unicode strings cannot be parsed by AWS services\n\n### Bug 2: Type Preservation Issue  \n- **Severity**: Medium\n- The `integer` validator doesn't convert string numbers to integers, causing:\n  - Type inconsistency in CloudFormation templates\n  - Preservation of leading zeros (\"010\" stays as \"010\" instead of 10)\n  - Potential arithmetic failures downstream\n\nBoth bugs violate the contract between what troposphere accepts and what CloudFormation expects, potentially causing deployment failures.\n\nBug reports saved as:\n- `bug_report_troposphere_kendra_2025-08-19_14-30_a1b2.md`\n- `bug_report_troposphere_kendra_2025-08-19_14-31_c3d4.md`",
+  "session_id": "4c90cbca-9507-44f0-b2c0-3e7e297a2a4d",
+  "total_cost_usd": 9.0976595,
+  "usage": {
+    "input_tokens": 638,
+    "cache_creation_input_tokens": 100470,
+    "cache_read_input_tokens": 3773268,
+    "output_tokens": 20349,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01R7C6PMJVYby2fXqjWSNrUr",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/troposphere_env/bin/activate && python -c \"import troposphere.kendra; print('success - treating as module')\"",
+        "description": "Activate environment and import troposphere.kendra"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Dzs7nPbgmTioZ2vM6J6ApB",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -c \"import troposphere.kendra; print('success - treating as module')\"",
+        "description": "Use venv Python to import troposphere.kendra"
+      }
+    }
+  ],
+  "call_id": "aef4302d",
+  "module": "troposphere.kendra",
+  "timestamp": "2025-08-19T02:02:00.938352"
+}

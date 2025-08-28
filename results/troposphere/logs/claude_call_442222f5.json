@@ -1,0 +1,50 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 461860,
+  "duration_api_ms": 473625,
+  "num_turns": 98,
+  "result": "## Bug Hunt Complete! \ud83d\udc1b\n\nFound **2 bugs** in `troposphere.docdb` module:\n\n### Bug 1: Integer Validator Accepts Non-Integer Floats\n- **Location**: `troposphere/validators/__init__.py:46`\n- **Issue**: `validators.integer(42.7)` accepts float with decimal part\n- **Impact**: Type validation failure, may cause downstream issues\n- **Report**: `bug_report_troposphere_docdb_2025-08-19_00-42_bug1.md`\n\n### Bug 2: Empty String Bypasses Title Validation  \n- **Location**: `troposphere/__init__.py:327`\n- **Issue**: Empty string `\"\"` passes title validation despite regex requiring 1+ chars\n- **Impact**: Invalid CloudFormation resource names could be created\n- **Report**: `bug_report_troposphere_docdb_2025-08-19_00-42_bug2.md`\n\nBoth bugs were discovered through property-based testing using Hypothesis by testing fundamental properties the code claims to enforce.",
+  "session_id": "43e7b049-2153-4c46-b387-f06bc002618c",
+  "total_cost_usd": 5.203490200000001,
+  "usage": {
+    "input_tokens": 622,
+    "cache_creation_input_tokens": 61404,
+    "cache_read_input_tokens": 1965460,
+    "output_tokens": 14498,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01TGh7JiV5yYsmm6KVCaxeAr",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python3 -c \"import troposphere.docdb; print('success - treating as module'); print('Module path:', troposphere.docdb.__file__)\"",
+        "description": "Import troposphere.docdb module"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01GyHkwpr2MEMiMtYCG2tmnw",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python3 -m pytest test_docdb_properties.py -v",
+        "description": "Run property-based tests"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01EieFYeULjorFdE8SZvbUsF",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python3 run_tests.py",
+        "description": "Run property tests manually"
+      }
+    }
+  ],
+  "call_id": "442222f5",
+  "module": "troposphere.docdb",
+  "timestamp": "2025-08-19T00:43:38.851154"
+}

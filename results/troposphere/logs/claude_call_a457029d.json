@@ -1,0 +1,65 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 525508,
+  "duration_api_ms": 517815,
+  "num_turns": 136,
+  "result": "## Summary\n\nFound **2 genuine bugs** in troposphere through property-based testing with Hypothesis:\n\n1. **Bug: Tags Addition Operator Mutates Right Operand** (High severity)\n   - The `+` operator modifies the right operand instead of creating a new object\n   - Violates Python convention that addition should not mutate operands\n   - Created bug report: `bug_report_troposphere_tags_2025-08-19_02-02_0m3h.md`\n\n2. **Bug: Parameter Accepts Invalid Empty String for Number Type** (Medium severity)  \n   - Parameters with Type=\"Number\" accept empty strings as defaults\n   - Empty strings are not valid numbers and will fail CloudFormation validation\n   - Created bug report: `bug_report_troposphere_parameter_2025-08-19_02-02_w5d1.md`\n\nTested 14 properties across validators, Template limits, round-trip serialization, and object equality - finding these 2 bugs among comprehensive property testing of the troposphere CloudFormation library.",
+  "session_id": "4cfe62f3-91ec-4761-8ad3-6c02aa09ebfc",
+  "total_cost_usd": 7.665963899999999,
+  "usage": {
+    "input_tokens": 716,
+    "cache_creation_input_tokens": 97478,
+    "cache_read_input_tokens": 3078264,
+    "output_tokens": 15847,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01TwrZYTuhTnEVrCJrGmhaeE",
+      "tool_input": {
+        "command": "pip3 install troposphere",
+        "description": "Install troposphere module"
+      }
+    },
+    {
+      "tool_name": "LS",
+      "tool_use_id": "toolu_01294NYhUDjVeYDTbV2gZD1g",
+      "tool_input": {
+        "path": "/root/hypothesis-llm"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01RbZMZjkqaVB82WWVq8b9ns",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/troposphere_env/bin/activate && python3 -c \"import troposphere; print('success - troposphere module found')\"",
+        "description": "Activate venv and check for troposphere"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01PwA9zHDuE6yxtKkTGA9yA2",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python3 -c \"import troposphere; print('Success - troposphere module found'); print(f'Module file: {troposphere.__file__}')\"",
+        "description": "Check if troposphere is installed in venv"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_011MqFKsvUH44Tdqst5EdixN",
+      "tool_input": {
+        "command": "PYTHONPATH=/root/hypothesis-llm/envs/troposphere_env/lib/python3.13/site-packages python3 -c \"import troposphere; print('Success - troposphere module found')\"",
+        "description": "Import troposphere with custom PYTHONPATH"
+      }
+    }
+  ],
+  "call_id": "a457029d",
+  "module": "troposphere.logs",
+  "timestamp": "2025-08-19T02:03:56.741952"
+}

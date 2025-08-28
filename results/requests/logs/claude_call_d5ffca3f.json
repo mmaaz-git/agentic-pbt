@@ -1,0 +1,41 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 379612,
+  "duration_api_ms": 389369,
+  "num_turns": 92,
+  "result": "## Bug Found! \u2705\n\nI discovered a **contract violation bug** in `requests.status_codes.LookupDict` through property-based testing with Hypothesis.\n\n### The Bug\nLookupDict's `__getitem__` method inconsistently handles inherited dict methods:\n- `codes['clear']` returns `None` \n- `codes.clear` returns the actual method\n- This violates the expected behavior that `obj[key]` should equal `getattr(obj, key)` for dict-like objects\n\n### Impact\n- **Severity**: Medium\n- **Type**: Contract violation\n- Breaks dynamic attribute access patterns\n- Affects all inherited dict methods (clear, copy, items, keys, pop, etc.)\n\n### Files Created\n1. `test_status_codes.py` - Comprehensive property-based tests (10 tests, 9 passed, 1 found the bug)\n2. `test_lookupdict_bug.py` - Focused test for the specific bug\n3. `reproduce_bug.py` - Minimal reproduction script  \n4. `bug_report_requests_status_codes_2025-08-19_00-01_fp2w.md` - Full bug report with proposed fix\n\nThe bug report includes a patch that fixes the issue by making `__getitem__` check for inherited attributes using `getattr` when the key isn't in `__dict__`.",
+  "session_id": "7c5b5c6d-dcfe-425e-945f-2f08c708c8c7",
+  "total_cost_usd": 3.8067559999999996,
+  "usage": {
+    "input_tokens": 610,
+    "cache_creation_input_tokens": 33516,
+    "cache_read_input_tokens": 1541628,
+    "output_tokens": 11185,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_014TPPXQAMuasTBeSPgwJ4vs",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/requests/status_codes.py"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01UamUofoedf9wKTPzq6d2r5",
+      "tool_input": {
+        "command": "cp /home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/requests/status_codes.py status_codes_copy.py",
+        "description": "Copy status_codes.py to working directory"
+      }
+    }
+  ],
+  "call_id": "d5ffca3f",
+  "module": "requests.status_codes",
+  "timestamp": "2025-08-19T00:02:37.769505"
+}

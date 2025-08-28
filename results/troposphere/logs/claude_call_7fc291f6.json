@@ -1,0 +1,59 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 718033,
+  "duration_api_ms": 724728,
+  "num_turns": 124,
+  "result": "## Bug Found! \ud83d\udc1b\n\nSuccessfully discovered a **title validation inconsistency** bug in `troposphere.iotanalytics` (affects all troposphere resources).\n\n### Bug Summary\n- **Issue**: Title validation error message claims to check for \"alphanumeric\" characters but actually only accepts ASCII [a-zA-Z0-9]\n- **Example**: Character '\u00b9' (superscript 1) is alphanumeric according to Python's `isalnum()` but rejected by troposphere\n- **Impact**: Low severity contract violation - misleading error messages\n\n### Testing Summary\n\u2705 Created 37 property-based tests across 3 test files\n\u2705 Tested round-trip serialization, type validation, required properties, and edge cases\n\u2705 Found 1 genuine bug through systematic validation testing\n\n**Bug report saved**: `bug_report_troposphere_iotanalytics_2025-08-19_01-55_8t87.md`",
+  "session_id": "6e6f6051-4470-4900-9ee9-7139069f383c",
+  "total_cost_usd": 7.951947799999998,
+  "usage": {
+    "input_tokens": 806,
+    "cache_creation_input_tokens": 95192,
+    "cache_read_input_tokens": 3061892,
+    "output_tokens": 20563,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01VG1hx8kNLJk7Zy5ZyhHtKT",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/troposphere_env/bin/activate && python -c \"import troposphere.iotanalytics; print('Successfully imported troposphere.iotanalytics')\"",
+        "description": "Activate venv and import troposphere.iotanalytics"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_019dZKKTpm1Ej33r4zD4LqDL",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -c \"import troposphere.iotanalytics; print('Successfully imported troposphere.iotanalytics')\"",
+        "description": "Use venv Python to import troposphere.iotanalytics"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01MCcfbLv9ytApy7WbBGYmY1",
+      "tool_input": {
+        "command": "grep -n \"^def integer\" /root/hypothesis-llm/envs/troposphere_env/lib/python3.13/site-packages/troposphere/__init__.py | head -5",
+        "description": "Find integer validator function"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01MYSofcWL8gThZCq8zPc9NL",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/worker_/11 && /root/hypothesis-llm/envs/troposphere_env/bin/python -m pytest test_troposphere_iotanalytics_properties.py -v --tb=short",
+        "timeout": 120000,
+        "description": "Run Hypothesis property tests for troposphere.iotanalytics"
+      }
+    }
+  ],
+  "call_id": "7fc291f6",
+  "module": "troposphere.iotanalytics",
+  "timestamp": "2025-08-19T01:56:00.142666"
+}

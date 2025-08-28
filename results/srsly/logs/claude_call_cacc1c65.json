@@ -1,0 +1,50 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 384174,
+  "duration_api_ms": 379850,
+  "num_turns": 114,
+  "result": "## Bug Found! \ud83d\udc1b\n\nI discovered a **logic bug** in `srsly.ruamel_yaml` where the Unicode character U+0085 (Next Line) is incorrectly handled during YAML round-trip operations.\n\n**Summary:**\n- Dictionary keys containing U+0085 get corrupted during serialization/deserialization\n- The character is replaced with a space, violating the round-trip property\n- Example: `{'0\\x85': None}` becomes `{'0 ': None}` after round-trip\n\nThe bug report has been saved to: `bug_report_srsly_ruamel_yaml_2025-08-18_22-54_mh0h.md`\n\nThis is a genuine bug that affects data integrity when using the YAML serialization functions with strings containing this specific Unicode control character.",
+  "session_id": "8de6c240-0ac5-4e4d-82ea-7f51251f227a",
+  "total_cost_usd": 5.7470969,
+  "usage": {
+    "input_tokens": 660,
+    "cache_creation_input_tokens": 73306,
+    "cache_read_input_tokens": 2317434,
+    "output_tokens": 11656,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01ACuVRhJ7boGmcmF1oo9VeL",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/srsly_env/bin/activate && python -c \"import srsly.ruamel_yaml; print('Success - treating as module'); print('Module type:', type(srsly.ruamel_yaml))\"",
+        "description": "Activate venv and check srsly.ruamel_yaml"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01RqUqWwm3nCoUfx2wy2Zzah",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/srsly_env/bin/python -c \"import srsly.ruamel_yaml; print('Success - treating as module'); print('Module type:', type(srsly.ruamel_yaml))\"",
+        "description": "Check srsly.ruamel_yaml module using venv python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01P5EcY8gKLUvsSUYmA3iw3E",
+      "tool_input": {
+        "command": "PYTHONPATH=/root/hypothesis-llm/envs/srsly_env/lib/python3.13/site-packages python3 -c \"import srsly.ruamel_yaml; print('Success - treating as module'); print('Module type:', type(srsly.ruamel_yaml))\"",
+        "description": "Check srsly.ruamel_yaml with PYTHONPATH"
+      }
+    }
+  ],
+  "call_id": "cacc1c65",
+  "module": "srsly.ruamel_yaml",
+  "timestamp": "2025-08-18T22:54:46.167196"
+}

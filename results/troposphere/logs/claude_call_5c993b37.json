@@ -1,0 +1,42 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 624333,
+  "duration_api_ms": 630851,
+  "num_turns": 120,
+  "result": "## Bug Found! \ud83d\udc1b\n\nI successfully identified a **semantic bug** in the `troposphere.acmpca` module through property-based testing with Hypothesis.\n\n### Summary\n\n**Bug**: Misleading error message in title validation  \n**Severity**: Low  \n**Type**: Contract violation (API documentation/error message inconsistency)\n\nThe bug occurs when validating resource titles. The error message claims a character is \"not alphanumeric\" when it actually IS alphanumeric according to Python's `isalnum()` method. The validation uses a regex that only accepts ASCII characters `[a-zA-Z0-9]`, but the error message doesn't clarify this restriction.\n\n### Properties Tested\n\nI tested 17 different properties including:\n- \u2705 Validator round-trip invariants (valid inputs returned unchanged)\n- \u2705 Validator rejection properties (invalid inputs raise ValueError)  \n- \u2705 Case sensitivity in validators\n- \u2705 Property instantiation with required/optional fields\n- \u2705 Boolean field handling in KeyUsage\n- \u2705 Double/integer type validation\n- \u2705 Metamorphic properties (idempotence, determinism)\n- \u2705 Unicode character handling in titles (found the bug here!)\n\n### Bug Details\n\nCharacters like '\u00b9' (superscript), '\u03b1' (Greek), '\u0410' (Cyrillic) are considered alphanumeric by Python but rejected by troposphere with the error \"not alphanumeric\". This creates confusion as developers might test with `isalnum()` and expect it to work.\n\nThe bug report has been saved to: `bug_report_troposphere_acmpca_2025-08-18_23-43_94fy.md`",
+  "session_id": "7bb03432-8bbb-4171-889d-c729d7d51a06",
+  "total_cost_usd": 7.5810651999999985,
+  "usage": {
+    "input_tokens": 688,
+    "cache_creation_input_tokens": 96640,
+    "cache_read_input_tokens": 2819042,
+    "output_tokens": 20133,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Lh846eXMZr5xK6M45mbXdP",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/troposphere_env/bin/activate && python -c \"import troposphere.acmpca; print('Successfully imported troposphere.acmpca')\"",
+        "description": "Activate venv and import troposphere.acmpca"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01TUTRBcf6frSJ6JFmb7Xmhj",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -c \"import troposphere.acmpca; print('Successfully imported troposphere.acmpca')\"",
+        "description": "Import troposphere.acmpca with venv python"
+      }
+    }
+  ],
+  "call_id": "5c993b37",
+  "module": "troposphere.acmpca",
+  "timestamp": "2025-08-18T23:44:26.664132"
+}

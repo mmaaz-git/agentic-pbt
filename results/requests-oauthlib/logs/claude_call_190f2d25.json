@@ -1,0 +1,82 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 952275,
+  "duration_api_ms": 955392,
+  "num_turns": 98,
+  "result": "## Bug Found! \u2705\n\nI've discovered a **legitimate bug** in `requests_oauthlib.oauth2_session.OAuth2Session`. \n\nThe `register_compliance_hook` method accepts non-callable objects (None, strings, integers, etc.) without validation. These invalid hooks are stored and later cause `TypeError` when the code tries to invoke them.\n\n**Bug details:**\n- **Location**: `OAuth2Session.register_compliance_hook` method (lines 570-587)\n- **Issue**: No validation that hooks are callable before adding to set\n- **Impact**: Runtime crashes when non-callable hooks are invoked\n- **Severity**: Medium (API contract violation, delayed error detection)\n\nThe bug report has been saved to: `bug_report_requests_oauthlib_oauth2_session_2025-08-18_00-00_x7a3.md`\n\nThis violates the fail-fast principle - errors should be caught at registration time, not during request processing. The fix is simple: add a callable check before adding hooks to the set.",
+  "session_id": "1e5dddef-5b4d-4205-a27f-269be7a4dbcb",
+  "total_cost_usd": 6.1653365,
+  "usage": {
+    "input_tokens": 626,
+    "cache_creation_input_tokens": 79710,
+    "cache_read_input_tokens": 2142520,
+    "output_tokens": 19108,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01TD4Ntu6Wdu6ZsEFqJi4Fw2",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/envs/requests-oauthlib_env && source bin/activate && pip list | grep -E \"requests|oauth\"",
+        "description": "Check installed packages in venv"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01LZjidkDW1EF3e8njDbCnPC",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/requests-oauthlib_env/bin/python3 -c \"import requests_oauthlib.oauth2_session; print('Successfully imported module')\"",
+        "description": "Import oauth2_session using venv python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01HaZ8Sj1rLhawtzySfsptsh",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/requests-oauthlib_env/bin/python3 -m pytest test_oauth2_session_properties.py -v --tb=short",
+        "description": "Run property-based tests with pytest"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01MRNSs6c4gYUFsZcYeRtoTq",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/requests-oauthlib_env/bin/python3 test_oauth2_session_properties.py",
+        "description": "Run the test file directly"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01NGDFSvJYAeEg1vP9p71iwC",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/requests-oauthlib_env/bin/python3 run_tests.py",
+        "description": "Execute property-based tests"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01NeFKXyFmwzYfcibmvbxAho",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/requests-oauthlib_env/bin/python3 manual_test.py",
+        "description": "Run manual property tests"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01HJJzmhvPVkYPaTjYRPUbSQ",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/requests-oauthlib_env/bin/python3 -c \"import sys; sys.path.insert(0, '/root/hypothesis-llm/envs/requests-oauthlib_env/lib/python3.13/site-packages'); from requests_oauthlib import OAuth2Session; session = OAuth2Session(client_id='test', pkce=''); print('Empty string accepted:', session._pkce)\"",
+        "description": "Test PKCE with empty string"
+      }
+    }
+  ],
+  "call_id": "190f2d25",
+  "module": "requests_oauthlib.oauth2_session",
+  "timestamp": "2025-08-18T22:11:09.141712"
+}

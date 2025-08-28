@@ -1,0 +1,66 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 565627,
+  "duration_api_ms": 568017,
+  "num_turns": 108,
+  "result": "Tested 7 properties on troposphere.mediatailor - all passed \u2705\n\n**Properties tested:**\n1. **Boolean validator invariants**: Correctly converts documented values to booleans\n2. **Integer validator type handling**: Properly validates integers (accepts booleans due to Python's bool subclassing int)\n3. **Double validator coercion**: Correctly accepts numeric types and strings\n4. **Required property validation**: Enforces required fields during validation\n5. **Round-trip serialization**: `from_dict(to_dict(x))` maintains equivalence\n6. **Hash/equality contract**: Equal objects have equal hashes\n7. **Type validation**: Property setters validate types against declared schemas\n\n**Notable behaviors (not bugs):**\n- Integer validators accept boolean values (Python design: bool subclasses int)\n- Empty strings satisfy \"required\" field constraints (semantic choice)\n- Validators perform type coercion for numeric strings (documented behavior)\n\nAll tested properties align with the code's documented behavior and Python language semantics.",
+  "session_id": "5405c079-9d7e-49ed-b86b-885b473d3885",
+  "total_cost_usd": 7.0718223999999985,
+  "usage": {
+    "input_tokens": 616,
+    "cache_creation_input_tokens": 92116,
+    "cache_read_input_tokens": 2537538,
+    "output_tokens": 20246,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01VxRwUz6dnqNwzqwGnK5fTn",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python3 -c \"import troposphere.mediatailor; print('Successfully imported troposphere.mediatailor')\"",
+        "description": "Import troposphere.mediatailor using the environment's Python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01H4gemLPtXcZy3Fd2kZoLrb",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/envs/troposphere_env && ./bin/python3 -c \"\nimport inspect\nimport troposphere.mediatailor as mediatailor\n\n# Get all public classes/functions\nmembers = inspect.getmembers(mediatailor, lambda m: inspect.isclass(m) and not m.__name__.startswith('_'))\nprint('Public classes in troposphere.mediatailor:')\nfor name, cls in members:\n    print(f'  {name}')\n    \n# Check if there are any functions\nfunctions = inspect.getmembers(mediatailor, inspect.isfunction)\nprint(f'\\nPublic functions: {len([f for f in functions if not f[0].startswith('_')])}')\n\"",
+        "description": "List all public classes and functions in mediatailor module"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Ff6CYDVckEXQtMhGN2fgn5",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python3 inspect_mediatailor.py",
+        "description": "Run the inspection script"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01MYoCZL1cewTwaMdPc7WWtN",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/pytest test_mediatailor_properties.py -v",
+        "description": "Run the property-based tests"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01T84dvDFXQ134hXuCGxweiL",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python3 run_tests.py",
+        "description": "Run the manual test script"
+      }
+    }
+  ],
+  "call_id": "295d4761",
+  "module": "troposphere.mediatailor",
+  "timestamp": "2025-08-19T02:10:16.121311"
+}

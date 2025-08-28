@@ -1,0 +1,42 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 559260,
+  "duration_api_ms": 552488,
+  "num_turns": 109,
+  "result": "## Summary\n\nI successfully found **2 high-severity logic bugs** in `pyatlan.cache` using property-based testing with Hypothesis:\n\n### Bug 1: AbstractAssetCache Silent Overwrite\n- **Location**: `/root/hypothesis-llm/envs/pyatlan_env/lib/python3.13/site-packages/pyatlan/cache/abstract_asset_cache.py:76-88`\n- **Issue**: Cache silently overwrites entries when assets have the same name or qualified_name but different GUIDs\n- **Impact**: Wrong assets returned from cache, potential data corruption\n- **Bug report**: `bug_report_pyatlan_cache_abstract_asset_cache_2025-08-18_21-09_027f.md`\n\n### Bug 2: UserCache Bidirectional Map Inconsistency\n- **Location**: `/root/hypothesis-llm/envs/pyatlan_env/lib/python3.13/site-packages/pyatlan/cache/user_cache.py:64-78`\n- **Issue**: Bidirectional maps become inconsistent when multiple user IDs share the same username/email\n- **Impact**: Wrong user retrieved, potential security/authorization issues\n- **Bug report**: `bug_report_pyatlan_cache_user_cache_2025-08-18_21-09_ugvx.md`\n\nBoth bugs violate fundamental cache invariants and could lead to serious data integrity issues in production. The property-based tests revealed these by testing bidirectional consistency and uniqueness assumptions that the code implicitly makes but doesn't enforce.",
+  "session_id": "77d9f929-7c25-4121-9cdd-58d78a68f1a7",
+  "total_cost_usd": 6.8754789,
+  "usage": {
+    "input_tokens": 782,
+    "cache_creation_input_tokens": 93878,
+    "cache_read_input_tokens": 2512000,
+    "output_tokens": 17674,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_011RQ3t6qxXsuNLuRhhKQkfa",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/pyatlan_env/bin/python3 -c \"import pyatlan.cache; print('Successfully imported pyatlan.cache')\"",
+        "description": "Import pyatlan.cache using venv Python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01SqAZpfX5bcAV2YKazbjuS7",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/pyatlan_env/bin/activate && python3 -c \"import pyatlan.cache; print('Successfully imported pyatlan.cache')\"",
+        "description": "Activate venv and import pyatlan.cache"
+      }
+    }
+  ],
+  "call_id": "ba911262",
+  "module": "pyatlan.cache",
+  "timestamp": "2025-08-18T21:11:40.425465"
+}

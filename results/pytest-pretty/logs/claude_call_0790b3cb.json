@@ -1,0 +1,42 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 413215,
+  "duration_api_ms": 419353,
+  "num_turns": 97,
+  "result": "## Bug Found in pytest_pretty! \ud83d\udc1b\n\nI discovered a logic bug in the ANSI escape removal regex that fails to remove many legitimate ANSI escape sequences. The regex pattern only handles CSI-style sequences but misses:\n\n1. **Single-character ESC sequences** (ESC M, ESC 7, ESC 8) - real ANSI control codes\n2. **Incomplete sequences** (lone ESC, ESC[) - can appear in truncated output\n\nThis causes the `parseoutcomes` function to fail when parsing test results containing these sequences.\n\n**Bug report created**: `bug_report_pytest_pretty_2025-08-18_14-30_x7k2.md`\n\nThe property-based testing approach successfully revealed this edge case that would be easy to miss with traditional testing!",
+  "session_id": "445ad084-0fa3-4d8c-8f86-5a1e27b35719",
+  "total_cost_usd": 4.4747168,
+  "usage": {
+    "input_tokens": 566,
+    "cache_creation_input_tokens": 53740,
+    "cache_read_input_tokens": 1682834,
+    "output_tokens": 12274,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01V4qV7yV6oJ2epj2gnLNcpD",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/envs/pytest-pretty_env && source bin/activate && python3 -c \"import pytest_pretty; print('success - treating as module'); print(pytest_pretty.__file__)\"",
+        "description": "Import pytest_pretty from the virtual environment"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01EnWF5FmwkkMxhz81KEpk7Q",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/pytest-pretty_env/bin/python3 -c \"import pytest_pretty; print('success - treating as module'); print(pytest_pretty.__file__)\"",
+        "description": "Import pytest_pretty using venv Python"
+      }
+    }
+  ],
+  "call_id": "0790b3cb",
+  "module": "pytest_pretty",
+  "timestamp": "2025-08-18T22:41:47.225905"
+}

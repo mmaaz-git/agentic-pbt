@@ -1,0 +1,42 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 639119,
+  "duration_api_ms": 647764,
+  "num_turns": 127,
+  "result": "## Summary\n\n**Bug Found** \u2705 - Challenge detection methods in `cloudscraper.cloudflare` return `None` instead of `False`\n\n### Testing Results:\n- Tested 7 properties on the `unescape()` method - all passed \u2705\n- Tested edge cases for HTML entity handling - all passed \u2705  \n- Discovered bug in `is_IUAM_Challenge()`, `is_Captcha_Challenge()`, and `is_Firewall_Blocked()` methods\n\n### Bug Details:\n- **Type**: API Contract violation\n- **Severity**: Medium\n- **Impact**: Methods with `is_` prefix should return booleans but return `None` in certain cases\n- **Root Cause**: When Cloudflare headers/status match but regex patterns don't, the functions return the result of `re.search()` (which is `None`) instead of `False`\n\n### Bug Report Created:\n`bug_report_cloudscraper_cloudflare_2025-08-19_03-08_i4ju.md`\n\nThe bug affects code that explicitly checks for `False` values and violates the expected boolean return type for `is_*` methods.",
+  "session_id": "5379fb13-676e-4b22-a9c4-72418a11abcb",
+  "total_cost_usd": 7.504555100000001,
+  "usage": {
+    "input_tokens": 770,
+    "cache_creation_input_tokens": 87870,
+    "cache_read_input_tokens": 2876298,
+    "output_tokens": 20106,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_011BgZLS934FA9EPfxU37g8h",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/cloudscraper_env/bin/activate && python3 -c \"import cloudscraper.cloudflare; print('success - treating as module')\"",
+        "description": "Import cloudscraper.cloudflare in the venv"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01BrQbYHSyidgRgdWhywPHHx",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/cloudscraper_env/bin/python3 -c \"import cloudscraper.cloudflare; print('success - treating as module')\"",
+        "description": "Import cloudscraper.cloudflare using venv python"
+      }
+    }
+  ],
+  "call_id": "b8533268",
+  "module": "cloudscraper.cloudflare",
+  "timestamp": "2025-08-19T03:09:37.976939"
+}

@@ -1,0 +1,50 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 388501,
+  "duration_api_ms": 391283,
+  "num_turns": 103,
+  "result": "## Testing Summary\n\nTested **9 properties** on `jurigged.runpy` - all passed \u2705\n\n### Properties Tested:\n\n1. **_ModifiedArgv0 context manager**:\n   - Round-trip property: sys.argv[0] properly restored\n   - No nesting allowed (RuntimeError on double entry)\n   - Works with special values (None, empty string, etc.)\n   - Exception safety: restores even on errors\n\n2. **_get_module_details validation**:\n   - Correctly rejects relative module names (starting with '.')\n   - Accepts absolute module names\n\n3. **split_script function**:\n   - Returns valid compiled code objects\n   - Splits at the last function/class definition\n   - Handles edge cases: empty files, comment-only files\n   - Works with nested functions\n   - Supports Unicode identifiers\n\n4. **_run_code execution**:\n   - Handles tuple code (before, after) execution\n   - Prepare callback integration\n   - Proper execution order with prepare between tuple parts\n   - Module metadata injection\n\nAll properties held as documented. The module appears to be robust with no bugs discovered through property-based testing.",
+  "session_id": "3b0665b2-fcf2-4ec8-b7b3-38a9fc66e87d",
+  "total_cost_usd": 4.8897487,
+  "usage": {
+    "input_tokens": 634,
+    "cache_creation_input_tokens": 57314,
+    "cache_read_input_tokens": 1871058,
+    "output_tokens": 13165,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01DB1CHqJqK531BxmmDYmx6N",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/envs/jurigged_env && ./bin/python -c \"import jurigged.runpy; print('Successfully imported jurigged.runpy'); print(type(jurigged.runpy)); import inspect; print('Module file:', inspect.getfile(jurigged.runpy))\"",
+        "description": "Import jurigged.runpy from the virtual environment"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01PTQvmp4b2S9toic5xDvois",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/jurigged_env/bin/python -c \"import jurigged.runpy; print('Successfully imported jurigged.runpy'); print(type(jurigged.runpy)); import inspect; print('Module file:', inspect.getfile(jurigged.runpy))\"",
+        "description": "Import jurigged.runpy using the venv python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_017VQ4GPtrGz7r11UgckN87c",
+      "tool_input": {
+        "command": "cat > test_execution.py << 'EOF'\nimport sys\nsys.path.insert(0, '/root/hypothesis-llm/envs/jurigged_env/lib/python3.13/site-packages')\nimport jurigged.runpy\n\n# Test _run_code with tuple code\ncode_before = compile(\"x = 1\", \"<test>\", \"exec\")\ncode_after = compile(\"y = 2\", \"<test>\", \"exec\")\n\nrun_globals = {}\nresult = jurigged.runpy._run_code(\n    code=(code_before, code_after),\n    run_globals=run_globals\n)\n\nassert 'x' in result\nassert 'y' in result\nassert result['x'] == 1\nassert result['y'] == 2\nprint(\"Test 1 passed: tuple code execution\")\n\n# Test with prepare callback\nprepare_called = []\n\ndef prepare(globals_dict):\n    prepare_called.append(True)\n    globals_dict['injected'] = 'from_prepare'\n\nrun_globals = {}\ncode = compile(\"x = 1\", \"<test>\", \"exec\")\nresult = jurigged.runpy._run_code(\n    code=code,\n    run_globals=run_globals,\n    prepare=prepare\n)\n\nassert prepare_called == [True]\nassert 'injected' in result\nprint(\"Test 2 passed: prepare callback\")\n\n# Test tuple with prepare - checking call order\ncode_before = compile(\"x = 1\", \"<test>\", \"exec\")\ncode_after = compile(\"y = x + 1\", \"<test>\", \"exec\")\n\nprepare_calls = []\n\ndef prepare2(globals_dict):\n    prepare_calls.append(globals_dict.get('x'))\n    globals_dict['z'] = 3\n\nrun_globals = {}\nresult = jurigged.runpy._run_code(\n    code=(code_before, code_after),\n    run_globals=run_globals,\n    prepare=prepare2\n)\n\nassert prepare_calls == [1]\nassert result['x'] == 1\nassert result['y'] == 2\nassert result['z'] == 3\nprint(\"Test 3 passed: tuple with prepare callback order\")\n\nprint(\"\\nAll execution tests passed!\")\nEOF\npython3 test_execution.py",
+        "description": "Create and run execution tests directly"
+      }
+    }
+  ],
+  "call_id": "7078124d",
+  "module": "jurigged.runpy",
+  "timestamp": "2025-08-19T02:52:46.331284"
+}

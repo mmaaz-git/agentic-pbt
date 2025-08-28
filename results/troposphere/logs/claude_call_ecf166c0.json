@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 409974,
+  "duration_api_ms": 395666,
+  "num_turns": 85,
+  "result": "## Bug Found! \ud83d\udc1b\n\nI discovered a **logic bug** in the `troposphere.datazone.boolean()` function through property-based testing with Hypothesis.\n\n**Summary**: The `boolean()` function incorrectly accepts float values `0.0` and `1.0`, returning `False` and `True` respectively, when it should raise `ValueError` for all float inputs.\n\n**Root Cause**: The bug occurs because the function uses Python's `in` operator to check membership in lists like `[True, 1, \"1\", ...]`. Since Python considers `0.0 == 0` and `1.0 == 1`, these float values are incorrectly accepted.\n\nI've created a detailed bug report: `bug_report_troposphere_datazone_boolean_2025-08-19_06-04_9581.md`\n\n**Testing Summary**:\n- \u2705 Tested 10 different properties across the module\n- \u2705 Discovered 1 genuine bug in `boolean()` function\n- \u2705 All other properties (double function, round-trip serialization, validation) passed successfully",
+  "session_id": "ad123aaa-70f2-47db-9eee-a3c0d93d0551",
+  "total_cost_usd": 4.1412615,
+  "usage": {
+    "input_tokens": 656,
+    "cache_creation_input_tokens": 68486,
+    "cache_read_input_tokens": 1363886,
+    "output_tokens": 10508,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_016Tdh1GF871mzW2bDtoi8mv",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/troposphere/datazone.py"
+      }
+    }
+  ],
+  "call_id": "ecf166c0",
+  "module": "troposphere.datazone",
+  "timestamp": "2025-08-19T06:05:39.625322"
+}

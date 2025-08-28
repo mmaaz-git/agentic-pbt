@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 376671,
+  "duration_api_ms": 382313,
+  "num_turns": 116,
+  "result": "## Bug Found! \ud83d\udc1b\n\nSuccessfully discovered a **round-trip property violation** in `troposphere.efs`. The `to_dict()` and `from_dict()` methods are incompatible - all AWSObject classes (FileSystem, AccessPoint, MountTarget) cannot be reconstructed from their dictionary representation.\n\n**Key findings:**\n- 8 property tests passed \u2705 for validators\n- 1 critical bug found in round-trip property\n- Bug affects all AWSObject classes in the module\n- Created bug report: `bug_report_troposphere_efs_2025-08-19_06-04_i6au.md`\n\nThe bug occurs because `to_dict()` adds CloudFormation template keys ('Type', 'Properties') that `from_dict()` doesn't handle, causing an AttributeError when trying to reconstruct objects.",
+  "session_id": "515a170d-610a-4535-973c-bb04f9fef815",
+  "total_cost_usd": 4.688293099999998,
+  "usage": {
+    "input_tokens": 676,
+    "cache_creation_input_tokens": 69970,
+    "cache_read_input_tokens": 1752752,
+    "output_tokens": 9702,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_015wuaFmtmKfCodFMizxTkR7",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/troposphere/efs.py"
+      }
+    }
+  ],
+  "call_id": "f4d8efd4",
+  "module": "troposphere.efs",
+  "timestamp": "2025-08-19T06:05:06.776432"
+}

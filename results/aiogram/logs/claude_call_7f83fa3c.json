@@ -1,0 +1,41 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 524138,
+  "duration_api_ms": 495961,
+  "num_turns": 91,
+  "result": "## Testing Report: aiogram.fsm\n\nTested **30 properties** on `aiogram.fsm` - all passed \u2705\n\n### Properties Tested:\n\n**MemoryStorage Core Properties (12 tests)**:\n- \u2705 Round-trip: `set_data`/`get_data` correctly stores and retrieves data\n- \u2705 Key isolation: Different storage keys maintain separate data\n- \u2705 Copy semantics: `get_data` returns independent copies\n- \u2705 Update merging: `update_data` preserves existing keys\n- \u2705 Default values: `get_value` correctly handles defaults\n- \u2705 State persistence: `set_state`/`get_state` round-trips correctly\n- \u2705 Empty storage handling: Returns empty dict for data, None for state\n\n**Validation Properties (4 tests)**:\n- \u2705 Type checking: `set_data` correctly rejects non-dict objects\n- \u2705 Complete overwrite: `set_data` replaces rather than merges\n- \u2705 Nested structures: Deep copies work correctly\n- \u2705 Empty updates: Preserve existing data\n\n**Advanced Properties (8 tests)**:\n- \u2705 State objects: Handles `aiogram.fsm.state.State` instances\n- \u2705 State/data independence: State and data don't interfere\n- \u2705 Concurrent access: Multiple keys work correctly in parallel\n- \u2705 Special characters: Unicode, emojis handled correctly\n- \u2705 Deep nesting: Recursive structures preserved\n- \u2705 Large data: Handles substantial payloads\n\n**FSMContext Properties (6 tests)**:\n- \u2705 Context integration: FSMContext correctly uses MemoryStorage\n- \u2705 Update with kwargs: Handles both dict and keyword arguments\n- \u2705 Clear functionality: Resets both state and data\n- \u2705 Value retrieval: `get_value` with defaults works correctly\n\nNo bugs found. The implementation appears robust with proper data isolation, copy semantics, and state management.",
+  "session_id": "6f46596c-99dc-4845-bd20-ae6cc6206111",
+  "total_cost_usd": 4.645474500000001,
+  "usage": {
+    "input_tokens": 610,
+    "cache_creation_input_tokens": 56718,
+    "cache_read_input_tokens": 1521450,
+    "output_tokens": 16977,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01TCLiB9gUUVdPMCZ2o8CW5b",
+      "tool_input": {
+        "file_path": "/root/.local/lib/python3.13/site-packages/aiogram/fsm/context.py"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_014EPMAYcQ76h9v9UL27Guv2",
+      "tool_input": {
+        "command": "ls -la /root/.local/lib/python3.13/site-packages/aiogram/fsm/storage/",
+        "description": "List files in storage directory"
+      }
+    }
+  ],
+  "call_id": "7f83fa3c",
+  "module": "aiogram.fsm",
+  "timestamp": "2025-08-18T23:08:24.703522"
+}

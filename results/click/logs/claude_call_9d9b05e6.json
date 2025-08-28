@@ -1,0 +1,25 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 288232,
+  "duration_api_ms": 295623,
+  "num_turns": 73,
+  "result": "Found bug: `_unpack_args` incorrectly handles `nargs=0` - returns empty tuple `()` instead of properly skipping the position \u2705",
+  "session_id": "c1acb351-1598-4726-9d6b-4fa3a745531f",
+  "total_cost_usd": 5.3787177999999995,
+  "usage": {
+    "input_tokens": 334,
+    "cache_creation_input_tokens": 91380,
+    "cache_read_input_tokens": 1945894,
+    "output_tokens": 9249,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [],
+  "call_id": "9d9b05e6",
+  "module": "click.parser",
+  "timestamp": "2025-08-18T05:54:07.767575"
+}

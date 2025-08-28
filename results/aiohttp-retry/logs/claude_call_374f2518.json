@@ -1,0 +1,50 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 430357,
+  "duration_api_ms": 432832,
+  "num_turns": 113,
+  "result": "## Bug Found! \ud83d\udc1b\n\nI discovered a **logic bug** in `aiohttp_retry.retry_options.FibonacciRetry` where the `get_timeout()` method completely ignores the `attempt` parameter and relies on mutable internal state instead.\n\n**The bug causes:**\n- Non-deterministic timeout values based on call history rather than attempt number\n- State pollution when reusing FibonacciRetry instances across multiple requests\n- API contract violation compared to all other retry strategies\n\n**Impact:** Medium severity - affects retry behavior consistency in production systems using FibonacciRetry\n\nBug report saved as: `bug_report_aiohttp_retry_fibonacciretry_2025-08-18_22-42_tyya.md`\n\nThe property-based testing successfully revealed this bug by testing the invariant that timeout values should be deterministic based on the attempt parameter, which FibonacciRetry violates.",
+  "session_id": "8bb3ff30-c34d-45af-be30-dcf083042b41",
+  "total_cost_usd": 5.5995439000000005,
+  "usage": {
+    "input_tokens": 698,
+    "cache_creation_input_tokens": 66014,
+    "cache_read_input_tokens": 2211936,
+    "output_tokens": 13611,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01HjFnrpe7n6mhk5tZR62ySz",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/envs/aiohttp-retry_env && source bin/activate && python3 -c \"import aiohttp_retry.types; print('success - treating as module')\"",
+        "description": "Import aiohttp_retry.types with activated environment"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01SnyLrcMuinXcAcv65KxM9o",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/aiohttp-retry_env/bin/python3 -c \"import aiohttp_retry.types; print('success - treating as module')\"",
+        "description": "Import aiohttp_retry.types with environment Python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_014EYowVE6g2poZqjGZ8CYVs",
+      "tool_input": {
+        "command": "PYTHONPATH=/root/hypothesis-llm/envs/aiohttp-retry_env/lib/python3.13/site-packages pytest test_aiohttp_retry_properties.py -v",
+        "description": "Run property-based tests with pytest"
+      }
+    }
+  ],
+  "call_id": "374f2518",
+  "module": "aiohttp_retry.types",
+  "timestamp": "2025-08-18T22:43:32.682903"
+}

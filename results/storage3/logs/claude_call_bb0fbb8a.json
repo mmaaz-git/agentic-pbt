@@ -1,0 +1,42 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 147962,
+  "duration_api_ms": 151260,
+  "num_turns": 49,
+  "result": "No testable properties found in storage3.utils. The module only contains:\n- `SyncClient`: A deprecated wrapper around httpx.Client that just delegates calls\n- `StorageException`: A simple exception class with no logic\n\nNo mathematical properties, invariants, or algorithmic logic to test with Hypothesis. \u2705",
+  "session_id": "445a4f9d-b1e1-4351-bf00-9bea779c57d9",
+  "total_cost_usd": 1.9671828000000002,
+  "usage": {
+    "input_tokens": 320,
+    "cache_creation_input_tokens": 34364,
+    "cache_read_input_tokens": 714644,
+    "output_tokens": 3197,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Hr89M1RX8qeLJg6aQFRpzW",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/storage3_env/bin/activate && python3 -c \"import storage3.utils; print('success - treating as module')\"",
+        "description": "Activate env and import storage3.utils"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01ByASLZ6HdxesSg2ivUbEoZ",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/storage3_env/bin/python3 -c \"import storage3.utils; print('success - treating as module')\"",
+        "description": "Import storage3.utils using venv python"
+      }
+    }
+  ],
+  "call_id": "bb0fbb8a",
+  "module": "storage3.utils",
+  "timestamp": "2025-08-18T21:46:00.364767"
+}

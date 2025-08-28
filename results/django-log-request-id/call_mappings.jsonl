@@ -1,0 +1,4 @@
+{"call_id": "bea2b4fe", "module": "log_request_id", "timestamp": "2025-08-18T21:53:43.118905", "bug_reports": ["bug_report_log_request_id_2025-01-18_12-30_k3n9.md"], "aux_files_dir": "aux_files/bea2b4fe"}
+{"call_id": "b1a8a25a", "module": "log_request_id.filters", "timestamp": "2025-08-18T23:03:26.671673", "bug_reports": ["bug_report_log_request_id_filters_2025-08-18_23-02_c940.md"], "aux_files_dir": "aux_files/b1a8a25a"}
+{"call_id": "9bfefb83", "module": "log_request_id.middleware", "timestamp": "2025-08-18T21:54:22.990753", "bug_reports": ["bug_report_log_request_id_middleware_2025-08-18_21-52_qkiq.md", "bug_report_log_request_id_middleware_2025-08-18_21-52_b7x3.md"], "aux_files_dir": "aux_files/9bfefb83"}
+{"call_id": "a469e244", "module": "log_request_id.models", "timestamp": "2025-08-18T21:46:22.915034", "bug_reports": [], "aux_files_dir": "aux_files/a469e244"}

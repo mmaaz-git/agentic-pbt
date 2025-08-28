@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 1057000,
+  "duration_api_ms": 1047871,
+  "num_turns": 115,
+  "result": "## Bug Found! \ud83d\udc1b\n\nI've discovered a genuine bug in `pydantic.functional_validators` through property-based testing.\n\n### Bug Summary\n**PlainValidator blocks BeforeValidator execution** - When `PlainValidator` and `BeforeValidator` are used together in an Annotated type, the BeforeValidator is completely skipped, violating the documented validator execution order.\n\n### Key Findings:\n- \u2705 Tested 11 core properties with 100+ examples each - most passed\n- \u2705 Tested 10 edge cases - all passed  \n- \u2705 Tested 10 advanced properties - found 1 genuine bug\n- \ud83d\udc1b **Bug confirmed**: PlainValidator prevents BeforeValidator from executing\n\n### What I Tested:\n- Validator execution order (Before/After/Plain/Wrap)\n- Validator composition and chaining\n- Exception propagation  \n- Type conversion behavior\n- Complex validator interactions\n- SkipValidation behavior\n- field_validator and model_validator functionality\n\nThe bug has been documented in `bug_report_pydantic_functional_validators_2025-08-18_19-50_teee.md` with a complete reproduction script and suggested fix.",
+  "session_id": "c6c63acc-3364-4133-937b-0f5649c2fe94",
+  "total_cost_usd": 7.069957499999999,
+  "usage": {
+    "input_tokens": 836,
+    "cache_creation_input_tokens": 98298,
+    "cache_read_input_tokens": 2340492,
+    "output_tokens": 22436,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01Mb7k6qNmPKzaApTz4T6KEx",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/pydantic/functional_validators.py"
+      }
+    }
+  ],
+  "call_id": "2594f92d",
+  "module": "pydantic.functional_validators",
+  "timestamp": "2025-08-18T19:52:01.497463"
+}

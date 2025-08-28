@@ -1,0 +1,66 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 549347,
+  "duration_api_ms": 526763,
+  "num_turns": 128,
+  "result": "## Summary\n\nFound **3 genuine bugs** in `spnego.negotiate` through property-based testing! \u2705\n\n### Bugs Discovered:\n\n1. **OID Encoding Overflow** - `pack_mech_type_list` crashes when OID components encode to values \u2265 256\n   - Bug report: `bug_report_spnego_pack_mech_type_list_2025-08-18_21-06_n11y.md`\n   \n2. **NegTokenInit Pack/Unpack Failure** - Round-trip property violated for empty mech_types lists\n   - Bug report: `bug_report_spnego_negtokeninit_2025-08-18_21-06_cgzf.md`\n   \n3. **NTLM Unwrap Crash** - `unpack_token` crashes on malformed NTLM messages instead of graceful error handling\n   - Bug report: `bug_report_spnego_unpack_token_ntlm_2025-08-18_21-06_0dyq.md`\n\n### Testing Summary:\n- Tested 4 core properties with multiple Hypothesis strategies\n- 6 tests failed revealing bugs, 5 tests passed\n- All bugs involve violations of expected invariants (round-trip properties, graceful error handling)\n- Severity: All Medium (crashes on edge cases, but not security/data corruption issues)",
+  "session_id": "7c925808-4dce-4f29-ab14-9c6eeadbd227",
+  "total_cost_usd": 7.344487399999998,
+  "usage": {
+    "input_tokens": 784,
+    "cache_creation_input_tokens": 87820,
+    "cache_read_input_tokens": 2977570,
+    "output_tokens": 15987,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01AvczXYAo74Z1EvGvj6a6MR",
+      "tool_input": {
+        "command": "pip3 install pyspnego",
+        "description": "Install pyspnego module"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01WK8At4ZAgiEjqqanZ7m6qy",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/pyspnego_env/bin/activate && python -c \"import spnego; print('spnego module found'); print(spnego.__file__)\"",
+        "description": "Activate env and check spnego module"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01R64h1J7ZjK9Yt1SmCTXis1",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/pyspnego_env/bin/python -c \"import spnego; print('spnego module found'); print(spnego.__file__)\"",
+        "description": "Check spnego module in venv"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01PP4Jw3w5vschViJSthzMot",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/worker_/18 && /root/hypothesis-llm/envs/pyspnego_env/bin/python -m pytest test_spnego_negotiate_properties.py -v --tb=short",
+        "description": "Run tests with pyspnego environment"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_013yE15i15hv5UgEma6FGJyT",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/worker_/18 && PYTHONPATH=/root/hypothesis-llm/envs/pyspnego_env/lib/python3.13/site-packages python3 -m pytest test_spnego_negotiate_properties.py -v --tb=short",
+        "description": "Run tests with PYTHONPATH"
+      }
+    }
+  ],
+  "call_id": "bd8a2d08",
+  "module": "spnego.negotiate",
+  "timestamp": "2025-08-18T21:09:12.463053"
+}

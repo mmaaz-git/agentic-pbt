@@ -1,0 +1,25 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 60785,
+  "duration_api_ms": 63330,
+  "num_turns": 25,
+  "result": "## Analysis Complete\n\nNo testable properties found in `requests.help` - this attribute does not exist in the requests module.\n\nThe `requests` module (version 2.32.4) has no `help` attribute or method. The main HTTP methods available are `get`, `post`, `put`, `delete`, `head`, `patch`, and `options`.",
+  "session_id": "67974c08-52b7-4abc-8042-7084d77df294",
+  "total_cost_usd": 0.6530266,
+  "usage": {
+    "input_tokens": 190,
+    "cache_creation_input_tokens": 3880,
+    "cache_read_input_tokens": 303676,
+    "output_tokens": 1593,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [],
+  "call_id": "816dda2b",
+  "module": "requests.help",
+  "timestamp": "2025-08-18T23:57:19.075233"
+}

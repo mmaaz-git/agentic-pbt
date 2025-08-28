@@ -1,0 +1,41 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 488443,
+  "duration_api_ms": 474019,
+  "num_turns": 97,
+  "result": "## Bug Found! \ud83d\udc1b\n\nI discovered a **JSON serialization bug** in `aiogram.methods`. The bug report has been saved to `bug_report_aiogram_methods_2025-08-18_23-07_c4dy.md`.\n\n### Bug Summary\n- **Issue**: The `model_dump_json()` method fails for all aiogram method classes\n- **Cause**: Default objects (sentinel values) cannot be serialized to JSON\n- **Impact**: Prevents standard Pydantic JSON serialization, requiring workarounds\n- **Severity**: Medium (breaks expected Pydantic functionality)\n\n### Properties Tested\n\u2705 Serialization with Default values (found bug!)  \n\u2705 model_copy field preservation  \n\u2705 model_copy selective updates  \n\u2705 Required field validation  \n\u2705 Parameterless method instantiation  \n\u2705 Basic Pydantic operations across all classes\n\nThe property-based testing successfully identified a real bug where the library violates the expected Pydantic contract for JSON serialization.",
+  "session_id": "7a4d317b-41a7-4abb-9ee0-a4d5d3ebc27c",
+  "total_cost_usd": 4.8313898,
+  "usage": {
+    "input_tokens": 732,
+    "cache_creation_input_tokens": 55688,
+    "cache_read_input_tokens": 1713794,
+    "output_tokens": 15852,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "LS",
+      "tool_use_id": "toolu_011AtT5XgBvDzRrcNWG3B8UY",
+      "tool_input": {
+        "path": "/root/.local/lib/python3.13/site-packages/aiogram/methods"
+      }
+    },
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01FBijAgh3b62Mp6P6iGwVoR",
+      "tool_input": {
+        "file_path": "/root/.local/lib/python3.13/site-packages/aiogram/methods/base.py",
+        "limit": 100
+      }
+    }
+  ],
+  "call_id": "3eda3f1d",
+  "module": "aiogram.methods",
+  "timestamp": "2025-08-18T23:08:17.231651"
+}

@@ -1,0 +1,13 @@
+{"call_id": "fe8c346b", "module": "optax", "timestamp": "2025-08-18T23:19:17.470190", "bug_reports": [], "aux_files_dir": "aux_files/fe8c346b"}
+{"call_id": "8059edf9", "module": "optax.assignment", "timestamp": "2025-08-18T23:20:21.296298", "bug_reports": ["bug_report_optax_assignment_hungarian_algorithm_2025-08-18_23-19_xj5f.md"], "aux_files_dir": "aux_files/8059edf9"}
+{"call_id": "3e75d00c", "module": "optax.contrib", "timestamp": "2025-08-18T23:16:50.194404", "bug_reports": ["bug_report_optax_contrib_normalize_2025-08-18_00-00_a3f2.md"], "aux_files_dir": "aux_files/3e75d00c"}
+{"call_id": "84ebac99", "module": "optax.losses", "timestamp": "2025-08-18T23:15:28.037978", "bug_reports": [], "aux_files_dir": "aux_files/84ebac99"}
+{"call_id": "cf9f91a0", "module": "optax.monte_carlo", "timestamp": "2025-08-18T23:18:46.206327", "bug_reports": ["bug_report_optax_monte_carlo_moving_avg_baseline_2025-08-18_02-35_d3f7.md"], "aux_files_dir": "aux_files/cf9f91a0"}
+{"call_id": "ff6c6f64", "module": "optax.optax_test", "timestamp": "2025-08-18T23:22:09.361173", "bug_reports": ["bug_report_optax_linear_schedule_2025-01-03_00-00_x7j9.md"], "aux_files_dir": "aux_files/ff6c6f64"}
+{"call_id": "5561ab91", "module": "optax.perturbations", "timestamp": "2025-08-18T23:17:44.708910", "bug_reports": ["bug_report_optax_perturbations_2025-08-18_11-30_k3m9.md"], "aux_files_dir": "aux_files/5561ab91"}
+{"call_id": "adeea71a", "module": "optax.projections", "timestamp": "2025-08-18T23:19:24.514385", "bug_reports": ["bug_report_optax_projections_l1_ball_2025-08-18_23-17_mi82.md", "bug_report_optax_projections_simplex_2025-08-18_23-18_u8uf.md"], "aux_files_dir": "aux_files/adeea71a"}
+{"call_id": "fc247ce4", "module": "optax.schedules", "timestamp": "2025-08-18T23:21:56.789236", "bug_reports": ["bug_report_optax_schedules_linear_onecycle_2025-08-18_13-43_x7n2.md", "bug_report_optax_schedules_exponential_decay_2025-08-18_13-43_p9q8.md"], "aux_files_dir": "aux_files/fc247ce4"}
+{"call_id": "679ba398", "module": "optax.second_order", "timestamp": "2025-08-18T23:23:25.562797", "bug_reports": ["bug_report_optax_second_order_hvp_2025-08-18_23-21_8bdp.md", "bug_report_optax_second_order_hvp_scalar_2025-08-18_23-21_xfq5.md"], "aux_files_dir": "aux_files/679ba398"}
+{"call_id": "d37490d8", "module": "optax.transforms", "timestamp": "2025-08-18T23:30:55.695313", "bug_reports": [], "aux_files_dir": "aux_files/d37490d8"}
+{"call_id": "7dbd1c25", "module": "optax.tree", "timestamp": "2025-08-18T23:27:13.394468", "bug_reports": [], "aux_files_dir": "aux_files/7dbd1c25"}
+{"call_id": "d4056eab", "module": "optax.tree_utils", "timestamp": "2025-08-18T23:20:44.486696", "bug_reports": [], "aux_files_dir": "aux_files/d4056eab"}

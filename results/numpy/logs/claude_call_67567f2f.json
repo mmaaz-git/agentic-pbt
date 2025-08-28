@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 746503,
+  "duration_api_ms": 771874,
+  "num_turns": 96,
+  "result": "Found bug: `ma.compress` incorrectly handles masked conditions, including masked elements in output instead of treating them as False. Bug report saved to `bug_report_numpy_ma_compress_2025-08-18_05-06_2r3o.md`.",
+  "session_id": "b11dd2e3-282c-4afe-9fd3-b3b0df7d081a",
+  "total_cost_usd": 7.019790399999998,
+  "usage": {
+    "input_tokens": 402,
+    "cache_creation_input_tokens": 75936,
+    "cache_read_input_tokens": 2463342,
+    "output_tokens": 24151,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "LS",
+      "tool_use_id": "toolu_01U6Yr13iThTEBZHRyfx2LoZ",
+      "tool_input": {
+        "path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/numpy/ma"
+      }
+    }
+  ],
+  "call_id": "67567f2f",
+  "module": "numpy.ma",
+  "timestamp": "2025-08-18T05:06:37.747494"
+}

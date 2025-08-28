@@ -1,0 +1,25 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 821158,
+  "duration_api_ms": 834292,
+  "num_turns": 108,
+  "result": "Tested 17 properties on numpy.linalg and found 1 bug: `numpy.linalg.eig` produces incorrect eigenvectors when matrices contain very small but non-zero values (between ~1e-300 and 1e-20), violating the fundamental eigenvalue equation even for non-defective eigenvalues. \u2705",
+  "session_id": "44dd131a-fce4-4a6f-bcbe-d6c5c3d3ee4b",
+  "total_cost_usd": 8.727314899999998,
+  "usage": {
+    "input_tokens": 344,
+    "cache_creation_input_tokens": 101970,
+    "cache_read_input_tokens": 3164724,
+    "output_tokens": 26443,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [],
+  "call_id": "5daa5ede",
+  "module": "numpy.linalg",
+  "timestamp": "2025-08-18T05:07:47.369903"
+}

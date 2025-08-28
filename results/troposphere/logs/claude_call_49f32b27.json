@@ -1,0 +1,58 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 3503172,
+  "duration_api_ms": 3506811,
+  "num_turns": 109,
+  "result": "## Bug Hunt Complete! \ud83d\udd0d\n\nI successfully tested 10 properties in `troposphere.emr` and discovered **2 bugs**:\n\n### Bug 1: positive_integer Validator Accepts Zero (Medium Severity)\n- **Location**: `/root/hypothesis-llm/envs/troposphere_env/lib/python3.13/site-packages/troposphere/validators/__init__.py:57`\n- **Issue**: The `positive_integer` validator accepts 0, but positive integers should be > 0\n- **Impact**: Could lead to invalid AWS EMR scaling configurations with EXACT_CAPACITY\n- **Bug Report**: `bug_report_troposphere_validators_positive_integer_2025-08-19_01-38_oqnw.md`\n\n### Bug 2: Empty Property Name Error Message (Low Severity)  \n- **Location**: `/root/hypothesis-llm/envs/troposphere_env/lib/python3.13/site-packages/troposphere/__init__.py:316`\n- **Issue**: Empty string property names produce unhelpful error messages\n- **Impact**: Makes debugging difficult when accidental empty strings are used\n- **Bug Report**: `bug_report_troposphere_empty_property_name_2025-08-19_01-38_om6e.md`\n\n### Properties Tested Successfully \u2705\n- Market validator (ON_DEMAND/SPOT validation)\n- Volume type validator (gp2, gp3, io1, etc.)\n- AdditionalInfo validator (string key/value dict)\n- Configuration validator (Configuration/dict list)\n- ActionOnFailure validator\n- OnDemandProvisioningSpecification allocation strategy\n- SpotProvisioningSpecification allocation strategy\n- ScalingConstraints Min/MaxCapacity\n\nBoth bugs have been documented with reproduction scripts and suggested fixes.",
+  "session_id": "c31697c5-dafa-429f-a5ab-144b1f0040aa",
+  "total_cost_usd": 7.615493000000002,
+  "usage": {
+    "input_tokens": 668,
+    "cache_creation_input_tokens": 155856,
+    "cache_read_input_tokens": 2449716,
+    "output_tokens": 13281,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01FgcHJiCMFAMiDk6RQ9Dq76",
+      "tool_input": {
+        "command": "pip3 install troposphere",
+        "description": "Install troposphere package"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01XvFkQ6QMCykZYXCkxV4pf9",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/troposphere_env/bin/activate && python -c \"import troposphere.emr; print('success - treating as module'); print(troposphere.emr.__file__)\"",
+        "description": "Activate venv and import troposphere.emr"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01C1yvDbNk3GiwpgQP3StWSa",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -c \"import troposphere.emr; print('success - treating as module'); print(troposphere.emr.__file__)\"",
+        "description": "Import troposphere.emr using venv Python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_016NoFbNEfNsPdfUCWQL6DXz",
+      "tool_input": {
+        "command": "PYTHONPATH=/root/hypothesis-llm/envs/troposphere_env/lib/python3.13/site-packages python3 -m pytest test_troposphere_emr.py -v",
+        "description": "Run pytest on troposphere EMR tests"
+      }
+    }
+  ],
+  "call_id": "49f32b27",
+  "module": "troposphere.emr",
+  "timestamp": "2025-08-19T01:39:35.193871"
+}

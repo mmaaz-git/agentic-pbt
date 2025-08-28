@@ -1,0 +1,42 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 705909,
+  "duration_api_ms": 648446,
+  "num_turns": 139,
+  "result": "Tested 9 properties on `isort.wrap` - all passed \u2705\n\n**Properties tested:**\n1. Line length constraints - wrapped lines respect configured limits\n2. Comment preservation - comments maintained during wrapping  \n3. Import statement invariants - all imports present, correct types returned\n4. Balanced wrapping termination - algorithm always terminates\n5. Empty input handling - gracefully handles empty lists\n6. Trailing comma consistency - proper comma placement\n7. Multiple wrap modes - all enum modes work correctly\n8. Boundary conditions - extreme values handled properly\n9. Edge cases with special characters and whitespace\n\nRan 27 property-based tests across 4 test files with over 10,000+ generated examples total. The `isort.wrap` module appears robust and correctly implements its documented line-wrapping behavior.",
+  "session_id": "cccd1cfb-bbee-41de-9b46-d46be69b6242",
+  "total_cost_usd": 7.5405568,
+  "usage": {
+    "input_tokens": 754,
+    "cache_creation_input_tokens": 83336,
+    "cache_read_input_tokens": 2968696,
+    "output_tokens": 19992,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_013i9qaYhQjfs7zVH5c7r8iB",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/isort_env/bin/activate && python -c \"import isort.wrap; print('isort.wrap is a module')\"",
+        "description": "Activate venv and check isort.wrap"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01GsRUEgbwctGG6WwTPRRFNV",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/isort_env/bin/python -c \"import isort.wrap; print('isort.wrap is a module')\"",
+        "description": "Check isort.wrap using venv python"
+      }
+    }
+  ],
+  "call_id": "4d88a68d",
+  "module": "isort.wrap",
+  "timestamp": "2025-08-18T23:00:07.689664"
+}

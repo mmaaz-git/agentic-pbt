@@ -1,0 +1,42 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 538562,
+  "duration_api_ms": 543429,
+  "num_turns": 90,
+  "result": "## Bug Hunting Complete! \ud83d\udc1b\n\nFound **2 genuine bugs** in `pyatlan.utils.to_camel_case`:\n\n1. **High Severity Crash Bug**: IndexError on empty/whitespace inputs\n   - Report: `bug_report_pyatlan_utils_to_camel_case_crash_2025-08-18_21-12_k5vd.md`\n   \n2. **Medium Severity Logic Bug**: Non-idempotent transformation  \n   - Report: `bug_report_pyatlan_utils_to_camel_case_idempotence_2025-08-18_21-12_xv4i.md`\n\nTested 12 different properties across 8 functions. The remaining functions passed all property tests \u2705",
+  "session_id": "ef35628d-4d8c-4ba8-b17f-840b9116df24",
+  "total_cost_usd": 4.3859358,
+  "usage": {
+    "input_tokens": 652,
+    "cache_creation_input_tokens": 58548,
+    "cache_read_input_tokens": 1583266,
+    "output_tokens": 11843,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01AQkmewRL1v9QJyJGTM1kpc",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/pyatlan_env/bin/activate && python -c \"import pyatlan.utils; print('Successfully imported pyatlan.utils')\"",
+        "description": "Import pyatlan.utils with activated environment"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01JwJ46FZ7ay4b6mAmMk7eCB",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/pyatlan_env/bin/python -c \"import pyatlan.utils; print('Successfully imported pyatlan.utils')\"",
+        "description": "Import pyatlan.utils using venv python"
+      }
+    }
+  ],
+  "call_id": "0b661a92",
+  "module": "pyatlan.utils",
+  "timestamp": "2025-08-18T21:13:51.483557"
+}

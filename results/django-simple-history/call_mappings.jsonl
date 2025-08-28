@@ -1,0 +1,9 @@
+{"call_id": "09545061", "module": "simple_history", "timestamp": "2025-08-18T23:38:05.436121", "bug_reports": [], "aux_files_dir": "aux_files/09545061"}
+{"call_id": "21f4d7b6", "module": "simple_history.management", "timestamp": "2025-08-18T23:36:55.245056", "bug_reports": ["bug_report_simple_history_management_commands_clean_duplicate_history_2025-08-18_23-35_lxw7.md"], "aux_files_dir": "aux_files/21f4d7b6"}
+{"call_id": "f6d9795e", "module": "simple_history.manager", "timestamp": "2025-08-18T23:42:07.461919", "bug_reports": [], "aux_files_dir": "aux_files/f6d9795e"}
+{"call_id": "7398088d", "module": "simple_history.middleware", "timestamp": "2025-08-18T23:36:26.716176", "bug_reports": ["bug_report_simple_history_middleware_2025-08-18_23-35_3x0g.md"], "aux_files_dir": "aux_files/7398088d"}
+{"call_id": "11ee9fe4", "module": "simple_history.models", "timestamp": "2025-08-18T23:38:13.459078", "bug_reports": ["bug_report_simple_history_models_2025-08-18_23-37_z841.md"], "aux_files_dir": "aux_files/11ee9fe4"}
+{"call_id": "f277ca23", "module": "simple_history.signals", "timestamp": "2025-08-18T23:33:42.091923", "bug_reports": [], "aux_files_dir": "aux_files/f277ca23"}
+{"call_id": "6ce3deda", "module": "simple_history.template_utils", "timestamp": "2025-08-18T23:36:01.397891", "bug_reports": ["bug_report_simple_history_template_utils_2025-08-18_23-35_v74j.md"], "aux_files_dir": "aux_files/6ce3deda"}
+{"call_id": "dc9ef7f6", "module": "simple_history.templatetags", "timestamp": "2025-08-18T23:38:35.428177", "bug_reports": ["bug_report_simple_history_template_utils_2025-08-18_14-30_xk9f.md"], "aux_files_dir": "aux_files/dc9ef7f6"}
+{"call_id": "c59099f5", "module": "simple_history.utils", "timestamp": "2025-08-18T23:39:53.771718", "bug_reports": ["bug_report_simple_history_utils_2025-08-18_23-39_6yhr.md"], "aux_files_dir": "aux_files/c59099f5"}

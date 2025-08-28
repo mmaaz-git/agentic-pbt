@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 346849,
+  "duration_api_ms": 354437,
+  "num_turns": 81,
+  "result": "## Bug Found! \ud83d\udc1b\n\nI discovered a crash bug in `pydantic.typing.getattr_migration`. The function incorrectly raises `KeyError` when accessing attributes from non-existent modules, instead of the expected `AttributeError`.\n\n**Bug Summary**: When `getattr_migration` creates a wrapper for a module that doesn't exist in `sys.modules`, it crashes with `KeyError` on line 303 of `/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/pydantic/_migration.py` instead of handling it gracefully.\n\n**Impact**: This affects error handling consistency and violates Python's convention that attribute access errors should be `AttributeError`.\n\nThe bug report has been saved to: `bug_report_pydantic_typing_2025-08-18_19-39_rxf7.md`",
+  "session_id": "ad9704ea-ba29-4c39-b40f-e6c14b717c6d",
+  "total_cost_usd": 3.9706537000000006,
+  "usage": {
+    "input_tokens": 588,
+    "cache_creation_input_tokens": 67990,
+    "cache_read_input_tokens": 1246594,
+    "output_tokens": 10645,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_012nZUfWYVow6Wnc9xcamKrM",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/pydantic/typing.py"
+      }
+    }
+  ],
+  "call_id": "31b801ee",
+  "module": "pydantic.typing",
+  "timestamp": "2025-08-18T19:40:11.129037"
+}

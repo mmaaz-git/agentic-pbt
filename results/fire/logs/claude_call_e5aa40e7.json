@@ -1,0 +1,34 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 967651,
+  "duration_api_ms": 974594,
+  "num_turns": 108,
+  "result": "## Bug Found! \ud83d\udc1b\n\nI discovered a genuine bug in the `fire.core` module through property-based testing with Hypothesis. \n\n**Summary**: The flag detection functions (`_IsFlag`, `_IsSingleCharFlag`, `_IsMultiCharFlag`) return `None` instead of `False` for many inputs, violating their expected boolean return type contract.\n\nThe bug report has been saved to: `bug_report_fire_core_2025-08-18_22-31_z2rz.md`\n\nThis is a **Medium severity** contract violation bug where predicate functions that should return boolean values can return `None`, potentially causing issues in type-checked code or when strict boolean values are expected.",
+  "session_id": "24f140cd-ca2c-4dbf-9cb4-0a45b72e4ed2",
+  "total_cost_usd": 5.512471399999998,
+  "usage": {
+    "input_tokens": 664,
+    "cache_creation_input_tokens": 71668,
+    "cache_read_input_tokens": 2225820,
+    "output_tokens": 10776,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01JgYLDuZQ466vgBASBNeqr4",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/fire_env/bin/python -c \"import fire.core_test; print('success - treating as module')\"",
+        "description": "Check if fire.core_test exists using fire_env python"
+      }
+    }
+  ],
+  "call_id": "e5aa40e7",
+  "module": "fire.core_test",
+  "timestamp": "2025-08-18T22:32:15.497299"
+}

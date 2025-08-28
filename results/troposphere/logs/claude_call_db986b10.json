@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 323062,
+  "duration_api_ms": 292344,
+  "num_turns": 82,
+  "result": "## Bug Found! \ud83d\udc1b\n\nSuccessfully discovered a **round-trip property violation** in `troposphere.qldb`:\n\n- **Issue**: `to_dict()` outputs CloudFormation format with 'Properties' and 'Type' keys, but `from_dict()` expects only the properties directly\n- **Impact**: Affects both `Ledger` and `Stream` classes \n- **Severity**: Medium (API contract violation)\n\nThe bug report has been saved to `bug_report_troposphere_qldb_2025-08-19_02-17_gxby.md`.\n\nThis violates a fundamental expectation that serialization/deserialization methods should be inverses of each other. Any code relying on round-trip conversion would fail.",
+  "session_id": "0416726b-2212-4fa0-b269-5adff6f99246",
+  "total_cost_usd": 3.3078852,
+  "usage": {
+    "input_tokens": 506,
+    "cache_creation_input_tokens": 37872,
+    "cache_read_input_tokens": 1239194,
+    "output_tokens": 9567,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_011EpwGw8kvw4CDRAQZka2gH",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/troposphere/qldb.py"
+      }
+    }
+  ],
+  "call_id": "db986b10",
+  "module": "troposphere.qldb",
+  "timestamp": "2025-08-19T02:18:01.283771"
+}

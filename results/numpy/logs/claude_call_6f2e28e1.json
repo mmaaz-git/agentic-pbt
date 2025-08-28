@@ -1,0 +1,25 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 331448,
+  "duration_api_ms": 343214,
+  "num_turns": 79,
+  "result": "Found bug: `numpy.rec.format_parser` strips whitespace from field names, causing duplicate name errors for distinct whitespace strings and breaking field access by original names. Bug report saved as `bug_report_numpy_rec_format_parser_2025-08-18_05-01_jhwz.md`.",
+  "session_id": "448f721e-b168-4297-acba-32b8771c2e21",
+  "total_cost_usd": 4.394091500000001,
+  "usage": {
+    "input_tokens": 280,
+    "cache_creation_input_tokens": 51662,
+    "cache_read_input_tokens": 1760008,
+    "output_tokens": 9895,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [],
+  "call_id": "6f2e28e1",
+  "module": "numpy.rec",
+  "timestamp": "2025-08-18T05:01:52.292691"
+}

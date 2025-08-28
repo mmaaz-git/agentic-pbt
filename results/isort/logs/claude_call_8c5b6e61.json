@@ -1,0 +1,58 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 389522,
+  "duration_api_ms": 393447,
+  "num_turns": 94,
+  "result": "## Bug Found in isort! \ud83d\udc1b\n\nI successfully discovered a **contract violation bug** in isort through property-based testing with Hypothesis.\n\n### The Bug\n`isort.check_code()` returns `True` (claiming code is properly sorted) but `isort.code()` still modifies the code by adding a trailing newline. This violates the expected contract that if checking passes, sorting should be a no-op.\n\n### Impact\n- **Severity**: Medium\n- **Type**: Contract violation\n- **Affected**: Any code without trailing newlines\n\n### Key Finding\n```python\ncode = \"import a\"\nisort.check_code(code)  # Returns True \u2713\nisort.code(code)        # Returns \"import a\\n\" (modified!) \u2717\n```\n\nThe bug report has been saved to `bug_report_isort_2025-01-18_22-22_x8k3.md` with full reproduction steps and analysis.\n\nThis inconsistency could affect CI/CD pipelines, editor integrations, and any workflow assuming `check_code() == True` means no changes needed.",
+  "session_id": "6abb86ef-b3af-40de-a515-16cda7c069eb",
+  "total_cost_usd": 4.8721183,
+  "usage": {
+    "input_tokens": 522,
+    "cache_creation_input_tokens": 66322,
+    "cache_read_input_tokens": 1792368,
+    "output_tokens": 12254,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01DkkdUm7wMUPJNM4toPXshW",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/isort_env/bin/activate && python -c \"import isort; print('isort module loaded successfully'); print(f'isort.__file__ = {isort.__file__}')\"",
+        "description": "Activate isort environment and check module"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Lnbx37woobTopyw7DDFF6S",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/isort_env/bin/python -c \"import isort; print('isort module loaded successfully'); print(f'isort.__file__ = {isort.__file__}')\"",
+        "description": "Use isort environment python directly"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01VUG5ZxGZRJgxf2ht2APjTU",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/isort_env/bin/python -m pytest test_isort_properties.py -v --tb=short",
+        "description": "Run property-based tests with pytest"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01LCDJmPqXKsC8C49JizQQvT",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/isort_env/bin/python test_isort_properties.py",
+        "description": "Run isort property tests directly"
+      }
+    }
+  ],
+  "call_id": "8c5b6e61",
+  "module": "isort",
+  "timestamp": "2025-08-18T21:37:03.533159"
+}

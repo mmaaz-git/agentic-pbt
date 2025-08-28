@@ -1,0 +1,25 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 309163,
+  "duration_api_ms": 320503,
+  "num_turns": 57,
+  "result": "**Bug found**: JSONEncoder causes silent data loss when dictionaries contain both special float keys (inf, -inf, nan) and their string representations ('Infinity', '-Infinity', 'NaN'). The encoder converts float keys to JSON representations, creating key collisions that silently overwrite data.\n\nSaved bug report to: `bug_report_json_encoder_2025-08-18_04-48_agms.md`",
+  "session_id": "d5e1c63a-7143-407b-9a99-fa35d9a3b2d5",
+  "total_cost_usd": 3.358294699999999,
+  "usage": {
+    "input_tokens": 244,
+    "cache_creation_input_tokens": 34918,
+    "cache_read_input_tokens": 1290218,
+    "output_tokens": 9860,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [],
+  "call_id": "d84e8bef",
+  "module": "json.encoder",
+  "timestamp": "2025-08-18T04:49:02.065783"
+}

@@ -1,0 +1,1 @@
+{"call_id": "daffb32b", "module": "base64", "timestamp": "2025-08-18T04:55:13.519989", "bug_reports": ["bug_report_base64_b64encode_altchars_2025-08-18_04-53_1edw.md", "bug_report_base64_b85encode_padding_2025-08-18_04-54_46yx.md"], "aux_files_dir": "aux_files/daffb32b"}

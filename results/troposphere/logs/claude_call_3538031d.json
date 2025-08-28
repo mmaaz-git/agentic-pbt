@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 369120,
+  "duration_api_ms": 379862,
+  "num_turns": 83,
+  "result": "## Bug Found! \ud83d\udc1b\n\nSuccessfully discovered a **medium-severity contract bug** in `troposphere.workspacesweb.double`:\n\nThe `double()` validator accepts bytes/bytearray objects which causes JSON serialization failures when used in AWS CloudFormation templates. This breaks the contract that CloudFormation properties must be JSON-serializable.\n\n**Bug report saved**: `bug_report_troposphere_workspacesweb_2025-08-19_02-43_78sy.md`\n\n**Key finding**: When `ConfidenceLevel=b'0.75'` is used in `InlineRedactionPattern`, the template generation succeeds but JSON serialization fails with `TypeError: Object of type bytes is not JSON serializable`, preventing CloudFormation deployment.",
+  "session_id": "1331f0b5-92ba-460e-b414-e84a1e74718b",
+  "total_cost_usd": 3.3844245999999996,
+  "usage": {
+    "input_tokens": 582,
+    "cache_creation_input_tokens": 35128,
+    "cache_read_input_tokens": 1290390,
+    "output_tokens": 10226,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_019zdbPSDgAQcSma3BemPdps",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/troposphere/workspacesweb.py"
+      }
+    }
+  ],
+  "call_id": "3538031d",
+  "module": "troposphere.workspacesweb",
+  "timestamp": "2025-08-19T02:44:37.532170"
+}

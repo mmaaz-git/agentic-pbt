@@ -1,0 +1,58 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 452957,
+  "duration_api_ms": 458086,
+  "num_turns": 119,
+  "result": "## Summary\n\n**Found bug**: `troposphere.validators.boolean` incorrectly accepts float values and other numeric types that compare equal to 0 or 1. \n\nThe validator uses Python's `in` operator with lists, which uses `==` for comparison. Since `0.0 == 0` and `1.0 == 1`, floats and other numeric types bypass validation despite the type hints explicitly excluding them.\n\n**Bug report created**: `bug_report_troposphere_validators_boolean_2025-08-19_00-40_n730.md`\n\nThis is a **Medium severity Contract bug** that violates the API's type contract and could cause unexpected behavior when users accidentally pass float values to boolean properties in AWS CloudFormation templates.",
+  "session_id": "8d5dd855-0943-4fa5-ae9b-7693f0706f0c",
+  "total_cost_usd": 5.916815199999999,
+  "usage": {
+    "input_tokens": 740,
+    "cache_creation_input_tokens": 62288,
+    "cache_read_input_tokens": 2490508,
+    "output_tokens": 13182,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_017f2QyALmivcJjzCNdqCr54",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/troposphere_env/bin/activate && python -c \"import troposphere.directoryservice; print('success - treating as module')\"",
+        "description": "Import troposphere.directoryservice with activated venv"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_0149HQkqMsnA27PmTTyiyyaG",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -c \"import troposphere.directoryservice; print('success - treating as module')\"",
+        "description": "Import troposphere.directoryservice with venv python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01F1afEqk5SDNAa9BTwCC2F3",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -m pytest test_directoryservice_properties.py -v",
+        "description": "Run property-based tests with pytest"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_016U1PtbYPo2R9smAxKUtBK1",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python test_directoryservice_properties.py",
+        "description": "Run property-based tests directly"
+      }
+    }
+  ],
+  "call_id": "6b931ff7",
+  "module": "troposphere.directoryservice",
+  "timestamp": "2025-08-19T00:41:33.309419"
+}

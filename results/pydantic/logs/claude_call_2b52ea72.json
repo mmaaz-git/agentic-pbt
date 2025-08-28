@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 822177,
+  "duration_api_ms": 826511,
+  "num_turns": 75,
+  "result": "## Bug Found! \ud83d\udc1b\n\nSuccessfully discovered a **logic bug** in `pydantic.alias_generators` affecting the case conversion functions. The bug violates idempotence and round-trip properties due to inconsistent handling of letter-digit boundaries.\n\n### Key Findings:\n- **to_snake is not idempotent**: `to_snake('A0')` \u2192 `'a0'` \u2192 `'a_0'` (changes on second application)\n- **Round-trip failures**: Common identifiers like `value1`, `api2`, `sha256` fail when converted to camel/pascal and back\n- **Root cause**: `to_snake` inserts underscores between letters and digits, but `to_pascal` removes all underscores, creating asymmetry\n\n### Impact:\nAffects real-world code using these functions for API field name conversions, potentially causing data mapping issues.\n\nBug report saved to: `bug_report_pydantic_alias_generators_2025-08-18_19-18_6iio.md`",
+  "session_id": "a06478d3-c052-4a97-8126-0a2dac794f70",
+  "total_cost_usd": 3.3790752,
+  "usage": {
+    "input_tokens": 564,
+    "cache_creation_input_tokens": 43808,
+    "cache_read_input_tokens": 1166178,
+    "output_tokens": 10519,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01YWWNVgqM8G38zSWdYuHWFK",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/pydantic/alias_generators.py"
+      }
+    }
+  ],
+  "call_id": "2b52ea72",
+  "module": "pydantic.alias_generators",
+  "timestamp": "2025-08-18T19:19:53.582603"
+}

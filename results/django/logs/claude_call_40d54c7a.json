@@ -1,0 +1,49 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 428367,
+  "duration_api_ms": 439904,
+  "num_turns": 104,
+  "result": "## Testing Summary for django.http\n\n**Bug Found!** \ud83d\udc1b\n\nI discovered a data loss bug in `django.http.parse_cookie` where whitespace-only cookie values (including non-breaking spaces) are incorrectly stripped to empty strings.\n\n### Test Results:\n- \u2705 **QueryDict round-trip**: Passed - correctly preserves data through encode/decode\n- \u2705 **QueryDict multi-value preservation**: Passed - handles multiple values per key correctly  \n- \u274c **parse_cookie edge cases**: Failed - loses whitespace-only values\n- \u26a0\ufe0f **SimpleCookie round-trip**: Failed due to overly strict character validation (not a bug, documented behavior)\n\n### Bug Details:\n- **Function**: `django.http.parse_cookie`\n- **Issue**: Cookie values consisting only of whitespace (including `\\xa0`) are converted to empty strings\n- **Impact**: Data loss for applications using whitespace as meaningful cookie values\n- **Bug report**: Created in `bug_report_django_http_parse_cookie_2025-08-18_18-57_nofw.md`\n\nThe property-based testing successfully identified a subtle but genuine bug that could affect real-world applications.",
+  "session_id": "6af1e45f-685d-4f7b-83e7-f8ab83cd464e",
+  "total_cost_usd": 4.789668999999999,
+  "usage": {
+    "input_tokens": 772,
+    "cache_creation_input_tokens": 69888,
+    "cache_read_input_tokens": 1679104,
+    "output_tokens": 12379,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "LS",
+      "tool_use_id": "toolu_011v27hh6kznXezikx2PdkZY",
+      "tool_input": {
+        "path": "/root/.local/lib/python3.13/site-packages/django/http"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Dyhp91bYWf3mD5unKYKo5W",
+      "tool_input": {
+        "command": "ls -la /root/.local/lib/python3.13/site-packages/django/http/",
+        "description": "List files in django.http directory"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01NFvPW71teZG8SX3kJf9kr5",
+      "tool_input": {
+        "command": "python3 -c \"\nimport django\nfrom django.conf import settings\nsettings.configure(DEBUG=True, SECRET_KEY='test', DEFAULT_CHARSET='utf-8')\n\nimport django.http\nimport http.cookies\n\n# Test SimpleCookie with various characters\nprint('Testing SimpleCookie with special characters:')\ntest_chars = ['a', '0', '_', '-', '\u00b5', '\u00f1', '\u4e2d']\nfor char in test_chars:\n    try:\n        cookie = django.http.SimpleCookie()\n        cookie[char] = 'value'\n        print(f'{repr(char)}: OK')\n    except http.cookies.CookieError as e:\n        print(f'{repr(char)}: FAILED - {e}')\n\nprint()\nprint('Testing what characters are considered legal for cookie names:')\nimport string\nlegal = []\nillegal = []\nfor char in string.printable:\n    if char in '=;,\\\\\\\"\\\\r\\\\n':\n        continue\n    try:\n        cookie = django.http.SimpleCookie()\n        cookie[char] = 'test'\n        legal.append(char)\n    except:\n        illegal.append(char)\n\nprint(f'Legal characters: {repr(\\\"\\\".join(legal))}')\nprint(f'Illegal characters: {repr(\\\"\\\".join(illegal))}')\n\"",
+        "description": "Test SimpleCookie character restrictions"
+      }
+    }
+  ],
+  "call_id": "40d54c7a",
+  "module": "django.http",
+  "timestamp": "2025-08-18T18:57:57.997869"
+}

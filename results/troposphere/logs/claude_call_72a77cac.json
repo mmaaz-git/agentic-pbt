@@ -1,0 +1,90 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 491365,
+  "duration_api_ms": 492236,
+  "num_turns": 130,
+  "result": "## Bug Found! \ud83d\udc1b\n\nI discovered a **contract violation bug** in `troposphere.applicationinsights` (affects all troposphere AWS objects):\n\n**Bug**: The title validation error message incorrectly claims Unicode alphanumeric characters like '\u00b9' are \"not alphanumeric\" when Python's `isalnum()` confirms they ARE alphanumeric.\n\n**Impact**: Low severity - misleading error message causes confusion. The validation correctly rejects non-ASCII characters but the error message is technically incorrect.\n\n**Properties tested**: \n- \u2705 Boolean validator \n- \u2705 Integer validator\n- \u2705 Required properties validation\n- \u2705 Serialization round-trip\n- \u2705 List properties handling\n- \u274c Title validation (bug found!)\n\nThe bug report has been saved as `bug_report_troposphere_applicationinsights_2025-08-18_23-47_x9k2.md`.",
+  "session_id": "ef91bf94-ce8c-4f71-8280-74ac415395fa",
+  "total_cost_usd": 7.5990776,
+  "usage": {
+    "input_tokens": 740,
+    "cache_creation_input_tokens": 90460,
+    "cache_read_input_tokens": 3171618,
+    "output_tokens": 14912,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01SiFRdpi5cVjb6qiSTChFbz",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/troposphere_env/bin/activate && python -c \"import troposphere.applicationinsights; print('Module imported successfully'); print('Module file:', troposphere.applicationinsights.__file__)\"",
+        "description": "Activate venv and import troposphere.applicationinsights"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01XG8fYa3M2YjDdmK4nrJC6U",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -c \"import troposphere.applicationinsights; print('Module imported successfully'); print('Module file:', troposphere.applicationinsights.__file__)\"",
+        "description": "Import troposphere.applicationinsights using venv python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01EkvapGgjE1Cu6fr61iLif8",
+      "tool_input": {
+        "command": "grep -n \"class AWSProperty\" /root/hypothesis-llm/envs/troposphere_env/lib/python3.13/site-packages/troposphere/__init__.py",
+        "description": "Find AWSProperty class definition"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01WTHH1VTcqD1xojWNwM1jvQ",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -m pytest test_applicationinsights_properties.py -v --tb=short",
+        "description": "Run property-based tests with pytest"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_0184QogWU5cTPXinHEzC2mmG",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/pytest test_applicationinsights_properties.py -v --tb=short",
+        "description": "Run pytest tests for applicationinsights"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_015F4oLfefC5mJfbRozHfpRr",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python test_applicationinsights_properties.py",
+        "description": "Run tests directly with python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_018UPVFADUdsc8Vv5oda4tsw",
+      "tool_input": {
+        "command": "PATH=/root/hypothesis-llm/envs/troposphere_env/bin:$PATH python -m pytest test_applicationinsights_properties.py -v --tb=short",
+        "description": "Run pytest with venv in PATH"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01CKgxrq6iWK9w1JC9Dx91du",
+      "tool_input": {
+        "command": "PYTHONPATH=/root/hypothesis-llm/envs/troposphere_env/lib/python3.13/site-packages python3 -m pytest test_applicationinsights_properties.py -v --tb=short",
+        "description": "Run pytest with PYTHONPATH set"
+      }
+    }
+  ],
+  "call_id": "72a77cac",
+  "module": "troposphere.applicationinsights",
+  "timestamp": "2025-08-18T23:45:07.714500"
+}

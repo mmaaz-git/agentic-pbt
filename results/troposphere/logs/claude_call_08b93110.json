@@ -1,0 +1,82 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 421258,
+  "duration_api_ms": 420782,
+  "num_turns": 128,
+  "result": "## Bug Found! \ud83d\udc1b\n\nI discovered a **genuine bug** in the `troposphere.validators.boolean` function through property-based testing with Hypothesis.\n\n### Bug Summary\nThe `boolean()` validator incorrectly accepts float values `0.0` and `1.0`, returning `False` and `True` respectively, when it should raise `ValueError`. This happens because Python's equality comparison treats `0.0 == 0` and `1.0 == 1` as `True`, causing these floats to match the integers in the validation lists.\n\n### Impact\n- **Severity**: Medium\n- **Type**: Contract violation\n- **Affected**: Type validation in CloudFormation template generation\n\n### Files Created\n1. `test_internetmonitor.py` - Comprehensive property-based tests (15 tests total, 3 failures that led to bug discovery)\n2. `bug_report_troposphere_validators_boolean_2025-08-19_01-49_hsoc.md` - Detailed bug report with reproduction steps and fix\n3. `reproduce_bug.py` - Minimal reproduction script demonstrating the issue\n\nThe bug violates the implicit contract that the boolean validator should only accept specific documented values, not arbitrary floats that happen to equal those values. This could lead to unexpected behavior when users accidentally pass float values expecting strict validation.",
+  "session_id": "b404b999-0f22-46d1-b17e-9cdcd4875568",
+  "total_cost_usd": 6.737251499999999,
+  "usage": {
+    "input_tokens": 672,
+    "cache_creation_input_tokens": 74658,
+    "cache_read_input_tokens": 2927222,
+    "output_tokens": 12215,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Kq4R7p5Bqoz3TMSnQtgtaC",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -c \"import troposphere.internetmonitor; print('Successfully imported troposphere.internetmonitor'); print(dir(troposphere.internetmonitor))\"",
+        "description": "Import troposphere.internetmonitor using venv python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_012h4Hj5tQBmqeNBppzBbVTG",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/troposphere_env/bin/activate && python -c \"import troposphere.internetmonitor; print('Successfully imported troposphere.internetmonitor'); print(dir(troposphere.internetmonitor))\"",
+        "description": "Activate venv and import troposphere.internetmonitor"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01QR4Er4nyWUARmXxHKUvzBM",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/envs/troposphere_env && bin/python -c \"import troposphere.internetmonitor; print('Successfully imported troposphere.internetmonitor'); print(dir(troposphere.internetmonitor))\"",
+        "description": "Import troposphere.internetmonitor module"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01WoePqK1ds5fJ1WtxJx5a5H",
+      "tool_input": {
+        "command": "PATH=/root/hypothesis-llm/envs/troposphere_env/bin:$PATH pytest test_internetmonitor.py -v",
+        "description": "Run hypothesis property-based tests"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01HKW8Jtbqc5p79pmbFmzVeJ",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -m pytest test_internetmonitor.py -v",
+        "description": "Run property-based tests with pytest"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_011yQn4dMFfZB9CdHUV45hPD",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python test_internetmonitor.py",
+        "description": "Run test file directly with python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Y2yEBjhvNMHU6ow2JXDeue",
+      "tool_input": {
+        "command": "PYTHONPATH=/root/hypothesis-llm/envs/troposphere_env/lib/python3.13/site-packages python3 test_internetmonitor.py",
+        "description": "Run tests with PYTHONPATH set"
+      }
+    }
+  ],
+  "call_id": "08b93110",
+  "module": "troposphere.internetmonitor",
+  "timestamp": "2025-08-19T01:50:07.491298"
+}

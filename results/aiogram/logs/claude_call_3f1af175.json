@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 417220,
+  "duration_api_ms": 395996,
+  "num_turns": 100,
+  "result": "## Bug Found! \ud83d\udc1b\n\nSuccessfully discovered a **string representation bug** in `aiogram.enums`. \n\n**Summary**: All string-based enums in aiogram (like `ChatType`, `ParseMode`, `BotCommandScopeType`) have inconsistent behavior where `str(enum_member)` returns the full enum representation (e.g., `\"ChatType.PRIVATE\"`) instead of the actual string value (`\"private\"`), even though the enum members inherit from `str` and equal their string values.\n\n**Impact**: This breaks string formatting, logging, and any code expecting true string substitutability when using these enums.\n\n**Bug report saved**: `bug_report_aiogram_enums_2025-08-18_23-04_2ctz.md`\n\nThe property-based testing approach successfully identified this contract violation through systematic testing of string enum behavior across the module. \u2705",
+  "session_id": "b8247317-48e5-4374-97a3-8f2a2b67e336",
+  "total_cost_usd": 4.499266600000001,
+  "usage": {
+    "input_tokens": 786,
+    "cache_creation_input_tokens": 49244,
+    "cache_read_input_tokens": 1726520,
+    "output_tokens": 12750,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01MADuEfqP5vqgzZ1KA1aGPL",
+      "tool_input": {
+        "file_path": "/root/.local/lib/python3.13/site-packages/aiogram/enums/__init__.py"
+      }
+    }
+  ],
+  "call_id": "3f1af175",
+  "module": "aiogram.enums",
+  "timestamp": "2025-08-18T23:05:06.132617"
+}

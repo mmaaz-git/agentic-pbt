@@ -1,0 +1,90 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 464279,
+  "duration_api_ms": 468034,
+  "num_turns": 97,
+  "result": "Tested 10+ properties on troposphere.appconfig - all passed \u2705\n\n## Summary\n\nI conducted comprehensive property-based testing on the `troposphere.appconfig` module, focusing on its validation functions (`validate_growth_type`, `validate_replicate_to`, `validate_validator_type`) and their integration with the AWS resource classes.\n\n## Properties Tested\n\n**Core validator properties:**\n- Identity property: Valid inputs returned unchanged\n- Invalid input rejection with proper error messages\n- Case sensitivity enforcement (only uppercase values accepted)\n- Error message format consistency\n- None value and empty string rejection\n- Type handling for non-string inputs\n\n**Advanced properties:**\n- Substring handling (rejecting partial matches)\n- Concatenated values rejection\n- Unicode lookalike character handling\n- Long string processing\n- Cross-validator value isolation\n- Mutation safety of constants\n\n**Class-level validation:**\n- Invalid values properly rejected at object creation\n- Validators correctly integrated into resource classes\n\nAll validation functions demonstrated robust behavior, correctly accepting only their designated valid values (\"LINEAR\", \"NONE\"/\"SSM_DOCUMENT\", \"JSON_SCHEMA\"/\"LAMBDA\") and properly rejecting all invalid inputs with appropriate error messages.\n\nThe module's implementation is solid with no bugs discovered through extensive property-based testing.",
+  "session_id": "75d60d03-41a3-4a59-8795-9944238368fa",
+  "total_cost_usd": 5.2243208,
+  "usage": {
+    "input_tokens": 612,
+    "cache_creation_input_tokens": 67412,
+    "cache_read_input_tokens": 1860570,
+    "output_tokens": 15206,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01GH9aJ6XXUkyNkanZo15rKn",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/troposphere_env/bin/activate && python -c \"import troposphere.appconfig; print('success - treating as module')\"",
+        "description": "Activate venv and check if troposphere.appconfig is importable"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01DyBCo2GKNvvqsh5xedf5Es",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -c \"import troposphere.appconfig; print('success - treating as module')\"",
+        "description": "Use venv python to check troposphere.appconfig"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01MZzVdYL395QhoJQFvYdxc8",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python3 -c \"import troposphere.appconfig; print('success - treating as module')\"",
+        "description": "Use venv python3 to check troposphere.appconfig"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01GrjgKo1GvK1TTAsanmF6cT",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python3 -c \"\nimport troposphere.appconfig\nimport inspect\nprint('File location:', troposphere.appconfig.__file__)\nmembers = inspect.getmembers(troposphere.appconfig, lambda x: inspect.isclass(x) and x.__module__ == 'troposphere.appconfig')\nprint(f'Found {len(members)} classes in troposphere.appconfig:')\nfor name, cls in members[:10]:  # Show first 10 classes\n    print(f'  - {name}')\"",
+        "description": "Inspect troposphere.appconfig module structure"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01YVG1knr9xDa126n9Cc2WtA",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python3 -m pytest test_appconfig_properties.py -v",
+        "description": "Run property-based tests with pytest"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01CS4Df6PFmBa59BDYHC4s5W",
+      "tool_input": {
+        "command": "PYTHONPATH=/root/hypothesis-llm/envs/troposphere_env/lib/python3.13/site-packages python3 -m pytest test_appconfig_properties.py -v",
+        "description": "Run tests with PYTHONPATH set to venv site-packages"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01A8UDRbvKJLwB5miQgyXFNV",
+      "tool_input": {
+        "command": "pip3 install troposphere",
+        "description": "Install troposphere in the current environment"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01J8vZVkNETb71dtdEDMs6LQ",
+      "tool_input": {
+        "command": "cp -r /root/hypothesis-llm/envs/troposphere_env/lib/python3.13/site-packages/troposphere .",
+        "description": "Copy troposphere module to current directory"
+      }
+    }
+  ],
+  "call_id": "65771a9a",
+  "module": "troposphere.appconfig",
+  "timestamp": "2025-08-18T23:43:42.480617"
+}

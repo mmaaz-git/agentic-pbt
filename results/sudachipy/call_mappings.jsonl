@@ -1,0 +1,7 @@
+{"call_id": "b390b455", "module": "sudachipy", "timestamp": "2025-08-18T20:44:44.465621", "bug_reports": ["bug_report_sudachipy_config_2025-08-18_02-22_x3k9.md", "bug_report_pyramid_path_2025-08-18_04-34_k3m9.md"], "aux_files_dir": "aux_files/b390b455"}
+{"call_id": "5f1878e2", "module": "sudachipy.command_line", "timestamp": "2025-08-18T20:38:16.904838", "bug_reports": ["bug_report_sudachipy_command_line_2025-08-18_20-37_6jw1.md"], "aux_files_dir": "aux_files/5f1878e2"}
+{"call_id": "a5ac8afc", "module": "sudachipy.dictionary", "timestamp": "2025-08-18T20:40:13.806270", "bug_reports": ["bug_report_sudachipy_splitmode_2025-08-18_04-42_k3j9.md"], "aux_files_dir": "aux_files/a5ac8afc"}
+{"call_id": "8645468c", "module": "sudachipy.morpheme", "timestamp": "2025-08-18T20:36:24.545598", "bug_reports": [], "aux_files_dir": "aux_files/8645468c"}
+{"call_id": "6a091d2e", "module": "sudachipy.morphemelist", "timestamp": "2025-08-18T20:35:48.145946", "bug_reports": [], "aux_files_dir": "aux_files/6a091d2e"}
+{"call_id": "a9b742f1", "module": "sudachipy.sudachipy", "timestamp": "2025-08-18T20:41:49.214512", "bug_reports": ["bug_report_sudachipy_config_2025-08-18_20-40_ew27.md"], "aux_files_dir": "aux_files/a9b742f1"}
+{"call_id": "befcfaac", "module": "sudachipy.tokenizer", "timestamp": "2025-08-18T20:48:16.380684", "bug_reports": [], "aux_files_dir": "aux_files/befcfaac"}

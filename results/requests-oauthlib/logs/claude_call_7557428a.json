@@ -1,0 +1,66 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 708355,
+  "duration_api_ms": 699165,
+  "num_turns": 121,
+  "result": "## Summary\n\nFound 2 bugs in `requests_oauthlib.oauth1_auth` through property-based testing:\n\n### Bug 1: UnicodeDecodeError (Medium Severity)\n- **Issue**: Crashes when Content-Type header contains non-UTF8 bytes (e.g., `b'\\x80'`)\n- **Location**: Line 82 of oauth1_auth.py\n- **Impact**: Valid request objects from the requests library can cause authentication to fail\n\n### Bug 2: TypeError (Low Severity)  \n- **Issue**: Crashes when body is empty bytes (`b''`) without Content-Type header\n- **Location**: Line 77 calling extract_params on binary data\n- **Impact**: Edge case affecting requests with binary bodies and missing Content-Type\n\nBoth bugs have been documented with reproduction scripts and proposed fixes. The property-based testing successfully identified these issues by exploring edge cases in type handling and encoding assumptions.",
+  "session_id": "2dfa4ce6-cdef-47c7-a163-6aed4b4b4603",
+  "total_cost_usd": 5.875067100000001,
+  "usage": {
+    "input_tokens": 778,
+    "cache_creation_input_tokens": 66126,
+    "cache_read_input_tokens": 2354226,
+    "output_tokens": 14402,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01VXv6HTAJAUqFd2USLke7jv",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/requests-oauthlib_env/bin/python3 -c \"import requests_oauthlib.oauth1_auth; print('Successfully imported requests_oauthlib.oauth1_auth')\"",
+        "description": "Import module using venv python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01DpVm68fh7Pgn6zpjzCwqYS",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/requests-oauthlib_env/bin/python3 -m pytest test_oauth1_auth_properties.py -v",
+        "description": "Run tests with venv Python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01DNdbdBy1D4FVj5VfuW4ez8",
+      "tool_input": {
+        "command": "PYTHONPATH=/root/hypothesis-llm/envs/requests-oauthlib_env/lib/python3.13/site-packages python3 -m pytest test_oauth1_auth_properties.py -v",
+        "description": "Run tests with PYTHONPATH set to venv"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01BmcUH7XB5q6Drmb51kohn5",
+      "tool_input": {
+        "command": "PYTHONPATH=/root/hypothesis-llm/envs/requests-oauthlib_env/lib/python3.13/site-packages:$PYTHONPATH python3 test_oauth1_auth_properties.py",
+        "description": "Run tests directly with PYTHONPATH"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01R9HRmzBqDkqeCaaiPjwDMC",
+      "tool_input": {
+        "command": "mv bug_report_requests_oauthlib_oauth1_auth_2025-08-18_22-03_8exx.py bug_report_requests_oauthlib_oauth1_auth_2025-08-18_22-03_8exx.md",
+        "description": "Rename bug report to .md"
+      }
+    }
+  ],
+  "call_id": "7557428a",
+  "module": "requests_oauthlib.oauth1_auth",
+  "timestamp": "2025-08-18T22:06:29.953430"
+}

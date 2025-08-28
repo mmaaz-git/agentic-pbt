@@ -1,0 +1,3 @@
+{"call_id": "baea2d40", "module": "html", "timestamp": "2025-08-18T04:59:04.008161", "bug_reports": ["bug_report_requests_utils_null_char_2025-08-18_04-50_l6tw.md", "bug_report_requests_utils_cidr_zero_2025-08-18_04-50_3hi5.md"], "aux_files_dir": "aux_files/baea2d40"}
+{"call_id": "591bd628", "module": "html.entities", "timestamp": "2025-08-18T05:00:33.701572", "bug_reports": [], "aux_files_dir": "aux_files/591bd628"}
+{"call_id": "e2321bed", "module": "html.parser", "timestamp": "2025-08-18T04:56:19.785978", "bug_reports": ["bug_report_html_unescape_2025-08-18_04-55_axxv.md"], "aux_files_dir": "aux_files/e2321bed"}

@@ -1,0 +1,50 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 463921,
+  "duration_api_ms": 475517,
+  "num_turns": 103,
+  "result": "## Summary\n\nFound **3 bugs** in `troposphere.validators.iam`:\n\n1. **Incorrect error message**: Group name validator reports \"IAM Role Name\" instead of \"IAM Group Name\"\n2. **Format string bug**: Path validator doesn't format error messages correctly (creates tuple)\n3. **Format string bug**: User name validator doesn't format error messages correctly (creates tuple)\n\nBug report saved to: `bug_report_troposphere_validators_iam_2025-08-19_01-47_0s5e.md`\n\nTested 11 properties total, including validation constraints, regex patterns, and required fields. All other properties passed \u2705",
+  "session_id": "a5ac5671-b4b4-4e58-a2da-f8082ba71316",
+  "total_cost_usd": 5.5166817,
+  "usage": {
+    "input_tokens": 666,
+    "cache_creation_input_tokens": 66846,
+    "cache_read_input_tokens": 2173152,
+    "output_tokens": 13006,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01AVZyjpFgMQFYD7f14iwtAZ",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/troposphere_env/bin/activate && python -c \"import troposphere.iam; print('success - treating as module')\"",
+        "description": "Activate venv and test import"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_016bvjAKSXzey8WCMq1ches5",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -c \"import troposphere.iam; print('success - treating as module')\"",
+        "description": "Test import using venv python directly"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01MknmiZGCkPn3YxWQhExiaJ",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -m pytest test_iam_properties.py -v",
+        "description": "Run property-based tests for IAM module"
+      }
+    }
+  ],
+  "call_id": "228d7fe6",
+  "module": "troposphere.iam",
+  "timestamp": "2025-08-19T01:48:54.860147"
+}

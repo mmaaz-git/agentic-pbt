@@ -1,0 +1,5 @@
+{"call_id": "c11071b2", "module": "json", "timestamp": "2025-08-18T04:51:18.550827", "bug_reports": ["bug_report_json_parse_float_2025-08-18_04-50_hlih.md"], "aux_files_dir": "aux_files/c11071b2"}
+{"call_id": "c95e4b33", "module": "json.decoder", "timestamp": "2025-08-18T04:53:01.039215", "bug_reports": ["bug_report_requests_sessions_2025-08-18_04-49_hmmq.md"], "aux_files_dir": "aux_files/c95e4b33"}
+{"call_id": "d84e8bef", "module": "json.encoder", "timestamp": "2025-08-18T04:49:02.728239", "bug_reports": ["bug_report_requests_status_codes_2025-08-18_04-47_r3ah.md", "bug_report_json_encoder_2025-08-18_04-48_agms.md"], "aux_files_dir": "aux_files/d84e8bef"}
+{"call_id": "720bbd62", "module": "json.scanner", "timestamp": "2025-08-18T04:54:10.157216", "bug_reports": ["bug_report_requests_structures_LookupDict_2025-08-18_04-48_a74n.md"], "aux_files_dir": "aux_files/720bbd62"}
+{"call_id": "563825bf", "module": "json.tool", "timestamp": "2025-08-18T04:49:51.947475", "bug_reports": ["bug_report_json_tool_2025-08-18_04-49_o9tb.md"], "aux_files_dir": "aux_files/563825bf"}

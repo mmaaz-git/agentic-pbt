@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 352343,
+  "duration_api_ms": 326576,
+  "num_turns": 76,
+  "result": "## Bug Found: Whitespace Arguments Lost in Command Parsing \ud83d\udc1b\n\nSuccessfully discovered a bug in `aiogram.filters.command.Command.extract_command` where whitespace-only arguments are incorrectly discarded.\n\n**Key findings:**\n- The method loses arguments consisting only of whitespace characters (tabs, newlines, carriage returns, spaces)\n- Root cause: Python's `str.split(maxsplit=1)` strips trailing whitespace\n- Impact: Valid user input is lost when commands have whitespace-only arguments\n\n**Test results:**\n- \u2705 6 properties passed successfully (command structure preservation, validation, round-trip)  \n- \u274c 1 genuine bug found: whitespace argument loss\n- \u274c 1 test failure due to incorrect assumption (CommandObject.magic doesn't exist)\n\nBug report saved as: `bug_report_aiogram_filters_command_2025-08-18_23-03_xpsh.md`",
+  "session_id": "69023ba9-6f1f-4a1d-9f40-9d4fadcad764",
+  "total_cost_usd": 3.4503931000000003,
+  "usage": {
+    "input_tokens": 590,
+    "cache_creation_input_tokens": 44294,
+    "cache_read_input_tokens": 1209158,
+    "output_tokens": 10412,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_0173EZMgjXu1jTcsLYtq8KJV",
+      "tool_input": {
+        "file_path": "/root/.local/lib/python3.13/site-packages/aiogram/filters/__init__.py"
+      }
+    }
+  ],
+  "call_id": "2ee0f691",
+  "module": "aiogram.filters",
+  "timestamp": "2025-08-18T23:04:36.056651"
+}

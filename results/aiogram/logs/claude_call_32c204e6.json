@@ -1,0 +1,42 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 152408,
+  "duration_api_ms": 155724,
+  "num_turns": 67,
+  "result": "No testable properties found in `aiogram.loggers`. The module only contains 5 static logger instantiations with no functions, classes, or logic that could be tested with property-based testing.",
+  "session_id": "0478c0f7-7c40-45e6-b0df-41902c08bdae",
+  "total_cost_usd": 2.3662949000000006,
+  "usage": {
+    "input_tokens": 402,
+    "cache_creation_input_tokens": 35002,
+    "cache_read_input_tokens": 907580,
+    "output_tokens": 4459,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_018VxzA8GyY13gcWUVfvmYoa",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/aiogram_env/bin/python -c \"import aiogram.loggers; print('success - treating as module')\"",
+        "description": "Check if aiogram.loggers is in the virtual env"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_014UmSJhvc5vo97famyPgPKZ",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/envs/aiogram_env && ./bin/python3 -c \"import aiogram.loggers; print('success - treating as module')\"",
+        "description": "Check if aiogram.loggers is available"
+      }
+    }
+  ],
+  "call_id": "32c204e6",
+  "module": "aiogram.loggers",
+  "timestamp": "2025-08-18T22:45:56.918123"
+}

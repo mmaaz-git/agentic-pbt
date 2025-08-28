@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 373064,
+  "duration_api_ms": 378216,
+  "num_turns": 95,
+  "result": "## Bug Found! \ud83d\udc1b\n\nI discovered a logic bug in `bs4.formatter.Formatter` where float indent values are incorrectly handled. When you pass a float like `0.0` or `2.0` as the indent parameter, it always becomes a single space `\" \"` instead of behaving like its integer equivalent.\n\n**Bug Details:**\n- **Severity**: Low (edge case, unlikely to affect many users)\n- **Type**: Logic error in parameter handling\n- **Impact**: Unexpected indentation when floats are used\n\n**Bug report saved**: `bug_report_bs4_formatter_2025-08-18_22-53_yzbl.md`\n\n**Properties tested (all others passed):**\n- \u2705 Attributes always sorted alphabetically  \n- \u2705 Empty string to None conversion for boolean attributes\n- \u274c Indent normalization (found float handling bug)\n- \u2705 CDATA tag content preservation\n- \u2705 Language-specific defaults\n- \u2705 Entity substitution behavior\n\nThe bug occurs because the code only checks for `int` and `str` types but not `float`, causing floats to fall through to the default case.",
+  "session_id": "a1d7f44f-afe4-4034-8034-95a1d0cf8e14",
+  "total_cost_usd": 5.004635000000001,
+  "usage": {
+    "input_tokens": 590,
+    "cache_creation_input_tokens": 68204,
+    "cache_read_input_tokens": 1885158,
+    "output_tokens": 11709,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_0174HqfJogJuaej5ieECBmVe",
+      "tool_input": {
+        "file_path": "/root/.local/lib/python3.13/site-packages/bs4/formatter.py"
+      }
+    }
+  ],
+  "call_id": "d567b4cd",
+  "module": "bs4.formatter",
+  "timestamp": "2025-08-18T22:54:35.127127"
+}

@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 398770,
+  "duration_api_ms": 407632,
+  "num_turns": 87,
+  "result": "## Summary\n\nSuccessfully discovered **2 bugs** in `requests.adapters` through property-based testing:\n\n### Bug 1: HTTPAdapter.proxy_headers Unicode Crash\n- **Severity**: Medium\n- **Type**: Crash\n- Proxy authentication fails with UnicodeEncodeError when credentials contain non-Latin-1 characters\n- Saved to: `bug_report_requests_adapters_proxy_headers_2025-08-19_00-01_jd3r.md`\n\n### Bug 2: get_auth_from_url Logic Error  \n- **Severity**: Medium\n- **Type**: Logic\n- Function incorrectly returns empty credentials for URLs with username but no password\n- Saved to: `bug_report_requests_adapters_get_auth_2025-08-19_00-01_69hn.md`\n\nTested 10 properties across key functions (urldefragauth, get_auth_from_url, select_proxy, proxy_headers). 8 properties passed, 2 revealed bugs. Both bugs affect real-world usage - international proxy authentication and username-only auth scenarios.",
+  "session_id": "2f6d0779-d0bb-43d7-81aa-e2ca5b8c68be",
+  "total_cost_usd": 3.7425213000000004,
+  "usage": {
+    "input_tokens": 532,
+    "cache_creation_input_tokens": 34654,
+    "cache_read_input_tokens": 1435456,
+    "output_tokens": 12218,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01TLNrQgHNfYUF4Yu5rdA9oX",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/requests/adapters.py"
+      }
+    }
+  ],
+  "call_id": "c8bbcd80",
+  "module": "requests.adapters",
+  "timestamp": "2025-08-19T00:02:57.094144"
+}

@@ -1,0 +1,50 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 548186,
+  "duration_api_ms": 552951,
+  "num_turns": 116,
+  "result": "## Summary\n\n**Found 2 bugs in `pyatlan.model.utils.to_python_class_name` \u2705**\n\nTested 6 properties on pyatlan.generator module, focusing on utility functions. Two critical bugs were discovered:\n\n1. **Bug 1**: Function returns lowercase class names (e.g., '0A' \u2192 'a') violating PEP 8\n2. **Bug 2**: Function returns Python keywords as class names (e.g., 'none' \u2192 'None')\n\nBoth bugs violate the function's documented contract to return valid Python class names. Bug report saved as `bug_report_pyatlan_model_utils_2025-08-18_21-10_o171.md`.",
+  "session_id": "c7c0fd9d-4aaf-4aca-8a43-65200910c713",
+  "total_cost_usd": 5.7913037,
+  "usage": {
+    "input_tokens": 694,
+    "cache_creation_input_tokens": 73242,
+    "cache_read_input_tokens": 2370934,
+    "output_tokens": 11178,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_016amzQMjq82B1LzbJaBe2oJ",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/pyatlan_env/bin/python3 -c \"import pyatlan.generator; print('Successfully imported pyatlan.generator'); print(type(pyatlan.generator)); import inspect; print(f'Module file: {pyatlan.generator.__file__}')\"",
+        "description": "Import pyatlan.generator using venv python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01SKAmoBauMGF3btrU4wCfBH",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/envs/pyatlan_env && source bin/activate && python3 -c \"import pyatlan.generator; print('Successfully imported pyatlan.generator'); print(type(pyatlan.generator)); import inspect; print(f'Module file: {pyatlan.generator.__file__}')\"",
+        "description": "Import pyatlan.generator with activated venv"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_019vSbC7uvBBsZtAQ7mD2dhj",
+      "tool_input": {
+        "command": "pip3 install networkx",
+        "description": "Install networkx dependency"
+      }
+    }
+  ],
+  "call_id": "35d82906",
+  "module": "pyatlan.generator",
+  "timestamp": "2025-08-18T21:11:50.347611"
+}

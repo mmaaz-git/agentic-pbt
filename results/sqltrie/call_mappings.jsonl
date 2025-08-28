@@ -1,0 +1,6 @@
+{"call_id": "4213c3f6", "module": "sqltrie", "timestamp": "2025-08-19T02:59:47.152419", "bug_reports": ["bug_report_sqltrie_prefixes_2025-08-19_02-58_pcyr.md"], "aux_files_dir": "aux_files/4213c3f6"}
+{"call_id": "99766ba4", "module": "sqltrie.pygtrie", "timestamp": "2025-08-19T03:00:38.245276", "bug_reports": ["bug_report_sqltrie_pygtrie_2025-08-19_14-45_x7k2.md"], "aux_files_dir": "aux_files/99766ba4"}
+{"call_id": "08bc7038", "module": "sqltrie.serialized", "timestamp": "2025-08-19T03:01:40.732554", "bug_reports": ["bug_report_sqltrie_serialized_2025-08-19_03-00_t50q.md"], "aux_files_dir": "aux_files/08bc7038"}
+{"call_id": "16c986cd", "module": "sqltrie.sqlalchemy", "timestamp": "2025-08-19T02:57:59.211253", "bug_reports": [], "aux_files_dir": "aux_files/16c986cd"}
+{"call_id": "22a17481", "module": "sqltrie.sqlite", "timestamp": "2025-08-19T03:06:17.922505", "bug_reports": ["bug_report_sqltrie_null_2025-08-19_03-03_tknx.md", "bug_report_sqltrie_shortkey_2025-08-19_03-03_fa09.md"], "aux_files_dir": "aux_files/22a17481"}
+{"call_id": "3635e4c2", "module": "sqltrie.trie", "timestamp": "2025-08-19T02:58:58.111753", "bug_reports": ["bug_report_esp_idf_monitor_base_line_matcher_2025-08-19_02-57_fiyd.md"], "aux_files_dir": "aux_files/3635e4c2"}

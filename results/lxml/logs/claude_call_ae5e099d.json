@@ -1,0 +1,25 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 280248,
+  "duration_api_ms": 296735,
+  "num_turns": 69,
+  "result": "## Summary\n\nI successfully found a bug in `lxml.isoschematron.stylesheet_params` through property-based testing with Hypothesis. The function crashes with a ValueError when given strings containing control characters (like `\\x1f`, `\\x00`, etc.), despite:\n\n1. Accepting string parameters as documented\n2. Not documenting any restriction on control characters\n3. Control characters being valid in Python strings\n\nThe bug was discovered by testing the invariant that a function accepting strings should handle all valid Python strings, or at least document its limitations clearly.",
+  "session_id": "f01a129f-873d-4703-9ae0-206ef7058342",
+  "total_cost_usd": 3.6756104,
+  "usage": {
+    "input_tokens": 274,
+    "cache_creation_input_tokens": 44092,
+    "cache_read_input_tokens": 1451968,
+    "output_tokens": 8291,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [],
+  "call_id": "ae5e099d",
+  "module": "lxml.isoschematron",
+  "timestamp": "2025-08-18T05:29:56.108460"
+}

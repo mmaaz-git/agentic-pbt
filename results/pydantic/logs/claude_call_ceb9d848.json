@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 503036,
+  "duration_api_ms": 518336,
+  "num_turns": 110,
+  "result": "## Bug Found! \ud83d\udc1b\n\nI discovered a **caching bug** in `pydantic.plugin._loader.get_plugins()` through property-based testing with Hypothesis.\n\n### Testing Summary\n\n**Tested properties across 3 main components:**\n\n1. **filter_handlers** - All properties passed \u2705\n2. **build_wrapper** - All properties passed \u2705  \n3. **SchemaTypePath** - All properties passed \u2705\n4. **get_plugins** - **BUG FOUND** \u274c\n\n### The Bug\n\nThe `get_plugins()` function fails to properly cache results when plugins are disabled via the `PYDANTIC_DISABLE_PLUGINS` environment variable. When set to `'__all__'`, `'1'`, or `'true'`, the function returns empty results but never sets the `_plugins` cache, causing unnecessary repeated environment variable checks on every call.\n\n**Impact**: Low severity logic bug causing minor performance degradation due to repeated environment checks.\n\n**Bug report saved**: `bug_report_pydantic_plugin__loader_2025-08-18_19-41_cmy2.md`\n\nThe bug violates the caching contract and could lead to inconsistent behavior between disabled and enabled plugin states. I've provided a simple fix that ensures the cache is properly set even when plugins are disabled.",
+  "session_id": "9163cf1c-2add-4c85-be4d-d46cffaadc36",
+  "total_cost_usd": 5.3073507,
+  "usage": {
+    "input_tokens": 706,
+    "cache_creation_input_tokens": 77150,
+    "cache_read_input_tokens": 1820092,
+    "output_tokens": 14687,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01X9uALzxxoJksFq2pShjrXV",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/pydantic/plugin/__init__.py"
+      }
+    }
+  ],
+  "call_id": "ceb9d848",
+  "module": "pydantic.plugin",
+  "timestamp": "2025-08-18T19:42:47.481451"
+}

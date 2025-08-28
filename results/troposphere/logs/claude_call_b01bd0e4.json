@@ -1,0 +1,25 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 1231164,
+  "duration_api_ms": 1126815,
+  "num_turns": 158,
+  "result": "## Summary\n\nFound bug: **Hash inconsistency in troposphere** - Equal objects have different hashes when properties are set in different orders \u2705\n\n**Bug Details:**\n- **Severity**: Medium  \n- **Type**: Logic bug\n- **Impact**: Violates Python's hash/equality contract, could cause issues with sets/dicts\n\nThe bug occurs because `__hash__` doesn't sort dictionary keys while `__eq__` effectively does (through `to_json` with `sort_keys=True`). Created bug report: `bug_report_troposphere_neptune_2025-08-19_02-21_wnk0.md`",
+  "session_id": "86ffca74-016f-4fb4-a216-0ba2c7964729",
+  "total_cost_usd": 11.3432912,
+  "usage": {
+    "input_tokens": 1152,
+    "cache_creation_input_tokens": 114548,
+    "cache_read_input_tokens": 4755988,
+    "output_tokens": 27041,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [],
+  "call_id": "b01bd0e4",
+  "module": "troposphere.neptune",
+  "timestamp": "2025-08-19T02:22:32.844687"
+}

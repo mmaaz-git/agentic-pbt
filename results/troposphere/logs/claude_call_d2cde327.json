@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 420812,
+  "duration_api_ms": 440407,
+  "num_turns": 115,
+  "result": "## Bug Found! \ud83d\udc1b\n\nI discovered a **contract violation bug** in `troposphere.sso` where the `validation=False` parameter fails to disable title validation as expected.\n\n### Key Findings:\n- **Bug**: Title validation is always enforced, ignoring the `validation` parameter\n- **Impact**: Cannot create resources with non-alphanumeric titles even with validation disabled\n- **Severity**: Medium (API contract violation)\n\n### Test Results:\n\u2705 5 tests passed (round-trip properties, nested properties, etc.)  \n\u274c 1 test failed (title validation consistency)\n\nThe bug has been documented in `bug_report_troposphere_sso_2025-08-19_02-36_25zm.md` with a reproduction script and suggested fix.",
+  "session_id": "0d813a92-7e07-4e0e-a2eb-a4fe0078a507",
+  "total_cost_usd": 4.804282700000001,
+  "usage": {
+    "input_tokens": 918,
+    "cache_creation_input_tokens": 45398,
+    "cache_read_input_tokens": 2011142,
+    "output_tokens": 11976,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01D8r7ytHhb7Eq4YCtJFerD6",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/troposphere/sso.py"
+      }
+    }
+  ],
+  "call_id": "d2cde327",
+  "module": "troposphere.sso",
+  "timestamp": "2025-08-19T02:37:12.887423"
+}

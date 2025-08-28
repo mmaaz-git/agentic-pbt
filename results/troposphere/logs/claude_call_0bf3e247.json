@@ -1,0 +1,74 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 359907,
+  "duration_api_ms": 369715,
+  "num_turns": 106,
+  "result": "## Bug Found! \ud83d\udc1b\n\nSuccessfully discovered a **contract violation bug** in `troposphere.validators.network_port`:\n\n### Bug Summary\nThe `network_port` validator has an inconsistency between its error message and validation logic:\n- **Error message claims**: ports \"must been between 0 and 65535\" \n- **Actual implementation**: accepts -1 as valid (checks `int(i) < -1`)\n- **Additional issue**: Typo in error message (\"been\" \u2192 \"be\")\n\n### Verification\n```python\nfrom troposphere.validators import network_port\n\nnetwork_port(-1)  # \u2713 Accepted (returns -1)\nnetwork_port(-2)  # \u2717 Raises: \"must been between 0 and 65535\"\n```\n\nThe bug report has been saved to: `bug_report_troposphere_validators_network_port_2025-08-19_00-40_bmhf.md`\n\nThis is a low-severity contract violation that could confuse users debugging validation errors.",
+  "session_id": "54870a18-2337-44ed-8bde-81f85968da74",
+  "total_cost_usd": 5.6564768999999995,
+  "usage": {
+    "input_tokens": 710,
+    "cache_creation_input_tokens": 74630,
+    "cache_read_input_tokens": 2291294,
+    "output_tokens": 10569,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_018JcRNwVRcSnVNqwb5Y64TD",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/troposphere_env/bin/activate && python3 -c \"import troposphere.dms; print('success - treating as module'); print(troposphere.dms.__file__)\" 2>&1",
+        "description": "Activate venv and check for troposphere.dms module"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_015b5hcuHJPXGow2ddA8BykR",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python3 -c \"import troposphere.dms; print('success - treating as module'); print(troposphere.dms.__file__)\" 2>&1",
+        "description": "Check for troposphere.dms module using venv Python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01TvrHw7DyknZzeeTvSQb7Gk",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/pip list | grep -i troposphere",
+        "description": "Check if troposphere is installed"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01VE7mHuhf6QZZMDX8XpuARH",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -m pytest test_troposphere_dms.py -v",
+        "description": "Run property-based tests"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01BapujwruVemNquzfgJbo69",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/pytest test_troposphere_dms.py -v",
+        "description": "Run pytest on test file"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_019KLmt7s39WZGZaw1nqE6bw",
+      "tool_input": {
+        "command": "PYTHONPATH=/root/hypothesis-llm/envs/troposphere_env/lib/python3.13/site-packages python3 test_troposphere_dms.py",
+        "description": "Run test file directly with Python"
+      }
+    }
+  ],
+  "call_id": "0bf3e247",
+  "module": "troposphere.dms",
+  "timestamp": "2025-08-19T00:41:37.106608"
+}

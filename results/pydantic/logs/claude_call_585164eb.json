@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 750791,
+  "duration_api_ms": 744876,
+  "num_turns": 105,
+  "result": "## Testing Complete: pydantic.root_model\n\nTested 12+ properties on `pydantic.root_model.RootModel` - all passed \u2705\n\n### Properties Successfully Tested:\n- **JSON round-trip**: `model_validate_json(model_dump_json(x)) == x`\n- **Pickle round-trip**: Works correctly for module-level classes\n- **Copy/Deepcopy invariants**: Shallow copy shares root, deep copy creates independent root\n- **Initialization contract**: Accepts either positional OR keyword arguments, not both\n- **Equality properties**: Reflexive, symmetric, and based on content\n- **model_construct**: Correctly bypasses validation while preserving data\n- **Unicode handling**: Properly handles special characters and Unicode\n- **Nested structures**: Handles complex nested dictionaries and lists\n- **BaseModel as root**: Works with Pydantic models as root type\n- **Union/Optional types**: Correctly validates and preserves types\n- **Inheritance**: Subclasses work as expected\n- **Mutation detection**: Changes to mutable roots are reflected\n\n### Notes:\n- Found that `model_construct` allows invalid field names in `_fields_set`, but this appears intentional as it bypasses validation\n- Pickle limitation with locally-defined classes is a Python constraint, not a Pydantic bug\n- All core functionality works as documented",
+  "session_id": "e25d290a-0598-4cf3-9c12-93f042c8ad7c",
+  "total_cost_usd": 6.282097899999999,
+  "usage": {
+    "input_tokens": 658,
+    "cache_creation_input_tokens": 99358,
+    "cache_read_input_tokens": 1889534,
+    "output_tokens": 20706,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01YUYLPue7VKdhVQkwkFftbU",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/pydantic/root_model.py"
+      }
+    }
+  ],
+  "call_id": "585164eb",
+  "module": "pydantic.root_model",
+  "timestamp": "2025-08-18T19:46:55.130627"
+}

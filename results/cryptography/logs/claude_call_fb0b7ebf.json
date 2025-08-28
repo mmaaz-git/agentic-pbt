@@ -1,0 +1,25 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 369339,
+  "duration_api_ms": 379784,
+  "num_turns": 76,
+  "result": "## Summary\n\n**Bug found**: Created bug report file `bug_report_cryptography_fernet_2025-08-18_05-25_dn9j.md`\n\nThe property-based testing discovered a genuine contract violation bug in the `cryptography.fernet` module where all methods that accept tokens (`decrypt`, `decrypt_at_time`, `extract_timestamp`, and their MultiFernet counterparts) raise `ValueError` instead of the expected `InvalidToken` exception when given string tokens containing non-ASCII characters.\n\nThis violates the API contract where all invalid tokens should consistently raise `InvalidToken`, potentially breaking client code that relies on proper exception handling. The fix is simple - adding `ValueError` to the caught exceptions in the `_get_unverified_token_data` method.\n\nAdditionally tested 24 other properties on the Fernet module - all passed \u2705, confirming the module is otherwise robust.",
+  "session_id": "23d8a1e3-878a-47ea-a956-7af73c9a2c39",
+  "total_cost_usd": 4.1138109,
+  "usage": {
+    "input_tokens": 350,
+    "cache_creation_input_tokens": 43050,
+    "cache_read_input_tokens": 1608280,
+    "output_tokens": 11377,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [],
+  "call_id": "fb0b7ebf",
+  "module": "cryptography.fernet",
+  "timestamp": "2025-08-18T05:27:11.327670"
+}

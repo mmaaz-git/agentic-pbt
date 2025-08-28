@@ -1,0 +1,25 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 386149,
+  "duration_api_ms": 398995,
+  "num_turns": 77,
+  "result": "## Summary\n\nI successfully found a bug in `lxml.html` through property-based testing. The bug involves inconsistent handling of control characters in the `fragment_fromstring` function when `create_parent=True` is used.\n\n**Bug found**: Control character handling inconsistency where NULL bytes (0x00) are silently converted to U+FFFD replacement characters while other control characters (0x01-0x1B) correctly raise ValueError. This violates the principle that similar inputs should be handled consistently.\n\nThe bug report has been saved to `bug_report_lxml_html_2025-08-18_05-30_lwpi.md`.",
+  "session_id": "97f6e55c-d0b4-4bd7-ae3b-27c21277724b",
+  "total_cost_usd": 4.855251100000001,
+  "usage": {
+    "input_tokens": 318,
+    "cache_creation_input_tokens": 56462,
+    "cache_read_input_tokens": 1911198,
+    "output_tokens": 11868,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [],
+  "call_id": "0f958b11",
+  "module": "lxml.html",
+  "timestamp": "2025-08-18T05:31:10.953737"
+}

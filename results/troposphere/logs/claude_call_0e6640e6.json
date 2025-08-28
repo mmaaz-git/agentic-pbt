@@ -1,0 +1,42 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 462135,
+  "duration_api_ms": 465156,
+  "num_turns": 119,
+  "result": "## Summary\n\nSuccessfully tested `troposphere.opensearchserverless` with property-based testing and discovered **1 bug**:\n\n**Bug Found**: Misleading error message in title validation. The error states \"not alphanumeric\" when rejecting Unicode characters like '\u00b9', '\u03b1', '\u00f1' that Python's `str.isalnum()` considers alphanumeric. While the validation correctly enforces AWS CloudFormation's ASCII-only requirement, the error message is semantically incorrect.\n\n**Bug Report Created**: `bug_report_troposphere_opensearchserverless_2025-08-19_02-11_hvrk.md`\n\n**Properties Successfully Tested**: \u2705\n- Boolean validator invariants (10 properties)\n- Integer validator type preservation\n- Required property validation\n- Round-trip property (from_dict/to_dict)\n- Resource property type enforcement\n\nThe bug is a low-severity contract violation where the error message doesn't accurately describe the validation requirement.",
+  "session_id": "adb5209e-3494-4392-aa47-1886570fa647",
+  "total_cost_usd": 6.2641463,
+  "usage": {
+    "input_tokens": 714,
+    "cache_creation_input_tokens": 71658,
+    "cache_read_input_tokens": 2660988,
+    "output_tokens": 12094,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_016x2uoJ5Vtsx5ogA9Cpw2Q5",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/troposphere_env/bin/activate && python3 -c \"import troposphere.opensearchserverless; print('Module imported successfully')\"",
+        "description": "Check troposphere.opensearchserverless in virtual environment"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01K8gsxmZxQH1T9zHtVUznxg",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python3 -c \"import troposphere.opensearchserverless; print('Module imported successfully')\"",
+        "description": "Import module using venv python"
+      }
+    }
+  ],
+  "call_id": "0e6640e6",
+  "module": "troposphere.opensearchserverless",
+  "timestamp": "2025-08-19T02:12:45.601185"
+}

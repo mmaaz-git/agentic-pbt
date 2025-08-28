@@ -1,0 +1,50 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 992773,
+  "duration_api_ms": 972924,
+  "num_turns": 167,
+  "result": "Tested 6 properties on `requests_oauthlib.compliance_fixes` - all passed \u2705\n\nSuccessfully tested:\n- JSON round-trip properties for OAuth response transformations (Fitbit, Facebook, Weibo)\n- URL parameter preservation for token injection (Slack, Instagram)  \n- Idempotence of all compliance fix functions\n- Content-type based response handling logic\n\nNo bugs found. The compliance fixes correctly handle edge cases including empty parameter values, duplicate tokens, and various content types.",
+  "session_id": "408fea35-fbc5-4a89-af24-c76da90ee299",
+  "total_cost_usd": 8.3218359,
+  "usage": {
+    "input_tokens": 1078,
+    "cache_creation_input_tokens": 77654,
+    "cache_read_input_tokens": 3568742,
+    "output_tokens": 19726,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01TDeTieYfoPNwisXEoAkdaP",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/requests-oauthlib_env/bin/activate && python -c \"import requests_oauthlib.compliance_fixes; print('Module imported successfully'); print('Module file:', requests_oauthlib.compliance_fixes.__file__)\"",
+        "description": "Activate venv and import module"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_013P74ry8iDu2TBBVwUN8FVg",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/requests-oauthlib_env/bin/python -c \"import requests_oauthlib.compliance_fixes; print('Module imported successfully'); print('Module file:', requests_oauthlib.compliance_fixes.__file__)\"",
+        "description": "Use venv Python to import module"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_019YxKbfCCtfd6PAaqEZs6pS",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/worker_/17 && PYTHONPATH=/root/hypothesis-llm/envs/requests-oauthlib_env/lib/python3.13/site-packages python3 -m pytest test_compliance_fixes_properties.py -v --tb=short",
+        "description": "Run tests with correct PYTHONPATH"
+      }
+    }
+  ],
+  "call_id": "3931a81d",
+  "module": "requests_oauthlib.compliance_fixes",
+  "timestamp": "2025-08-18T22:11:05.848389"
+}

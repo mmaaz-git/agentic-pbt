@@ -1,0 +1,66 @@
+*.py[cod]
+
+# troposphere stuff
+autogen
+CloudFormationResourceSpecification*
+spec
+
+# C extensions
+*.so
+
+# Packages
+*.egg
+*.eggs
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+lib
+lib64
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
+
+# Translations
+*.mo
+
+# Mr Developer
+.mr.developer.cfg
+.project
+.pydevproject
+.idea
+.venv
+
+# Vim
+*.sw*
+
+# Jetbrains
+*.iml
+
+# Git
+*.diff
+*.patch
+
+# Sphinx
+docs/_build/
+
+# VSCode
+.vscode
+
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+*.ipynb
+
+.DS_Store
+node_modules

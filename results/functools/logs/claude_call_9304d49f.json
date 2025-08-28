@@ -1,0 +1,25 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 644167,
+  "duration_api_ms": 655997,
+  "num_turns": 98,
+  "result": "## Summary\n\n**Bug found**: `functools.wraps` fails when decorating classes with AttributeError \u2705\n\nI discovered that `functools.wraps` and `functools.update_wrapper` crash when used to wrap classes because class `__dict__` attributes are read-only `mappingproxy` objects that lack the `update()` method. This prevents using these decorators with classes, even though classes are callable objects in Python.\n\nThe bug report has been saved to `bug_report_functools_wraps_2025-08-18_04-53_kn9l.md`.",
+  "session_id": "10f6d384-91f7-4f3c-bf2a-0d9af7c91706",
+  "total_cost_usd": 7.4750482,
+  "usage": {
+    "input_tokens": 434,
+    "cache_creation_input_tokens": 74768,
+    "cache_read_input_tokens": 2918212,
+    "output_tokens": 21891,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [],
+  "call_id": "9304d49f",
+  "module": "functools",
+  "timestamp": "2025-08-18T04:54:37.354740"
+}

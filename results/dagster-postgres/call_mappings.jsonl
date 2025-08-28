@@ -1,0 +1,6 @@
+{"call_id": "041b0c63", "module": "dagster_postgres", "timestamp": "2025-08-19T02:49:52.690757", "bug_reports": ["bug_report_dagster_postgres_utils_2025-08-19_00-00_x7f2.md"], "aux_files_dir": "aux_files/041b0c63"}
+{"call_id": "c466ee4d", "module": "dagster_postgres.event_log", "timestamp": "2025-08-19T02:47:51.305534", "bug_reports": ["bug_report_dagster_postgres_utils_2025-08-19_02-47_71i0.md"], "aux_files_dir": "aux_files/c466ee4d"}
+{"call_id": "19ef467e", "module": "dagster_postgres.run_storage", "timestamp": "2025-08-19T02:49:43.377573", "bug_reports": [], "aux_files_dir": "aux_files/19ef467e"}
+{"call_id": "c8292edc", "module": "dagster_postgres.schedule_storage", "timestamp": "2025-08-19T02:50:07.422785", "bug_reports": ["bug_report_dagster_postgres_utils_2025-01-19_03-45_x8k2.md"], "aux_files_dir": "aux_files/c8292edc"}
+{"call_id": "d3c7b678", "module": "dagster_postgres.storage", "timestamp": "2025-08-19T02:51:38.353934", "bug_reports": ["bug_report_dagster_postgres_utils_2025-08-19_02-41_k3x9.md"], "aux_files_dir": "aux_files/d3c7b678"}
+{"call_id": "9c6588eb", "module": "dagster_postgres.utils", "timestamp": "2025-08-19T02:48:58.366358", "bug_reports": ["bug_report_dagster_postgres_utils_2025-08-19_02-48_9hat.md"], "aux_files_dir": "aux_files/9c6588eb"}

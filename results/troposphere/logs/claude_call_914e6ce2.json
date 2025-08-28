@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 404949,
+  "duration_api_ms": 370234,
+  "num_turns": 100,
+  "result": "Tested 5 properties on troposphere.verifiedpermissions - all passed \u2705\n\nTested properties:\n- Round-trip property: from_dict(to_dict()) maintains data integrity \n- Required property validation: Missing required fields raise ValueError\n- Type validation: Wrong types raise TypeError\n- Title validation: Non-alphanumeric titles rejected for AWSObject classes\n- Nested object serialization: Complex nested AWS properties serialize correctly\n\nAll 13 test methods passed across 950+ generated examples with no bugs found.",
+  "session_id": "13ca2e19-1867-49f7-ab88-b4d2ddf7d0f5",
+  "total_cost_usd": 4.9318914000000005,
+  "usage": {
+    "input_tokens": 796,
+    "cache_creation_input_tokens": 60964,
+    "cache_read_input_tokens": 1964048,
+    "output_tokens": 10870,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01JvGqzysVPHJSg3zdx9fizw",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/troposphere/verifiedpermissions.py"
+      }
+    }
+  ],
+  "call_id": "914e6ce2",
+  "module": "troposphere.verifiedpermissions",
+  "timestamp": "2025-08-19T02:40:22.614427"
+}

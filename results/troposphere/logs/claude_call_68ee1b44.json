@@ -1,0 +1,58 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 621545,
+  "duration_api_ms": 539964,
+  "num_turns": 129,
+  "result": "Tested 11 properties on troposphere.iotfleethub - all passed \u2705\n\nThe property-based testing revealed that the module correctly:\n- Validates required fields (ApplicationName, RoleArn)\n- Enforces alphanumeric-only titles\n- Maintains round-trip serialization integrity\n- Ensures equality and hash consistency\n- Preserves resource type consistency\n- Handles edge cases appropriately (empty strings, Unicode, control characters)\n- Integrates properly with CloudFormation templates\n\nNo bugs found in troposphere.iotfleethub.Application.",
+  "session_id": "973a748b-1d43-4124-9f92-f0a0f9bfd43a",
+  "total_cost_usd": 7.388020299999999,
+  "usage": {
+    "input_tokens": 840,
+    "cache_creation_input_tokens": 85250,
+    "cache_read_input_tokens": 2924602,
+    "output_tokens": 18289,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01ABqtF4ih8wXFsrXzCN4rEs",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/troposphere_env/bin/activate && python -c \"import troposphere.iotfleethub; print('Successfully imported:', troposphere.iotfleethub); print('Module file:', troposphere.iotfleethub.__file__)\"",
+        "description": "Import troposphere.iotfleethub in virtual env"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01WQBr8HR3da6ReaTU1j6aRP",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -c \"import troposphere.iotfleethub; print('Successfully imported:', troposphere.iotfleethub); print('Module file:', troposphere.iotfleethub.__file__)\"",
+        "description": "Import troposphere.iotfleethub using venv Python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_011fA65sC8FumP4FmQiSNjPg",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python3 -c \"import troposphere.iotfleethub; print('Successfully imported:', troposphere.iotfleethub); print('Module file:', troposphere.iotfleethub.__file__)\"",
+        "description": "Import troposphere.iotfleethub using venv python3"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01R3rvs5SmRy4uZ9Y58dbTsK",
+      "tool_input": {
+        "command": "PYTHONPATH=/root/hypothesis-llm/envs/troposphere_env/lib/python3.13/site-packages /root/hypothesis-llm/envs/troposphere_env/bin/python3 -m pytest test_iotfleethub_properties.py -v",
+        "description": "Run property-based tests for iotfleethub"
+      }
+    }
+  ],
+  "call_id": "68ee1b44",
+  "module": "troposphere.iotfleethub",
+  "timestamp": "2025-08-19T01:55:02.771711"
+}

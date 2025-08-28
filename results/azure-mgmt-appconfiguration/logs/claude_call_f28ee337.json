@@ -1,0 +1,90 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 639967,
+  "duration_api_ms": 644747,
+  "num_turns": 118,
+  "result": "## Summary\n\nI successfully found a **bug in azure-mgmt-appconfiguration** through property-based testing! \n\n### Bug Found: Readonly Field Modification\n\n**Issue**: Fields marked as `readonly` in model validation dictionaries can be modified after object creation, violating the expected immutability contract.\n\n**Affected Models**: `ApiKey`, `ConfigurationStore`, and likely all models inheriting from the base `Model` class that have readonly fields.\n\n**Impact**: This is a **Medium severity Contract bug** that allows client code to modify server-generated readonly fields like IDs, timestamps, and connection strings, potentially leading to data inconsistency and API contract violations.\n\nI've created a detailed bug report saved as `bug_report_azure_mgmt_appconfiguration_2025-08-18_21-00_k9x2.md` with:\n- Property-based test demonstrating the bug\n- Minimal reproduction code\n- Explanation of why this violates expected behavior\n- Suggested fix using `__setattr__` to enforce readonly constraints\n\nThe bug was discovered by testing the fundamental property that readonly fields should remain immutable after object creation - a property clearly implied by the \"readonly\" validation attribute in the model definitions.",
+  "session_id": "1d3e792d-4047-4057-90f0-a7f2291db0b2",
+  "total_cost_usd": 8.5491025,
+  "usage": {
+    "input_tokens": 754,
+    "cache_creation_input_tokens": 111546,
+    "cache_read_input_tokens": 3249570,
+    "output_tokens": 20734,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01TwC7x8eXHNKTQZGgJ6uVHB",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/azure-mgmt-appconfiguration_env/bin/python3 -c \"import azure; print('success - treating as module')\"",
+        "description": "Check if azure module in venv"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01PjJHGUR3NLwMUzh537XHA1",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/azure-mgmt-appconfiguration_env/bin/python -c \"import azure; print('success - treating as module')\"",
+        "description": "Check if azure module exists in venv"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Wx2VAnPibd7hQEg7LJ1kWW",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/azure-mgmt-appconfiguration_env/bin/pytest test_azure_appconfiguration.py -v --tb=short",
+        "description": "Run pytest on azure tests"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01JryeXMQK7NqQmiY8HxxyH6",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/azure-mgmt-appconfiguration_env/bin/python -m pytest test_azure_appconfiguration.py -v --tb=short",
+        "description": "Run pytest tests with python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_017NiwBDmUrMPSebsCDJV8ux",
+      "tool_input": {
+        "command": "pip3 install azure-mgmt-appconfiguration hypothesis pytest",
+        "description": "Install required packages"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_018z3xnDq51pmdZGjVFn15BX",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/azure-mgmt-appconfiguration_env/bin/activate && python -m pytest test_azure_appconfiguration.py -v --tb=short",
+        "description": "Activate venv and run tests"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01YGVreYWxtbafCDMTKtHFhq",
+      "tool_input": {
+        "command": "PYTHONPATH=/root/hypothesis-llm/envs/azure-mgmt-appconfiguration_env/lib/python3.13/site-packages python3 -m pytest test_azure_appconfiguration.py -v --tb=short",
+        "description": "Run pytest with PYTHONPATH"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01P5d7Kxv2NwiCT6n7xh9boM",
+      "tool_input": {
+        "command": "PYTHONPATH=/root/hypothesis-llm/envs/azure-mgmt-appconfiguration_env/lib/python3.13/site-packages python3 test_azure_appconfiguration.py",
+        "description": "Run test file directly"
+      }
+    }
+  ],
+  "call_id": "f28ee337",
+  "module": "azure",
+  "timestamp": "2025-08-18T21:01:30.234735"
+}

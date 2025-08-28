@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 517213,
+  "duration_api_ms": 494496,
+  "num_turns": 112,
+  "result": "## Summary: Property-Based Testing of flask.views\n\nI successfully tested `flask.views` using Hypothesis and discovered **2 genuine bugs**:\n\n### Bug 1: MethodView Dynamic Method Detection Failure\n- **Severity**: Medium\n- **Type**: Logic\n- **Issue**: Methods added dynamically after class definition aren't detected by `MethodView.__init_subclass__`\n- **Impact**: Affects factory patterns and dynamic API generation\n- **Report**: `bug_report_flask_views_methodview_2025-08-19_00-09_qifv.md`\n\n### Bug 2: View Decorator Order Reversal  \n- **Severity**: Medium\n- **Type**: Logic\n- **Issue**: Decorators in `View.decorators` list are applied in reverse order\n- **Impact**: Breaks decorator ordering expectations, affecting auth, logging, and transaction decorators\n- **Report**: `bug_report_flask_views_decorator_order_2025-08-19_00-11_x5go.md`\n\n### Properties Successfully Tested \u2705\n- MethodView HEAD request fallback to GET\n- View.init_every_request instance reuse behavior\n- View function attribute preservation\n- MethodView case-insensitive method dispatch\n- View/MethodView kwargs forwarding\n- MethodView error handling for unsupported methods\n\nBoth bugs are reproducible, affect real-world usage patterns, and violate documented or expected behavior.",
+  "session_id": "53531575-4e9d-43c3-8fdc-afaf27532aec",
+  "total_cost_usd": 5.6086058,
+  "usage": {
+    "input_tokens": 826,
+    "cache_creation_input_tokens": 63128,
+    "cache_read_input_tokens": 2079246,
+    "output_tokens": 17004,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01G77yo8PXnjqTQPmMb7aJ4G",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/flask/views.py"
+      }
+    }
+  ],
+  "call_id": "4eeda097",
+  "module": "flask.views",
+  "timestamp": "2025-08-19T00:13:16.014799"
+}

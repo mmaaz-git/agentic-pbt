@@ -1,0 +1,34 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 575675,
+  "duration_api_ms": 586024,
+  "num_turns": 120,
+  "result": "## Summary\n\n**Bug found in django.utils! \u2705**\n\nI discovered a logic bug in `django.utils.datastructures.CaseInsensitiveMapping` where it fails to handle Unicode characters with complex case mappings (like German '\u00df' \u2192 'SS' and Turkish '\u0131' \u2192 'I'). The class promises case-insensitive lookups but only uses `str.lower()` which doesn't handle these edge cases properly.\n\n**Testing completed:**\n- Tested 10+ properties across multiple django.utils modules\n- All basic properties passed (encoding round-trips, slugify idempotence, HTML escaping, etc.)\n- Found 1 medium-severity logic bug with Unicode case-folding\n\n**Bug report saved:** `bug_report_django_utils_datastructures_CaseInsensitiveMapping_2025-08-18_18-59_ijtp.md`\n\nThe bug affects internationalized applications using CaseInsensitiveMapping with non-ASCII keys. The fix is straightforward - use `str.casefold()` instead of `str.lower()` for proper Unicode case-folding.",
+  "session_id": "36279af6-fffd-45b5-9ada-1fd50ae8a9d8",
+  "total_cost_usd": 6.344530500000001,
+  "usage": {
+    "input_tokens": 806,
+    "cache_creation_input_tokens": 90482,
+    "cache_read_input_tokens": 2169246,
+    "output_tokens": 18106,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_016dqcegd9JJWCVAF35Bhd7j",
+      "tool_input": {
+        "file_path": "/root/.local/lib/python3.13/site-packages/django/utils/encoding.py",
+        "limit": 150
+      }
+    }
+  ],
+  "call_id": "e798d4c5",
+  "module": "django.utils",
+  "timestamp": "2025-08-18T19:00:25.691373"
+}

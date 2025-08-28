@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 609531,
+  "duration_api_ms": 573131,
+  "num_turns": 106,
+  "result": "## Bug Found! \ud83d\udc1b\n\nFound a **high-severity logic bug** in `pydantic.v1`: Decimal values lose precision during JSON serialization round-trips.\n\n**Key finding**: High-precision Decimal values like `Decimal('99503980.42126126126126126126')` get silently truncated to float precision during JSON serialization, resulting in data loss.\n\n**Impact**: This could cause data corruption in financial or scientific applications that rely on exact decimal arithmetic.\n\n**Bug report saved**: `bug_report_pydantic_v1_decimal_2025-08-18_19-43_ozsw.md`\n\nAlso tested 13 other properties across BaseModel, constrained types, ByteSize, and URL parsing - all others passed \u2705",
+  "session_id": "1dec329f-335d-4bc3-b599-fb1abe3bfe35",
+  "total_cost_usd": 5.9045183,
+  "usage": {
+    "input_tokens": 728,
+    "cache_creation_input_tokens": 86170,
+    "cache_read_input_tokens": 1984938,
+    "output_tokens": 16933,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "LS",
+      "tool_use_id": "toolu_01U5dT9C1jU2XWxcJdEvHHWh",
+      "tool_input": {
+        "path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/pydantic/v1"
+      }
+    }
+  ],
+  "call_id": "52eaa29e",
+  "module": "pydantic.v1",
+  "timestamp": "2025-08-18T19:44:34.038870"
+}

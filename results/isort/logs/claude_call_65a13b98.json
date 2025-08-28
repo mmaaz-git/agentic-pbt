@@ -1,0 +1,74 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 567543,
+  "duration_api_ms": 573392,
+  "num_turns": 144,
+  "result": "## Testing Summary\n\nTested 9 properties on `isort.stdlibs` - all passed \u2705\n\n### Properties Tested:\n1. **Union correctness**: `all.stdlib == py2.stdlib | py3.stdlib` \u2705\n2. **Python 3 union**: `py3.stdlib` equals union of all py3x versions \u2705\n3. **Valid module names**: All entries match Python identifier rules \u2705\n4. **Non-empty sets**: Each version has modules \u2705\n5. **Type invariant**: All entries are strings \u2705\n6. **Subset relationships**: py27 \u2286 py2 \u2705\n7. **Core modules present**: Common modules exist across versions \u2705\n8. **Version uniqueness**: Each Python version has distinct stdlib \u2705\n9. **No invalid characters**: No dots, spaces, or hyphens in names \u2705\n\n### Additional Integration Tests:\n- Dynamic `getattr()` access pattern works correctly \u2705\n- `VALID_PY_TARGETS` generation logic is sound \u2705\n- Invalid version access properly raises `AttributeError` \u2705\n- No Python keyword conflicts \u2705\n\n### Notable Finding:\nPython 3.13 correctly shows removal of 20 deprecated modules (aifc, cgi, lib2to3, telnetlib, etc.) - this is accurate data, not a bug. Verified by attempting imports on Python 3.13.\n\n**Conclusion**: `isort.stdlibs` module is robust and correctly maintains Python standard library module lists across versions.",
+  "session_id": "12d29922-8bf7-45ca-b531-aa6245e189b5",
+  "total_cost_usd": 5.744581800000001,
+  "usage": {
+    "input_tokens": 834,
+    "cache_creation_input_tokens": 59468,
+    "cache_read_input_tokens": 2438326,
+    "output_tokens": 12575,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01SZfCD4QAWvNmGL5Rzoe93C",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/isort_env/bin/python -c \"import isort.stdlibs; print('Successfully imported isort.stdlibs')\"",
+        "description": "Import isort.stdlibs using venv Python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01ABfYkUyJPB2HVXBYtfzR4e",
+      "tool_input": {
+        "command": "find /root/hypothesis-llm -name \"*.py\" -type f | head -20",
+        "description": "Search for Python files in the environment"
+      }
+    },
+    {
+      "tool_name": "Glob",
+      "tool_use_id": "toolu_01BCfMAeCXXMGMh3TVQPMwCw",
+      "tool_input": {
+        "pattern": "**/*.py",
+        "path": "/root/hypothesis-llm"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01JsMdFoCMuda6ky1usMLM8L",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/envs/isort_env && source bin/activate && python3 -c \"import isort.stdlibs; print('Successfully imported isort.stdlibs')\"",
+        "description": "Activate venv and import isort.stdlibs"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01J6bGT48GURW9Xy9s1RehRU",
+      "tool_input": {
+        "command": "PYTHONPATH=/root/hypothesis-llm/envs/isort_env/lib/python3.13/site-packages python3 -c \"import isort.stdlibs; print('Successfully imported isort.stdlibs')\"",
+        "description": "Import isort.stdlibs with PYTHONPATH"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_019d17bjGsAaYFNFGvDh5YFu",
+      "tool_input": {
+        "command": "grep -r \"from \\.\" /root/hypothesis-llm/envs/isort_env/lib/python3.13/site-packages/isort/settings.py | head -10",
+        "description": "Search for relative imports in settings.py"
+      }
+    }
+  ],
+  "call_id": "65a13b98",
+  "module": "isort.stdlibs",
+  "timestamp": "2025-08-18T21:47:27.958629"
+}

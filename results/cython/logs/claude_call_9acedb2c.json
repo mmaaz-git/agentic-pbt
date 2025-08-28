@@ -1,0 +1,41 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 293110,
+  "duration_api_ms": 305393,
+  "num_turns": 86,
+  "result": "Tested 5 properties on Cython.Debugging.print_call_chain - all passed \u2705\n\n**Summary**: The `print_call_chain` function is a simple debugging utility that prints its arguments and the call stack. Property-based testing confirmed it correctly:\n- Handles arbitrary input types without crashing\n- Successfully processes unicode and special characters\n- Traverses call stacks of varying depths\n- Appropriately propagates exceptions from custom __str__ methods (expected Python behavior)\n\nNo bugs were found. The function behaves as a straightforward debugging helper with no documented invariants to violate.",
+  "session_id": "8e6c61ad-6883-4c5d-bcc8-2b6f863095f4",
+  "total_cost_usd": 3.3190712999999996,
+  "usage": {
+    "input_tokens": 620,
+    "cache_creation_input_tokens": 36934,
+    "cache_read_input_tokens": 1271028,
+    "output_tokens": 9312,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_011RMXD2DGupmHvtYUoN6uvV",
+      "tool_input": {
+        "file_path": "/root/.local/lib/python3.13/site-packages/Cython/Debugging.py"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Y5aDy1crSYxqAqnzcZLgW2",
+      "tool_input": {
+        "command": "ls -la /root/.local/lib/python3.13/site-packages/Cython/ | grep -i debug",
+        "description": "Look for debugging-related files in Cython"
+      }
+    }
+  ],
+  "call_id": "9acedb2c",
+  "module": "Cython.Debugging",
+  "timestamp": "2025-08-18T20:30:49.484447"
+}

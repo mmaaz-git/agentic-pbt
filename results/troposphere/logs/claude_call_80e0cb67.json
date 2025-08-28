@@ -1,0 +1,42 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 398289,
+  "duration_api_ms": 408404,
+  "num_turns": 123,
+  "result": "## Summary\n\nSuccessfully completed property-based testing on `troposphere.location` and discovered **2 genuine bugs**:\n\n### Bug 1: Boolean Validator Float Acceptance (Medium Severity, Logic Bug)\n- The `boolean` validator incorrectly accepts float values 0.0 and 1.0\n- Root cause: Python's `in` operator treats `0.0 == 0` and `1.0 == 1` as True\n- Bug report: `bug_report_troposphere_validators_boolean_2025-08-19_02-00_rj7x.md`\n\n### Bug 2: Validation Method Inconsistency (Medium Severity, Contract Bug)  \n- `validate()` method doesn't check required fields, but `to_dict(validation=True)` does\n- Creates inconsistency where objects can pass validation but fail serialization\n- Bug report: `bug_report_troposphere_location_validation_2025-08-19_02-00_l8gh.md`\n\n### Testing Coverage\n\u2705 Tested 10 properties across the module\n\u2705 8 properties passed correctly\n\u2705 2 properties revealed genuine bugs\n\u2705 All tests used evidence-based properties from the actual implementation",
+  "session_id": "1c5c1294-2064-47fc-8d62-52c50a8cdf88",
+  "total_cost_usd": 4.8389561999999975,
+  "usage": {
+    "input_tokens": 676,
+    "cache_creation_input_tokens": 48716,
+    "cache_read_input_tokens": 1951228,
+    "output_tokens": 12958,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01EdGctWrTKbKt5NXDvBSYnK",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python3 -c \"import troposphere.location; print('success - treating as module')\"",
+        "description": "Import troposphere.location using env python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Hda7DgxnGSaQk3bGb5i6ee",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/envs/troposphere_env && source bin/activate && python3 -c \"import troposphere.location; print('success - treating as module')\"",
+        "description": "Import troposphere.location with venv activated"
+      }
+    }
+  ],
+  "call_id": "80e0cb67",
+  "module": "troposphere.location",
+  "timestamp": "2025-08-19T02:01:41.788208"
+}

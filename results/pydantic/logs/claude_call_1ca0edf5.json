@@ -1,0 +1,40 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 336651,
+  "duration_api_ms": 347419,
+  "num_turns": 90,
+  "result": "## Bug Found! \ud83d\udc1b\n\nI discovered a **contract violation bug** in `pydantic.annotated_handlers.GetJsonSchemaHandler`:\n\nThe class docstring explicitly documents a `mode` attribute, but accessing it raises `AttributeError` because the attribute is type-annotated but never initialized. This violates the documented API contract.\n\n**Bug details:**\n- **Type**: Contract violation  \n- **Severity**: Medium\n- **Issue**: `handler.mode` raises `AttributeError` despite being documented as an accessible attribute\n\nThe bug report has been saved to `bug_report_pydantic_annotated_handlers_2025-08-18_20-24_8q1d.md` with a complete reproduction case and suggested fix.",
+  "session_id": "560e3dc8-4f02-4604-8839-c6bce27d1286",
+  "total_cost_usd": 4.032073099999999,
+  "usage": {
+    "input_tokens": 642,
+    "cache_creation_input_tokens": 63550,
+    "cache_read_input_tokens": 1363844,
+    "output_tokens": 10279,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_015yga5XJtTvKkkUcvDiomYB",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/pydantic/annotated_handlers.py"
+      }
+    },
+    {
+      "tool_name": "LS",
+      "tool_use_id": "toolu_01HR2QJo4nYSBtf4cEEMT8TF",
+      "tool_input": {
+        "path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/pydantic"
+      }
+    }
+  ],
+  "call_id": "1ca0edf5",
+  "module": "pydantic.annotated_handlers",
+  "timestamp": "2025-08-18T20:25:16.930041"
+}

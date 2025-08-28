@@ -1,0 +1,42 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 562330,
+  "duration_api_ms": 570541,
+  "num_turns": 137,
+  "result": "## Summary\n\nFound **1 bug** in `aws_lambda_powertools.logging` through property-based testing with Hypothesis:\n\n### Bug Found: Invalid Sampling Rate Validation \u2717\n- **Severity**: Medium  \n- **Type**: Contract violation\n- **Issue**: Logger accepts special float values ('Infinity', 'NaN', etc.) as sampling rates despite documentation stating rates must be between 0.0 and 1.0\n- **Impact**: Could lead to unexpected behavior if invalid sampling rates are accidentally provided\n- **Bug report saved**: `bug_report_aws_lambda_powertools_logging_2025-08-18_23-32_k9f2.md`\n\n### Properties Successfully Tested \u2705\n- SuppressFilter correctly filters child logger records\n- Key management (append/remove/clear) maintains proper state\n- Child logger naming and handler inheritance works correctly  \n- Correlation ID round-trip functions properly\n- Valid sampling rates (0.0-1.0) are properly accepted\n- Log level setting and precedence works as documented\n\n### False Positives Investigated\n- The 0.0 sampling rate behavior is correct (exits early, no sampling)\n- Default log level handling works as intended when combined with sampling logic\n\nThe bug found represents a genuine contract violation where the implementation doesn't match the documented constraints for sampling rate values.",
+  "session_id": "e87a0032-4890-45a4-8c74-39fedb857a76",
+  "total_cost_usd": 8.640816399999999,
+  "usage": {
+    "input_tokens": 900,
+    "cache_creation_input_tokens": 103384,
+    "cache_read_input_tokens": 3575532,
+    "output_tokens": 17470,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01DjpGYNu1qqueskcjiEDeTB",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/aws-lambda-powertools_env/bin/activate && python3 -c \"import aws_lambda_powertools.logging; print('Module imported successfully'); print(aws_lambda_powertools.logging.__file__)\"",
+        "description": "Activate venv and import module"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01VjjBGFeabANpLcciGqxD4i",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/aws-lambda-powertools_env/bin/python3 -c \"import aws_lambda_powertools.logging; print('Module imported successfully'); print(aws_lambda_powertools.logging.__file__)\"",
+        "description": "Import module using venv python directly"
+      }
+    }
+  ],
+  "call_id": "744391a2",
+  "module": "aws_lambda_powertools.logging",
+  "timestamp": "2025-08-18T23:35:56.153963"
+}

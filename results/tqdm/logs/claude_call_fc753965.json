@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 661468,
+  "duration_api_ms": 671907,
+  "num_turns": 115,
+  "result": "## Summary\n\nTested 12 properties on `tqdm` - all passed \u2705\n\n### Properties tested:\n- **format_interval**: Round-trip time formatting ([H:]MM:SS pattern)\n- **format_num**: Scientific notation consistency and parseability  \n- **format_sizeof**: SI prefix formatting with different divisors\n- **Counter invariants**: Update summation, reset behavior, float precision\n- **Edge cases**: Negative values, special floats (NaN/Inf), extreme ranges\n- **API consistency**: Description handling, iteration behavior\n\n### Initial false positives investigated:\n- `set_description()` adding \": \" - **Intentional** (use `set_description_str()` to avoid)\n- Counter not updating with `disable=True` - **Intentional** (disables all functionality)\n- Progress exceeding 100% - **Allowed by design**\n\nThe tqdm library demonstrated robust handling of edge cases and maintains its documented contracts correctly. No genuine bugs were discovered through comprehensive property-based testing.",
+  "session_id": "90e256ca-7338-41b4-99bd-55ee219aa3e0",
+  "total_cost_usd": 6.055992599999998,
+  "usage": {
+    "input_tokens": 720,
+    "cache_creation_input_tokens": 69236,
+    "cache_read_input_tokens": 2214866,
+    "output_tokens": 18707,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "LS",
+      "tool_use_id": "toolu_01X4GRTaXvcQjuPqooGcQyWF",
+      "tool_input": {
+        "path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/tqdm"
+      }
+    }
+  ],
+  "call_id": "fc753965",
+  "module": "tqdm",
+  "timestamp": "2025-08-18T19:51:08.081127"
+}

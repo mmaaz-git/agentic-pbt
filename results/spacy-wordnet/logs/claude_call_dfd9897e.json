@@ -1,0 +1,42 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 470967,
+  "duration_api_ms": 351467,
+  "num_turns": 100,
+  "result": "## Summary\n\nFound and reported 1 bug in `spacy_wordnet.wordnet_annotator`:\n\n**Bug Found**: The `fetch_wordnet_lang` function in `spacy_wordnet.__utils__` includes unsanitized user input directly in error messages, causing malformed messages when input contains special characters (newlines, tabs, etc.).\n\n- **Severity**: Low\n- **Type**: Contract violation (improper error message formatting)\n- **Impact**: Makes error messages unreadable and potentially allows log injection\n- **Fix**: Use `repr()` to properly escape the language code in error messages\n\nBug report saved as: `bug_report_spacy_wordnet___utils___fetch_wordnet_lang_2025-08-19_03-16_zrip.md`",
+  "session_id": "9a2747e2-083a-47c1-9a3f-026c477136de",
+  "total_cost_usd": 4.9436979,
+  "usage": {
+    "input_tokens": 624,
+    "cache_creation_input_tokens": 65798,
+    "cache_read_input_tokens": 1965940,
+    "output_tokens": 9911,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01UKBEQTgz3K4pyAjLon6S3T",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/spacy-wordnet_env/bin/activate && python -c \"import spacy_wordnet.wordnet_annotator; print('success - treating as module')\"",
+        "description": "Activate venv and import module"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_013FojbWXbUy3keRWfA65Zxr",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/spacy-wordnet_env/bin/python -c \"import spacy_wordnet.wordnet_annotator; print('success - treating as module')\"",
+        "description": "Import module using venv Python"
+      }
+    }
+  ],
+  "call_id": "dfd9897e",
+  "module": "spacy_wordnet.wordnet_annotator",
+  "timestamp": "2025-08-19T03:17:27.134813"
+}

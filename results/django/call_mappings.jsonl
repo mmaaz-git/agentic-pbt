@@ -1,0 +1,16 @@
+{"call_id": "4c87bdd6", "module": "django", "timestamp": "2025-08-18T18:57:29.617408", "bug_reports": ["bug_report_django_utils_encoding_escape_uri_path_2025-08-18_18-56_nvec.md"], "aux_files_dir": "aux_files/4c87bdd6"}
+{"call_id": "14e7a0ea", "module": "django.apps", "timestamp": "2025-08-18T19:01:13.418307", "bug_reports": ["bug_report_django_apps_appconfig_create_2025-08-18_19-00_gpuf.md"], "aux_files_dir": "aux_files/14e7a0ea"}
+{"call_id": "b958780a", "module": "django.conf", "timestamp": "2025-08-18T18:52:00.357922", "bug_reports": [], "aux_files_dir": "aux_files/b958780a"}
+{"call_id": "cabf5e7b", "module": "django.contrib", "timestamp": "2025-08-18T19:00:29.346633", "bug_reports": ["bug_report_django_utils_encoding_2025-08-18_18-59_16tj.md"], "aux_files_dir": "aux_files/cabf5e7b"}
+{"call_id": "4c21fe03", "module": "django.core", "timestamp": "2025-08-18T19:00:58.804738", "bug_reports": [], "aux_files_dir": "aux_files/4c21fe03"}
+{"call_id": "c35fca04", "module": "django.db", "timestamp": "2025-08-18T18:58:02.727439", "bug_reports": ["bug_report_django_db_models_query_utils_subclasses_2025-08-18_18-57_nstw.md"], "aux_files_dir": "aux_files/c35fca04"}
+{"call_id": "0e1a4167", "module": "django.dispatch", "timestamp": "2025-08-18T19:01:32.830614", "bug_reports": ["bug_report_django_dispatch_2025-08-18_19-00_4apr.md", "bug_report_django_dispatch_2025-08-18_19-00_pnzn.md"], "aux_files_dir": "aux_files/0e1a4167"}
+{"call_id": "ec96cdfa", "module": "django.forms", "timestamp": "2025-08-18T18:59:49.943648", "bug_reports": ["bug_report_django_forms_jsonfield_2025-08-18_18-58_rr74.md", "bug_report_django_forms_booleanfield_2025-08-18_18-58_k3x9.md"], "aux_files_dir": "aux_files/ec96cdfa"}
+{"call_id": "40d54c7a", "module": "django.http", "timestamp": "2025-08-18T18:57:58.000298", "bug_reports": ["bug_report_django_http_parse_cookie_2025-08-18_18-57_nofw.md"], "aux_files_dir": "aux_files/40d54c7a"}
+{"call_id": "fa602195", "module": "django.middleware", "timestamp": "2025-08-18T18:59:38.127605", "bug_reports": ["bug_report_django_middleware_csrf_2025-08-18_18-58_2zgm.md"], "aux_files_dir": "aux_files/fa602195"}
+{"call_id": "76f66d73", "module": "django.shortcuts", "timestamp": "2025-08-18T19:00:20.487031", "bug_reports": ["bug_report_django_shortcuts_2025-08-18_10-45_x3f9.md"], "aux_files_dir": "aux_files/76f66d73"}
+{"call_id": "07703238", "module": "django.template", "timestamp": "2025-08-18T19:00:23.840679", "bug_reports": [], "aux_files_dir": "aux_files/07703238"}
+{"call_id": "600257aa", "module": "django.templatetags", "timestamp": "2025-08-18T18:59:33.346523", "bug_reports": ["bug_report_django_templatetags_cache_2025-08-18_18-58_hvch.md"], "aux_files_dir": "aux_files/600257aa"}
+{"call_id": "72d1de7d", "module": "django.urls", "timestamp": "2025-08-18T18:59:00.005937", "bug_reports": ["bug_report_django_urls_converters_2025-08-18_18-57_b8mz.md"], "aux_files_dir": "aux_files/72d1de7d"}
+{"call_id": "e798d4c5", "module": "django.utils", "timestamp": "2025-08-18T19:00:25.694641", "bug_reports": ["bug_report_django_utils_datastructures_CaseInsensitiveMapping_2025-08-18_18-59_ijtp.md"], "aux_files_dir": "aux_files/e798d4c5"}
+{"call_id": "7591cb9e", "module": "django.views", "timestamp": "2025-08-18T18:58:12.549121", "bug_reports": [], "aux_files_dir": "aux_files/7591cb9e"}

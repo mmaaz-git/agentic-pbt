@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 431384,
+  "duration_api_ms": 444223,
+  "num_turns": 106,
+  "result": "## Bug Hunt Complete! \ud83d\udc1b\n\nFound **2 high-severity bugs** in `troposphere.servicediscovery`:\n\n### Bug 1: Invalid JSON Generation (HIGH)\nThe module accepts infinity and NaN values for TTL fields, producing invalid JSON that violates RFC 7159. CloudFormation will reject these templates.\n- **File**: `bug_report_troposphere_servicediscovery_2025-08-19_02-31_pz4z.md`\n\n### Bug 2: Negative TTL Values (MEDIUM) \nThe module accepts negative TTL values which violate DNS specifications (RFC 2181) and will be rejected by CloudFormation.\n- **File**: `bug_report_troposphere_servicediscovery_negative_ttl_2025-08-19_02-31_mn3f.md`\n\n### Additional Issues Found:\n- Boolean values accepted as TTL (semantically wrong)\n- TTL values beyond CloudFormation's 32-bit limit accepted\n- No validation of reasonable TTL bounds\n\nAll bugs were verified through property-based testing with Hypothesis and confirmed with minimal reproductions.",
+  "session_id": "2cd88474-0476-48ed-ae1b-da517e4843e1",
+  "total_cost_usd": 4.559248599999999,
+  "usage": {
+    "input_tokens": 680,
+    "cache_creation_input_tokens": 45620,
+    "cache_read_input_tokens": 1853584,
+    "output_tokens": 11900,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01F3EtCzCQkqxD3de7MznjBV",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/troposphere/servicediscovery.py"
+      }
+    }
+  ],
+  "call_id": "c35fdf21",
+  "module": "troposphere.servicediscovery",
+  "timestamp": "2025-08-19T02:32:41.010303"
+}

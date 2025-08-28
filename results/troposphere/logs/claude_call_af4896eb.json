@@ -1,0 +1,42 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 422382,
+  "duration_api_ms": 429865,
+  "num_turns": 109,
+  "result": "## Bug Hunting Complete \u2705\n\nFound **2 significant bugs** in the troposphere.validators module through property-based testing:\n\n### 1. Boolean Validator Accepts Floats (Medium Severity)\n- **Bug**: `boolean(0.0)` returns `False`, `boolean(1.0)` returns `True`\n- **Impact**: Violates type contract, allows unintended float inputs\n- **Report**: `bug_report_troposphere_validators_2025-08-19_02-12_qb3y.md`\n\n### 2. Integer Validator Accepts Non-Integer Floats (Medium Severity)  \n- **Bug**: `integer(0.5)` returns `0.5`, silently truncates when converted\n- **Impact**: Silent data loss, precision errors\n- **Report**: `bug_report_troposphere_integer_validator_2025-08-19_02-13_0rxk.md`\n\n### Additional Issues Found:\n- VpcOptions doesn't accept `None` for optional list properties (design limitation)\n- Title validation regex inconsistent with Python's `isalnum()` for Unicode characters\n\nThe property-based testing approach successfully revealed subtle type coercion bugs that traditional unit tests might miss.",
+  "session_id": "82946fa4-a92b-4799-8df6-965bacacc054",
+  "total_cost_usd": 5.4143584,
+  "usage": {
+    "input_tokens": 712,
+    "cache_creation_input_tokens": 62568,
+    "cache_read_input_tokens": 2143942,
+    "output_tokens": 13327,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_019sLffVpRArmqMu4yA5fW6U",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/troposphere_env/bin/activate && python -c \"import troposphere.osis; print('success - treating as module')\"",
+        "description": "Activate env and check if troposphere.osis is importable"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_012bFTP1kiQpkRt6yS6dbuJ5",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -c \"import troposphere.osis; print('success - treating as module')\"",
+        "description": "Check if troposphere.osis is importable using env python"
+      }
+    }
+  ],
+  "call_id": "af4896eb",
+  "module": "troposphere.osis",
+  "timestamp": "2025-08-19T02:14:05.939056"
+}

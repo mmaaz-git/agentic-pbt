@@ -1,0 +1,9 @@
+{"call_id": "12084333", "module": "spnego", "timestamp": "2025-08-18T21:03:05.789594", "bug_reports": ["bug_report_spnego_channel_bindings_2025-08-18_12-34_x7n9.md"], "aux_files_dir": "aux_files/12084333"}
+{"call_id": "a821188f", "module": "spnego.auth", "timestamp": "2025-08-18T21:04:38.412785", "bug_reports": ["bug_report_spnego_channel_bindings_2025-08-18_21-03_aphe.md"], "aux_files_dir": "aux_files/a821188f"}
+{"call_id": "c6f44e74", "module": "spnego.channel_bindings", "timestamp": "2025-08-18T21:02:29.409371", "bug_reports": ["bug_report_spnego_channel_bindings_2025-08-18_21-01_oen4.md"], "aux_files_dir": "aux_files/c6f44e74"}
+{"call_id": "7bd6edbe", "module": "spnego.gss", "timestamp": "2025-08-18T21:12:00.615489", "bug_reports": [], "aux_files_dir": "aux_files/7bd6edbe"}
+{"call_id": "bd5af85f", "module": "spnego.iov", "timestamp": "2025-08-18T21:18:36.035157", "bug_reports": ["bug_report_awkward_forms_ListForm_2025-08-18_21-16_q0bl.md", "bug_report_awkward_forms_index_types_2025-08-18_21-17_4l90.md"], "aux_files_dir": "aux_files/bd5af85f"}
+{"call_id": "bd8a2d08", "module": "spnego.negotiate", "timestamp": "2025-08-18T21:09:12.465644", "bug_reports": ["bug_report_spnego_pack_mech_type_list_2025-08-18_21-06_n11y.md", "bug_report_spnego_negtokeninit_2025-08-18_21-06_cgzf.md", "bug_report_spnego_unpack_token_ntlm_2025-08-18_21-06_0dyq.md"], "aux_files_dir": "aux_files/bd8a2d08"}
+{"call_id": "33f18015", "module": "spnego.ntlm", "timestamp": "2025-08-18T21:11:01.340114", "bug_reports": [], "aux_files_dir": "aux_files/33f18015"}
+{"call_id": "d68882df", "module": "spnego.sspi", "timestamp": "2025-08-18T21:07:24.515143", "bug_reports": ["bug_report_spnego__context_split_username_2025-08-18_21-06_wf8w.md"], "aux_files_dir": "aux_files/d68882df"}
+{"call_id": "638f76ab", "module": "spnego.tls", "timestamp": "2025-08-18T21:12:03.906930", "bug_reports": [], "aux_files_dir": "aux_files/638f76ab"}

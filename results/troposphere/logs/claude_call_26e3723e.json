@@ -1,0 +1,42 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 826634,
+  "duration_api_ms": 758875,
+  "num_turns": 140,
+  "result": "## Bug Hunting Summary\n\nSuccessfully found **2 genuine bugs** in `troposphere.certificatemanager`:\n\n### Bug 1: Empty Title Validation Bypass\n- **Severity**: Medium\n- **Type**: Logic bug\n- Empty string titles bypass validation due to incorrect conditional check before calling `validate_title()`\n- The code checks `if self.title:` which evaluates to False for empty strings, skipping validation entirely\n\n### Bug 2: Integer Validator Accepts Floats\n- **Severity**: Medium  \n- **Type**: Contract violation\n- The `integer()` validator accepts float values (e.g., 3.14) when it should only accept integers\n- Only checks if `int(x)` is possible but returns the original float value unchanged\n\nBoth bugs have been documented with:\n- Minimal reproducible examples\n- Clear explanations of why they're bugs\n- Proposed fixes using diff format\n\nThe property-based testing approach successfully uncovered these issues by testing fundamental properties the code claims to have (title validation and type checking).",
+  "session_id": "abd2a7af-6d5f-469a-ac8e-b4d44819f643",
+  "total_cost_usd": 8.29473675,
+  "usage": {
+    "input_tokens": 776,
+    "cache_creation_input_tokens": 95885,
+    "cache_read_input_tokens": 3488582,
+    "output_tokens": 16516,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01PjvZBVz9EVyFKFNTChyBjf",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -c \"import troposphere.certificatemanager; print('Module imported successfully'); print(troposphere.certificatemanager.__file__)\"",
+        "description": "Import module using virtual env python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01GfUscJUkAb6q7yz2Pk5W7u",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/troposphere_env/bin/activate && python3 -c \"import troposphere.certificatemanager; print('Module imported successfully'); print(troposphere.certificatemanager.__file__)\"",
+        "description": "Activate venv and import module"
+      }
+    }
+  ],
+  "call_id": "26e3723e",
+  "module": "troposphere.certificatemanager",
+  "timestamp": "2025-08-19T00:32:30.887250"
+}

@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 555861,
+  "duration_api_ms": 557625,
+  "num_turns": 105,
+  "result": "Tested 10+ properties on `pydantic.validate_call_decorator` - all passed \u2705\n\n## Summary\n\nI thoroughly tested the `validate_call` decorator from Pydantic using property-based testing with Hypothesis. The testing covered:\n\n**Properties tested:**\n- Function attribute preservation after decoration\n- Partial function support (including nested partials)\n- Return value validation with type coercion\n- Union type handling\n- Decorator stacking behavior\n- Invalid callable type rejection\n- Method decoration (instance, class, static)\n- Default parameter preservation\n- Keyword-only argument validation\n\n**Key findings:**\n- All core functionality works as designed\n- Type coercion is consistent between inputs and returns (e.g., \"42\" \u2192 42)\n- Return validation correctly catches type mismatches when coercion isn't possible\n- Proper error messages for invalid decorator usage patterns\n- Python's `partial` implementation prevents true \"partial of partial\" nesting\n\nNo bugs were discovered. The module behaves correctly according to Pydantic's documented validation philosophy.",
+  "session_id": "863a9265-86bd-4728-b709-c044b32af5c9",
+  "total_cost_usd": 5.5512176,
+  "usage": {
+    "input_tokens": 664,
+    "cache_creation_input_tokens": 87244,
+    "cache_read_input_tokens": 1748132,
+    "output_tokens": 16831,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01UDXmzckAotj5T8u6fAzurK",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/pydantic/validate_call_decorator.py"
+      }
+    }
+  ],
+  "call_id": "8e633c46",
+  "module": "pydantic.validate_call_decorator",
+  "timestamp": "2025-08-18T19:43:39.983401"
+}

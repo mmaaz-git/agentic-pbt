@@ -1,0 +1,58 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 1116327,
+  "duration_api_ms": 1106006,
+  "num_turns": 148,
+  "result": "Tested 49 properties on spnego.iov - all passed \u2705\n\nI thoroughly tested the `spnego.iov` module using Hypothesis property-based testing, examining:\n- BufferType enum invariants and conversions\n- IOVBuffer/IOVResBuffer creation and immutability\n- Input validation logic from `_build_iov_list` \n- Edge cases with various data types\n\nNo bugs were found. The module correctly handles all tested properties and edge cases.",
+  "session_id": "6dde459a-49ad-4b94-8f38-204a41538570",
+  "total_cost_usd": 9.172927800000002,
+  "usage": {
+    "input_tokens": 844,
+    "cache_creation_input_tokens": 101248,
+    "cache_read_input_tokens": 3632248,
+    "output_tokens": 23945,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01E5Ggv9JoDz2rUMZiMvgRTd",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/pyspnego_env/bin/python3 -c \"import spnego.iov; print('success - treating as module')\"",
+        "description": "Check if spnego.iov exists in pyspnego_env"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01J8p2bpxCCPkQyHqo7G6gQK",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/pyspnego_env/bin/python3 -m pip list | grep -i spnego",
+        "description": "Check for spnego packages"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_018A3BAp5KZ9YHswPqY3syxD",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/pyspnego_env/bin/python3 -c \"import sys; print(sys.executable)\"",
+        "description": "Check Python executable path"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Scx7uLY1LePVeAJRoNBC8p",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/pyspnego_env/bin/python3 -m pytest test_spnego_iov.py -v",
+        "description": "Run Hypothesis tests for spnego.iov"
+      }
+    }
+  ],
+  "call_id": "bd5af85f",
+  "module": "spnego.iov",
+  "timestamp": "2025-08-18T21:18:36.032595"
+}

@@ -1,0 +1,50 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 459785,
+  "duration_api_ms": 463783,
+  "num_turns": 98,
+  "result": "## Summary\n\nTested 3 core functions in `pyramid.scripts` with property-based testing:\n\n### Functions Tested:\n1. **`parse_vars`** (pyramid.scripts.common): Variable assignment parser\n2. **`_get_pattern`** (pyramid.scripts.proutes): Route pattern normalizer  \n3. **`_get_request_methods`** (pyramid.scripts.proutes): HTTP method resolver\n\n### Properties Verified:\n- Round-trip property for `parse_vars`\n- Value preservation after first '=' character\n- Idempotence of `_get_pattern`\n- Slash-prefix invariant for route patterns\n- Method intersection logic in `_get_request_methods`\n- Edge cases with empty values, Unicode, and special characters\n\n**Result**: Tested 23 properties on pyramid.scripts - all passed \u2705\n\nNo bugs found. The code handles edge cases correctly including empty keys/values, duplicate keys, Unicode characters, and complex method intersections.",
+  "session_id": "88b00ec6-8eba-472d-a12f-052f35fbdb34",
+  "total_cost_usd": 4.1792069,
+  "usage": {
+    "input_tokens": 678,
+    "cache_creation_input_tokens": 51106,
+    "cache_read_input_tokens": 1649754,
+    "output_tokens": 9574,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01MVEk6esmdLuHJoMyZY1D2j",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/envs/pyramid_env && ./bin/python -c \"import pyramid.scripts; print('Module found:', pyramid.scripts.__file__)\"",
+        "description": "Check pyramid.scripts module location"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01NTaYLsswUgbBLNSgiu4BdB",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/pyramid_env/bin/python -c \"import pyramid.scripts; print('Module found:', pyramid.scripts.__file__)\"",
+        "description": "Check pyramid.scripts module location with full path"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01RrCWdfWUxxQgByQAC7VFkb",
+      "tool_input": {
+        "command": "PYTHONPATH=/root/hypothesis-llm/envs/pyramid_env/lib/python3.13/site-packages python3 -c \"import pyramid.scripts; print('Module found:', pyramid.scripts.__file__)\"",
+        "description": "Import pyramid.scripts with custom PYTHONPATH"
+      }
+    }
+  ],
+  "call_id": "1d480c19",
+  "module": "pyramid.scripts",
+  "timestamp": "2025-08-18T20:51:39.798043"
+}

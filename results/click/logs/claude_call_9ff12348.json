@@ -1,0 +1,25 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 383969,
+  "duration_api_ms": 392113,
+  "num_turns": 65,
+  "result": "Found bug: `click.types.BoolParamType` crashes with AttributeError when converting integer values like -1, raising an AttributeError instead of handling them gracefully. \u2705",
+  "session_id": "b66fa612-a3d2-457c-9ff6-a0986bdde37b",
+  "total_cost_usd": 5.371433799999999,
+  "usage": {
+    "input_tokens": 308,
+    "cache_creation_input_tokens": 76984,
+    "cache_read_input_tokens": 1929384,
+    "output_tokens": 13277,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [],
+  "call_id": "9ff12348",
+  "module": "click.types",
+  "timestamp": "2025-08-18T05:56:31.903043"
+}

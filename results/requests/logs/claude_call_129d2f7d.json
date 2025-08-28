@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 693094,
+  "duration_api_ms": 702782,
+  "num_turns": 121,
+  "result": "## Summary\n\n\u2705 **Bug found in requests.hooks.dispatch_hook!**\n\nI discovered that the `dispatch_hook` function crashes with an AttributeError when passed non-dict values for the `hooks` parameter. This is a legitimate bug in a public API function that should handle invalid inputs more gracefully.\n\nThe bug report has been saved to: `bug_report_requests_hooks_dispatch_hook_2025-08-19_00-07_jzex.md`\n\n**Testing Summary:**\n- Tested 12 properties of the hooks module\n- 11 properties passed successfully \n- 1 property revealed a bug: handling of non-dict hooks parameter\n- Bug severity: Low (edge case, but poor error handling in public API)\n- Bug type: Crash (AttributeError on invalid input)",
+  "session_id": "c341893f-3e5a-4852-9dcc-9a2dd7571c71",
+  "total_cost_usd": 5.191695750000002,
+  "usage": {
+    "input_tokens": 782,
+    "cache_creation_input_tokens": 42709,
+    "cache_read_input_tokens": 2194798,
+    "output_tokens": 14349,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01VAXQbPN5ep17dWQ3i5VeMc",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/requests/hooks.py"
+      }
+    }
+  ],
+  "call_id": "129d2f7d",
+  "module": "requests.hooks",
+  "timestamp": "2025-08-19T00:07:50.900266"
+}

@@ -1,0 +1,2 @@
+{"call_id": "524a7a34", "module": "datadog_checks", "timestamp": "2025-08-18T21:55:49.609392", "bug_reports": [], "aux_files_dir": "aux_files/524a7a34"}
+{"call_id": "17d921bf", "module": "datadog_checks.utils", "timestamp": "2025-08-18T23:04:39.572566", "bug_reports": ["bug_report_round_value_negative_precision_2025-08-18_23-03_htwx.md", "bug_report_pattern_filter_empty_list_2025-08-18_23-03_sase.md"], "aux_files_dir": "aux_files/17d921bf"}

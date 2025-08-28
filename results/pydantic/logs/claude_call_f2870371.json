@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 608199,
+  "duration_api_ms": 617062,
+  "num_turns": 108,
+  "result": "## Bug Found! \ud83d\udc1b\n\nI discovered a bug in `pydantic.decorator.getattr_migration` where it fails to handle module descriptor attributes like `__dict__`, `__class__`, and `__module__`. \n\nThe wrapper function only checks if attributes exist in `sys.modules[module].__dict__`, but descriptor attributes are properties of the module object itself, not keys in its `__dict__`. This causes valid module attributes to incorrectly raise `AttributeError`.\n\n**Bug report saved**: `bug_report_pydantic_decorator_2025-08-18_20-28_82wf.md`\n\nThe property-based testing with Hypothesis successfully identified this edge case that standard unit tests might miss.",
+  "session_id": "b9f9d062-a8dc-46b5-bc72-dbea2ae515fc",
+  "total_cost_usd": 5.2020889000000015,
+  "usage": {
+    "input_tokens": 736,
+    "cache_creation_input_tokens": 79466,
+    "cache_read_input_tokens": 1742270,
+    "output_tokens": 14274,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01P8JWP78QWuxKphHhw6b1cE",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/pydantic/decorator.py"
+      }
+    }
+  ],
+  "call_id": "f2870371",
+  "module": "pydantic.decorator",
+  "timestamp": "2025-08-18T20:29:48.389260"
+}

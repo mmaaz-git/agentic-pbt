@@ -1,0 +1,25 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 715290,
+  "duration_api_ms": 738754,
+  "num_turns": 110,
+  "result": "Perfect! I've successfully found and documented two genuine bugs in the `dateutil` library through property-based testing:\n\n1. **relativedelta inverse property violation** (Medium severity) - Adding and subtracting the same relativedelta doesn't always return to the original date when mixing month and day arithmetic.\n\n2. **Easter date range violation** (High severity) - The Easter calculation returns dates outside the valid range (May instead of March/April) and on wrong weekdays (Friday instead of Sunday) for certain years.\n\nBoth bugs were discovered by testing fundamental mathematical properties and invariants that should always hold. The property-based testing approach with Hypothesis was effective at finding edge cases that violate expected behavior.",
+  "session_id": "d4a51d5d-9a87-4ae8-a638-33b75e0aacd8",
+  "total_cost_usd": 7.427875799999999,
+  "usage": {
+    "input_tokens": 526,
+    "cache_creation_input_tokens": 78660,
+    "cache_read_input_tokens": 2760230,
+    "output_tokens": 23019,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [],
+  "call_id": "22df754c",
+  "module": "dateutil",
+  "timestamp": "2025-08-18T05:29:46.146678"
+}

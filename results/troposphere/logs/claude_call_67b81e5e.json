@@ -1,0 +1,50 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 489080,
+  "duration_api_ms": 465308,
+  "num_turns": 114,
+  "result": "\n\n## Bug Found! \ud83d\udc1b\n\nI discovered a **contract violation bug** in `troposphere.devopsguru` through property-based testing.\n\n### Bug Summary\nThe title validation error message is misleading - it claims titles are \"not alphanumeric\" when rejecting Unicode characters that Python's `isalnum()` considers valid (like '\u00b5', '\u00f1', 'caf\u00e9'). The actual validation only accepts ASCII `[a-zA-Z0-9]`.\n\n### Properties Tested\n\u2705 Title validation consistency  \n\u2705 Required property validation  \n\u2705 Type checking validation  \n\u2705 Serialization round-trip  \n\u2705 List property validation  \n\u2705 Nested object validation  \n\nThe bug was found when testing the title validation property with Unicode alphanumeric characters.\n\n**Bug report saved:** `bug_report_troposphere_devopsguru_2025-08-19_00-40_yxs9.md`",
+  "session_id": "980b2257-0c73-4c54-aabb-43248ec94aa6",
+  "total_cost_usd": 5.433851199999999,
+  "usage": {
+    "input_tokens": 644,
+    "cache_creation_input_tokens": 62240,
+    "cache_read_input_tokens": 2130610,
+    "output_tokens": 13907,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01LZLxdAAFefjedTqmEzHj6A",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -c \"import troposphere.devopsguru; print('Module imported successfully'); print(troposphere.devopsguru.__file__)\"",
+        "description": "Import troposphere.devopsguru using the virtualenv Python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01T3GhN9PMXUNSYUUZ68iqrS",
+      "tool_input": {
+        "command": "pip3 install troposphere",
+        "description": "Install troposphere package"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Q2bvPe1rkzMeErbyTSB1Pv",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/envs/troposphere_env && ./bin/python3 -c \"import troposphere.devopsguru; print('Module imported successfully'); print(troposphere.devopsguru.__file__)\"",
+        "description": "Import troposphere.devopsguru using virtualenv"
+      }
+    }
+  ],
+  "call_id": "67b81e5e",
+  "module": "troposphere.devopsguru",
+  "timestamp": "2025-08-19T00:41:11.237429"
+}

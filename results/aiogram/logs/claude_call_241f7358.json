@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 431451,
+  "duration_api_ms": 404405,
+  "num_turns": 103,
+  "result": "## Summary\n\nI've completed property-based testing on the `aiogram` module and discovered a **genuine bug** in the markdown utilities.\n\n### Bug Found: Double-Escaping in Nested Markdown Functions\n\n**Severity**: Medium  \n**Type**: Logic bug  \n**Location**: `aiogram.utils.markdown`\n\nWhen nesting markdown formatting functions (e.g., `italic(bold(text))`), special characters get escaped multiple times, producing invalid markdown. For example:\n- Input: `\"[\"`\n- `bold(\"[\")` \u2192 `\"*\\[*\"`\n- `italic(bold(\"[\"))` \u2192 `\"_\\*\\\\\\[\\*_\"` (double-escaped, invalid)\n\n### Properties Successfully Tested \u2705\n- `encode_payload`/`decode_payload` round-trip (1000 examples)\n- `add_surrogates`/`remove_surrogates` round-trip (1000 examples) \n- Unicode emoji handling in both encoding functions (500 examples each)\n- Empty string handling\n\nThe bug report has been saved to: `bug_report_aiogram_utils_markdown_2025-08-18_23-04_xv1h.md`",
+  "session_id": "6fe24d2a-098e-47e2-b581-de5a7382dbe9",
+  "total_cost_usd": 4.8871698,
+  "usage": {
+    "input_tokens": 732,
+    "cache_creation_input_tokens": 60356,
+    "cache_read_input_tokens": 1850412,
+    "output_tokens": 12664,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01FbbbKgSuiv2sWCA7y8LfAs",
+      "tool_input": {
+        "file_path": "/root/.local/lib/python3.13/site-packages/aiogram/utils/payload.py"
+      }
+    }
+  ],
+  "call_id": "241f7358",
+  "module": "aiogram",
+  "timestamp": "2025-08-18T23:05:16.371274"
+}

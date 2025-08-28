@@ -1,0 +1,42 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 705222,
+  "duration_api_ms": 692467,
+  "num_turns": 154,
+  "result": "## Summary\n\nFound **2 bugs** in `troposphere.m2` through property-based testing with Hypothesis:\n\n### Bug 1: ApplicationVersion Accepts Negative Values\n- **Location**: `troposphere.m2.Deployment`\n- **Issue**: Accepts negative integers for ApplicationVersion (should be >= 1)  \n- **Report**: `bug_report_troposphere_m2_2025-08-19_02-05_2p93.md`\n\n### Bug 2: DesiredCapacity Accepts Invalid Range  \n- **Location**: `troposphere.m2.HighAvailabilityConfig`\n- **Issue**: Accepts any integer for DesiredCapacity (should be 1-100)\n- **Report**: `bug_report_troposphere_m2_2025-08-19_02-05_po02.md`\n\nBoth bugs violate AWS CloudFormation constraints and would cause deployment failures. The fixes involve using appropriate validators (`positive_integer` and `integer_range`) instead of the generic `integer` validator.",
+  "session_id": "927c5482-8bf0-478a-b88e-b7daa2b68e28",
+  "total_cost_usd": 9.0951905,
+  "usage": {
+    "input_tokens": 706,
+    "cache_creation_input_tokens": 94582,
+    "cache_read_input_tokens": 3954682,
+    "output_tokens": 18107,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01UwjUUZ2vTTCEH1bLgt6hmk",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/troposphere_env/bin/activate && python -c \"import troposphere; print('success - treating as module'); print('Location:', troposphere.__file__)\"",
+        "description": "Activate venv and check for troposphere module"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01WzwWC4bv2tACwwtfxUn2Fh",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -c \"import troposphere; print('success - treating as module'); print('Location:', troposphere.__file__)\"",
+        "description": "Check troposphere module with venv Python"
+      }
+    }
+  ],
+  "call_id": "d0c16094",
+  "module": "troposphere.m2",
+  "timestamp": "2025-08-19T02:07:48.327696"
+}

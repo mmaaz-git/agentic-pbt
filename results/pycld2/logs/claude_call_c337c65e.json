@@ -1,0 +1,66 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 663632,
+  "duration_api_ms": 680226,
+  "num_turns": 112,
+  "result": "## Summary\n\nI successfully tested `pycld2` using property-based testing with Hypothesis and discovered a genuine bug:\n\n### Bug Found: textBytesFound Reports 2 Extra Bytes \u2705\n\n**Severity**: Medium  \n**Type**: Logic error\n\nThe `textBytesFound` field returned by `pycld2.detect()` consistently reports 2 more bytes than the actual UTF-8 byte length of the input text. This violates the expected invariant that detected bytes should not exceed input bytes.\n\n**Example**: \n- Input: `\"A\"` (1 UTF-8 byte)\n- Returns: `textBytesFound = 3` \n- Expected: `textBytesFound = 1`\n\nThe pattern suggests the library is counting C-style double null terminators used internally, which shouldn't be included in the byte count reported to users.\n\n### Testing Summary\n\nI tested 11 properties of pycld2:\n- Return format invariants \u2705\n- Text bytes found <= input length \u274c (bug found)\n- Percentage sum <= 100 \u2705\n- HTML vs plain text parsing \u2705\n- Idempotence \u2705\n- String/bytes equivalence \u2705\n- Vector bounds checking \u2705\n- Score non-negativity \u2705\n- Language code format \u2705\n\nThe bug report has been saved to: `bug_report_pycld2_detect_2025-08-18_02-14_h7x9.md`",
+  "session_id": "9caf6de8-9d0b-4afe-aa53-1c5e04aacc47",
+  "total_cost_usd": 5.993875199999998,
+  "usage": {
+    "input_tokens": 778,
+    "cache_creation_input_tokens": 79700,
+    "cache_read_input_tokens": 2225336,
+    "output_tokens": 14885,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_018BvezbC34KGZnFazLagmu2",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/pycld2_env/bin/python -c \"import pycld2; print('success - treating as module'); print(pycld2)\"",
+        "description": "Check pycld2 module using venv Python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_012ZHKFD6Nnt2exhGUTiVvnU",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/envs/pycld2_env && ./bin/python3 -c \"import pycld2; print('success - treating as module'); print(pycld2.__file__)\"",
+        "description": "Check pycld2 module location"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01FzbL1vxDAet1Xfa84ezmjE",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/envs/pycld2_env && bin/python3 -c \"import pycld2; print('success'); print(pycld2.__file__)\"",
+        "description": "Import pycld2 and get file location"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Nxpm7KZNhnj1u9adw67kyq",
+      "tool_input": {
+        "command": "export PATH=/root/hypothesis-llm/envs/pycld2_env/bin:$PATH && python3 -c \"import pycld2; print('success'); print(pycld2.__file__)\"",
+        "description": "Check pycld2 module with updated PATH"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_016j9fbarEwyuZXXgi3wKWyQ",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/pycld2_env/bin/activate && python -c \"import pycld2; print('success'); print(pycld2.__file__)\"",
+        "description": "Activate venv and check pycld2"
+      }
+    }
+  ],
+  "call_id": "c337c65e",
+  "module": "pycld2",
+  "timestamp": "2025-08-18T21:58:32.631631"
+}

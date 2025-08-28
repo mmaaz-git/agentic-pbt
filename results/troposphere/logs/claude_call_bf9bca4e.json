@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 603550,
+  "duration_api_ms": 607396,
+  "num_turns": 94,
+  "result": "Tested 17+ properties on troposphere.wafv2 validation functions - all passed \u2705\n\n**Summary:**\n- Tested whitelist validators (transformation types, comparison operators, IP versions, positional constraints, content types)\n- Validated content length boundaries (1-10240 characters)\n- Tested statement validation requirements (minimum 2 statements)\n- Verified case sensitivity, type checking, edge cases with unicode/null bytes\n- All validators correctly enforce their documented constraints without bugs",
+  "session_id": "f7a47a05-38eb-40e1-b0be-2f89a7ebb09a",
+  "total_cost_usd": 5.3006843,
+  "usage": {
+    "input_tokens": 656,
+    "cache_creation_input_tokens": 67866,
+    "cache_read_input_tokens": 1810508,
+    "output_tokens": 17190,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_013kxHAmKmqNqRRWVB1n4DTW",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/troposphere/wafv2.py"
+      }
+    }
+  ],
+  "call_id": "bf9bca4e",
+  "module": "troposphere.wafv2",
+  "timestamp": "2025-08-19T02:46:17.064358"
+}

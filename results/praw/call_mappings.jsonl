@@ -1,0 +1,6 @@
+{"call_id": "8d1b835d", "module": "praw", "timestamp": "2025-08-18T23:23:09.255512", "bug_reports": ["bug_report_praw_util_snake_2025-08-18_23-22_1mij.md"], "aux_files_dir": "aux_files/8d1b835d"}
+{"call_id": "a30ff2d3", "module": "praw.const", "timestamp": "2025-08-18T23:21:18.195697", "bug_reports": [], "aux_files_dir": "aux_files/a30ff2d3"}
+{"call_id": "86939542", "module": "praw.endpoints", "timestamp": "2025-08-18T23:19:26.080642", "bug_reports": [], "aux_files_dir": "aux_files/86939542"}
+{"call_id": "2fb71303", "module": "praw.models", "timestamp": "2025-08-18T23:29:56.402794", "bug_reports": ["bug_report_praw_models_util_permissions_string_2025-01-21_23-45_x7n3.md"], "aux_files_dir": "aux_files/2fb71303"}
+{"call_id": "46c731dc", "module": "praw.objector", "timestamp": "2025-08-18T23:23:56.216041", "bug_reports": ["bug_report_praw_objector_2025-08-18_23-23_v6hp.md"], "aux_files_dir": "aux_files/46c731dc"}
+{"call_id": "84b33e0a", "module": "praw.reddit", "timestamp": "2025-08-18T23:22:53.833095", "bug_reports": ["bug_report_praw_util_snake_2025-08-18_23-21_yzkf.md"], "aux_files_dir": "aux_files/84b33e0a"}

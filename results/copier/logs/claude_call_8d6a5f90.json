@@ -1,0 +1,42 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 432260,
+  "duration_api_ms": 426113,
+  "num_turns": 107,
+  "result": "## Summary\n\n**Found bug**: Templates with single `{% yield %}` tag incorrectly raise `MultipleYieldTagsError` when rendered multiple times \u274c\n\nI tested 8 properties of `copier._jinja_ext`:\n- \u2705 Yield tag sets environment attributes correctly\n- \u2705 Preprocessing resets yield attributes \n- \u2705 Multiple yield tags raise MultipleYieldTagsError\n- \u2705 UndefinedError handling returns empty string\n- \u2705 Dict.attr pattern returns empty string\n- \u2705 Non-yield templates have None attributes\n- \u274c **BUG**: Template re-rendering raises incorrect error\n- \u2705 Yield iterable identity preservation\n\nThe bug occurs because `YieldExtension._yield_support` checks if attributes are already set but they're never reset between renders of the same template instance, causing false positives on the second render.\n\nBug report saved to: `bug_report_copier__jinja_ext_2025-08-19_16-45_x7k2.md`",
+  "session_id": "401dc366-a05b-46f3-bfb9-e3c0158362eb",
+  "total_cost_usd": 4.8619672000000005,
+  "usage": {
+    "input_tokens": 654,
+    "cache_creation_input_tokens": 59944,
+    "cache_read_input_tokens": 1750458,
+    "output_tokens": 14575,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_018bRonEenbjHHdGC2V8GhsW",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/copier_env/bin/activate && python -c \"import copier.jinja_ext; print('Module loaded successfully'); print(f'Module file: {copier.jinja_ext.__file__}')\"",
+        "description": "Load copier.jinja_ext in virtual environment"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Nm4W2mpHQrniQaxVQDUGkK",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/copier_env/bin/python -c \"import copier.jinja_ext; print('Module loaded successfully'); print(f'Module file: {copier.jinja_ext.__file__}')\"",
+        "description": "Check copier.jinja_ext with env python"
+      }
+    }
+  ],
+  "call_id": "8d6a5f90",
+  "module": "copier.jinja_ext",
+  "timestamp": "2025-08-19T02:56:56.357030"
+}

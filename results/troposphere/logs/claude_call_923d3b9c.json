@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 615996,
+  "duration_api_ms": 626613,
+  "num_turns": 94,
+  "result": "## Bug Hunting Complete! \ud83d\udc1b\n\nI successfully tested `troposphere.elasticloadbalancing` using property-based testing with Hypothesis and discovered **2 genuine bugs**:\n\n### Bug 1: `validate_int_to_str` Exception Type Error (Medium Severity)\n- **Issue**: Raises `ValueError` instead of `TypeError` for non-numeric strings\n- **Impact**: Inconsistent error handling breaks the function's contract\n- **Saved to**: `bug_report_troposphere_elasticloadbalancing_validate_int_to_str_2025-08-19_06-06_ma8e.md`\n\n### Bug 2: `network_port` Error Message Issues (Low Severity)  \n- **Issue 1**: Grammatical error - \"must been\" instead of \"must be\"\n- **Issue 2**: Incorrect range documentation - says \"0 to 65535\" but -1 is valid\n- **Saved to**: `bug_report_troposphere_validators_network_port_typo_2025-08-19_06-07_wcb3.md`\n\n### Properties Successfully Tested \u2705\n- `validate_threshold`: Range enforcement (2-10) works correctly\n- `elb_name`: Regex pattern validation works as specified\n- `integer_range`: Factory function creates correct validators\n- All other validation functions passed their property tests\n\nThe bugs found are real issues that affect the library's usability and consistency, demonstrating the power of property-based testing to uncover edge cases and contract violations.",
+  "session_id": "53c6aed3-a3ab-4f1b-8d4c-c4fe7af59adc",
+  "total_cost_usd": 4.851564499999999,
+  "usage": {
+    "input_tokens": 584,
+    "cache_creation_input_tokens": 76738,
+    "cache_read_input_tokens": 1581420,
+    "output_tokens": 13503,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01GPdm82aVtkapLM71aoNhFY",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/troposphere/elasticloadbalancing.py"
+      }
+    }
+  ],
+  "call_id": "923d3b9c",
+  "module": "troposphere.elasticloadbalancing",
+  "timestamp": "2025-08-19T06:09:06.076246"
+}

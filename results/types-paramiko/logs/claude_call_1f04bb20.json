@@ -1,0 +1,58 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 196099,
+  "duration_api_ms": 202123,
+  "num_turns": 70,
+  "result": "## Analysis Complete: paramiko-stubs\n\n**No testable properties found in paramiko-stubs**\n\nAfter thorough analysis, I've determined that `paramiko-stubs` cannot be tested with property-based testing because:\n\n1. **Type stubs only**: paramiko-stubs consists entirely of `.pyi` files (Python Interface files) that only define type signatures and interfaces\n2. **No implementation code**: These stub files contain no actual executable Python code - they're purely for type checking tools like mypy\n3. **No paramiko installation**: The actual `paramiko` library is not installed in the environment, only the type stubs package `types-paramiko`\n\nType stub packages like `paramiko-stubs` are designed to provide type hints for existing libraries when used with static type checkers. They don't contain any implementation that can be executed or tested at runtime. Property-based testing requires actual executable code with behaviors and invariants to verify.\n\nTo test paramiko's actual functionality with property-based testing, you would need:\n- The real `paramiko` library installed (not just the stubs)\n- Test the actual paramiko implementation functions like `util.inflate_long()`, `util.deflate_long()`, etc.\n\nThe stub files I examined show interesting functions that *would* be good candidates for property testing if the actual implementation were available (like the inflate/deflate round-trip properties in `util.pyi` or the BER encoding/decoding in `ber.pyi`), but without the implementation, there's nothing to test.",
+  "session_id": "eb5a102d-54e8-4358-a49b-5931477a9c21",
+  "total_cost_usd": 2.9299667000000005,
+  "usage": {
+    "input_tokens": 452,
+    "cache_creation_input_tokens": 42598,
+    "cache_read_input_tokens": 1153066,
+    "output_tokens": 5108,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01EVd6cjeGY6zdSrnoRF3D1D",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/envs/types-paramiko_env && source bin/activate && python3 -c \"import sys; print(sys.executable)\"",
+        "description": "Activate virtual environment and check Python path"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_011UBt9Z7uJqRnvf6wpmfjR5",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/types-paramiko_env/bin/python3 -c \"import sys; print('Python:', sys.executable); print('Site-packages:', [p for p in sys.path if 'site-packages' in p])\"",
+        "description": "Check Python environment paths"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01EQJpaud5beUFAbxSTMt94o",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/types-paramiko_env/bin/python3 test_check_paramiko.py",
+        "description": "Check if paramiko is installed"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01XBLosf6YgucKLB4SmJY1ig",
+      "tool_input": {
+        "command": "PYTHONPATH=/root/hypothesis-llm/envs/types-paramiko_env/lib/python3.13/site-packages python3 -c \"import paramiko; print(paramiko.__version__)\"",
+        "description": "Check paramiko version"
+      }
+    }
+  ],
+  "call_id": "1f04bb20",
+  "module": "paramiko-stubs",
+  "timestamp": "2025-08-19T02:45:56.980797"
+}

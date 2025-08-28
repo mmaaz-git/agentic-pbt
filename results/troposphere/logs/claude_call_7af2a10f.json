@@ -1,0 +1,42 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 474122,
+  "duration_api_ms": 473229,
+  "num_turns": 135,
+  "result": "## Summary\n\nFound 2 bugs in troposphere.codedeploy through property-based testing:\n\n1. **DeploymentGroup validation failure** (High severity) - Mutually exclusive constraints for Ec2TagFilters/Ec2TagSet aren't enforced due to case mismatch in validator\n2. **Integer validator accepts floats** (Medium severity) - The integer validator incorrectly accepts float values instead of rejecting them\n\nBug reports created:\n- `bug_report_troposphere_codedeploy_2025-08-19_00-29_83q4.md`  \n- `bug_report_troposphere_validators_2025-08-19_00-30_coml.md`\n\nTested 11 properties total, found 2 genuine bugs. \u2705",
+  "session_id": "ec1eb9f4-7bae-4d17-a479-0e9dec7e2df7",
+  "total_cost_usd": 7.6535272999999995,
+  "usage": {
+    "input_tokens": 716,
+    "cache_creation_input_tokens": 89278,
+    "cache_read_input_tokens": 3229956,
+    "output_tokens": 14862,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01LN53ncpFf3sizXETiTBCk4",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -c \"import troposphere.codedeploy; print('success - treating as module')\"",
+        "description": "Check if troposphere.codedeploy is available in the venv"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01LhkLMb1ddXiFAeHpEuvEmj",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -m pytest test_codedeploy_properties.py -v",
+        "description": "Run property-based tests with pytest"
+      }
+    }
+  ],
+  "call_id": "7af2a10f",
+  "module": "troposphere.codedeploy",
+  "timestamp": "2025-08-19T00:31:12.340276"
+}

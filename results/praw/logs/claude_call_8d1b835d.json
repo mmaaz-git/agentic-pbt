@@ -1,0 +1,74 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 558109,
+  "duration_api_ms": 564733,
+  "num_turns": 140,
+  "result": "## Bug Found! \ud83d\udc1b\n\nI successfully discovered a **logic bug** in the `praw.util.camel_to_snake` function through property-based testing with Hypothesis.\n\n### Summary\nThe function incorrectly handles strings with 3+ consecutive uppercase letters followed by lowercase letters. For example:\n- `\"APIv2\"` converts to `\"ap_iv2\"` instead of `\"apiv2\"`\n- `\"RESTAPIv1\"` converts to `\"restap_iv1\"` instead of `\"restapiv1\"`\n\n### Key Properties Tested\n\u2705 **Idempotence**: Applying the function twice gives the same result  \n\u2705 **Output format**: Always returns lowercase strings  \n\u2705 **Dictionary preservation**: `snake_case_keys` preserves dictionary structure  \n\u274c **Acronym handling**: Failed - splits acronyms incorrectly\n\n### Bug Details\n- **Severity**: Medium\n- **Type**: Logic error in regex pattern\n- **Impact**: Affects any code using camelCase with 3+ letter acronyms followed by lowercase\n\nThe bug report has been saved to: `bug_report_praw_util_snake_2025-08-18_23-22_1mij.md`\n\nThis bug affects real-world usage patterns where developers commonly use acronyms like API, HTTP, REST in their variable names.",
+  "session_id": "6e6c7b80-bd6e-43d5-9e59-c9cc9b4359ee",
+  "total_cost_usd": 6.6093031,
+  "usage": {
+    "input_tokens": 772,
+    "cache_creation_input_tokens": 71670,
+    "cache_read_input_tokens": 2649770,
+    "output_tokens": 16726,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01SezkwwwxNUWi2ZqACmvwJ1",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/praw_env/bin/python3 -c \"import praw; print('success - treating as module'); print(praw.__version__ if hasattr(praw, '__version__') else 'No version attr')\"",
+        "description": "Import praw using venv python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_014wP7ch4dzFyJYj2scZggGx",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/praw_env/bin/python -c \"import praw; print('success - treating as module'); print(praw.__version__ if hasattr(praw, '__version__') else 'No version attr')\"",
+        "description": "Import praw using venv python from working directory"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01SXE7awyApbZfnUs9jv1n3i",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/praw_env/bin/python -m pytest test_praw_properties.py -v",
+        "description": "Run property-based tests for praw"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Sf1LGW5anAi3LEpLEJVncL",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/praw_env/bin/python -m pytest test_praw_properties.py::test_camel_to_snake_idempotence -v",
+        "description": "Run idempotence test"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01EVwmv2teWJbeLRgFFe4j31",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/praw_env/bin/python run_tests.py",
+        "description": "Run praw property tests with custom runner"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_0168phY5sBDwMsVV2CuhipRV",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/praw_env/bin/python test_simple.py",
+        "description": "Run simple test with praw venv python"
+      }
+    }
+  ],
+  "call_id": "8d1b835d",
+  "module": "praw",
+  "timestamp": "2025-08-18T23:23:09.252526"
+}

@@ -1,0 +1,42 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 165160,
+  "duration_api_ms": 169009,
+  "num_turns": 67,
+  "result": "## Analysis Complete: No Testable Properties Found\n\nAfter thorough analysis of `simple_history.signals`, I found that this module simply defines 4 Django Signal instances:\n- `pre_create_historical_record`\n- `post_create_historical_record`\n- `pre_create_historical_m2m_records`\n- `post_create_historical_m2m_records`\n\nThe entire module is only 18 lines of code that creates these signal objects. It contains no functions, classes with methods, or any algorithmic logic that would benefit from property-based testing. The signals are simply Django Signal instances that serve as event dispatchers.\n\nThe actual signal functionality is provided by Django's `django.dispatch.Signal` class, which is part of Django's core framework (not the target of this testing). The `simple_history.signals` module makes no testable claims about properties - it merely instantiates 4 signal objects for use by the rest of the simple_history package.\n\n**Conclusion**: No testable properties found in `simple_history.signals` \u2705",
+  "session_id": "696b2ca5-fc64-4aba-8e48-b3a28281287a",
+  "total_cost_usd": 2.588864899999999,
+  "usage": {
+    "input_tokens": 442,
+    "cache_creation_input_tokens": 37322,
+    "cache_read_input_tokens": 1011006,
+    "output_tokens": 4776,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01W2TfvU6u3HZ6U7ZteVhwoF",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/envs/django-simple-history_env && source bin/activate && python -c \"import simple_history.signals; print('success - treating as module')\"",
+        "description": "Activate virtual env and check simple_history.signals"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01TrQaUg85tP37aQjgKfLPc5",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/django-simple-history_env/bin/python -c \"import simple_history.signals; print('Module imported successfully')\"",
+        "description": "Import simple_history.signals using venv python"
+      }
+    }
+  ],
+  "call_id": "f277ca23",
+  "module": "simple_history.signals",
+  "timestamp": "2025-08-18T23:33:42.091020"
+}

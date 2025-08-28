@@ -1,0 +1,11 @@
+{"call_id": "4d006e67", "module": "copier", "timestamp": "2025-08-19T02:56:16.039955", "bug_reports": ["bug_report_copier_normalize_git_path_2025-08-19_02-55_sxwq.md"], "aux_files_dir": "aux_files/4d006e67"}
+{"call_id": "c1c9555c", "module": "copier.cli", "timestamp": "2025-08-19T02:55:50.408747", "bug_reports": ["bug_report_copier__cli_data_switch_2025-08-19_02-54_zak2.md", "bug_report_copier__cli_data_file_2025-08-19_02-54_7kx5.md"], "aux_files_dir": "aux_files/c1c9555c"}
+{"call_id": "8d6a5f90", "module": "copier.jinja_ext", "timestamp": "2025-08-19T02:56:56.360668", "bug_reports": ["bug_report_copier__jinja_ext_2025-08-19_16-45_x7k2.md"], "aux_files_dir": "aux_files/8d6a5f90"}
+{"call_id": "fc298ee5", "module": "copier.main", "timestamp": "2025-08-19T02:56:13.405656", "bug_reports": ["bug_report_copier_tools_normalize_git_path_2025-08-19_16-25_k3j9.md", "bug_report_copier_tools_escape_git_path_2025-08-19_16-26_m2x7.md"], "aux_files_dir": "aux_files/fc298ee5"}
+{"call_id": "f19cc6ed", "module": "copier.settings", "timestamp": "2025-08-19T02:57:19.640288", "bug_reports": ["bug_report_copier_settings_2025-08-19_02-56_vzq8.md"], "aux_files_dir": "aux_files/f19cc6ed"}
+{"call_id": "66cf53fb", "module": "copier.subproject", "timestamp": "2025-08-19T03:02:53.433542", "bug_reports": ["bug_report_copier__subproject_2025-08-19_03-01_zr1s.md"], "aux_files_dir": "aux_files/66cf53fb"}
+{"call_id": "46d3e498", "module": "copier.template", "timestamp": "2025-08-19T02:58:04.726641", "bug_reports": ["bug_report_copier__template_2025-08-19_02-57_kz0m.md"], "aux_files_dir": "aux_files/46d3e498"}
+{"call_id": "af249358", "module": "copier.tools", "timestamp": "2025-08-19T02:55:53.157288", "bug_reports": ["bug_report_copier__tools_2025-08-19_02-55_9z5u.md"], "aux_files_dir": "aux_files/af249358"}
+{"call_id": "0e32d674", "module": "copier.types", "timestamp": "2025-08-19T02:57:14.785225", "bug_reports": ["bug_report_copier__types_2025-08-19_02-56_7mzp.md"], "aux_files_dir": "aux_files/0e32d674"}
+{"call_id": "6256fe95", "module": "copier.user_data", "timestamp": "2025-08-19T02:59:17.387092", "bug_reports": [], "aux_files_dir": "aux_files/6256fe95"}
+{"call_id": "fad3108f", "module": "copier.vcs", "timestamp": "2025-08-19T03:02:15.687999", "bug_reports": ["bug_report_copier_vcs_2025-08-19_14-30_x7k2.md"], "aux_files_dir": "aux_files/fad3108f"}

@@ -1,0 +1,50 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 373905,
+  "duration_api_ms": 378626,
+  "num_turns": 97,
+  "result": "## Bug Found! \ud83d\udc1b\n\nSuccessfully discovered a logic bug in `pyramid.static._add_vary` through property-based testing:\n\n**Bug**: The `_add_vary` function fails to remove pre-existing duplicate Vary headers, only preventing new duplicates from being added.\n\n**Test Results**:\n- \u2705 `_secure_path`: Security properties verified\n- \u2705 `_compile_content_encodings`: Mapping properties correct  \n- \u274c `_add_vary`: **BUG FOUND** - Preserves existing duplicates\n- \u2705 `ManifestCacheBuster.parse_manifest`: Round-trip property holds\n- \u2705 `QueryStringConstantCacheBuster.tokenize`: Invariant maintained\n\n**Bug Report**: Created `bug_report_pyramid_static_2025-08-18_20-50_vd9b.md` with reproduction steps and suggested fix.",
+  "session_id": "277f6fd2-a9de-4a94-b7ef-b650c6b70564",
+  "total_cost_usd": 4.592026700000001,
+  "usage": {
+    "input_tokens": 578,
+    "cache_creation_input_tokens": 53302,
+    "cache_read_input_tokens": 1892182,
+    "output_tokens": 9772,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01J8WsjZUdLN5bWrJqxGfdXS",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/pyramid_env/bin/activate && python -c \"import pyramid.static; print('success - treating as module')\"",
+        "description": "Activate pyramid_env and try importing pyramid.static"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_017GEPCFnGtuN6p8dvaBX4Qj",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/pyramid_env/bin/python -c \"import pyramid.static; print('success - treating as module')\"",
+        "description": "Try importing pyramid.static using venv python directly"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_011GoUfNiStwGhSspuhKFDh4",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/envs/pyramid_env && ./bin/python -c \"import pyramid.static; print('success')\"",
+        "description": "Use pyramid_env python to import pyramid.static"
+      }
+    }
+  ],
+  "call_id": "9107e04f",
+  "module": "pyramid.static",
+  "timestamp": "2025-08-18T20:51:39.974963"
+}

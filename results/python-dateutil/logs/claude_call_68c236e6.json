@@ -1,0 +1,25 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 425726,
+  "duration_api_ms": 419819,
+  "num_turns": 73,
+  "result": "## Summary\n\n\u2705 **Bug found in dateutil.zoneinfo.ZoneInfoFile**: The class crashes with unhandled `JSONDecodeError` or `UnicodeDecodeError` when the METADATA file in a zone tarball contains invalid JSON or non-UTF-8 data. \n\nThe bug was discovered through property-based testing by feeding arbitrary binary data to the METADATA file. The minimal failing inputs are:\n- Empty file (`b''`) \u2192 `JSONDecodeError`  \n- Invalid UTF-8 (`b'\\x80'`) \u2192 `UnicodeDecodeError`\n\nThis is a **Medium severity Crash bug** because it causes the entire initialization to fail when encountering corrupted metadata, even though metadata is optional and the code already handles missing metadata gracefully.",
+  "session_id": "0cd50e31-a8df-495b-8f90-7c34bea51fe8",
+  "total_cost_usd": 4.5052081,
+  "usage": {
+    "input_tokens": 352,
+    "cache_creation_input_tokens": 51426,
+    "cache_read_input_tokens": 1681706,
+    "output_tokens": 13102,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [],
+  "call_id": "68c236e6",
+  "module": "dateutil.zoneinfo",
+  "timestamp": "2025-08-18T05:27:54.573911"
+}

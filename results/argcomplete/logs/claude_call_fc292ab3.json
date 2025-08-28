@@ -1,0 +1,41 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 559928,
+  "duration_api_ms": 566612,
+  "num_turns": 108,
+  "result": "Tested 6 properties on argcomplete.shell_integration - all passed \u2705\n\n**Properties tested:**\n1. Fish function names properly sanitize '/' characters\n2. Bash/zsh correctly replace spaces with '_SPACE_' in script paths  \n3. Fish uses correct completion arguments (--path vs --command)\n4. Executables are preserved in generated shell code\n5. Unknown shells return empty code as expected\n6. Special shell characters are properly quoted in bash/zsh\n\nThe module correctly handles edge cases like executables with quotes, semicolons, and other shell metacharacters through proper escaping.",
+  "session_id": "ad754f0a-5e72-4441-8515-7cda2c799ced",
+  "total_cost_usd": 5.239995999999999,
+  "usage": {
+    "input_tokens": 776,
+    "cache_creation_input_tokens": 68120,
+    "cache_read_input_tokens": 2051432,
+    "output_tokens": 11486,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01DZLXvRZ5wGjM18qq6Y5RLk",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/argcomplete/shell_integration.py"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_018cUNAVjx9KHnrkZyhy16Tx",
+      "tool_input": {
+        "command": "find . -name \"*.py\" -type f -exec grep -l \"shell_integration\\|shellcode\" {} \\; | head -10",
+        "description": "Find files that import or use shell_integration"
+      }
+    }
+  ],
+  "call_id": "fc292ab3",
+  "module": "argcomplete.shell_integration",
+  "timestamp": "2025-08-18T21:27:19.259757"
+}

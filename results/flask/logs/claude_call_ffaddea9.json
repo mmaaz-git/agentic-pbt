@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 568711,
+  "duration_api_ms": 556583,
+  "num_turns": 121,
+  "result": "Found bug: **Context stack corruption after wrong pop order** in both `AppContext.pop()` and `RequestContext.pop()` methods. When contexts are popped out of LIFO order, Flask correctly raises an AssertionError but corrupts the context stack, making it impossible to clean up remaining contexts.\n\nBug report saved as `bug_report_flask_ctx_2025-08-19_00-09_zimp.md` \u2705",
+  "session_id": "92e8e5ee-014e-48d7-ac58-0b1c816d3453",
+  "total_cost_usd": 6.2098538,
+  "usage": {
+    "input_tokens": 804,
+    "cache_creation_input_tokens": 68152,
+    "cache_read_input_tokens": 2327452,
+    "output_tokens": 18783,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_018DygdPz4ducuTkNLUgr8iF",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/flask/ctx.py"
+      }
+    }
+  ],
+  "call_id": "ffaddea9",
+  "module": "flask.ctx",
+  "timestamp": "2025-08-19T00:10:50.849350"
+}

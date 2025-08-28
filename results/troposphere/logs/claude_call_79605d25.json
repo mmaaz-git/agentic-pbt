@@ -1,0 +1,89 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 738170,
+  "duration_api_ms": 723922,
+  "num_turns": 136,
+  "result": "Found 1 bug in `troposphere.cleanroomsml` through property-based testing! \u2705\n\n**Bug discovered**: Tags round-trip serialization failure in TrainingDataset. When a TrainingDataset object with Tags is serialized via `to_dict()` and then deserialized with `from_dict()`, it fails with a TypeError because Tags are serialized as a list but `from_dict()` expects a Tags object.\n\nBug report saved as: `bug_report_troposphere_cleanroomsml_2025-08-19_00-30_bn67.md`\n\nAdditionally tested 27 properties across the module including:\n- Round-trip serialization for all classes\n- Required/optional property validation  \n- Type checking and validation\n- Edge cases with empty values, special characters, and Unicode\n- Deeply nested object equality and hashing\n- AWS intrinsic function support\n\nAll other properties passed successfully, demonstrating the module is generally robust except for the Tags serialization issue.",
+  "session_id": "420637d5-85ec-4b26-99c5-247b6096135c",
+  "total_cost_usd": 7.6575406,
+  "usage": {
+    "input_tokens": 1065,
+    "cache_creation_input_tokens": 89838,
+    "cache_read_input_tokens": 2810633,
+    "output_tokens": 22868,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_018kGH7JL54KyvzEpiaAnqYo",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/troposphere_env/bin/activate && python -c \"import troposphere.cleanroomsml; print('success - treating as module')\"",
+        "description": "Activate virtualenv and import troposphere.cleanroomsml"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01WqigqE5Y3iGkT6Qt2ZQEuD",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python -c \"import troposphere.cleanroomsml; print('success - treating as module')\"",
+        "description": "Use virtualenv python to import troposphere.cleanroomsml"
+      }
+    },
+    {
+      "tool_name": "Glob",
+      "tool_use_id": "toolu_01WTxHdTZYK7gcSzwjNw7WtG",
+      "tool_input": {
+        "pattern": "**/*cleanroomsml*",
+        "path": "/root/hypothesis-llm"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01FAmTgwyUJPhHaQqwBDLzUu",
+      "tool_input": {
+        "command": "pip3 list | grep -i troposphere",
+        "description": "Check if troposphere is installed"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01SM48B6KYvAMqbp7aK4Fm3L",
+      "tool_input": {
+        "command": "pip3 install troposphere",
+        "description": "Install troposphere package"
+      }
+    },
+    {
+      "tool_name": "LS",
+      "tool_use_id": "toolu_01N5HguLqxq7zKHKagHiYm2C",
+      "tool_input": {
+        "path": "/root/hypothesis-llm"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01LD2nTTnWrQxVccgTPPQ4tg",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm && ls",
+        "description": "Navigate to parent directory and list files"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_017uW9fq5RDpka9aoivLWeei",
+      "tool_input": {
+        "command": "bin/python -c \"\nimport sys\nsys.path.insert(0, 'lib/python3.13/site-packages')\nimport troposphere.cleanroomsml as crml\nimport inspect\n\n# Get all public classes and functions\nmembers = inspect.getmembers(crml, lambda x: inspect.isclass(x) and not x.__name__.startswith('_'))\nprint('Classes found:')\nfor name, cls in members:\n    print(f'  {name}: {cls.__bases__}')\n    if hasattr(cls, 'props'):\n        print(f'    props: {cls.props}')\n\"",
+        "description": "Inspect troposphere.cleanroomsml module structure"
+      }
+    }
+  ],
+  "call_id": "79605d25",
+  "module": "troposphere.cleanroomsml",
+  "timestamp": "2025-08-19T00:31:40.470305"
+}

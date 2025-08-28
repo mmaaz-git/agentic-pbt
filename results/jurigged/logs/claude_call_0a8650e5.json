@@ -1,0 +1,50 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 333161,
+  "duration_api_ms": 333426,
+  "num_turns": 89,
+  "result": "## Bug Found! \ud83d\udc1b\n\nSuccessfully discovered a bug in `jurigged.utils.shift_lineno` through property-based testing.\n\n**Summary**: The `shift_lineno` function crashes when shifting code line numbers would result in values < 1, violating the round-trip property (shift by delta then -delta should restore original).\n\n**Bug Report**: Created `bug_report_jurigged_utils_shift_lineno_2025-08-19_02-48_4uj9.md`\n\n**Testing Results**:\n- \u2705 EventSource emission and registration properties \n- \u2705 glob_filter path matching (false positive - works as designed)\n- \u2705 or_filter logical OR properties\n- \u274c shift_lineno round-trip property (BUG FOUND)\n- \u2705 attrproxy attribute access equivalence\n\nThe property-based testing successfully identified a medium-severity crash bug where valid operations cause unhandled exceptions.",
+  "session_id": "2a638f16-913d-46d0-a987-fbf5ba8e3932",
+  "total_cost_usd": 4.609411099999999,
+  "usage": {
+    "input_tokens": 594,
+    "cache_creation_input_tokens": 60738,
+    "cache_read_input_tokens": 1760840,
+    "output_tokens": 10798,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01K9VU3W2Lv7siCRFJpkk6D6",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/jurigged_env/bin/activate && python -c \"import jurigged.live; print('success - treating as module')\"",
+        "description": "Activate venv and import jurigged.live"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_014tFHy9pHphSKKDBkmS7SBu",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/jurigged_env/bin/python -c \"import jurigged.live; print('success - treating as module')\"",
+        "description": "Import jurigged.live using venv Python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_019i1eHDkcSpL2UfviJoBnsN",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/jurigged_env/bin/python -m pytest test_jurigged_properties.py -v --tb=short",
+        "description": "Run property-based tests"
+      }
+    }
+  ],
+  "call_id": "0a8650e5",
+  "module": "jurigged.live",
+  "timestamp": "2025-08-19T02:49:31.831049"
+}

@@ -1,0 +1,81 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 716545,
+  "duration_api_ms": 545946,
+  "num_turns": 145,
+  "result": "## Bug Found! \ud83d\udc1b\n\nI discovered a **contract violation bug** in `isal.igzip.compress()` where it fails to properly validate the `compresslevel` parameter, leading to inconsistent error handling compared to other parts of the API.\n\n### Bug Details:\n- **Invalid large values** (e.g., 2147483648) cause `OverflowError` \n- **Negative values** (e.g., -1) cause `IsalError`\n- Meanwhile, `IGzipFile` properly validates and raises `ValueError` with clear messages\n\n### Testing Summary:\n\u2705 Tested 11 properties on isal.igzip:\n- Round-trip compression/decompression\n- All compression levels (0-3)\n- File interface operations  \n- Edge cases and special patterns\n- Invalid input handling (**bug found here**)\n\nA complete bug report has been saved to `bug_report_isal_igzip_2025-01-18_05-36_k3m9.md` with reproduction steps and a suggested fix.",
+  "session_id": "e4050650-3543-426e-929b-b5ef73bc4629",
+  "total_cost_usd": 8.3186896,
+  "usage": {
+    "input_tokens": 682,
+    "cache_creation_input_tokens": 92264,
+    "cache_read_input_tokens": 3487064,
+    "output_tokens": 17788,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Dh1JYiUEcNYzwwnszfUA2Q",
+      "tool_input": {
+        "command": "pip3 install python-isal",
+        "description": "Install the python-isal package"
+      }
+    },
+    {
+      "tool_name": "LS",
+      "tool_use_id": "toolu_01CbTxzcYRDcE1vw8Z8zXowm",
+      "tool_input": {
+        "path": "/root/hypothesis-llm"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01CiptELcmb7TQ2sniK9UyQV",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/isal_env/bin/activate && python -c \"import isal.igzip; print('success - treating as module')\"",
+        "description": "Check isal.igzip in virtual environment"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01S2zLzvmh9yQjTA9Mi3XYCk",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/isal_env/bin/python -c \"import isal.igzip; print('success - treating as module')\"",
+        "description": "Check isal.igzip using venv python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Nn7mdWKrZBoBDqxatqevoV",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/isal_env/bin/pytest /root/hypothesis-llm/worker_/11/test_isal_igzip.py -v",
+        "description": "Run pytest on the isal igzip tests"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01UjeSqvCQD5xThZXcZanKnk",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/isal_env/bin/python3 test_isal_igzip.py",
+        "description": "Run isal igzip tests directly with python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_012tUNBZvyuKRxKbxRXGFvL4",
+      "tool_input": {
+        "command": "PYTHONPATH=/root/hypothesis-llm/envs/isal_env/lib/python3.13/site-packages python3 -m pytest test_isal_igzip.py -v",
+        "description": "Run pytest on isal igzip tests with PYTHONPATH"
+      }
+    }
+  ],
+  "call_id": "d1dd01b7",
+  "module": "isal.igzip",
+  "timestamp": "2025-08-18T23:07:56.103329"
+}

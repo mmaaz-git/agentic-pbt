@@ -1,0 +1,50 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 262834,
+  "duration_api_ms": 270899,
+  "num_turns": 95,
+  "result": "## Testing Complete: praw.endpoints\n\nTested 9 properties on `praw.endpoints` - all passed \u2705\n\n### Properties Tested:\n1. **Dictionary structure**: API_PATH is a non-empty dictionary\n2. **Key/value validity**: All endpoint names and paths are non-empty strings  \n3. **Placeholder format**: All URL placeholders follow `{identifier}` pattern with valid Python identifiers\n4. **Path uniqueness**: No duplicate endpoint paths (prevents routing conflicts)\n5. **URL format**: No absolute URLs or protocols in paths\n6. **Character validity**: No invalid URL characters in paths\n7. **Placeholder consistency**: Common placeholders like `{subreddit}` used consistently\n8. **Naming convention**: All endpoint names follow snake_case convention\n\nThe `praw.endpoints` module is a well-structured static configuration dictionary mapping Reddit API endpoint names to URL path templates. All tested properties hold correctly, indicating robust design with no bugs found.",
+  "session_id": "1e85e2d6-16c3-4560-a71a-3d0cf82671e7",
+  "total_cost_usd": 3.7105501000000007,
+  "usage": {
+    "input_tokens": 610,
+    "cache_creation_input_tokens": 45838,
+    "cache_read_input_tokens": 1501388,
+    "output_tokens": 7694,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_011GgLyLxQ8UfYZVoFZpBBNj",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/praw_env/bin/python -c \"import praw; print('praw imported successfully'); print(f'praw version: {praw.__version__ if hasattr(praw, \\\"__version__\\\") else \\\"unknown\\\"}'); print(f'praw module file: {praw.__file__}')\"",
+        "description": "Import praw using virtual environment Python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01JK3HRBDqKiQwj3aewnkCd6",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/praw_env/bin/activate && python -c \"import praw; print('praw imported successfully'); print(f'praw version: {praw.__version__ if hasattr(praw, \\\"__version__\\\") else \\\"unknown\\\"}'); print(f'praw module file: {praw.__file__}')\"",
+        "description": "Activate venv and import praw"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01AWXhYrmKp6rbJbzdPhyCDk",
+      "tool_input": {
+        "command": "grep -n \"endpoints\" /root/hypothesis-llm/envs/praw_env/lib/python3.13/site-packages/praw/reddit.py | head -20",
+        "description": "Search for endpoints usage in reddit.py"
+      }
+    }
+  ],
+  "call_id": "86939542",
+  "module": "praw.endpoints",
+  "timestamp": "2025-08-18T23:19:26.078847"
+}

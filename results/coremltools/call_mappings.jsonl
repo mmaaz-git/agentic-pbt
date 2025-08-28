@@ -1,0 +1,5 @@
+{"call_id": "927ee14b", "module": "coremltools", "timestamp": "2025-08-18T22:30:29.450916", "bug_reports": ["bug_report_coremltools_models_utils_rename_feature_2025-08-18_22-28_b06j.md"], "aux_files_dir": "aux_files/927ee14b"}
+{"call_id": "8e39497b", "module": "coremltools.converters", "timestamp": "2025-08-18T22:20:30.507715", "bug_reports": ["bug_report_coremltools_converters_EnumeratedShapes_2025-08-18_02-16_k3f9.md"], "aux_files_dir": "aux_files/8e39497b"}
+{"call_id": "c22d0b17", "module": "coremltools.models", "timestamp": "2025-08-18T22:18:18.011482", "bug_reports": ["bug_report_coremltools_models_datatypes_2025-08-18_13-45_a3f7.md"], "aux_files_dir": "aux_files/c22d0b17"}
+{"call_id": "54417a53", "module": "coremltools.optimize", "timestamp": "2025-08-18T22:30:47.654077", "bug_reports": ["bug_report_coremltools_optimize__utils_2025-08-18_22-22_7x2k.md"], "aux_files_dir": "aux_files/54417a53"}
+{"call_id": "b2612a05", "module": "coremltools.proto", "timestamp": "2025-08-18T22:21:55.506078", "bug_reports": [], "aux_files_dir": "aux_files/b2612a05"}

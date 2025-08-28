@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 588702,
+  "duration_api_ms": 594529,
+  "num_turns": 111,
+  "result": "## Testing Summary\n\nTested 16 properties on `pydantic.tools` - all passed \u2705\n\n### Properties Tested:\n1. **Round-trip property**: `schema_of` and `schema_json_of` produce equivalent results\n2. **Equivalence property**: `parse_obj_as` behaves identically to `TypeAdapter.validate_python`\n3. **Schema title handling**: Title parameter correctly sets schema titles\n4. **JSON formatting**: `schema_json_of` respects JSON formatting kwargs\n5. **Type coercion consistency**: Types are preserved/coerced correctly\n6. **Unicode handling**: Special characters and unicode strings handled properly\n7. **Numeric edge cases**: Infinity, near-boundary floats handled correctly\n8. **Empty collections**: All collection types handle empty values\n9. **Optional/None handling**: Optional types with None values work correctly\n10. **Deeply nested structures**: Arbitrary nesting depth supported\n11. **Large string schemas**: Schema generation handles large strings\n12. **Special dictionary keys**: Whitespace and empty string keys work\n13. **String-to-type coercion**: String values coerce to appropriate types\n14. **Union type lists**: Mixed-type lists with Union types work correctly\n15. **Type name parameter**: Deprecated parameter handled with proper warnings\n16. **Schema validation**: Parsed values are JSON-serializable per their schemas\n\nAll properties held under extensive property-based testing with Hypothesis. The deprecated functions in `pydantic.tools` correctly wrap their modern `TypeAdapter` equivalents and maintain backward compatibility.",
+  "session_id": "333590aa-2d43-4bd4-b081-47ad7867417e",
+  "total_cost_usd": 5.8637274,
+  "usage": {
+    "input_tokens": 744,
+    "cache_creation_input_tokens": 90836,
+    "cache_read_input_tokens": 2022296,
+    "output_tokens": 14686,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_019XT8jdhYFh7PyeSVmjArKo",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/pydantic/tools.py"
+      }
+    }
+  ],
+  "call_id": "2998b7bc",
+  "module": "pydantic.tools",
+  "timestamp": "2025-08-18T19:44:13.160628"
+}

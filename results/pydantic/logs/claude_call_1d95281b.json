@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 680524,
+  "duration_api_ms": 644393,
+  "num_turns": 112,
+  "result": "## Summary\n\nTested **32 properties** on `pydantic.dataclasses` - all passed \u2705\n\n### Properties Tested:\n\n**Core Functionality:**\n- is_pydantic_dataclass invariant (decorator always produces pydantic dataclasses)\n- Equality behavior with eq=True parameter\n- Frozen immutability with frozen=True parameter  \n- rebuild_dataclass idempotence\n- Field default_factory isolation (mutable defaults are safe)\n\n**Advanced Features:**\n- Nested dataclass validation\n- Inheritance chains (single and multiple)\n- repr consistency\n- slots behavior and attribute restrictions\n- kw_only parameter for keyword-only arguments\n- order parameter for comparison operators\n\n**Edge Cases:**\n- Circular references and memory management\n- ClassVar handling\n- Long field names (50-100 characters)\n- Many fields (50+ fields per dataclass)\n- Properties and computed fields\n- Field constraints with boundary values\n- __post_init__ hook execution\n- Complex nested structures\n\n**Type Support:**\n- Empty dataclasses\n- Union types\n- Literal types  \n- Generic dataclasses with TypeVar\n- Field name conflicts with Python keywords\n- Recursive validation with self-references\n- Callable defaults and factory functions\n- Binary data (bytes)\n- Mutable default safety\n\nNo bugs found. The module behaves correctly according to its documentation and design specifications.",
+  "session_id": "bc179e2a-b2fd-461c-904d-102d896a9fec",
+  "total_cost_usd": 6.9980488,
+  "usage": {
+    "input_tokens": 796,
+    "cache_creation_input_tokens": 101440,
+    "cache_read_input_tokens": 2291716,
+    "output_tokens": 21618,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01Qh3mAdm8kNahvi72ak4er2",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/pydantic/dataclasses.py"
+      }
+    }
+  ],
+  "call_id": "1d95281b",
+  "module": "pydantic.dataclasses",
+  "timestamp": "2025-08-18T20:31:00.827311"
+}

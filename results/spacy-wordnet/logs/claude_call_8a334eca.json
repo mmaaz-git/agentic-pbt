@@ -1,0 +1,50 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 470825,
+  "duration_api_ms": 473336,
+  "num_turns": 107,
+  "result": "## Bug Found! \ud83d\udc1b\n\nI discovered a **crash bug** in `spacy_wordnet.wordnet_domains.load_wordnet_domains()` through property-based testing.\n\n### Summary\nThe function crashes with `ValueError: not enough values to unpack` when the input file contains:\n- Empty lines \n- Lines without tab separators\n\nThis makes it vulnerable to file corruption or malformed custom data files.\n\n### Impact\n- **Severity**: Medium\n- **Type**: Crash bug (unhandled exception)\n- Users providing custom domain files or corrupted data files will experience crashes\n\n### Bug Report\nCreated: `bug_report_spacy_wordnet_wordnet_domains_2025-08-19_03-16_evle.md`\n\nThe fix is simple - add validation to skip empty lines and lines without tabs before attempting to parse them.",
+  "session_id": "43118904-7fbd-4ec6-abd3-7af41efcec4b",
+  "total_cost_usd": 4.9007729,
+  "usage": {
+    "input_tokens": 782,
+    "cache_creation_input_tokens": 57702,
+    "cache_read_input_tokens": 1925358,
+    "output_tokens": 11965,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01VNY1pHiikVwHxLndsQvKWB",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/envs/spacy-wordnet_env && source bin/activate && python -c \"import spacy_wordnet; print('Module found'); import spacy_wordnet.wordnet_domains as wd; print('Submodule found:', wd)\"",
+        "description": "Import spacy_wordnet.wordnet_domains with venv"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_019Kkj591DLiwPKo7kFWzqCt",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/spacy-wordnet_env/bin/python -c \"import spacy_wordnet; print('Module found'); import spacy_wordnet.wordnet_domains as wd; print('Submodule found:', wd)\"",
+        "description": "Import spacy_wordnet.wordnet_domains"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01EV1mSVH7EdtHfkMQRG6gS9",
+      "tool_input": {
+        "command": "grep -c '^$' /root/hypothesis-llm/envs/spacy-wordnet_env/lib/python3.13/site-packages/spacy_wordnet/data/wordnet_domains.txt",
+        "description": "Count empty lines in the data file"
+      }
+    }
+  ],
+  "call_id": "8a334eca",
+  "module": "spacy_wordnet.wordnet_domains",
+  "timestamp": "2025-08-19T03:17:29.540722"
+}

@@ -1,0 +1,58 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 179851,
+  "duration_api_ms": 186353,
+  "num_turns": 57,
+  "result": "No testable properties found in srsly.about",
+  "session_id": "e2a0eccd-541c-484e-8d4f-3447fc5b8729",
+  "total_cost_usd": 2.0282071,
+  "usage": {
+    "input_tokens": 370,
+    "cache_creation_input_tokens": 32438,
+    "cache_read_input_tokens": 756872,
+    "output_tokens": 3537,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Eoxhqjqua15NdJdybzAwXn",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/srsly_env/bin/python -c \"import srsly; print('srsly module found'); print(dir(srsly))\"",
+        "description": "Check srsly module in virtual env"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01BSPxHBcpzjAFKuWaW1yXWZ",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/envs/srsly_env && source bin/activate && python -c \"import srsly; print('srsly module found'); print(dir(srsly))\"",
+        "description": "Activate venv and check srsly module"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01EScpJthBTGiFCL3yhFyU6S",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/srsly_env/bin/python3 -c \"import srsly; print('srsly module found'); print(dir(srsly))\"",
+        "description": "Check srsly in venv directly"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Xxx2qm97GZyzYGfz8z7nDw",
+      "tool_input": {
+        "command": "export PYTHONPATH=/root/hypothesis-llm/envs/srsly_env/lib/python3.13/site-packages:$PYTHONPATH && python3 -c \"import srsly; print('srsly module found'); print(dir(srsly))\"",
+        "description": "Set PYTHONPATH to venv and import srsly"
+      }
+    }
+  ],
+  "call_id": "0c55ec43",
+  "module": "srsly.about",
+  "timestamp": "2025-08-18T21:25:50.637869"
+}

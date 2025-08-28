@@ -1,0 +1,25 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 364143,
+  "duration_api_ms": 381642,
+  "num_turns": 87,
+  "result": "**Bug found**: The `click.termui.unstyle()` function fails to properly remove bare escape characters and incomplete ANSI sequences. When text containing `\\x1b` is styled and then unstyled, the escape character remains in the output, violating the round-trip property `unstyle(style(text)) == text`. Created bug report: `bug_report_click_termui_unstyle_2025-08-18_05-55_f6hb.md`",
+  "session_id": "bf96242a-0c8d-4656-9e1f-ef644253bfc9",
+  "total_cost_usd": 5.716084400000001,
+  "usage": {
+    "input_tokens": 276,
+    "cache_creation_input_tokens": 69352,
+    "cache_read_input_tokens": 2323466,
+    "output_tokens": 11647,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [],
+  "call_id": "82d41620",
+  "module": "click.termui",
+  "timestamp": "2025-08-18T05:55:54.772126"
+}

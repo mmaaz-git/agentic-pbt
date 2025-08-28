@@ -1,0 +1,34 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 292154,
+  "duration_api_ms": 297743,
+  "num_turns": 87,
+  "result": "## Bug Found! \u2705\n\nI've successfully discovered a **logic bug** in `spnego.channel_bindings.GssChannelBindings` through property-based testing. \n\n**Bug Summary**: The pack/unpack round-trip property is violated - `None` values for address and application_data fields become empty bytes `b''` after pack/unpack, breaking field value preservation.\n\n**Bug Details**:\n- **Severity**: Medium (violates API contract but doesn't crash)\n- **Type**: Logic bug (incorrect round-trip behavior)\n- **Impact**: Code relying on the distinction between `None` (no value) and `b''` (empty value) will behave incorrectly\n\nThe bug report has been saved to: `bug_report_spnego_channel_bindings_2025-08-18_21-01_oen4.md`\n\nThis bug was found by testing the fundamental round-trip property that should hold for any serialization/deserialization pair: `unpack(pack(x))` should equal `x`.",
+  "session_id": "4a22e2ae-d79d-4a96-a101-d7e714488756",
+  "total_cost_usd": 3.5706326999999995,
+  "usage": {
+    "input_tokens": 654,
+    "cache_creation_input_tokens": 46898,
+    "cache_read_input_tokens": 1310624,
+    "output_tokens": 9426,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01YbBEwSGi2AqU4gZ9zZ9sue",
+      "tool_input": {
+        "command": "cat /root/hypothesis-llm/envs/pyspnego_env/lib/python3.13/site-packages/pyspnego-0.11.2.dist-info/METADATA | grep -E \"Home-page|Source\" | head -5",
+        "description": "Find source repository information"
+      }
+    }
+  ],
+  "call_id": "c6f44e74",
+  "module": "spnego.channel_bindings",
+  "timestamp": "2025-08-18T21:02:29.407064"
+}

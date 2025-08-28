@@ -1,0 +1,4 @@
+{"call_id": "75917cd0", "module": "aiohttp_retry", "timestamp": "2025-08-18T22:44:26.637662", "bug_reports": ["bug_report_aiohttp_retry_ListRetry_2025-08-18_22-42_l0hx.md", "bug_report_aiohttp_retry_ExponentialRetry_2025-08-18_22-42_jzsz.md"], "aux_files_dir": "aux_files/75917cd0"}
+{"call_id": "d1967514", "module": "aiohttp_retry.client", "timestamp": "2025-08-18T22:42:37.238271", "bug_reports": ["bug_report_aiohttp_retry_fibonacci_2025-08-18_12-00_f3k9.md"], "aux_files_dir": "aux_files/d1967514"}
+{"call_id": "ec13f12b", "module": "aiohttp_retry.retry_options", "timestamp": "2025-08-18T22:41:50.627114", "bug_reports": ["bug_report_aiohttp_retry_retry_options_2025-08-18_22-40_xwgn.md"], "aux_files_dir": "aux_files/ec13f12b"}
+{"call_id": "374f2518", "module": "aiohttp_retry.types", "timestamp": "2025-08-18T22:43:32.686325", "bug_reports": ["bug_report_aiohttp_retry_fibonacciretry_2025-08-18_22-42_tyya.md"], "aux_files_dir": "aux_files/374f2518"}

@@ -1,0 +1,4 @@
+{"call_id": "f28ee337", "module": "azure", "timestamp": "2025-08-18T21:01:30.237253", "bug_reports": ["bug_report_azure_mgmt_appconfiguration_2025-08-18_21-00_k9x2.md"], "aux_files_dir": "aux_files/f28ee337"}
+{"call_id": "5ad9241e", "module": "azure.common", "timestamp": "2025-08-18T20:55:13.553089", "bug_reports": [], "aux_files_dir": "aux_files/5ad9241e"}
+{"call_id": "193751ab", "module": "azure.core", "timestamp": "2025-08-18T21:00:12.427660", "bug_reports": ["bug_report_azure_core_parse_connection_string_2025-08-18_20-58_qd5w.md", "bug_report_azure_core_caseinsensitivedict_2025-08-18_20-58_ernf.md"], "aux_files_dir": "aux_files/193751ab"}
+{"call_id": "b6af7168", "module": "azure.profiles", "timestamp": "2025-08-18T20:59:58.644672", "bug_reports": ["bug_report_azure_profiles_2025-08-18_20-58_2xo8.md"], "aux_files_dir": "aux_files/b6af7168"}

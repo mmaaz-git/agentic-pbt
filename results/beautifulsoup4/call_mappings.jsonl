@@ -1,0 +1,8 @@
+{"call_id": "ed0854ec", "module": "bs4", "timestamp": "2025-08-18T19:06:48.159701", "bug_reports": ["bug_report_bs4_css_selector_2025-08-18_19-05_fpbk.md"], "aux_files_dir": "aux_files/ed0854ec"}
+{"call_id": "c3e814fb", "module": "bs4.builder", "timestamp": "2025-08-18T19:20:20.204750", "bug_reports": ["bug_report_bs4_builder_TreeBuilderRegistry_2025-08-18_04-35_k3x9.md"], "aux_files_dir": "aux_files/c3e814fb"}
+{"call_id": "47704777", "module": "bs4.css", "timestamp": "2025-08-18T19:22:13.224536", "bug_reports": ["bug_report_bs4_css_2025-08-18_04-42_k3n9.md"], "aux_files_dir": "aux_files/47704777"}
+{"call_id": "930e7a9e", "module": "bs4.dammit", "timestamp": "2025-08-18T19:22:36.582952", "bug_reports": ["bug_report_bs4_dammit_2025-08-18_19-21_bbhu.md"], "aux_files_dir": "aux_files/930e7a9e"}
+{"call_id": "f8e6c769", "module": "bs4.diagnose", "timestamp": "2025-08-18T19:07:15.845044", "bug_reports": ["bug_report_bs4_diagnose_rdoc_2025-08-18_19-06_cdgg.md"], "aux_files_dir": "aux_files/f8e6c769"}
+{"call_id": "e5a522d9", "module": "bs4.element", "timestamp": "2025-08-18T19:19:23.243262", "bug_reports": ["bug_report_bs4_element_2025-08-18_19-18_p0pq.md"], "aux_files_dir": "aux_files/e5a522d9"}
+{"call_id": "2941c7b8", "module": "bs4.filter", "timestamp": "2025-08-18T20:25:56.030085", "bug_reports": ["bug_report_bs4_filter_2025-08-18_20-24_zfui.md"], "aux_files_dir": "aux_files/2941c7b8"}
+{"call_id": "d567b4cd", "module": "bs4.formatter", "timestamp": "2025-08-18T22:54:35.130350", "bug_reports": ["bug_report_bs4_formatter_2025-08-18_22-53_yzbl.md"], "aux_files_dir": "aux_files/d567b4cd"}

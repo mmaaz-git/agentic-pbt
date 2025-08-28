@@ -1,0 +1,40 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 532684,
+  "duration_api_ms": 492139,
+  "num_turns": 140,
+  "result": "## Bug Found! \ud83d\udc1b\n\nI discovered a **contract violation bug** in `aiogram.filters.command.CommandObject.text`. \n\nThe property claims to \"Generate original text from object\" but normalizes all whitespace (tabs, multiple spaces) to single spaces, breaking the round-trip property for command parsing.\n\n**Bug Details:**\n- When parsing `/start  John` (double space), it reconstructs as `/start John` (single space)\n- Affects tabs and any multiple whitespace characters\n- Violates the documented contract of preserving original text\n\nThe bug report has been saved to: `bug_report_aiogram_filters_command_2025-08-18_23-07_651b.md`\n\n**Testing Summary:**\n- \u2705 Tested 6 properties on CommandObject \n- \u2705 All basic tests passed initially\n- \ud83d\udc1b Found bug when testing whitespace preservation property with Hypothesis\n- \ud83d\udcdd Created comprehensive bug report with reproduction steps and suggested fix",
+  "session_id": "600efde8-9f51-44fd-8cbf-727c622cb28d",
+  "total_cost_usd": 5.7881383500000005,
+  "usage": {
+    "input_tokens": 842,
+    "cache_creation_input_tokens": 56523,
+    "cache_read_input_tokens": 2457443,
+    "output_tokens": 13408,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "LS",
+      "tool_use_id": "toolu_011FCGT2ogz6ZmaZ1CkMqzhx",
+      "tool_input": {
+        "path": "/root/.local/lib/python3.13/site-packages/aiogram/handlers"
+      }
+    },
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01X8ZNeiUC4yb2G2ShLTQ23C",
+      "tool_input": {
+        "file_path": "/root/.local/lib/python3.13/site-packages/aiogram/handlers/__init__.py"
+      }
+    }
+  ],
+  "call_id": "aa536509",
+  "module": "aiogram.handlers",
+  "timestamp": "2025-08-18T23:08:40.460217"
+}

@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 589916,
+  "duration_api_ms": 592184,
+  "num_turns": 113,
+  "result": "## Bug Found! \ud83d\udc1b\n\nSuccessfully discovered a **Contract violation bug** in `troposphere.waf`:\n\n**Issue**: The `no_validation()` method doesn't actually disable validation as its name and documentation suggest. Despite setting `do_validation = False`, validation still occurs during attribute assignment via `__setattr__`.\n\n**Impact**: Users cannot bypass validation even when explicitly requested, breaking the ability to work with custom or non-standard WAF actions.\n\n**Bug report saved**: `bug_report_troposphere_waf_2025-08-19_02-44_bqyr.md`\n\nThe property-based testing approach successfully identified this bug by testing the expected behavior of the `no_validation()` method against its actual implementation. \u2705",
+  "session_id": "7a8b046c-433b-4910-b4b6-e25a1be759a3",
+  "total_cost_usd": 5.238081300000001,
+  "usage": {
+    "input_tokens": 698,
+    "cache_creation_input_tokens": 59638,
+    "cache_read_input_tokens": 1923448,
+    "output_tokens": 16066,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_0159QBDB6sc2TY87kXwV1qX3",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/troposphere/waf.py"
+      }
+    }
+  ],
+  "call_id": "17a1894b",
+  "module": "troposphere.waf",
+  "timestamp": "2025-08-19T02:45:09.021823"
+}

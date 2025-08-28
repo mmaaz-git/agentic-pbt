@@ -1,0 +1,58 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 501173,
+  "duration_api_ms": 504757,
+  "num_turns": 103,
+  "result": "## Testing Summary\n\nTested **32 properties** on the `trino` Python client module - all passed \u2705\n\n### Properties Tested:\n- **Type Mappers (12 properties)**: BinaryValueMapper base64 round-trip, BooleanValueMapper string parsing, DoubleValueMapper special values (Infinity/NaN), Integer/Decimal/String preservation\n- **Temporal Types (4 properties)**: Time/Timestamp rounding precision, timezone parsing, fractional seconds conversion\n- **Interval Types (2 properties)**: Year-to-month and day-to-second interval parsing\n- **Collections (4 properties)**: Array and Map mappers with nested/nullable elements\n- **Edge Cases (10 properties)**: Malformed inputs, extreme values, overflow conditions, invalid base64\n\n### Conclusion:\nThe `trino` module's data type mappers demonstrate **robust handling** of:\n- Round-trip conversions between Trino and Python types\n- Special float values (Infinity, NaN)\n- Timezone offset parsing\n- Temporal precision rounding\n- Nested data structures\n- Edge cases and malformed inputs\n\nNo bugs were discovered. The module correctly implements the claimed properties for data type conversion between Trino's SQL types and Python types.",
+  "session_id": "409c9191-87b4-48e6-a695-06cc72a5b98c",
+  "total_cost_usd": 5.953136599999999,
+  "usage": {
+    "input_tokens": 600,
+    "cache_creation_input_tokens": 91060,
+    "cache_read_input_tokens": 2026768,
+    "output_tokens": 15608,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01BbuJV9L77EUHExCziJwDUL",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/trino_env/bin/activate && python3 -c \"import trino; print('success - treating as module'); print('Module file:', trino.__file__)\"",
+        "description": "Activate trino environment and check if trino module exists"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01MfhSgqwW9bsMUk5uyoKQZm",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/trino_env/bin/python3 -c \"import trino; print('success - treating as module'); print('Module file:', trino.__file__)\"",
+        "description": "Check if trino module exists in virtual environment"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_0125yC7QEb2kSbRgdp6N7jj6",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/trino_env/bin/python -c \"import trino; print('success - treating as module'); print('Module file:', trino.__file__)\"",
+        "description": "Check if trino module exists in virtual environment"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01CaQTLfc45kb3TSALXT7Q9B",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/trino_env/bin/python -m pytest test_trino_properties.py -v",
+        "description": "Run property-based tests for trino module"
+      }
+    }
+  ],
+  "call_id": "5b9751af",
+  "module": "trino",
+  "timestamp": "2025-08-18T21:00:02.074753"
+}

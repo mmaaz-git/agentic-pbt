@@ -1,0 +1,50 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 388385,
+  "duration_api_ms": 391021,
+  "num_turns": 97,
+  "result": "## Bug Found! \ud83d\udc1b\n\nSuccessfully identified a **global state mutation bug** in `yq.loader.get_loader()`:\n\n**Issue**: The function modifies shared class-level state instead of creating isolated configurations, causing different `get_loader()` calls to interfere with each other.\n\n**Impact**: This affects concurrent usage and sequential calls with different settings - the last call's configuration applies to all users of the returned class.\n\n**Bug report saved**: `bug_report_yq_loader_2025-08-19_02-52_k3m9.md`\n\nThe bug was discovered through property-based testing that revealed the function violates isolation principles by mutating global state. This is a medium-severity logic bug that could cause unexpected behavior in production systems using the yq library.",
+  "session_id": "64b70daa-11c8-4123-a17e-847abc84f473",
+  "total_cost_usd": 5.376116199999999,
+  "usage": {
+    "input_tokens": 616,
+    "cache_creation_input_tokens": 75316,
+    "cache_read_input_tokens": 1992054,
+    "output_tokens": 12775,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01FqgFyvg7mM1U5ZddFiUq12",
+      "tool_input": {
+        "command": "find /root/hypothesis-llm -name \"*loader*\" -type f | head -20",
+        "description": "Search for loader files in project"
+      }
+    },
+    {
+      "tool_name": "Glob",
+      "tool_use_id": "toolu_01AS27KFh9JxpbzZNVJQ1x5t",
+      "tool_input": {
+        "pattern": "**/*loader*",
+        "path": "/root/hypothesis-llm"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_012jSuYacTHstvxbKsDExbyx",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/yq_env/bin/python -c \"import yq.loader; print('yq.loader imported successfully')\"",
+        "description": "Check if yq.loader exists in yq_env"
+      }
+    }
+  ],
+  "call_id": "bc7895b5",
+  "module": "yq.loader",
+  "timestamp": "2025-08-19T03:08:09.822043"
+}

@@ -1,0 +1,41 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 368771,
+  "duration_api_ms": 338663,
+  "num_turns": 87,
+  "result": "## Summary\n\n\u2705 **Bug Found!** Successfully discovered a bug in `aiogram.webhook.security.IPFilter`\n\n**What was tested**: 9 properties across the `aiogram.webhook` module focusing on:\n- IPFilter class functionality\n- IP address validation and network handling  \n- X-Forwarded-For header parsing\n- Network CIDR notation support\n\n**Bug discovered**: `IPFilter.allow_ip()` crashes when given valid CIDR notation with host bits set (e.g., \"192.168.1.100/24\"). This is a common user pattern that should be supported.\n\n**Bug report**: Created `bug_report_aiogram_webhook_security_2025-08-18_23-07_m7e0.md` with:\n- Minimal reproduction showing the crash\n- Property-based test that found the issue  \n- Simple one-line fix using `strict=False` parameter\n\n**Test results**: 8/9 properties passed, 1 revealed the bug\n\nThe bug is legitimate because users commonly specify networks this way, and the fix is straightforward - just adding `strict=False` when parsing network addresses.",
+  "session_id": "3d7adb70-a6b6-4104-b8ee-b2e773545c82",
+  "total_cost_usd": 3.6402894000000003,
+  "usage": {
+    "input_tokens": 522,
+    "cache_creation_input_tokens": 43188,
+    "cache_read_input_tokens": 1319852,
+    "output_tokens": 11076,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "LS",
+      "tool_use_id": "toolu_01Tcj3VZjLLByEkoz5nePLYs",
+      "tool_input": {
+        "path": "/root/.local/lib/python3.13/site-packages/aiogram/webhook"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_015fAVi44B8qdxBqXw3AzCUv",
+      "tool_input": {
+        "command": "ls -la /root/.local/lib/python3.13/site-packages/aiogram/webhook/",
+        "description": "List files in aiogram.webhook module"
+      }
+    }
+  ],
+  "call_id": "23f46b0b",
+  "module": "aiogram.webhook",
+  "timestamp": "2025-08-18T23:08:10.923078"
+}

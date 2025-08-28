@@ -1,0 +1,58 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 571037,
+  "duration_api_ms": 578651,
+  "num_turns": 128,
+  "result": "## Summary\n\nSuccessfully completed property-based testing of `troposphere.cloudfront` and discovered **2 bugs**:\n\n### Bug 1: Delayed Required Properties Validation (Medium Severity)\n- **Type**: Contract violation\n- **Issue**: Required properties are not validated at object instantiation, only during serialization\n- **Impact**: Allows invalid objects to be created and passed around, failing much later\n- **Report**: `bug_report_troposphere_cloudfront_2025-08-19_00-28_75wq.md`\n\n### Bug 2: Network Port Error Message Inconsistency (Low Severity)  \n- **Type**: Documentation/Contract issue\n- **Issue**: Error message incorrectly states valid range is \"0 to 65535\" when -1 is actually valid\n- **Impact**: Misleading error messages for users\n- **Report**: `bug_report_troposphere_validators_2025-08-19_00-28_3s0z.md`\n\n### Properties Successfully Tested \u2705\n- Network port validation range (-1 to 65535)\n- Boolean validator type mappings\n- CloudFront enum validators (cookie behavior, viewer protocol policy, etc.)\n- Tags validation structure\n- Integer and double validators\n- Property round-trip consistency\n\nThe testing revealed that while most validators work correctly, the library has a systemic issue with delayed validation of required properties across all CloudFront resource classes.",
+  "session_id": "c8e5ed00-f0c3-4422-a63e-de637609f164",
+  "total_cost_usd": 9.985341300000002,
+  "usage": {
+    "input_tokens": 776,
+    "cache_creation_input_tokens": 128042,
+    "cache_read_input_tokens": 4069450,
+    "output_tokens": 19298,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_017fBS8HCQVziXwWBo4c15w6",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/troposphere_env/bin/activate && python3 -c \"import troposphere.cloudfront; print('Successfully imported troposphere.cloudfront'); print('File location:', troposphere.cloudfront.__file__)\"",
+        "description": "Activate troposphere environment and import module"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01V5raCSuPYrQ5yrn2jVRGEz",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python3 -c \"import troposphere.cloudfront; print('Successfully imported troposphere.cloudfront'); print('File location:', troposphere.cloudfront.__file__)\"",
+        "description": "Use venv Python to import troposphere.cloudfront"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01WtFH4Hx3rvgMoe3NcMtGjB",
+      "tool_input": {
+        "command": "grep -n \"def network_port\" /root/hypothesis-llm/envs/troposphere_env/lib/python3.13/site-packages/troposphere/validators/__init__.py",
+        "description": "Find network_port function definition"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01RWj3Ccn6mSiZw3zX8UQWFN",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/troposphere_env/bin/python3 -m pytest test_cloudfront_properties.py -v --tb=short",
+        "description": "Run property-based tests for cloudfront module"
+      }
+    }
+  ],
+  "call_id": "8573acaf",
+  "module": "troposphere.cloudfront",
+  "timestamp": "2025-08-19T00:30:12.046565"
+}

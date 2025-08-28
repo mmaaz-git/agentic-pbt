@@ -1,0 +1,49 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 180996,
+  "duration_api_ms": 192953,
+  "num_turns": 67,
+  "result": "## Conclusion\n\nNo testable properties found in `pydantic.datetime_parse`.\n\n**Analysis Summary:**\n- `pydantic.datetime_parse` is a backport/migration module from Pydantic V1\n- All datetime parsing functions (`parse_date`, `parse_datetime`, `parse_time`, `parse_duration`) were removed in Pydantic V2\n- The module only contains `getattr_migration`, a PEP 562 implementation helper that raises import errors when accessing removed functions\n- No actual datetime parsing logic exists in this module to test\n\nThe module serves only as a migration aid to provide helpful error messages for users upgrading from V1 to V2.",
+  "session_id": "f46d7e34-73c0-4d02-b65d-c3f4f684b0eb",
+  "total_cost_usd": 2.7202950999999995,
+  "usage": {
+    "input_tokens": 516,
+    "cache_creation_input_tokens": 51226,
+    "cache_read_input_tokens": 896628,
+    "output_tokens": 5228,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01CMNFrgCi8RxW4PWe79Efko",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/pydantic/datetime_parse.py"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01B8BVPUFdcinjhFJCUvABwN",
+      "tool_input": {
+        "command": "bin/python3 -c \"\nimport pydantic.datetime_parse\nimport inspect\n\n# Get the module file location\nprint(f'Module file: {pydantic.datetime_parse.__file__}')\n\"",
+        "description": "Check pydantic in virtual environment"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_018xyXvsvo4gc27WejhW6EL3",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/pydantic_env/bin/python3 -c \"\nimport pydantic.datetime_parse\nimport inspect\n\n# Get the module file location\nprint(f'Module file: {pydantic.datetime_parse.__file__}')\n\"",
+        "description": "Check pydantic location with full path"
+      }
+    }
+  ],
+  "call_id": "435208d2",
+  "module": "pydantic.datetime_parse",
+  "timestamp": "2025-08-18T20:22:40.885756"
+}

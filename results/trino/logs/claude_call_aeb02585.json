@@ -1,0 +1,66 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 639747,
+  "duration_api_ms": 643229,
+  "num_turns": 133,
+  "result": "## Summary\n\nSuccessfully discovered **3 bugs** in `trino.types` through property-based testing:\n\n### Bug 1: NamedRowTuple Shadows Tuple Methods (Medium severity)\n- **Issue**: Field names like \"count\" shadow tuple's built-in methods\n- **Impact**: Makes tuple methods inaccessible, causing TypeError\n- **File**: `bug_report_trino_types_namedrowtuple_2025-08-18_21-04_64qa.md`\n\n### Bug 2: NaN Handling Crash (Medium severity)  \n- **Issue**: `round_to()` crashes on NaN fractional seconds\n- **Impact**: TypeError when processing special Decimal values\n- **File**: `bug_report_trino_types_nan_handling_2025-08-18_21-04_y1fd.md`\n\n### Bug 3: Negative Precision KeyError (Low severity)\n- **Issue**: `round_to()` fails with negative precision values\n- **Impact**: KeyError when accessing POWERS_OF_TEN dictionary\n- **File**: `bug_report_trino_types_negative_precision_2025-08-18_21-04_3x5x.md`\n\nAll bugs have been verified with minimal reproduction scripts and include proposed fixes.",
+  "session_id": "da15c0ab-cbc0-4ab0-9be5-304d494457d4",
+  "total_cost_usd": 7.784728899999999,
+  "usage": {
+    "input_tokens": 782,
+    "cache_creation_input_tokens": 86038,
+    "cache_read_input_tokens": 3053344,
+    "output_tokens": 20812,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01EubCAjNVHsSqfNcQ8Hhhrn",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/trino_env/bin/activate && python -c \"import trino.types; print('success - treating as module')\"",
+        "description": "Import trino.types using the trino_env"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_011PAM5NFNwNxTrXaVRv2uoj",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/trino_env/bin/python -c \"import trino.types; print('success - treating as module')\"",
+        "description": "Import trino.types using trino_env python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_012nPubsBjpkWH1PF9ncH3v7",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/trino_env/bin/pytest test_trino_types.py -v",
+        "description": "Run property-based tests for trino.types"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Ci9daktXbcuuXzYqYyJ2ff",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/trino_env/bin/python -m pytest test_trino_types.py -v",
+        "description": "Run pytest on test_trino_types.py"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01PVJw2WGp6MvsitcWbsg8tR",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/trino_env/bin/python run_tests.py",
+        "description": "Execute property-based tests for trino.types"
+      }
+    }
+  ],
+  "call_id": "aeb02585",
+  "module": "trino.types",
+  "timestamp": "2025-08-18T21:05:54.683122"
+}

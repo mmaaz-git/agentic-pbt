@@ -1,0 +1,34 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 727194,
+  "duration_api_ms": 666681,
+  "num_turns": 148,
+  "result": "## Bug Hunting Complete! \ud83d\udc1b\n\nI've successfully analyzed `troposphere.launchwizard` using property-based testing with Hypothesis and discovered **2 genuine bugs**:\n\n### Bugs Found:\n\n1. **Unicode Title Validation Inconsistency** (Medium severity, Contract bug)\n   - Title validation rejects Unicode characters like '\u00b5', '\u03a9', '\u00f1' with misleading error \"not alphanumeric\"\n   - Python's `isalnum()` returns `True` for these, but the regex only accepts ASCII\n   - Bug report: `bug_report_troposphere_launchwizard_2025-08-19_02-03_q6qy.md`\n\n2. **Empty Title Validation Bypass** (Medium severity, Logic bug)\n   - Empty string titles bypass validation during initialization\n   - The `__init__` only validates if `self.title` is truthy, allowing `\"\"` and `None` through\n   - Bug report: `bug_report_troposphere_launchwizard_2025-08-19_02-04_afgo.md`\n\n### Properties Successfully Tested:\n- \u2705 Tags sorting with string keys\n- \u2705 Tags concatenation preserves all tags  \n- \u2705 Tags handling with mixed key types\n- \u2705 Required property validation\n\nThe bugs were found through systematic property-based testing, revealing inconsistencies in title validation that could confuse users and allow invalid CloudFormation resources to be created.",
+  "session_id": "04119d79-aa69-4b1b-9ba3-69387f7f1e33",
+  "total_cost_usd": 8.0262503,
+  "usage": {
+    "input_tokens": 966,
+    "cache_creation_input_tokens": 75826,
+    "cache_read_input_tokens": 3440000,
+    "output_tokens": 18878,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_014y2dAszkMPeydYqAr5nM6U",
+      "tool_input": {
+        "command": "grep -n \"^class Tags\" /root/hypothesis-llm/envs/troposphere_env/lib/python3.13/site-packages/troposphere/__init__.py",
+        "description": "Find Tags class definition"
+      }
+    }
+  ],
+  "call_id": "b3f3e4d1",
+  "module": "troposphere.launchwizard",
+  "timestamp": "2025-08-19T02:05:02.726732"
+}

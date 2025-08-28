@@ -1,0 +1,4 @@
+{"call_id": "c3d6fd35", "module": "lml", "timestamp": "2025-08-18T23:01:41.994102", "bug_reports": ["bug_report_lml_plugin_2025-08-18_23-00_wjlf.md"], "aux_files_dir": "aux_files/c3d6fd35"}
+{"call_id": "ce5abdfc", "module": "lml.loader", "timestamp": "2025-08-18T22:17:32.672910", "bug_reports": ["bug_report_lml_loader_split_join_2025-08-18_22-14_881k.md", "bug_report_lml_loader_remove_duplicates_2025-08-18_22-14_vwly.md", "bug_report_lml_loader_set_nested_2025-08-18_22-14_9eb2.md"], "aux_files_dir": "aux_files/ce5abdfc"}
+{"call_id": "baf6cb6b", "module": "lml.plugin", "timestamp": "2025-08-18T22:21:37.226502", "bug_reports": ["bug_report_lml_plugin_2025-08-18_17-52_a3f9.md"], "aux_files_dir": "aux_files/baf6cb6b"}
+{"call_id": "a10fd3a7", "module": "lml.utils", "timestamp": "2025-08-18T22:14:19.042294", "bug_reports": ["bug_report_lml_utils_2025-08-18_22-12_1tv1.md"], "aux_files_dir": "aux_files/a10fd3a7"}

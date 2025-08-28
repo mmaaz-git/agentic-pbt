@@ -1,0 +1,34 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 661647,
+  "duration_api_ms": 613710,
+  "num_turns": 121,
+  "result": "## Summary\n\nSuccessfully found **2 bugs** in `troposphere.ssm` through property-based testing:\n\n### Bug 1: YAML ReaderError Not Handled\n- **Severity**: Medium\n- **Type**: Crash\n- When given strings with special characters (e.g., `'\\x1f'`), `validate_document_content` crashes with `yaml.reader.ReaderError` instead of gracefully handling invalid input\n\n### Bug 2: None Value Handling\n- **Severity**: Medium  \n- **Type**: Crash\n- When given `None`, `validate_document_content` crashes with `TypeError` instead of properly validating and rejecting the input\n\nBoth bugs violate the function's error contract - it should raise `ValueError` with message \"Content must be one of dict or json/yaml string\" for invalid inputs, but instead crashes with unexpected exceptions.\n\nBug reports created:\n- `bug_report_troposphere_ssm_yaml_error_2025-08-19_02-37_cbhg.md`\n- `bug_report_troposphere_ssm_none_handling_2025-08-19_02-37_psxd.md`",
+  "session_id": "7aec0bf7-6864-48de-a25b-11d804c35526",
+  "total_cost_usd": 5.9562198,
+  "usage": {
+    "input_tokens": 770,
+    "cache_creation_input_tokens": 61656,
+    "cache_read_input_tokens": 2367704,
+    "output_tokens": 16229,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_012eV4MrPLz7tt8NRPNwHoJa",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/troposphere/ssm.py",
+        "limit": 100
+      }
+    }
+  ],
+  "call_id": "2b360690",
+  "module": "troposphere.ssm",
+  "timestamp": "2025-08-19T02:39:31.542057"
+}

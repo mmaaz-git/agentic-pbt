@@ -1,0 +1,40 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 359991,
+  "duration_api_ms": 361962,
+  "num_turns": 78,
+  "result": "Tested 7 properties on isort.profiles - all passed \u2705\n\nTested properties included:\n- Profile immutability when accessed via `.copy()`\n- Profile inheritance (plone from black)\n- Profile expansion via dictionary unpacking (appnexus from black)\n- Profiles dictionary completeness\n- `setdefault()` preservation of existing profiles\n- Independence of copied profiles\n- Type consistency across profile configurations\n\nAll properties held as expected based on the code's claimed behavior.",
+  "session_id": "2af1af53-7c43-4f51-9d32-16eabfa4e07b",
+  "total_cost_usd": 3.4855116999999995,
+  "usage": {
+    "input_tokens": 476,
+    "cache_creation_input_tokens": 51850,
+    "cache_read_input_tokens": 1289922,
+    "output_tokens": 7506,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Sjtm87ooJT6MeHQTyJvTT5",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/envs/isort_env && source bin/activate && python -c \"import isort.profiles; print('Module imported successfully')\""
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01VZAvRoqbGRYeQQk3LzZ7FT",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/isort_env/bin/python -c \"import isort.profiles; print('Module imported successfully')\""
+      }
+    }
+  ],
+  "call_id": "ced7e448",
+  "module": "isort.profiles",
+  "timestamp": "2025-08-18T21:43:04.551629"
+}

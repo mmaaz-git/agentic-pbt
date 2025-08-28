@@ -1,0 +1,34 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 504931,
+  "duration_api_ms": 497732,
+  "num_turns": 73,
+  "result": "## Summary\n\n\ud83d\udc1b **Bug found in scipy.linalg.pinv!**\n\nTested 12 properties on scipy.linalg functions:\n- \u2705 QR decomposition round-trip\n- \u2705 LU decomposition round-trip  \n- \u2705 Matrix inverse properties\n- \u2705 Solve equation properties\n- \u2705 Hadamard matrix orthogonality\n- \u2705 Circulant matrix structure\n- \u2705 Toeplitz matrix structure\n- \u2705 Pascal matrix properties\n- \u274c **Pseudo-inverse Moore-Penrose conditions** \n- \u2705 SVD round-trip\n- \u2705 Cholesky decomposition\n- \u2705 Block diagonal structure\n\nThe bug violates the third Moore-Penrose condition for pseudo-inverses: the product A @ pinv(A) should be Hermitian/symmetric, but for certain rank-deficient matrices with small values, it produces asymmetry errors up to 2.79e-09. This affects both scipy.linalg.pinv and numpy.linalg.pinv.\n\nBug report saved as: `bug_report_scipy_linalg_pinv_2025-08-18_14-30_x7k9.md`",
+  "session_id": "3f3a5531-c117-48d1-b753-4eafb0241e25",
+  "total_cost_usd": 4.2890359999999985,
+  "usage": {
+    "input_tokens": 528,
+    "cache_creation_input_tokens": 67388,
+    "cache_read_input_tokens": 1220798,
+    "output_tokens": 15594,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01M9jZbnPymf6g8kN4FR9wQ3",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/scipy/linalg/_special_matrices.py",
+        "limit": 100
+      }
+    }
+  ],
+  "call_id": "7f0388be",
+  "module": "scipy.linalg",
+  "timestamp": "2025-08-18T20:01:20.305923"
+}

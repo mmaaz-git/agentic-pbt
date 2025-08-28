@@ -1,0 +1,50 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 895753,
+  "duration_api_ms": 909498,
+  "num_turns": 149,
+  "result": "## Testing Summary for sudachipy.tokenizer\n\nTested 21 properties on sudachipy.tokenizer module components - all passed \u2705\n\n### What Was Tested\n\nSince the main `Tokenizer` class requires a dictionary (sudachidict_core) which wasn't available, I focused on testing the standalone components within the module:\n\n1. **SplitMode class** - An enum-like class for tokenization modes (A/B/C)\n2. **Config class** - Configuration management for the tokenizer\n\n### Properties Tested\n\n**SplitMode Properties (9 tests):**\n- Case insensitivity: `SplitMode(\"A\") == SplitMode(\"a\")` \u2713\n- Default behavior: `SplitMode(None) == SplitMode.C` \u2713  \n- Invalid input rejection (only accepts A/B/C) \u2713\n- Equality consistency across multiple creations \u2713\n- Constants distinctness (A \u2260 B \u2260 C) \u2713\n- Empty string rejection \u2713\n- Unicode/special character handling \u2713\n- Whitespace handling \u2713\n- Case normalization in string representation \u2713\n\n**Config Properties (12 tests):**\n- Default projection value preservation \u2713\n- Custom initialization parameter preservation \u2713\n- JSON serialization validity \u2713\n- Immutable update pattern (returns new instance) \u2713\n- Empty update creates proper copy \u2713\n- Multiple field updates \u2713\n- Update chain functionality \u2713\n- None value handling in JSON \u2713\n- Empty string system value support \u2713\n- Partial update field preservation \u2713\n- List field (user) handling \u2713\n- Extreme value handling (long strings, unicode) \u2713\n\n### Key Findings\n\nAll components tested behaved correctly according to their documented specifications:\n- `SplitMode` properly validates inputs and maintains singleton-like equality\n- `Config` follows an immutable pattern where `update()` returns new instances\n- Both components handle edge cases gracefully\n\n### Limitations\n\nCould not test the core tokenization functionality (`Tokenizer.tokenize()`) without the required dictionary dependency, which would have allowed testing properties like:\n- Morpheme boundary correctness\n- Index consistency (begin < end)\n- Surface reconstruction\n- Split mode hierarchy",
+  "session_id": "004f9b1f-2819-4b68-9b26-b65d5ae1833f",
+  "total_cost_usd": 7.5510088,
+  "usage": {
+    "input_tokens": 918,
+    "cache_creation_input_tokens": 80900,
+    "cache_read_input_tokens": 2992804,
+    "output_tokens": 20071,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01N7aCP7tK5dNoowV2neZc8o",
+      "tool_input": {
+        "command": "source /root/hypothesis-llm/envs/sudachipy_env/bin/activate && python -c \"import sudachipy.tokenizer; print('success - treating as module')\"",
+        "description": "Activate sudachipy env and import module"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_012dXJ25z5JCEpd7Qoku7Czk",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/sudachipy_env/bin/python -c \"import sudachipy.tokenizer; print('success - treating as module')\"",
+        "description": "Use venv python to import sudachipy.tokenizer"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Y4jtnEB9SMoJsoiCnUQKQ8",
+      "tool_input": {
+        "command": "cd /root/hypothesis-llm/envs/sudachipy_env && bin/python -c \"import sudachipy.tokenizer; print('success - treating as module')\"",
+        "description": "Test sudachipy.tokenizer import from venv directory"
+      }
+    }
+  ],
+  "call_id": "befcfaac",
+  "module": "sudachipy.tokenizer",
+  "timestamp": "2025-08-18T20:48:16.375075"
+}

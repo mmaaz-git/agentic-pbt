@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 547580,
+  "duration_api_ms": 554251,
+  "num_turns": 101,
+  "result": "## Bug Hunt Complete! \ud83d\udc1b\n\nSuccessfully discovered **2 bugs** in `packaging.metadata` through property-based testing:\n\n### Bug 1: Name Validation Inconsistency (Medium Severity)\n- **Issue**: `parse_email` accepts invalid package names like \"A-\" that are rejected by `Metadata.from_raw`\n- **Impact**: Breaks expected consistency between parsing methods\n- **Report**: `bug_report_packaging_metadata_name_validation_2025-08-18_19-51_l8cz.md`\n\n### Bug 2: Whitespace Handling Issue (Low Severity)  \n- **Issue**: Trailing whitespace in field values is preserved instead of being trimmed\n- **Impact**: Can cause unexpected comparison failures and data inconsistency\n- **Report**: `bug_report_packaging_metadata_whitespace_2025-08-18_19-51_o2yr.md`\n\n**Properties tested**: 8 property-based tests covering parse consistency, validation behavior, case sensitivity, and field handling.",
+  "session_id": "e48241cc-d782-412e-8b5f-66eae7e9d036",
+  "total_cost_usd": 4.6398542,
+  "usage": {
+    "input_tokens": 680,
+    "cache_creation_input_tokens": 51580,
+    "cache_read_input_tokens": 1733722,
+    "output_tokens": 13989,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01SwP7XLuNWzKaJzmU1Ug1jM",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/packaging/metadata.py"
+      }
+    }
+  ],
+  "call_id": "4f37bc78",
+  "module": "packaging.metadata",
+  "timestamp": "2025-08-18T19:53:42.655302"
+}

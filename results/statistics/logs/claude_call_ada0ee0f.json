@@ -1,0 +1,25 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 326231,
+  "duration_api_ms": 344771,
+  "num_turns": 77,
+  "result": "Found bug: `statistics.quantiles()` with default `method='exclusive'` returns values outside data range for small samples. Bug report saved as `bug_report_statistics_quantiles_2025-08-18_04-53_5h4i.md`.",
+  "session_id": "84c22d33-e55f-4e6e-a013-b9421355f183",
+  "total_cost_usd": 4.436867199999999,
+  "usage": {
+    "input_tokens": 348,
+    "cache_creation_input_tokens": 54208,
+    "cache_read_input_tokens": 1741714,
+    "output_tokens": 10071,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [],
+  "call_id": "ada0ee0f",
+  "module": "statistics",
+  "timestamp": "2025-08-18T04:54:30.198103"
+}

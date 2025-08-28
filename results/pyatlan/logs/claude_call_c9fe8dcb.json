@@ -1,0 +1,58 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 476333,
+  "duration_api_ms": 478465,
+  "num_turns": 102,
+  "result": "## Bug Found! \ud83d\udc1b\n\nSuccessfully discovered **2 bugs** in `pyatlan.model.utils.to_python_class_name`:\n\n1. **Returns Python keywords unchanged** - The function returns 'None', 'True', 'False' without modification, violating the requirement that class names cannot be keywords\n2. **Returns lowercase after digit removal** - When input starts with digits (e.g., '0A'), the function removes digits but returns 'a' instead of 'A', violating PEP 8 convention\n\n**Bug report saved**: `bug_report_pyatlan_model_utils_2025-08-18_21-09_z5sq.md`\n\nThe bugs were found through property-based testing that verified the function should always produce valid Python class names. Out of 10 properties tested, 9 passed and 1 revealed these critical issues.",
+  "session_id": "94deda2b-7a70-4dcf-a73c-bbfa29b4d4dd",
+  "total_cost_usd": 4.793316199999998,
+  "usage": {
+    "input_tokens": 660,
+    "cache_creation_input_tokens": 60096,
+    "cache_read_input_tokens": 1925406,
+    "output_tokens": 10112,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01SD32mFTUYujYtrTEyNvU1J",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/pyatlan_env/bin/python3 -c \"import pyatlan.model; print('success - treating as module')\"",
+        "description": "Import pyatlan.model with env python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01CFmck2LEEPUXvS7ffeo9gU",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/pyatlan_env/bin/python -c \"import pyatlan.model; print('success - treating as module')\"",
+        "description": "Import pyatlan.model with env python"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Q1kE1vVdxRwD4DXu8PiWvR",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/pyatlan_env/bin/python -m pytest test_pyatlan_model_properties.py -v",
+        "description": "Run property-based tests with pytest"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01GSw5QVTHAmAkujYw8vSuR4",
+      "tool_input": {
+        "command": "/root/hypothesis-llm/envs/pyatlan_env/bin/pytest test_pyatlan_model_properties.py -v",
+        "description": "Run pytest on test file"
+      }
+    }
+  ],
+  "call_id": "c9fe8dcb",
+  "module": "pyatlan.model",
+  "timestamp": "2025-08-18T21:11:03.166313"
+}

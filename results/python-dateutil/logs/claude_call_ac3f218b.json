@@ -1,0 +1,25 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 246147,
+  "duration_api_ms": 252217,
+  "num_turns": 57,
+  "result": "Found bug: `dateutil.utils.within_delta` crashes with TypeError when comparing naive and aware datetimes \u2705",
+  "session_id": "177feeea-4298-4da1-b387-8438be924fa5",
+  "total_cost_usd": 2.7612445000000005,
+  "usage": {
+    "input_tokens": 286,
+    "cache_creation_input_tokens": 29010,
+    "cache_read_input_tokens": 1065238,
+    "output_tokens": 7832,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [],
+  "call_id": "ac3f218b",
+  "module": "dateutil.utils",
+  "timestamp": "2025-08-18T05:24:43.730227"
+}

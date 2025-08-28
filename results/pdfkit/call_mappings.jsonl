@@ -1,0 +1,5 @@
+{"call_id": "02c6258a", "module": "pdfkit", "timestamp": "2025-08-19T03:02:36.264532", "bug_reports": ["bug_report_pdfkit_2025-08-19_14-30_k8f2.md"], "aux_files_dir": "aux_files/02c6258a"}
+{"call_id": "804f4d9c", "module": "pdfkit.api", "timestamp": "2025-08-19T03:04:58.554538", "bug_reports": ["bug_report_pdfkit_regex_injection_2025-08-19_03-03_sju3.md", "bug_report_pdfkit_boolean_normalization_2025-08-19_03-03_n2sn.md"], "aux_files_dir": "aux_files/804f4d9c"}
+{"call_id": "9402a2f5", "module": "pdfkit.configuration", "timestamp": "2025-08-19T03:01:51.670005", "bug_reports": ["bug_report_pdfkit_configuration_2025-08-19_03-01_htte.md"], "aux_files_dir": "aux_files/9402a2f5"}
+{"call_id": "c0b45022", "module": "pdfkit.pdfkit", "timestamp": "2025-08-19T03:04:21.492080", "bug_reports": ["bug_report_pdfkit_pdfkit_meta_tag_parsing_2025-08-19_03-03_292q.md", "bug_report_pdfkit_pdfkit_boolean_handling_2025-08-19_03-03_7uy9.md"], "aux_files_dir": "aux_files/c0b45022"}
+{"call_id": "af9dca5a", "module": "pdfkit.source", "timestamp": "2025-08-19T03:03:12.550193", "bug_reports": ["bug_report_pdfkit_source_2025-08-19_03-02_uvmo.md"], "aux_files_dir": "aux_files/af9dca5a"}

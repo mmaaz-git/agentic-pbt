@@ -1,0 +1,25 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 549807,
+  "duration_api_ms": 550406,
+  "num_turns": 80,
+  "result": "## Summary\n\n\u2705 **Bug Found**: Discovered a type inconsistency bug in `fire.docstrings._line_is_hyphens`\n\nI successfully tested 13 properties of the fire.docstrings module using Hypothesis:\n- 12 properties passed\n- 1 property revealed a genuine bug\n\nThe bug: `_line_is_hyphens('')` returns `''` (string) instead of `False` (boolean), violating its contract to return a boolean value. While this doesn't cause crashes due to Python's truthiness, it's a genuine type inconsistency that could cause issues in type-sensitive contexts.\n\nBug report saved as: `bug_report_fire_docstrings_2025-08-18_15-45_j8k2.md`",
+  "session_id": "547b78ec-2515-4992-89f0-831a12b644ce",
+  "total_cost_usd": 4.0224717000000005,
+  "usage": {
+    "input_tokens": 442,
+    "cache_creation_input_tokens": 66838,
+    "cache_read_input_tokens": 1381600,
+    "output_tokens": 9142,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [],
+  "call_id": "16dfa988",
+  "module": "fire.docstrings_test",
+  "timestamp": "2025-08-18T22:27:56.174134"
+}

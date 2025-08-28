@@ -1,0 +1,33 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 585846,
+  "duration_api_ms": 598282,
+  "num_turns": 122,
+  "result": "## Summary\n\nFound **1 genuine bug** in `packaging.utils`:\n\n**Bug: `is_normalized_name` incorrectly accepts consecutive dashes** (Medium severity)\n- The regex pattern has a flawed negative lookahead that allows names like \"a--b\" and \"0--0\"\n- Created bug report: `bug_report_packaging_utils_2025-08-18_19-54_2nla.md`\n\nAlso identified 1 false positive:\n- Unicode case-sensitivity issue: Not a real bug since non-ASCII characters are invalid in package names when validation is enabled\n\nTested 13 properties across the module's core functions with all other tests passing successfully \u2705",
+  "session_id": "dd97884a-cda3-491c-9660-49935e43b2d3",
+  "total_cost_usd": 5.972761000000001,
+  "usage": {
+    "input_tokens": 770,
+    "cache_creation_input_tokens": 61936,
+    "cache_read_input_tokens": 2301146,
+    "output_tokens": 17736,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_018rjcMrCTywZHf5u9rCufzE",
+      "tool_input": {
+        "file_path": "/home/linuxbrew/.linuxbrew/lib/python3.13/site-packages/packaging/utils.py"
+      }
+    }
+  ],
+  "call_id": "5b6ac010",
+  "module": "packaging.utils",
+  "timestamp": "2025-08-18T19:56:42.038910"
+}
