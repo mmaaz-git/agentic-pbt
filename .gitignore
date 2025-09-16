@@ -3,3 +3,8 @@
 .venv
 .hypothesis
 .pytest_cache
+
+# directories that the runner creates
+envs/
+results/
+worker_/
