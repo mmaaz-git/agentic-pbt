@@ -4,7 +4,8 @@
 .hypothesis
 .pytest_cache
 
-# directories that the runner creates
+# stuff that the runner creates
 envs/
 results/
 worker_/
+scoring_results.csv
