@@ -25,7 +25,7 @@ You can also just start Claude Code, and then invoke the agent.
 
 ## Agent runner
 
-The `run.py` script is a wrapper around the agent to test multiple packages, in parallel. It is what was used in the paper. This script does not require any other requirements beyond the standard library (of course, you still need to have Claude Code installed).
+The `run.py` script is a wrapper around the agent to test multiple packages, in parallel. It is what was used in the paper. This script does not require any other requirements beyond the standard library (of course, you still need to have Claude Code installed). You need `python3` and `pip` to be in your `PATH`.
 
 Note that the runner operates at the *module* level.
 
@@ -49,6 +49,7 @@ The keys in the json file are the package names, either the standard library nam
 The runner takes two optional arguments:
 - `--max-workers`: the number of parallel workers to use. Default is 20.
 - `--model`: the model to use. Default is "opus".
+- `--preinstall-workers`: the number of parallel workers to use for setting up the virtual environments. Default is 10.
 
 The runner will output all bug reports in the `results/` directory.
 
