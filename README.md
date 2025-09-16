@@ -18,7 +18,7 @@ Example usage:
 
 ```bash
 claude "/hypo numpy"
-claude "/hypo numpy.linalg.solve" --model opus
+claude "/hypo statistics.median" --model opus
 ```
 
 You can also just start Claude Code, and then invoke the agent.
@@ -47,8 +47,8 @@ The only required argument is the path to a json file containing the packages to
 The keys in the json file are the package names, either the standard library name or the PyPI name. For standard library packages, specify "stdlib", and for PyPI packages, specify "pypi". This is important so the runner knows how to set up the virtual environment.
 
 The runner takes two optional arguments:
-* `--max-workers`: the number of parallel workers to use. Default is 20.
-* `--model`: the model to use. Default is "opus".
+- `--max-workers`: the number of parallel workers to use. Default is 20.
+- `--model`: the model to use. Default is "opus".
 
 The runner will output all bug reports in the `results/` directory.
 
@@ -81,30 +81,30 @@ You should still be careful with the runner, because running arbitrary code is d
 ### Outputs
 
 In the `results/` directory, there will be a directory named after the package. Each of these will have the following structure:
-* `bug_reports/`
-    * \<all bug reports written by the agent>
-* `logs/`
-    * `claude_call_$id.json` \<the log of the Claude Code call corresponding to this id>
-* `aux_files/`
-    * `$id`
-        * \<all other files written by Claude Code during the Claude Code call corresponding to this id, e.g., Python files>
-* `call_mappings.jsonl`, with the following format:
-    * `call_id`: the Claude Code call id
-    * `module`: the module tested
-    * `timestamp`: date executed
-    * `bug_reports`: the filename of any bug reports in the `bug_reports` directory written by this Claude Code call
-    * `aux_files_dir`: the directory containing all files written by the agent during the Claude Code call corresponding to this id
+- `bug_reports/`
+    - \<all bug reports written by the agent>
+- `logs/`
+    - `claude_call_$id.json` \<the log of the Claude Code call corresponding to this id>
+- `aux_files/`
+    - `$id`
+        - \<all other files written by Claude Code during the Claude Code call corresponding to this id, e.g., Python files>
+- `call_mappings.jsonl`, with the following format:
+    - `call_id`: the Claude Code call id
+    - `module`: the module tested
+    - `timestamp`: date executed
+    - `bug_reports`: the filename of any bug reports in the `bug_reports` directory written by this Claude Code call
+    - `aux_files_dir`: the directory containing all files written by the agent during the Claude Code call corresponding to this id
 
 ### Ranking the bug reports
 
 To score the bug reports, you can run `python scoring.py results/`. This uses the rubric contained in that file, and passes it to Claude (not Claude Code, just the Claude API). This script outputs a CSV file containing the scores for each bug report, as well as the reasoning.
 
 It takes the following arguments:
-* `--retry-failures`: if set, it will retry the bug reports that failed to score. This requires the CSV file to already exist, as it checks for failed scores in the CSV file.
-* `reports_dir`: the directory containing the bug reports to score. Default is "results/".
-* `--max-workers`: the number of parallel workers to use. Default is 20.
-* `--model`: the model to use. Default is "claude-opus-4-1" (note model names are different when using the Claude API directly)
-* `--csv-path`: the path to the CSV file to write the results to. Default is "scoring_results.csv".
+- `--retry-failures`: if set, it will retry the bug reports that failed to score. This requires the CSV file to already exist, as it checks for failed scores in the CSV file.
+- `reports_dir`: the directory containing the bug reports to score. Default is "results/".
+- `--max-workers`: the number of parallel workers to use. Default is 20.
+- `--model`: the model to use. Default is "claude-opus-4-1" (note model names are different when using the Claude API directly)
+- `--csv-path`: the path to the CSV file to write the results to. Default is "scoring_results.csv".
 
 Example usage:
 
