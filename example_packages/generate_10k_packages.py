@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Fast module discovery without installs:
-- Reads top-pypi-packages.min.json (ClickHouse export) by default, or provided file
+Make list of modules for 10k packages:
+- Reads top-pypi-packages.min.json (or provided file) -- top 15k pypi packages
 - Fetches GitHub repository URLs from PyPI project metadata to dedupe by repo
-- For the first N deduped packages, downloads wheels only (no deps, no venv)
+- For the first N deduped packages, downloads wheels
 - Extracts top-level import names from top_level.txt and wheel contents
 
 Outputs mapping: { pypi_name: { type: "pypi", modules: [top, top.sub1, ...] } }
