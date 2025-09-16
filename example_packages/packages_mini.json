@@ -1,0 +1,14 @@
+{
+  "webcolors": {
+    "type": "pypi",
+    "modules": [
+      "webcolors"
+    ]
+  },
+  "docopt": {
+    "type": "pypi",
+    "modules": [
+      "docopt"
+    ]
+  }
+}
