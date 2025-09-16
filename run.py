@@ -5,6 +5,7 @@ Agent runner
 
 import argparse
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -14,12 +15,13 @@ import uuid
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
 from pathlib import Path
+from tqdm import tqdm
 
 # Configuration
 RESULTS_DIR = Path(__file__).parent / "results"
 ENVS_DIR = Path(__file__).parent / "envs"
 WORKER_DIR_PREFIX = Path(__file__).parent / "worker_"
-HYPO_COMMAND = Path(__file__).parent.parent / "hypo.md"
+HYPO_COMMAND = Path(__file__).parent / "hypo.md"
 MAX_WORKERS = 20
 
 RESULTS_DIR.mkdir(exist_ok=True)
@@ -63,6 +65,19 @@ def setup_stdlib_venv() -> Path:
     return venv_path
 
 
+def _pip_install_with_fallback(pip_path: Path, packages_to_install: list[str]) -> None:
+    """Install packages, optionally preferring wheels then falling back to normal install."""
+    base_cmd = [str(pip_path), "install"]
+    # First attempt: prefer wheels for speed
+    try:
+        subprocess.run(base_cmd + ["--only-binary", ":all:"] + packages_to_install, check=True)
+        return
+    except subprocess.CalledProcessError:
+        pass
+    # Fallback: normal install (may build sdists)
+    subprocess.run(base_cmd + packages_to_install, check=True)
+
+
 def setup_package_venv(package_name: str, packages: dict[str, dict]) -> Path:
     """Set up a virtual environment for a PyPI package."""
     package_info = packages[package_name]
@@ -79,9 +94,9 @@ def setup_package_venv(package_name: str, packages: dict[str, dict]) -> Path:
         subprocess.run(["python3", "-m", "venv", str(venv_path)], check=True)
         pip_path = venv_path / "bin" / "pip"
         # Install testing dependencies first
-        subprocess.run([str(pip_path), "install", "hypothesis", "pytest"], check=True)
+        _pip_install_with_fallback(pip_path, ["hypothesis", "pytest"])
         # Install the target package from PyPI
-        subprocess.run([str(pip_path), "install", package_name], check=True)
+        _pip_install_with_fallback(pip_path, [package_name])
 
         print(
             f"✅ {package_name} venv created with hypothesis, pytest, and {package_name}"
@@ -378,14 +393,17 @@ def get_completed_modules() -> set:
 
 
 def run_parallel_tests(
-    packages: dict[str, dict], max_workers: int = MAX_WORKERS, *, model: str = "opus"
+    packages: dict[str, dict], max_workers: int = MAX_WORKERS, *, model: str = "opus", preinstall_workers: int = 10
 ):
     """Run property-based tests on all packages in parallel."""
 
-    # Setup phase - create all venvs first
+    # Setup phase - create all venvs first (parallelized)
     print("🔧 Setting up package environments...")
-    for package_name in packages.keys():
-        setup_package_venv(package_name, packages)
+    pkg_names = list(packages.keys())
+    with ThreadPoolExecutor(max_workers=preinstall_workers) as ex:
+        futures = [ex.submit(setup_package_venv, name, packages) for name in pkg_names]
+        for _ in tqdm(futures, total=len(futures), desc="Preinstall", unit="pkg"):
+            _.result()
 
     # Check for already completed modules
     print("🔍 Checking for already completed modules...")
@@ -454,6 +472,12 @@ def main():
         help=f"Number of parallel workers (default: {MAX_WORKERS})",
     )
     parser.add_argument(
+        "--preinstall-workers",
+        type=int,
+        default=10,
+        help="Parallel workers for venv setup (default: 10)",
+    )
+    parser.add_argument(
         "--model",
         type=str,
         choices=["opus", "sonnet", "haiku"],
@@ -470,7 +494,12 @@ def main():
         f"📦 Loaded {total_packages} packages with {total_modules} total modules to test"
     )
 
-    run_parallel_tests(packages, args.max_workers, model=args.model)
+    run_parallel_tests(
+        packages,
+        args.max_workers,
+        model=args.model,
+        preinstall_workers=args.preinstall_workers
+    )
 
 
 # example usage: `python run.py packages.json --max-workers 1 --model sonnet`
