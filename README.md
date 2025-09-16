@@ -60,16 +60,16 @@ python run.py packages.json
 ```
 
 In the `example_packages/` directory, there are some example package json files to test:
-- `packages_mini.json`: a mini set of packages to test (1 stdlib package, 1 pypi package)
+- `packages_mini.json`: a mini set of modules to test (this took 6 minutes to run, with default settings)
 - `packages_10k.json`: top 10,000 pypi packages, with the main module and all submodules one level deep
 
 The packages tested in the paper are in the `paper/` directory.
 
 ### How the agent works
 
-The runner sets up virtual environments, with `venv` for each package. Standard library packages just use the same virtual environment, and PyPI packages get their own virtual environment. The runner will also install `pytest` and `hypothesis` in each virtual environment.
+The runner sets up virtual environments, with `venv` for each package. Standard library packages just use the same virtual environment, and PyPI packages get their own virtual environment. The runner will also install `pytest` and `hypothesis` in each virtual environment. It does this in parallel, which is controllable; see the CLI arguments below.
 
-It then then sets up `MAX_WORKERS` directories, which is a "sandbox" for the agent to run in. It only has permission to edit files within this sandbox. Each worker directory also contains `.claude/commands/hypo.md`, so that the agent can run. The runner parallelizes across modules.
+It then then sets up directories, up to a specified number of maximum workers (see CLI arguments below), which is a "sandbox" for the agent to run in. It only has permission to edit files within this sandbox. Each worker directory also contains `.claude/commands/hypo.md`, so that the agent can run. The runner parallelizes across modules.
 
 Note that the runner also checks if the module has already been tested, and skips it if so. So, you can easily resume a run by just running the runner again.
 
