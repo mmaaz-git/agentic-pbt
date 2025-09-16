@@ -38,8 +38,8 @@ The only required argument is the path to a json file containing the packages to
         "modules": ["pathlib"]
     },
     "numpy": {
-            "type": "pypi",
-            "modules": ["numpy"]
+        "type": "pypi",
+        "modules": ["numpy"]
     }
 }
 ```
