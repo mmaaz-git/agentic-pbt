@@ -6,7 +6,7 @@ For the artifacts from the paper, including bug reports and human evaluations, s
 
 ## Running the agent
 
-The agent is a Claude Code command. You will need to have Claude Code [installed](https://docs.anthropic.com/en/docs/claude-code/install-claude-code) to run it.
+The agent is a Claude Code command. You will need to have Claude Code [installed](https://docs.anthropic.com/en/docs/claude-code/install-claude-code) to run it. You will need a subscription to Claude Code, or an API key (we recommend an API key if you are going to be using the runner).
 
 The command is contained in the `hypo.md` file. You will need to place this file in the `.claude/commands/` directory, which can either be in `~` or in whichever directory you are running the agent from. The agent can then be invoked with `/hypo <target>`.
 
