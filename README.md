@@ -61,7 +61,7 @@ python run.py packages.json
 
 In the `example_packages/` directory, there are some example package json files to test:
 - `packages_mini.json`: a mini set of packages to test (1 stdlib package, 1 pypi package)
-- `packages_10000.json`: top 10,000 pypi packages, with the main module and all submodules one level deep
+- `packages_10k.json`: top 10,000 pypi packages, with the main module and all submodules one level deep
 
 The packages tested in the paper are in the `paper/` directory.
 

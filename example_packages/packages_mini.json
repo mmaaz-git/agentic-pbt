@@ -1,14 +1,14 @@
 {
-  "webcolors": {
+  "colorama": {
     "type": "pypi",
     "modules": [
-      "webcolors"
+      "colorama"
     ]
   },
-  "docopt": {
+  "git-url-parse": {
     "type": "pypi",
     "modules": [
-      "docopt"
+      "giturlparse"
     ]
   }
 }
