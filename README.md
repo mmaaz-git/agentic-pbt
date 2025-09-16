@@ -37,10 +37,10 @@ The only required argument is the path to a json file containing the packages to
         "type": "stdlib",
         "modules": ["pathlib"]
     },
-  "numpy": {
-        "type": "pypi",
-        "modules": ["numpy"]
-  }
+    "numpy": {
+            "type": "pypi",
+            "modules": ["numpy"]
+    }
 }
 ```
 
