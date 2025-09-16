@@ -2,7 +2,7 @@
 
 This is the code to run our property-based testing agent.
 
-For the artifacts from the paper, including bug reports and human evaluations, see the `paper` directory.
+For the artifacts from the paper, including bug reports and rankings, see the `paper` directory.
 
 ## Running the agent
 
