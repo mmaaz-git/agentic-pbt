@@ -1,6 +1,4 @@
-# hypothesis-llm
-
-This is the supplementary data for our submission to the NeurIPS "Deep Learning for Code in the Agentic Era" workshop.
+This is the supplementary data for the paper.
 
 * `hypo.md` is the final claude code command. It can be placed under `~/.claude/commands/` and invoked with `/hypo <file or directory>`. It corresponds to Appendix A of the paper.
 * `reported_bugs/` contains the bug reports written by the agent for the 5 bugs which we manually reported to maintainers. It corresponds to Appendix B of the paper.
