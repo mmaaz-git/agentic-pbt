@@ -302,7 +302,7 @@ def process_one(pkg: str, download_dir: Path, pip: str = "python3") -> dict:
 def main():
     parser = argparse.ArgumentParser(description="Scan wheels to list modules without installing.")
     parser.add_argument("--out", default=str(Path("packages.json")), help="Output JSON path")
-    parser.add_argument("--out-gh", default=str(Path("github_map.json")), help="Optional path to write {pypi_name: github_url} mapping")
+    parser.add_argument("--out-gh", default=None, help="Optional path to write {pypi_name: github_url} mapping")
     parser.add_argument("--count", type=int, default=None, help="How many packages to process from the original list")
     parser.add_argument("--finalcount", type=int, default=10000, help="Max final number of packages to output")
     parser.add_argument("--workers", type=int, default=100, help="Concurrent scans")
