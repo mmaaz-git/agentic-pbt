@@ -3,6 +3,7 @@
 .venv
 .hypothesis
 .pytest_cache
+.claude
 
 # stuff that the runner creates
 envs/
