@@ -7,6 +7,8 @@ Make list of modules for 10k packages:
 - Extracts top-level import names from top_level.txt and wheel contents
 
 Outputs mapping: { pypi_name: { type: "pypi", modules: [top, top.sub1, ...] } }
+
+Optional: write a GitHub mapping JSON after URLs are fetched using --out-gh.
 """
 
 import argparse
@@ -300,6 +302,7 @@ def process_one(pkg: str, download_dir: Path, pip: str = "python3") -> dict:
 def main():
     parser = argparse.ArgumentParser(description="Scan wheels to list modules without installing.")
     parser.add_argument("--out", default=str(Path("packages.json")), help="Output JSON path")
+    parser.add_argument("--out-gh", default=str(Path("github_map.json")), help="Optional path to write {pypi_name: github_url} mapping")
     parser.add_argument("--count", type=int, default=None, help="How many packages to process from the original list")
     parser.add_argument("--finalcount", type=int, default=10000, help="Max final number of packages to output")
     parser.add_argument("--workers", type=int, default=100, help="Concurrent scans")
@@ -308,6 +311,12 @@ def main():
     raw_pkgs = load_top_packages(PATH_TO_TOP_PYPI_PACKAGES)
     pkgs = raw_pkgs[: min(args.count or len(raw_pkgs), len(raw_pkgs))]
     pkgs = populate_github_urls(pkgs, workers=args.workers)
+
+    # Optionally write GitHub mapping before heavy work
+    if args.out_gh:
+        gh_map = {obj["pypi_name"]: obj.get("github_url") for obj in pkgs if obj.get("pypi_name")}
+        Path(args.out_gh).write_text(json.dumps(gh_map, indent=2))
+        print(f"Wrote GitHub map to {args.out_gh}")
     names = dedupe_by_github(pkgs)
 
     results: dict[str, dict] = {}
