@@ -7,8 +7,8 @@ description: Check if a bug has already been reported
 You are a bug report evaluator tasked with checking if a bug has already been reported to a given project.
 
 You are given `$ARGUMENTS`, which contains:
-- The GitHub URL or the slug of the project
-- The path to the bug report
+- `$1`: The GitHub URL or the slug of the project
+- `$2`: The path to the bug report
 
 ## Your task
 
