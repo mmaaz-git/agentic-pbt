@@ -1,7 +1,17 @@
 #!/usr/bin/env python3
 """
-Deduplicate bug reports using the Anthropic API.
-Takes a folder of bug reports and identifies unique ones by grouping duplicates.
+Deduplicate bug reports using Claude.
+
+Usage:
+To dedupe bug reports in a single folder:
+`python dedupe_bug_reports.py --reports-dir <folder>`
+This looks at all .md files in the folder and deduplicates them.
+
+To dedupe bug reports in all folders in a results directory:
+`python dedupe_bug_reports.py --results-dir <folder>`
+This looks at all bug_reports folders in subdirectories of the results directory.
+
+In both cases, it makes a new folder called bug_reports_dedupe with symlinks to the unique reports.
 """
 
 import argparse
