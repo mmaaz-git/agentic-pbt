@@ -34,3 +34,4 @@ To reproduce our evaluation, follow these steps:
       * `timestamp`: date executed
       * `bug_reports`: the filename of any bug reports in the `bug_reports` directory written by this api call
 * As a post-processing step, run `python clean_data.py results/`. This will clean the data and put the final results in a sibling `clean_results` directory.
+* Lastly, to score the bug reports, you can run `python scoring.py clean_results/`. This will score the bug reports using the rubric verbatim in `score_rubric_final.md`, and output a CSV file containing the scores for each bug report, as well as the reasoning.
