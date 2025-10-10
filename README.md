@@ -1,12 +1,12 @@
 # Agentic Property-Based Testing
 
-This is the code to run our property-based testing agent.
+Get a coding agent to find bugs in your codebase by mining *properties* and testing them via *Hypothesis*.
 
-For the artifacts from the paper, including bug reports and rankings, see the `paper` directory.
+For the artifacts from the paper, including bug reports and rankings, see the `paper` directory. Note that the code that was used in the paper is slightly behind what is in the main folder. See `paper/README.md` for more details.
 
 ## Running the agent
 
-The agent is a Claude Code command. You will need to have Claude Code [installed](https://docs.anthropic.com/en/docs/claude-code/install-claude-code) to run it. You will need a subscription to Claude Code, or an API key (we recommend an API key if you are going to be using the runner).
+The agent is a Claude Code command. You will need to have Claude Code [installed](https://docs.anthropic.com/en/docs/claude-code/install-claude-code) to run it. You will need a subscription to Claude Code, or an API key (we recommend an API key if you are running it over a large number of packages, or to reproduce the paper).
 
 The command is contained in the `hypo.md` file. You will need to place this file in the `.claude/commands/` directory, which can either be in `~` or in whichever directory you are running the agent from. The agent can then be invoked with `/hypo <target>`.
 
@@ -67,7 +67,7 @@ The packages tested in the paper are in the `paper/` directory.
 
 ### How the agent works
 
-The runner sets up virtual environments, with `venv` for each package. Standard library packages just use the same virtual environment, and PyPI packages get their own virtual environment. The runner will also install `pytest` and `hypothesis` in each virtual environment. It does this in parallel, which is controllable; see the CLI arguments below.
+The runner sets up virtual environments, with `venv`, for each package. Standard library packages just use the same virtual environment, and PyPI packages get their own virtual environment. The runner will also install `pytest` and `hypothesis` in each virtual environment. It does this in parallel, which is controllable; see the CLI arguments below.
 
 It then then sets up directories, up to a specified number of maximum workers (see CLI arguments below), which is a "sandbox" for the agent to run in. It only has permission to edit files within this sandbox. Each worker directory also contains `.claude/commands/hypo.md`, so that the agent can run. The runner parallelizes across modules.
 
