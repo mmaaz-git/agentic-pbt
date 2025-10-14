@@ -2,7 +2,9 @@
 
 Get a coding agent to find bugs in your codebase by mining *properties* and testing them via *Hypothesis*.
 
-For the artifacts from the paper, including bug reports and rankings, see the `paper` directory. Note that the code that was used in the paper is slightly behind what is in the main folder. See `paper/README.md` for more details.
+For the artifacts from the [paper](https://arxiv.org/abs/2510.09907), including bug reports and rankings, see the `paper` directory. Note that the code that was used in the paper is slightly behind what is in the main folder. See `paper/README.md` for more details.
+
+To see all the bugs our agent found, see our [website](https://mmaaz-github.github.io/agentic-pbt-site).
 
 ## Running the agent
 
@@ -12,7 +14,7 @@ The command is contained in the `hypo.md` file. You will need to place this file
 
 You will need `pytest`, `hypothesis`, and the package you are testing installed.
 
-The agent takes one argument, which is the target to test. This can be a file, a function, or a module. Ifno argument is given, it will test the entire codebase, i.e., the current working directory. You can pass whichever other arguments that Claude Code supports, like the model, permissions, etc.
+The agent takes one argument, which is the target to test. This can be a file, a function, or a module. If no argument is given, it will test the entire codebase, i.e., the current working directory. You can pass whichever other arguments that Claude Code supports, like the model, permissions, etc.
 
 Example usage:
 
