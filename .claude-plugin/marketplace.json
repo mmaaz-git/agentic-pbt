@@ -1,0 +1,13 @@
+{
+  "name": "agentic-pbt",
+  "owner": {
+    "name": "Muhammad Maaz"
+  },
+  "plugins": [
+    {
+      "name": "hypo-plugin",
+      "source": "./hypo-plugin",
+      "description": "Hypothesis property-based testing plugin"
+    }
+  ]
+}

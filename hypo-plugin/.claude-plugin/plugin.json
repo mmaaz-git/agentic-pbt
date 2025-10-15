@@ -1,0 +1,8 @@
+{
+    "name": "hypo-plugin",
+    "description": "A plugin to find bugs in a codebase using property-based testing",
+    "version": "1.0.0",
+    "author": {
+        "name": "Muhammad Maaz"
+    }
+}
