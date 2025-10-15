@@ -105,7 +105,7 @@ You can browse all the bug reports, validated and unvalidated, at our [bug datab
 
 ## Caveats
 
-Of course, bugs reports that the agent writes are not always correct. It is still up to the developer to validate the report. In order to make the tool more useful to developers, we emphasize to:
+Of course, bug reports that the agent writes are not always correct. It is still up to the developer to validate the report. In order to make the tool more useful to developers, we emphasize to:
 1. only write a few high-value properties -- we often experienced that the LLM could be "overeager" and propose dozens of properties, e.g., testing various mathematical theorems, and so had to guide it to stop doing that
 2. self-reflect very carefully on failures -- this is to keep the false positive rate low
 
