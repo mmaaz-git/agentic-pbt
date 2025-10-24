@@ -4,7 +4,7 @@ Get a coding agent to find bugs in your codebase by mining *properties* and test
 
 For the artifacts from the [paper](https://arxiv.org/abs/2510.09907), including bug reports and rankings, see the `paper` directory. Note that the code that was used in the paper is slightly behind what is in the main folder. See `paper/README.md` for more details.
 
-To see all the bugs our agent found, see our [website](https://mmaaz-github.git.io/agentic-pbt-site).
+To see all the bugs our agent found, see our [website](https://mmaaz-git.github.io/agentic-pbt-site).
 
 ## Running the agent
 
