@@ -6,6 +6,8 @@ For the artifacts from the [paper](https://arxiv.org/abs/2510.09907), including 
 
 To see all the bugs our agent found, see our [website](https://mmaaz-git.github.io/agentic-pbt-site).
 
+To read the blog post on the Hypothesis website, see [here](https://hypothesis.works/articles/claude-code-plugin/).
+
 ## Running the agent
 
 The agent is a Claude Code command. You will need to have Claude Code [installed](https://docs.anthropic.com/en/docs/claude-code/install-claude-code) to run it. You will need a subscription to Claude Code, or an API key (we recommend an API key if you are running it over a large number of packages, or to reproduce the paper).
